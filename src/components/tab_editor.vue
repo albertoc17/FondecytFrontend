@@ -1,0 +1,35 @@
+<template>
+  <div>
+    <quill-editor
+      v-model="content"
+      ref="myQuillEditor"
+      :options="editorOptions"
+    />
+  </div>
+</template>
+
+<script>
+import { quillEditor } from "vue-quill-editor";
+import "../../node_modules/quill/dist/quill.snow.css";
+
+export default {
+  name: "app",
+  components: {
+    quillEditor,
+  },
+  data() {
+    return {
+      editorOptions: {
+        readOnly: false,
+        theme: "snow",
+      },
+      content: "<h1>Aquí va el texto...</div>",
+    };
+  },
+  mounted(){
+    this.$root.$on("mensaje_fileupload", (arg) => {
+      this.content = arg.html;
+       });
+  },
+};
+</script>
