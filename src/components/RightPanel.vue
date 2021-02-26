@@ -1,5 +1,5 @@
 <template>
-  <div id="ModalInformativo">
+  <div id="RightPanel">
     <!-- class="position-fixed" -->
     <div v-if="modoInformacion === 'feedback'">
       <b-tabs content-class="mt-3">
@@ -54,7 +54,7 @@
 import Barchart from "./Barchart.vue";
 import BusquedaConcordancia from "./BusquedaConcordancia"
 export default {
-  name: "ModalInformativo",
+  name: "RightPanel",
   components: {
     Barchart,
     BusquedaConcordancia
@@ -96,7 +96,7 @@ export default {
 </script>
 
 <style>
-#ModalInformativo {
+#RightPanel {
   text-align: justify;
 }
 .resumen {

@@ -16,7 +16,7 @@
 <script>
 import { Analisis } from "@/includes/constants.js";
 export default {
-  name: "analisisFormal",
+  name: "TabAnalisisFormal",
   data() {
     return {
       html_oraciones: "",

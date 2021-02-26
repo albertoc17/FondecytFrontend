@@ -26,7 +26,7 @@
 <script>
 import { Analisis } from "@/includes/constants.js";
 export default {
-  name: "analisisEstilo",
+  name: "TabAnalisisEstilo",
   data() {
     return {
       html_conectores: "",
@@ -80,7 +80,3 @@ export default {
   },
 };
 </script>
-
-<style>
-
-</style>

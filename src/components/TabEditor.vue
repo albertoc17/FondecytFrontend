@@ -13,7 +13,7 @@ import { quillEditor } from "vue-quill-editor";
 import "../../node_modules/quill/dist/quill.snow.css";
 
 export default {
-  name: "app",
+  name: "TabEditor",
   components: {
     quillEditor,
   },

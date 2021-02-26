@@ -1,5 +1,5 @@
 <template>
-  <div id="thot">
+  <div id="Thot">
     <Navbar />
     <splitpanes vertical>
       <pane min-size="50" size="75">
@@ -9,20 +9,20 @@
             <br/>
             <b-tabs content-class="mt-3">
               <b-tab title="Editor de texto" active @click="sendFeedbackModal(data_general)">
-                <tabeditor />
+                <TabEditor />
               </b-tab>
               <b-tab title="Léxico gramatical" @click="sendFeedbackModal(data_lexicoGramatical)">
-                <analisisLexicoGramatical />
+                <TabAnalisisLexicoGramatical />
               </b-tab>
               <b-tab title="Formal" @click="sendFeedbackModal(data_formal)">
-                <analisisFormal />
+                <TabAnalisisFormal />
               </b-tab>
               <b-tab title="Estilo" @click="sendFeedbackModal(data_estilo)">
-                <analisisEstilo />
+                <TabAnalisisEstilo />
               </b-tab>
               <!-- <b-tab title="Discursivo" @click="sendFeedbackModal(data_discursivo)"> -->
               <b-tab title="Discursivo">
-                <analisisDiscursivo />
+                <TabAnalisisDiscursivo />
               </b-tab>
             </b-tabs>
           </div>
@@ -31,7 +31,7 @@
       <pane min-size="20" size="25">
         <div class="row" style="padding-left: 15px; padding-right: 20px;">
           <div class="col-md-12">
-            <ModalInformativo />
+            <RightPanel />
           </div>
         </div>
       </pane>
@@ -40,28 +40,30 @@
 </template>
   
 <script>
+
+import Navbar from "@/components/Navbar.vue";
+import TabEditor from "../components/TabEditor.vue";
+import TabAnalisisLexicoGramatical from "../components/TabAnalisisLexicoGramatical.vue";
+import TabAnalisisFormal from "../components/TabAnalisisFormal.vue";
+import TabAnalisisEstilo from "../components/TabAnalisisEstilo.vue";
+import TabAnalisisDiscursivo from "../components/TabAnalisisDiscursivo.vue";
+import RightPanel from "../components/RightPanel.vue";
+import FileUpload from "../components/FileUpload.vue";
+
 import { Splitpanes, Pane } from 'splitpanes'
 import 'splitpanes/dist/splitpanes.css'
-import tabeditor from "../components/tab_editor.vue";
-import analisisLexicoGramatical from "../components/analisisLexicoGramatical.vue";
-import analisisFormal from "../components/analisisFormal.vue";
-import analisisEstilo from "../components/analisisEstilo.vue";
-import analisisDiscursivo from "../components/analisisDiscursivo.vue";
-import ModalInformativo from "../components/ModalInformativo.vue";
-import FileUpload from "../components/FileUpload.vue";
-import Navbar from "@/components/Navbar.vue";
 
 export default {
-  name: "thot",
+  name: "Thot",
   components: {
     Splitpanes, 
     Pane,
-    tabeditor,
-    analisisLexicoGramatical,
-    analisisFormal,
-    analisisEstilo,
-    analisisDiscursivo,
-    ModalInformativo,
+    TabEditor,
+    TabAnalisisLexicoGramatical,
+    TabAnalisisFormal,
+    TabAnalisisEstilo,
+    TabAnalisisDiscursivo,
+    RightPanel,
     FileUpload,
     Navbar
   },

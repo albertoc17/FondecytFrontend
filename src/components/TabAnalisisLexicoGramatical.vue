@@ -1,4 +1,4 @@
-<template>
+<template id="TabAnalisisLexicoGramatical">
   <div class="row">
     <div class="col-md-12">
       <b-tabs content-class="mt-3">
@@ -14,7 +14,7 @@
 import { Analisis } from "@/includes/constants.js";
 
 export default {
-  name: "analisisLexicoGramatical",
+  name: "TabAnalisisLexicoGramatical",
   data() {
     return {
       html_gerundios: "",
@@ -47,9 +47,3 @@ export default {
   },
 };
 </script>
-
-<style>
-  #analisisLexicoGramatical {
-    text-align: right;
-  }
-</style>

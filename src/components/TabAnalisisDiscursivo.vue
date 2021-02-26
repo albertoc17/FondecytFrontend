@@ -20,7 +20,7 @@
 <script>
 
 export default {
-  name: "analisisDiscursivo",
+  name: "TabAnalisisDiscursivo",
   data() {
     return {
       html_analisis_concordancia: "",
@@ -48,7 +48,3 @@ export default {
   },
 };
 </script>
-
-<style>
-
-</style>
