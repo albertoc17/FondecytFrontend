@@ -4,60 +4,46 @@
     <div v-if="modoInformacion === 'feedback'">
       <b-tabs content-class="mt-3">
         <b-tab title="Retroalimentación" active>
-          <div
-            class="row"
-            :class="[fb.estilo]"
-            v-for="(fb, index) in feedback"
-            :key="index"
-          >
-            <div v-if="fb.nro_errores > 0"> 
-              {{fb.nro_errores}}
-              <div class="col-md-12">
-                <p style="padding: 0px; margin: 0px">{{ fb.feedback_negativo }}</p>
-                <div>
-                  <router-link
-                    :to="getUrl(index)"
-                    target="_blank"
-                    style="font-size: 13px; text-align: center"
-                  >
-                    Ver detalles <b-icon-arrow-up-right> </b-icon-arrow-up-right>
-                  </router-link>
-                </div>
-                <br />
-              </div>
+          <div class="row resumen">
+            <div class="col-md-12">
+              <Barchart :chartData="chartData" />
             </div>
-            <div v-else>
-              <div class="col-md-12">
-                <p> {{fb.feedback_positivo }} </p>
-              </div>
+          </div>
+          <Retroalimentacion :feedback="feedback"/>
+        </b-tab>
+        <b-tab title="Concordancia">
+          <BusquedaConcordancia />
+        </b-tab>
+      </b-tabs>
+    </div>
+    <div v-else-if="modoInformacion === 'estadistica'">
+      <b-tabs content-class="mt-3">
+        <b-tab title="Retroalimentación" active>
+          <div class="row resumen">
+            <div class="col-md-12">
+              <Barchart :chartData="chartData" />
             </div>
           </div>
         </b-tab>
         <b-tab title="Concordancia">
           <BusquedaConcordancia />
-          <br>
         </b-tab>
       </b-tabs>
     </div>
-    <div v-else-if="modoInformacion === 'estadistica'">
-      <div class="row resumen">
-        <div class="col-md-12">
-          <Barchart :chartData="chartData" />
-        </div>
-      </div>
-      <br />
-    </div>  
   </div>
 </template>
 
 <script>
 import Barchart from "./Barchart.vue";
-import BusquedaConcordancia from "./BusquedaConcordancia"
+import BusquedaConcordancia from "./BusquedaConcordancia";
+import Retroalimentacion from './Retroalimentacion.vue';
+
 export default {
   name: "RightPanel",
   components: {
     Barchart,
-    BusquedaConcordancia
+    BusquedaConcordancia,
+    Retroalimentacion,
   },
   data() {
     return {
@@ -66,16 +52,22 @@ export default {
       modoInformacion: "estadistica",
     };
   },
-  methods: {
-    getUrl(index) {
-      return "DetallesFeedback/" + this.feedback[index].id;
-    },
-  },
   mounted() {
     this.$root.$on("mensaje_feedback_modal", (feedback) => {
       this.modoInformacion = "feedback";
       this.feedback = feedback;
-      console.log(this.feedback);
+      //this.chartData.labels = feedback.map((d) => d.label);
+      this.chartData = {
+        labels: feedback.map((d) => d.label),
+        datasets: [
+          {
+            label: "# de posibles mejoras",
+            backgroundColor: feedback.map((d) => d.style),
+            data: feedback.map((d) => d.nro_errores),
+            borderWidth: 2,
+          },
+        ],
+      };
     });
     this.$root.$on("mensaje_estadistica_modal", (data) => {
       this.modoInformacion = "estadistica";

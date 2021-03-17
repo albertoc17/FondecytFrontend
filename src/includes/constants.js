@@ -2,14 +2,19 @@ export const Analisis = {
   FormalOracionesExtensas: {
     titulo: "Oraciones Extensas",
     feedback_negativo: "¡Tu oración es muy extensa! Se recomienda que una oración tenga una extensión entre 18 a 32 palabras.",
+    feedback_positivo: "Se identifica un buen texto, puesto que hay una adecuada extensión de oraciones ¡Sigue así!.",
     info: "Recuerda que las oraciones se componen por un sujeto y un predicado y finalizan con un punto seguido.",
-    ejemplo: "En el siguiente ejemplo se puede observar una oración muy extensa que fue producida por un estudiante,: “Toda resistencia tiene un valor nominal y otro real, teniendo en cuenta lo anterior con una tabla de colores se calcula el valor nominal de las dos resistencias dadas, luego en ambos multímetros se coloca la modalidad para medir resistencia, de acuerdo con el procedimiento puntual que se debe realizar con el analógico, primero conectar ambas terminales caimán de los cables, para crear un puente entre las dos entradas del multímetro, posteriormente se debe mover el indicador del instrumento con tal de que indique cero, para esto se utiliza la perilla que se encuentra en las esquina inferior del visor, se recomienda recostar el instrumento en la mesa y mirarlo desde arriba hasta que no se distinga el reflejo del indicador, para así tener una medición más exacta”. La oración al ser tan extensa dificulta la comprensión, por lo que si tu oración es similar a este ejemplo en cuanto a la estructura, te recomendamos que la organices empleando marcadores discursivos, así como puntos y comas. A continuación, observa este mismo ejemplo corregido: “Toda resistencia tiene un valor nominal y otro real. Teniendo en cuenta lo anterior, con una tabla de colores se calcula el valor nominal de las dos resistencias dadas y luego, en ambos multímetros, se coloca la modalidad para medir resistencia. De acuerdo con el procedimiento puntual que se debe realizar con el analógico, primero se debe conectar ambas terminales caimán de los cables, para crear un puente entre las dos entradas del multímetro. Posteriormente, se debe mover el indicador del instrumento con tal de que indique cero, para esto se utiliza la perilla que se encuentra en las esquina inferior del visor. Se recomienda recostar el instrumento en la mesa y mirarlo desde arriba hasta que no se distinga el reflejo del indicador, para así tener una medición más exacta”",
-    feedback_positivo: "Se identifica un buen texto, puesto que hay una adecuada extensión de oraciones ¡Sigue así!"
+    ejemplo_error: "“Toda resistencia tiene un valor nominal y otro real, teniendo en cuenta lo anterior con una tabla de colores se calcula el valor nominal de las dos resistencias dadas, luego en ambos multímetros se coloca la modalidad para medir resistencia, de acuerdo con el procedimiento puntual que se debe realizar con el analógico, primero conectar ambas terminales caimán de los cables, para crear un puente entre las dos entradas del multímetro, posteriormente se debe mover el indicador del instrumento con tal de que indique cero, para esto se utiliza la perilla que se encuentra en las esquina inferior del visor, se recomienda recostar el instrumento en la mesa y mirarlo desde arriba hasta que no se distinga el reflejo del indicador, para así tener una medición más exacta”.",
+    comentario: "La oración al ser tan extensa dificulta la comprensión, por lo que si tu oración es similar a este ejemplo en cuanto a la estructura, te recomendamos que la organices empleando marcadores discursivos, así como puntos y comas.",
+    ejemplo_correccion: "A continuación, observa este mismo ejemplo corregido: “Toda resistencia tiene un valor nominal y otro real. Teniendo en cuenta lo anterior, con una tabla de colores se calcula el valor nominal de las dos resistencias dadas y luego, en ambos multímetros, se coloca la modalidad para medir resistencia. De acuerdo con el procedimiento puntual que se debe realizar con el analógico, primero se debe conectar ambas terminales caimán de los cables, para crear un puente entre las dos entradas del multímetro. Posteriormente, se debe mover el indicador del instrumento con tal de que indique cero, para esto se utiliza la perilla que se encuentra en las esquina inferior del visor. Se recomienda recostar el instrumento en la mesa y mirarlo desde arriba hasta que no se distinga el reflejo del indicador, para así tener una medición más exacta”.",
   },
   FormalOracionesBreves: {
     titulo: "Oraciones Extensas",
     feedback_negativo: "¡Tu oración es muy extensa! Se recomienda que una oración tenga una extensión entre 18 a 32 palabras.",
     info: "Recuerda que las oraciones se componen por un sujeto y un predicado y finalizan con un punto seguido.",
+    ejemplo_error: "",
+    comentario: "",
+    ejemplo_correccion: "",
   },
   FormalParrafosExtensos: {
     titulo: "Parrafos Extenso",
@@ -40,18 +45,20 @@ export const Analisis = {
   },
   LexicoGramaticalGerundiosExcesivo: {
     titulo: "Gerundios Excesivos",
-    feedback_negativo: "¡Tu párrafo tiene muchos gerundios! Evita usarlos con mucha frecuencia para que no dificulte la comprensión de tu texto",
-    info: "Recuerda que el gerundio es una forma no personal del verbo, es decir, que no se encuentra conjugada. No se recomienda utilizar gerundios con tanta frecuencia, por lo que  intenta utilizar oraciones con verbos conjugados, por ejemplo: “Un circuito RLC consta de dos elementos de almacenamiento de energía: el inductor y el capacitor. A estos circuitos se les llama circuitos de segundo orden, porque sus respuestas se describen con ecuaciones diferenciales de segundo orden”",
-    ejemplo: "En el ejemplo que se presenta a continuación, se puede evidenciar el uso excesivo de gerundios en una misma oración: “Esta experiencia está diseñada para que los alumnos armen circuitos en serie y en paralelo de resistores, aprendiendo cómo medir sus respectivos voltajes y corrientes en cada uno de los elementos, comprobando así las Leyes de Kirchhoff”. Para evitar la repetición de los gerundios, se pueden reformular los verbos como se aprecia en la siguiente oración: “Esta experiencia está diseñada para que los alumnos armen circuitos en serie y en paralelo de resistores, aprendan cómo medir sus respectivos voltajes y corrientes en cada uno de los elementos, y comprueben así las Leyes de Kirchhoff”.",
-    feedback_positivo: "¡Felicitaciones! no observamos un uso excesivo de gerundios en tu texto."
+    feedback_negativo: "¡Tu párrafo tiene muchos gerundios! Evita usarlos con mucha frecuencia para que no dificulte la comprensión de tu texto.",
+    feedback_positivo: "¡Felicitaciones! no observamos un uso excesivo de gerundios en tu texto.",
+    info: "Recuerda que el gerundio es una forma no personal del verbo, es decir, que no se encuentra conjugada. No se recomienda utilizar gerundios con tanta frecuencia, por lo que  intenta utilizar oraciones con verbos conjugados, por ejemplo: “Un circuito RLC consta de dos elementos de almacenamiento de energía: el inductor y el capacitor. A estos circuitos se les llama circuitos de segundo orden, porque sus respuestas se describen con ecuaciones diferenciales de segundo orden”.",
+    ejemplo_error: "Esta experiencia está diseñada para que los alumnos armen circuitos en serie y en paralelo de resistores, aprendiendo cómo medir sus respectivos voltajes y corrientes en cada uno de los elementos, comprobando así las Leyes de Kirchhoff.",
+    comentario: "Una forma de evitar la repetición de los gerundios, es reformular los verbos.",
+    ejemplo_correccion: "Esta experiencia está diseñada para que los alumnos armen circuitos en serie y en paralelo de resistores, aprendan cómo medir sus respectivos voltajes y corrientes en cada uno de los elementos, y comprueben así las Leyes de Kirchhoff.",
   },
-  LexicoGramaticalConcordancia: {
-    titulo: "Concordancia",
-    feedback_negativo: "¡Tu texto presenta un error de concordancia! Revisa que la relación de las palabras de tu oración coincida en cuanto al género, número y tiempo verbal.",
-    info: "La concordancia gramatical se entiende como la correspondencia entre los accidentes gramaticales y los demás componentes de una oración determinada, es decir, en tu texto el género y el número deben coincidir dentro de una misma oración. Por otro lado, para que exista una concordancia en cuanto al tiempo verbal, debes fijarte que la conjugación del verbo corresponda a lo que estás expresando dentro de ella.",
-    ejemplo: "En los siguientes ejemplos se pueden observar faltas de concordancia de género: “conecta un varilla de cobre”, “ya que una mal cálculo”, y “el voltaje en el resistencia”; y de número: “el métodos de malla”, “en los circuito que” y “los cables más grueso”. Con respecto a la discordancia de tiempo verbal, se pueden observar los siguientes ejemplos: “no existía un elemento que unifica las 3 principales variables” y “es necesario construir un circuito que consta de 2 resistencias”.",
-    feedback_positivo: "No observamos ningún tipo de discordancia gramatical en tu texto ¡Buen trabajo!"
-  },
+  // LexicoGramaticalConcordancia: {
+  //   titulo: "Concordancia",
+  //   feedback_negativo: "¡Tu texto presenta un error de concordancia! Revisa que la relación de las palabras de tu oración coincida en cuanto al género, número y tiempo verbal.",
+  //   info: "La concordancia gramatical se entiende como la correspondencia entre los accidentes gramaticales y los demás componentes de una oración determinada, es decir, en tu texto el género y el número deben coincidir dentro de una misma oración. Por otro lado, para que exista una concordancia en cuanto al tiempo verbal, debes fijarte que la conjugación del verbo corresponda a lo que estás expresando dentro de ella.",
+  //   ejemplo: "En los siguientes ejemplos se pueden observar faltas de concordancia de género: “conecta un varilla de cobre”, “ya que una mal cálculo”, y “el voltaje en el resistencia”; y de número: “el métodos de malla”, “en los circuito que” y “los cables más grueso”. Con respecto a la discordancia de tiempo verbal, se pueden observar los siguientes ejemplos: “no existía un elemento que unifica las 3 principales variables” y “es necesario construir un circuito que consta de 2 resistencias”.",
+  //   feedback_positivo: "No observamos ningún tipo de discordancia gramatical en tu texto ¡Buen trabajo!"
+  // },
   EstiloPrimeraPersonaSingular: {
     titulo: "Primera Persona Singular",
     feedback_negativo: "Estás usando la primera persona singular para redactar tu texto. Se aconseja utilizar la tercera persona gramatical, la forma pasiva y la impersonal para la escritura de informes.",

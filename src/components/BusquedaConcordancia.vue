@@ -1,15 +1,20 @@
 <template>
-  <b-container class="bv-example-row">
+  <b-container fluid>
+    <!-- <b-form inline @submit="onSubmit"> -->
     <form @submit.prevent="onSubmit" enctype="multipart/form-data">
       <b-row>
-        <b-col cols="6">
-          <input v-model="patron" />
+        <b-col sm="5">
+          <b-form-input size="sm" v-model="patron" placeholder="Ingrese patrón"></b-form-input>
         </b-col>
-        <b-col cols="6">
+        <b-col sm="4">
+          <b-form-select size="sm" v-model="selectedTipoModelo" :options="optionsTipoModelo"></b-form-select>
+        </b-col>
+        <b-col sm="2">
           <button class="btn btn-sm btn-success">Buscar</button>
         </b-col>
       </b-row>
     </form>
+    <br>
     <b-row>
       <span v-html="concordancia"></span>
     </b-row>
@@ -24,26 +29,31 @@ export default {
   name: "BusquedaConcordancia",
   data() {
     return {
-      concordancia: null
+      concordancia: null,
+      patron: null,
+      selectedTipoModelo: null,
+      optionsTipoModelo: [
+        { value: null, text: 'Seleccione', disabled: true},
+        { value: 'general', text: 'General' },
+        { value: 'especifico', text: 'Específico' },
+      ]
     };
   },
   methods: {
   async onSubmit() {
-      const formData = new FormData();
-      formData.append("patron", this.patron);
-      try {
-        let res = await axios.post(
-          "http://127.0.0.1:8000/api/concordancia",
-          formData
-        );
-        this.concordancia = JSON.parse(res.data).html_response;
-
-      } catch (err) {
-        console.warn("ERROR!");
-        console.warn(err);
-      }
+    const formData = new FormData();
+    formData.append("patron", this.patron);
+    formData.append("selectedTipoModelo", this.selectedTipoModelo);
+    try {
+      let res = await axios.post(
+        "http://127.0.0.1:8000/api/concordancia",
+        formData
+      );
+      this.concordancia = JSON.parse(res.data).html_response;
+    } catch (err) {
+      console.warn(err);
+    }
   },
-
-  },
+}
 };
 </script>

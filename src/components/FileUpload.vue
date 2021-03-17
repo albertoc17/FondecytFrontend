@@ -12,7 +12,7 @@
             drop-placeholder="Arrastra el archivo..."
           ></b-form-file>
         </div>
-        <div class="col-md-3" style="margin:0px; padding:0px;">
+        <div class="col-md-3" style="margin: 0px; padding: 0px">
           <button class="btn btn-success">Enviar documento</button>
         </div>
       </div>
@@ -46,10 +46,11 @@
 
 <script>
 import axios from "axios";
-import Vue from 'vue';
-import Loading from 'vue-loading-overlay';
-import 'vue-loading-overlay/dist/vue-loading.css';
-// Init plugin
+import Vue from "vue";
+import Loading from "vue-loading-overlay";
+import "vue-loading-overlay/dist/vue-loading.css";
+
+// Init Loading plugin
 Vue.use(Loading);
 
 export default {
@@ -61,10 +62,10 @@ export default {
       statistics: null,
       oraciones: null,
       data_general: [
-        { label: "Gerundios", count: 2 },
-        { label: "Formal", count: 5 },
-        { label: "Estilo", count: 7 },
-        { label: "Discursivo", count:6 },
+        { label: "Gerundios", count: 0 },
+        { label: "Formal", count: 0 },
+        { label: "Estilo", count: 0 },
+        { label: "Discursivo", count: 0 },
       ],
       flags: null,
     };
@@ -89,11 +90,10 @@ export default {
         loader.hide();
       }
     },
-    sendFeedbackModal(data) {
-      this.$root.$emit("mensaje_estadistica_modal", data);
-    },
+    // sendFeedbackModal(data) {
+    //   this.$root.$emit("mensaje_estadistica_modal", data);
+    // },
     sendText(data) {
-      //console.log(this.text.data);
       this.$root.$emit("mensaje_fileupload", data);
     },
   },

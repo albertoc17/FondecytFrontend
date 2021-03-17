@@ -22,14 +22,18 @@ export default {
         feedback_negativo: Analisis.LexicoGramaticalGerundiosExcesivo.feedback_negativo,
         feedback_positivo: Analisis.LexicoGramaticalGerundiosExcesivo.feedback_positivo,
         id: "LexicoGramaticalGerundiosExcesivo",
-        estilo: "amarillo",
+        label: "Gerundios",
+        estilo: "naranjo",
+        style: "#fffa8e",
         nro_errores : 0
       }],
       fb_repeticionLexica: [{
         feedback_negativo:  Analisis.LexicoGramaticalRepeticionLexica.feedback_negativo,
         feedback_positivo: Analisis.LexicoGramaticalRepeticionLexica.feedback_positivo,
         id: "LexicoGramaticalRepeticionLexica",
-        estilo: "amarillo",
+        label: "Repetición Léxica",
+        estilo: "naranjo",
+        style: "#fffa8e",
         nro_errores : 0
       }]
     };

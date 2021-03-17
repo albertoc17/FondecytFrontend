@@ -36,15 +36,13 @@ export default {
     },
   },
   mounted() {
-    this.$root.$on("mensaje_fileupload", (arg) => {
-      this.html_analisis_concordancia = JSON.parse(
-        arg.analisis_concordancia
-      ).html_response;
-      this.html_proposito = JSON.parse(arg.proposito).html_response;
+    // this.$root.$on("mensaje_fileupload", (arg) => {
+    //   this.html_analisis_concordancia = JSON.parse(arg.analisis_concordancia).html_response;
+    //   this.html_proposito = JSON.parse(arg.proposito).html_response;
 
-      this.fb_proposito = JSON.parse(arg.proposito).feedback;
-      this.fb_concordancia = JSON.parse(arg.analisis_concordancia).feedback;
-    });
+    //   this.fb_proposito = JSON.parse(arg.proposito).feedback;
+    //   this.fb_concordancia = JSON.parse(arg.analisis_concordancia).feedback;
+    // });
   },
 };
 </script>

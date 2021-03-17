@@ -12,13 +12,13 @@ export default {
       options: {
         responsive: true,
         maintainAspectRatio: false,
-        borderColor: 'rgba(75, 192, 192, 1)',
-        borderWidth: 100,
+        borderColor: 'rgba(75, 192, 192, 0)',
+        borderWidth: 300,
         scales: {
           yAxes: [{
             ticks: {
               beginAtZero: true,
-              stepSize: 1
+              stepSize: 1 
             }
           }]
         }

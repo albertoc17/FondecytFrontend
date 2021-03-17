@@ -11,22 +11,22 @@
           <b-nav-item href="#">Link</b-nav-item>
           <b-nav-item href="#" disabled>Disabled</b-nav-item>
         </b-navbar-nav> -->
-
+        
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
           <a href="http://www.redilegra.com/" target="_blank">
             <img
               alt="logo REDILEGRA"
               src="../assets/logo_redilegra.png"
-              width="70"
-              height="70"
+              width="50"
+              height="50"
             />
           </a>
           <img
             alt="logo PUCV"
             src="../assets/pucv2.png"
-            width="200"
-            height="70"
+            width="150"
+            height="50"
           />
           <!-- 
           <b-nav-item-dropdown text="Lang" right>
