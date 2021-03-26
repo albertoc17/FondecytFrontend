@@ -10,6 +10,9 @@ export default {
   data() {
     return {
       options: {
+        legend: {
+          display: false
+        },
         responsive: true,
         maintainAspectRatio: false,
         borderColor: 'rgba(75, 192, 192, 0)',

@@ -8,7 +8,6 @@
     >
       <div class="col-md-12">
         <h5> {{ fb.label }} </h5>
-        nro_errores: {{ fb.nro_errores }}
         <p v-if="fb.nro_errores > 0" style="padding: 0px; margin: 0px"> {{ fb.feedback_negativo }} </p>
         <p v-else                    style="padding: 0px; margin: 0px"> {{ fb.feedback_positivo }} </p>
         <div>
@@ -43,7 +42,7 @@ export default {
     },
     itemStyle(fb) {
       if(fb.nro_errores > 0) return `background-color: ${fb.style};`;
-      else                   return `background-color: #9ee5b8;`;
+      else                   return `background-color: #A8D480;`;
     }
   },
 };

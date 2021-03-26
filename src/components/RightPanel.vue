@@ -4,11 +4,7 @@
     <div v-if="modoInformacion === 'feedback'">
       <b-tabs content-class="mt-3">
         <b-tab title="Retroalimentación" active>
-          <div class="row resumen">
-            <div class="col-md-12">
-              <Barchart :chartData="chartData" />
-            </div>
-          </div>
+          <Barchart :chartData="chartData" />
           <Retroalimentacion :feedback="feedback"/>
         </b-tab>
         <b-tab title="Concordancia">
@@ -19,11 +15,7 @@
     <div v-else-if="modoInformacion === 'estadistica'">
       <b-tabs content-class="mt-3">
         <b-tab title="Retroalimentación" active>
-          <div class="row resumen">
-            <div class="col-md-12">
-              <Barchart :chartData="chartData" />
-            </div>
-          </div>
+          <Barchart :chartData="chartData" />
         </b-tab>
         <b-tab title="Concordancia">
           <BusquedaConcordancia />
@@ -61,7 +53,7 @@ export default {
         labels: feedback.map((d) => d.label),
         datasets: [
           {
-            label: "# de posibles mejoras",
+            
             backgroundColor: feedback.map((d) => d.style),
             data: feedback.map((d) => d.nro_errores),
             borderWidth: 2,
@@ -75,7 +67,6 @@ export default {
         labels: data.map((d) => d.label),
         datasets: [
           {
-            label: "# de posibles mejoras",
             backgroundColor: "#f87979",
             data: data.map((d) => d.count),
             borderWidth: 2,
@@ -92,7 +83,7 @@ export default {
   text-align: justify;
 }
 .resumen {
-  background-color: rgba(56, 136, 211, 0.15);
+  /* background-color: rgba(56, 136, 211, 0.15); */
   padding-top: 15px;
 }
 .amarillo {

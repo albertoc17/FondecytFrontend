@@ -2,7 +2,7 @@
   <div id="Thot">
     <Navbar />
     <splitpanes vertical>
-      <pane min-size="50" size="75">
+      <pane min-size="50" size="73">
         <div class="row" style="padding-left: 15px; padding-right: 15px">
           <div class="col-md-12">
             <FileUpload />
@@ -35,7 +35,7 @@
           </div>
         </div>
       </pane>
-      <pane min-size="20" size="25">
+      <pane min-size="20" size="27">
         <div class="row" style="padding-left: 15px; padding-right: 20px">
           <div class="col-md-12">
             <RightPanel />
