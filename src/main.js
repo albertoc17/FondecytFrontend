@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import VueFormulate from '@braid/vue-formulate'
 import './assets/css/styles.css'
 import VueRouter from 'vue-router'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
@@ -12,6 +13,7 @@ Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
 Vue.use(VueRouter)
 
+Vue.use(VueFormulate)
 
 new Vue({
   el: '#app',
