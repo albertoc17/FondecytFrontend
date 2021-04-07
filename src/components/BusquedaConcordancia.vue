@@ -70,7 +70,7 @@ export default {
       formData.append("selectedTipoModelo", this.selectedTipoModelo);
       try {
         let res = await axios.post(
-          "http://redilegra.com/api/concordancia",
+          "http://redilegra.com/backend/api/concordancia",
           formData
         );
         this.concordancia = JSON.parse(res.data).html_response;
