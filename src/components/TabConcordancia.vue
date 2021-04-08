@@ -8,6 +8,7 @@
             name="patron"
             label="Patrón"
             validation="required|max:20"
+            v-model="patron"
           />
         </div>
         <div class="col-md-4">
@@ -18,6 +19,7 @@
             placeholder="Seleccione"
             validation="required"
             :options="optionsTipoModelo"
+            v-model="selectedTipoModelo"
           />
         </div>
         <div class="col-md-1" style="padding-top: 20px">
@@ -43,6 +45,8 @@ export default {
   data() {
     return {
       resConcordancia: null,
+      patron: null,
+      selectedTipoModelo: null,
       optionsTipoModelo: [
         { value: "general", label: "General" },
         { value: "especifico", label: "Específico" },
@@ -50,12 +54,15 @@ export default {
     };
   },
   methods: {
-    async submitHandler(data) {
+    async submitHandler() {
       try {
-        console.log(data);
+        const formData = new FormData();
+      formData.append("patron", this.patron);
+      formData.append("selectedTipoModelo", this.selectedTipoModelo)
+        console.log();
         let res = await axios.post(
           "http://redilegra.com/backend/api/concordancia",
-          data
+          formData
         );
         this.resConcordancia = JSON.parse(res.data).html_response;
         console.log(this.resConcordancia);
