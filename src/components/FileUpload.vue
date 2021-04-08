@@ -48,14 +48,7 @@ export default {
     };
   },
   methods: {
-    async onSubmit(e) {
-      const file = this.$refs.file.files[0];
-      console.log("asd: ", file);
-      if (!file) {
-        e.preventDefault();
-        alert('No file chosen');
-        return;
-      }
+    async onSubmit() {
       const formData = new FormData();
       formData.append("file", this.file);
       let loader = this.$loading.show({ isFullPage: true, canCancel: false });
