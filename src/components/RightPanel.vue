@@ -5,10 +5,10 @@
       <b-tabs content-class="mt-3">
         <b-tab title="Retroalimentación" active>
           <Barchart :chartData="chartData" />
-          <Retroalimentacion :feedback="feedback"/>
+          <Retroalimentacion :feedback="feedback" />
         </b-tab>
         <b-tab title="Concordancia">
-          <BusquedaConcordancia />
+          <TabConcordancia />
         </b-tab>
       </b-tabs>
     </div>
@@ -18,7 +18,7 @@
           <Barchart :chartData="chartData" />
         </b-tab>
         <b-tab title="Concordancia">
-          <BusquedaConcordancia />
+          <TabConcordancia />
         </b-tab>
       </b-tabs>
     </div>
@@ -27,14 +27,14 @@
 
 <script>
 import Barchart from "./Barchart.vue";
-import BusquedaConcordancia from "./BusquedaConcordancia";
-import Retroalimentacion from './Retroalimentacion.vue';
+import TabConcordancia from "./TabConcordancia";
+import Retroalimentacion from "./TabRetroalimentacion.vue";
 
 export default {
   name: "RightPanel",
   components: {
     Barchart,
-    BusquedaConcordancia,
+    TabConcordancia,
     Retroalimentacion,
   },
   data() {
@@ -53,7 +53,6 @@ export default {
         labels: feedback.map((d) => d.label),
         datasets: [
           {
-            
             backgroundColor: feedback.map((d) => d.style),
             data: feedback.map((d) => d.nro_errores),
             borderWidth: 2,
