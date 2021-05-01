@@ -1,8 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" fixed="true" type="light" variant="light">
-      <div id="containerNav" >
-        <b-navbar-brand href="#">THOT </b-navbar-brand>      
+        <b-navbar-brand href="#">THOT</b-navbar-brand>      
         <b-navbar-toggle target="nav-collapse"> </b-navbar-toggle>
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav class="ml-auto">
@@ -22,7 +21,6 @@
             />
           </b-navbar-nav>
         </b-collapse>
-      </div>
     </b-navbar>    
   </div>
 </template>
@@ -35,9 +33,8 @@ export default {
 </script>
 
 <style scoped>
-.containerNav{
-  border: 5px solid red;
-  background-color: blue;
-}
+.bg-light{
+    background: transparent !important;
+  }
 
 </style>
