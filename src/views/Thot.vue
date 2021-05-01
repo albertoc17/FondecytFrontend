@@ -132,7 +132,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .splitpanes--vertical > .splitpanes__splitter {
   min-width: 10px;
   background: linear-gradient(90deg, #ccc, #111);
