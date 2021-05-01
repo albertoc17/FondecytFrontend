@@ -79,7 +79,6 @@ export default {
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
-      
       this.html_conectores = JSON.parse(arg.conectores).html_response;
       this.html_vozpasiva = JSON.parse(arg.passive_voice).html_response;
       this.html_persona = JSON.parse(arg.fs_person).html_response;

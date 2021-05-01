@@ -70,14 +70,14 @@ export default {
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
+    // console.log(arg.oraciones);
+     this.html_oraciones = JSON.parse(arg.oraciones).html_response;
+     this.fb_oraciones[0].nro_errores = JSON.parse(arg.oraciones).flag.FormalOracionesExtensas;
+     this.fb_oraciones[1].nro_errores = JSON.parse(arg.oraciones).flag.FormalOracionesBreves;
 
-     // this.html_oraciones = JSON.parse(arg.oraciones).html_response;
-     // this.fb_oraciones[0].nro_errores     = JSON.parse(arg.oraciones).flag.FormalOracionesExtensas;
-     // this.fb_oraciones[1].nro_errores     = JSON.parse(arg.oraciones).flag.FormalOracionesBreves;
-
-      this.html_microparrafos = JSON.parse(arg.micro_paragraphs).html_response;
-      this.fb_microparrafos[0].nro_errores = JSON.parse(arg.micro_paragraphs).flag.FormalParrafosExtensos;
-      this.fb_microparrafos[1].nro_errores = JSON.parse(arg.micro_paragraphs).flag.FormalParrafosBreves;
+    this.html_microparrafos = JSON.parse(arg.micro_paragraphs).html_response;
+    this.fb_microparrafos[0].nro_errores = JSON.parse(arg.micro_paragraphs).flag.FormalParrafosExtensos;
+    this.fb_microparrafos[1].nro_errores = JSON.parse(arg.micro_paragraphs).flag.FormalParrafosBreves;
     });
   },
 };

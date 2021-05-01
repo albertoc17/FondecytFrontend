@@ -41,7 +41,7 @@ export default {
   methods: {
     sendFeedbackModal(feedback) {
       this.$root.$emit("mensaje_feedback_modal", feedback);
-    },
+    }
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {

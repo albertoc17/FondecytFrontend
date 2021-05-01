@@ -31,10 +31,10 @@ export default {
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
-      this.html_proposito = JSON.parse(arg.proposito).html_response;
+      // this.html_proposito = JSON.parse(arg.proposito).html_response;
       this.html_complejidad = JSON.parse(arg.sentence_complexity).html_response;
 
-      this.fb_proposito = JSON.parse(arg.proposito).feedback;
+      // this.fb_proposito = JSON.parse(arg.proposito).feedback;
       this.fb_complejidad = JSON.parse(arg.sentence_complexity).feedback;
     });
   },
