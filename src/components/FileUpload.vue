@@ -54,7 +54,7 @@ export default {
       let loader = this.$loading.show({ isFullPage: true, canCancel: false });
       try {
         this.text = await axios.post(
-          "http://redilegra.com/backend/api/FileUploadView",
+          "http://www.redilegra.com/backend/api/FileUploadView",
           formData
         );
         // this.sendFeedbackModal(this.data_general);

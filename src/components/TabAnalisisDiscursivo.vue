@@ -2,12 +2,8 @@
   <div class="row">
     <div class="col-md-12">
       <b-tabs content-class="mt-3">
-        <b-tab
-          title="Análisis de concordancia"
-          active
-          @click="sendFeedbackModal(fb_concordancia)"
-        >
-          <span v-html="html_analisis_concordancia"></span>
+        <b-tab title="Complejidad" active @click="sendFeedbackModal(fb_complejidad)">
+          <span v-html="html_complejidad"></span>
         </b-tab>
         <b-tab title="Propósito" @click="sendFeedbackModal(fb_proposito)">
           <span v-html="html_proposito"></span>
@@ -18,16 +14,14 @@
 </template>
 
 <script>
-
 export default {
   name: "TabAnalisisDiscursivo",
   data() {
     return {
-      html_analisis_concordancia: "",
       html_proposito: "",
+      html_complejidad: "",
       fb_proposito: "",
-      fb_concordancia: "",
-      modalInfo: "",
+      fb_complejidad: "",
     };
   },
   methods: {
@@ -36,13 +30,13 @@ export default {
     },
   },
   mounted() {
-    // this.$root.$on("mensaje_fileupload", (arg) => {
-    //   this.html_analisis_concordancia = JSON.parse(arg.analisis_concordancia).html_response;
-    //   this.html_proposito = JSON.parse(arg.proposito).html_response;
+    this.$root.$on("mensaje_fileupload", (arg) => {
+      this.html_proposito = JSON.parse(arg.proposito).html_response;
+      this.html_complejidad = JSON.parse(arg.sentence_complexity).html_response;
 
-    //   this.fb_proposito = JSON.parse(arg.proposito).feedback;
-    //   this.fb_concordancia = JSON.parse(arg.analisis_concordancia).feedback;
-    // });
+      this.fb_proposito = JSON.parse(arg.proposito).feedback;
+      this.fb_complejidad = JSON.parse(arg.sentence_complexity).feedback;
+    });
   },
 };
 </script>
