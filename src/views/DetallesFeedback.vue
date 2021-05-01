@@ -2,7 +2,7 @@
   <div id="DetallesFeedback">
     <!-- <Navbar/> -->
     <br>
-    <h2>{{ titulo }} </h2>
+      <h2>{{ titulo }} </h2>
     <br>
     <div class="row">
       <div class="col-md-12">
@@ -81,9 +81,15 @@ import { Analisis } from "@/includes/constants.js";
 </script>
 
 <style>
-  #DetallesFeedback {
-    padding-left: 100px;
-    padding-right: 110px;
-    text-align: justify;
-  }
+body{
+  background: white;
+}
+h2{
+  color: blue;
+}
+.DetallesFeedback {
+  padding-left: 100px;
+  padding-right: 110px;
+  text-align: justify;
+}
 </style>

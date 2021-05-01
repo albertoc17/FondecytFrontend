@@ -25,7 +25,7 @@
       <div class="container">
         <div class="intro-text">
           <div class="intro-lead-in">Bienvenido</div>
-          <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
+          <div class="intro-heading text-uppercase">A Redilegra</div>
           <router-link
             to="/thot"
             style="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
@@ -35,67 +35,14 @@
         </div>
       </div>
     </header>
-
-    <!-- Services -->
-    <section id="services">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Services</h2>
-            <h3 class="section-subheading text-muted">
-              Lorem ipsum dolor sit amet consectetur.
-            </h3>
-          </div>
-        </div>
-        <div class="row text-center">
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">E-Commerce</h4>
-            <p class="text-muted">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-              maxime quam architecto quo inventore harum ex magni, dicta
-              impedit.
-            </p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">Responsive Design</h4>
-            <p class="text-muted">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-              maxime quam architecto quo inventore harum ex magni, dicta
-              impedit.
-            </p>
-          </div>
-          <div class="col-md-4">
-            <span class="fa-stack fa-4x">
-              <i class="fas fa-circle fa-stack-2x text-primary"></i>
-              <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
-            </span>
-            <h4 class="service-heading">Web Security</h4>
-            <p class="text-muted">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
-              maxime quam architecto quo inventore harum ex magni, dicta
-              impedit.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- About -->
     <section id="about">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">About</h2>
+            <h2 class="section-heading text-uppercase">Proyectos</h2>
             <h3 class="section-subheading text-muted">
-              Lorem ipsum dolor sit amet consectetur.
+              Actuales.
             </h3>
           </div>
         </div>
@@ -112,15 +59,12 @@
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
-                    <h4>2009-2011</h4>
-                    <h4 class="subheading">Our Humble Beginnings</h4>
+                    <h4>2019-2021</h4>
+                    <h4 class="subheading">Fondecyt 1190369</h4>
                   </div>
                   <div class="timeline-body">
                     <p class="text-muted">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Sunt ut voluptatum eius sapiente, totam reiciendis
-                      temporibus qui quibusdam, recusandae sit vero unde, sed,
-                      incidunt et ea quo dolore laudantium consectetur!
+                      "Modelamiento de la práctica discursiva de acreditación del conocimiento por medio de géneros académicos en ingeniería
                     </p>
                   </div>
                 </div>
@@ -135,15 +79,14 @@
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
-                    <h4>March 2011</h4>
-                    <h4 class="subheading">An Agency is Born</h4>
+                    <h4>2019-2020</h4>
+                    <h4 class="subheading">Proyecto UCV1801</h4>
                   </div>
                   <div class="timeline-body">
                     <p class="text-muted">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Sunt ut voluptatum eius sapiente, totam reiciendis
-                      temporibus qui quibusdam, recusandae sit vero unde, sed,
-                      incidunt et ea quo dolore laudantium consectetur!
+                      “Consolidando las trayectorias académicas de los estudiantes de la pucv: 
+                      apoyo y seguimiento del logro de competencias para un desempeño laboral destacado”. 
+                      Responsable de formulación modelo de acompañamiento, seguimiento y evaluación.
                     </p>
                   </div>
                 </div>
@@ -158,15 +101,14 @@
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
-                    <h4>December 2012</h4>
-                    <h4 class="subheading">Transition to Full Service</h4>
+                    <h4>2019-2022</h4>
+                    <h4 class="subheading">Red “IDEAIS:</h4>
                   </div>
                   <div class="timeline-body">
                     <p class="text-muted">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Sunt ut voluptatum eius sapiente, totam reiciendis
-                      temporibus qui quibusdam, recusandae sit vero unde, sed,
-                      incidunt et ea quo dolore laudantium consectetur!
+                      Asistentes inteligentes para las infraestructuras de datos espaciales”, Financiado por CYTED. 
+                      Programa Iberoamérica de Ciencia y Tecnología para el Desarrollo. Coordinador de la Sub-Tarea 11.3.- 
+                      “Comprobación en desastre antrópico”.
                     </p>
                   </div>
                 </div>
@@ -181,15 +123,13 @@
                 </div>
                 <div class="timeline-panel">
                   <div class="timeline-heading">
-                    <h4>July 2014</h4>
-                    <h4 class="subheading">Phase Two Expansion</h4>
+                    <h4>2014-2017</h4>
+                    <h4 class="subheading">FONDECYT 1140967</h4>
                   </div>
                   <div class="timeline-body">
                     <p class="text-muted">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                      Sunt ut voluptatum eius sapiente, totam reiciendis
-                      temporibus qui quibusdam, recusandae sit vero unde, sed,
-                      incidunt et ea quo dolore laudantium consectetur!
+                      Hacia un modelo de análisis semiautomatizado de la organización retórico-discursiva de los 
+                      Trabajos Finales de Grado de licenciatura en ciencias y humanidades. Ver más aquí.
                     </p>
                   </div>
                 </div>
@@ -212,91 +152,31 @@
           <div class="col-lg-12 text-center">
             <h2 class="section-heading text-uppercase">NUESTRO INCREÍBLE EQUIPO</h2>
             <h3 class="section-subheading text-muted">
-              Lorem ipsum dolor sit amet consectetur.
+              Fundadores.
             </h3>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/1.jpg" alt="" />
+              <img class="mx-auto rounded-circle" src="../assets/img/rene.png" alt="" />
               <h4>Dr. René Venegas</h4>
               <p class="text-muted">Lider de Proyecto Fondecyt</p>
-              <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
-                </li>
-              </ul>
             </div>
           </div>
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/2.jpg" alt="" />
+              <img class="mx-auto rounded-circle" src="../assets/img/amparo.png" alt="" />
               <h4>Amparo Galdames</h4>
               <p class="text-muted">Magíster en Lingüística Aplicada.</p>
-              <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
-                </li>
-              </ul>
             </div>
           </div>
           <div class="col-sm-4">
             <div class="team-member">
-              <img class="mx-auto rounded-circle" src="img/team/3.jpg" alt="" />
+              <img class="mx-auto rounded-circle" src="../assets/img/sofia.png" alt="" />
               <h4>Sofía Zamora</h4>
               <p class="text-muted">Dra en Lingüística</p>
-              <ul class="list-inline social-buttons">
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-twitter"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a href="#">
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
-                </li>
-              </ul>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-8 mx-auto text-center">
-            <p class="large text-muted">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut
-              eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam
-              corporis ea, alias ut unde.
-            </p>
           </div>
         </div>
       </div>
@@ -431,7 +311,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <span class="copyright">Copyright &copy; Your Website 2018</span>
+            <span class="copyright">Copyright &copy; 2021</span>
           </div>
           <div class="col-md-4">
             <ul class="list-inline social-buttons">
