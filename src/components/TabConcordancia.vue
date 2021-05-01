@@ -64,8 +64,7 @@ export default {
           "http://www.redilegra.com/backend/api/Concordancia",
           formData
         );
-        // this.resConcordancia = JSON.parse(res.data).html_response;
-        // console.log("resConcordancia", this.resConcordancia);
+        this.resConcordancia = JSON.parse(res.data).html_response;
         console.log(res);
       } catch (err) {
         console.warn(err);
