@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import App from './App.vue'
-// import './assets/css/styles.css'
 import './assets/css/vueFormulate.css'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import VueRouter from 'vue-router'

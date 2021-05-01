@@ -269,6 +269,7 @@
 
 <script>
 import Navbar from "@/components/Navbar.vue";
+import '../assets/css/styles.css'
 export default {
   name: "landing",
   components: {
