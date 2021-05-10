@@ -103,10 +103,9 @@ export default {
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
-      console.log("falla", arg)
       this.data_lexicoGramatical[0].count = arg.gerunds ? JSON.parse(arg.gerunds).flag.LexicoGramaticalGerundiosExcesivo: "";
-      this.data_formal[0].count           = arg.oraciones != "" ? JSON.parse(arg.oraciones).flag.FormalOracionesExtensas: "";
-      this.data_formal[1].count           = arg.oraciones != "" ? JSON.parse(arg.oraciones).flag.FormalOracionesBreves: "";
+      this.data_formal[0].count           = arg.oraciones ? JSON.parse(arg.oraciones).flag.FormalOracionesExtensas: "";
+      this.data_formal[1].count           = arg.oraciones ? JSON.parse(arg.oraciones).flag.FormalOracionesBreves: "";
       this.data_formal[2].count           = arg.micro_paragraphs ? JSON.parse(arg.micro_paragraphs).flag.FormalParrafosExtensos: "";
       this.data_formal[3].count           = arg.micro_paragraphs ? JSON.parse(arg.micro_paragraphs).flag.FormalParrafosBreves: "";
       this.data_estilo[0].count           = arg.conectores ? JSON.parse(arg.conectores).flag.EstiloConectores : "";
