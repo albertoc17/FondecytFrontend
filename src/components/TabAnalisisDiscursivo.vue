@@ -3,10 +3,12 @@
     <div class="col-md-12">
       <b-tabs content-class="mt-3">
         <b-tab title="Complejidad" active @click="sendFeedbackModal(fb_complejidad)">
-          <span v-html="html_complejidad"></span>
-        </b-tab>
-        <b-tab disabled title="Propósito" @click="sendFeedbackModal(fb_proposito)">
-          <span v-html="html_proposito"></span>
+          <div v-if="showErrorComplejidad" >
+            <ErrorHtml/>
+          </div>
+          <div v-else>
+            <span v-html="html_complejidad"></span>
+          </div>
         </b-tab>
       </b-tabs>
     </div>
@@ -15,10 +17,16 @@
 
 <script>
 import { Analisis } from "@/includes/constants.js";
+import ErrorHtml from "./ErrorHtml.vue";
+
 export default {
+    components: {
+    ErrorHtml,
+  },
   name: "TabAnalisisDiscursivo",
   data() {
     return {
+      showErrorComplejidad: false,
       html_proposito: "",
       html_complejidad: "",
       fb_proposito: "",
@@ -40,9 +48,14 @@ export default {
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
-      console.log(JSON.parse(arg.sentence_complexity).flag); // decirle esta wea aa seba
-      this.html_complejidad = JSON.parse(arg.sentence_complexity).html_response;
-      this.fb_complejidad[0].nro_errores = 3;
+      if(arg.sentence_complexity != ""){
+        console.log(JSON.parse(arg.sentence_complexity).flag); // decirle esta wea aa seba
+        this.html_complejidad = JSON.parse(arg.sentence_complexity).html_response;
+        this.fb_complejidad[0].nro_errores = 3;
+      }
+      else{
+        this.showErrorComplejidad = true;
+      }
       // this.fb_complejidad[0].nro_errores = JSON.parse(arg.passive_voice).flag.DiscursivoComplejidad;
       // this.html_proposito = JSON.parse(arg.proposito).html_response;
       // this.fb_proposito[0].nro_errores = JSON.parse(arg.sentence_complexity).flag.EstiloVozPasiva;
