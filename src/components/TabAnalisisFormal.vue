@@ -3,10 +3,20 @@
     <div class="col-md-12">
       <b-tabs content-class="mt-3">
         <b-tab title="Largo de Oraciones" active @click="sendFeedbackModal(fb_oraciones)">
-          <span v-html="html_oraciones"></span>
+          <div v-if="showErrorOraciones" >
+            <ErrorHtml/>
+          </div>
+          <div v-else>
+            <span v-html="html_oraciones"></span>
+          </div>
         </b-tab>
         <b-tab title="Micropárrafos" @click="sendFeedbackModal(fb_microparrafos)">
-          <span v-html="html_microparrafos"></span>
+          <div v-if="showErrorMicroParrafos" >
+            <ErrorHtml/>
+          </div>
+          <div v-else>
+            <span v-html="html_microparrafos"></span>
+          </div>
         </b-tab>
       </b-tabs>
     </div>
@@ -15,10 +25,17 @@
 
 <script>
 import { Analisis } from "@/includes/constants.js";
+import ErrorHtml from "./ErrorHtml.vue";
+
 export default {
   name: "TabAnalisisFormal",
+  components: {
+   ErrorHtml,
+  },
   data() {
     return {
+      showErrorOraciones: false,
+      showErrorMicroParrafos: false,
       html_oraciones: "",
       html_microparrafos: "",
       fb_oraciones: [
@@ -62,7 +79,9 @@ export default {
         }
       ],
     };
+    
   },
+  
   methods:{
     sendFeedbackModal(feedback){
       this.$root.$emit("mensaje_feedback_modal", feedback);
@@ -70,14 +89,23 @@ export default {
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
-    // console.log(arg.oraciones);
-     this.html_oraciones = JSON.parse(arg.oraciones).html_response;
-     this.fb_oraciones[0].nro_errores = JSON.parse(arg.oraciones).flag.FormalOracionesExtensas;
-     this.fb_oraciones[1].nro_errores = JSON.parse(arg.oraciones).flag.FormalOracionesBreves;
-
-    this.html_microparrafos = JSON.parse(arg.micro_paragraphs).html_response;
-    this.fb_microparrafos[0].nro_errores = JSON.parse(arg.micro_paragraphs).flag.FormalParrafosExtensos;
-    this.fb_microparrafos[1].nro_errores = JSON.parse(arg.micro_paragraphs).flag.FormalParrafosBreves;
+      if(arg.oraciones != ""){
+        this.html_oraciones = JSON.parse(arg.oraciones).html_response;
+        this.fb_oraciones[0].nro_errores = JSON.parse(arg.oraciones).flag.FormalOracionesExtensas;
+        this.fb_oraciones[1].nro_errores = JSON.parse(arg.oraciones).flag.FormalOracionesBreves;
+      }
+      else{
+        this.showErrorOraciones = true;
+      }
+      if(arg.micro_paragraph != ""){
+        this.showErrorOraciones = true;
+        this.html_microparrafos = JSON.parse(arg.micro_paragraphs).html_response;
+        this.fb_microparrafos[0].nro_errores = JSON.parse(arg.micro_paragraphs).flag.FormalParrafosExtensos;
+        this.fb_microparrafos[1].nro_errores = JSON.parse(arg.micro_paragraphs).flag.FormalParrafosBreves;
+      }
+      else{
+        this.showErrorMicroParrafos = true;
+      }
     });
   },
 };

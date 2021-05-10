@@ -25,13 +25,9 @@
       <div class="container">
         <div class="intro-text">
           <div class="intro-lead-in">Bienvenido</div>
-          <div class="intro-heading text-uppercase">A Redilegra</div>
-          <router-link
-            to="/thot"
-            style="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
-          >
-            Herramienta THOT <b-icon-arrow-up-right> </b-icon-arrow-up-right>
-          </router-link>
+          <div class="intro-heading text-uppercase">A THOT</div>
+          <div class="intro-lead-in">Una herramienta de Redilegra</div>
+          <button class="btn btn-success" @click="$router.push('thot')">GO TO THOT</button>
         </div>
       </div>
     </header>

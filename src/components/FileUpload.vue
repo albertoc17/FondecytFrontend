@@ -29,6 +29,8 @@
 
 <script>
 import axios from "axios";
+import { validModel } from "@/includes/functions.js"
+
 
 export default {
   name: "FileUpload",
@@ -71,9 +73,17 @@ export default {
     //   this.$root.$emit("mensaje_estadistica_modal", data);
     // },
     sendText(data) {
-      this.$root.$emit("mensaje_fileupload", data);
+      var validateData = this.validateData(data)
+      this.$root.$emit("mensaje_fileupload", validateData);
     },
-  },
-};
+    validateData(data){
+      for (const property in data) {
+        if(!validModel(data[property]) && property!= 'html'){
+          data[property] = "";
+        }
+      }
+      return data;
+    },
+  } 
+}
 </script>
-

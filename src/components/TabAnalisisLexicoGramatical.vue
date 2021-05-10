@@ -3,7 +3,12 @@
     <div class="col-md-12">
       <b-tabs content-class="mt-3">
         <b-tab active title="Gerundios" @click="sendFeedbackModal(fb_gerundios)">
-          <span v-html="html_gerundios"></span>
+          <div v-if="showError" >
+            <ErrorHtml/>
+          </div>
+          <div v-else>
+            <span v-html="html_gerundios"></span>
+          </div>
         </b-tab>
       </b-tabs>
     </div>
@@ -12,11 +17,16 @@
 
 <script>
 import { Analisis } from "@/includes/constants.js";
+import ErrorHtml from "./ErrorHtml.vue";
 
 export default {
   name: "TabAnalisisLexicoGramatical",
+  components: {
+    ErrorHtml,
+  },
   data() {
     return {
+      showError: false,
       html_gerundios: "",
       fb_gerundios: [{
         feedback_negativo: Analisis.LexicoGramaticalGerundiosExcesivo.feedback_negativo,
@@ -45,8 +55,13 @@ export default {
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
-      this.html_gerundios = JSON.parse(arg.gerunds).html_response;
-      this.fb_gerundios[0].nro_errores = JSON.parse(arg.gerunds).flag.LexicoGramaticalGerundiosExcesivo;
+      if (arg.gerunds != ""){
+        this.html_gerundios = JSON.parse(arg.gerunds).html_response;
+        this.fb_gerundios[0].nro_errores = JSON.parse(arg.gerunds).flag.LexicoGramaticalGerundiosExcesivo;
+      }
+      else{
+        this.showError = true;
+      }
     });
   },
 };
