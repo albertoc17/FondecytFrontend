@@ -5,7 +5,7 @@
         <b-tab title="Complejidad" active @click="sendFeedbackModal(fb_complejidad)">
           <span v-html="html_complejidad"></span>
         </b-tab>
-        <b-tab title="Propósito" @click="sendFeedbackModal(fb_proposito)">
+        <b-tab disabled title="Propósito" @click="sendFeedbackModal(fb_proposito)">
           <span v-html="html_proposito"></span>
         </b-tab>
       </b-tabs>
@@ -30,13 +30,15 @@ export default {
     },
   },
   mounted() {
-    this.$root.$on("mensaje_fileupload", (arg) => {
-      // this.html_proposito = JSON.parse(arg.proposito).html_response;
-      this.html_complejidad = JSON.parse(arg.sentence_complexity).html_response;
+    // this.$root.$on("mensaje_fileupload", (arg) => {
 
-      // this.fb_proposito = JSON.parse(arg.proposito).feedback;
-      this.fb_complejidad = JSON.parse(arg.sentence_complexity).feedback;
-    });
+    //   console.log(arg.sentence_complexity);
+    //   // this.html_proposito = JSON.parse(arg.proposito).html_response;
+    //   this.html_complejidad = JSON.parse(arg.sentence_complexity).html_response;
+
+    //   // this.fb_proposito = JSON.parse(arg.proposito).feedback;
+    //   this.fb_complejidad = JSON.parse(arg.sentence_complexity).feedback;
+    // });
   },
 };
 </script>

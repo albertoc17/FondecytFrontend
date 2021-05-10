@@ -23,7 +23,7 @@ export default {
         readOnly: false,
         theme: "snow",
       },
-      content: "<h1>Aquí va el texto...</div>",
+      content: "Inserte texto aquí...",
     };
   },
   mounted(){

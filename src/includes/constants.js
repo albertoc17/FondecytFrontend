@@ -14,13 +14,13 @@ export const Analisis = {
     info: "Recuerda que las oraciones se componen por un sujeto y un predicado y finalizan con un punto seguido.",
   },
   FormalParrafosExtensos: {
-    titulo: "Parrafos Extenso",
+    titulo: "Párrafos Extenso",
     feedback_negativo: "¡Tu párrafo es muy extenso! Se sugiere que la extensión de un párrafo sea de 3 oraciones como mínimo y 5 máximo.",
     info: "Recuerda que las oraciones se componen por un sujeto y un predicado y finalizan con un punto seguido. ",
     feedback_positivo: "¡Felicitaciones! no observamos errores en tu texto. Se identifica una adecuada extensión de párrafos."
   },
   FormalParrafosBreves: {
-    titulo: "Parrafos Breves",
+    titulo: "Párrafos Breves",
     feedback_negativo: "¡Tu párrafo es muy breve! Se sugiere que la extensión de un párrafo sea de 3 oraciones como mínimo y 5 máximo.",
     info: "Recuerda que las oraciones se componen por un sujeto y un predicado y finalizan con un punto seguido.",
     ejemplo: "En el siguiente ejemplo se puede observar una oración muy extensa que fue producida por un estudiante,: “Toda resistencia tiene un valor nominal y otro real, tenido en cuenta lo anterior con una tabla de colores se calcula el valor nominal de las dos resistencias dadas, luego en ambos multímetros se coloca la modalidad para medir resistencia, teniendo en cuenta el procedimiento puntual que se debe realizar con el analógico, primero conectar ambas terminales caimán de los cables, para crear un puente entre las dos entradas del multímetro, luego se debe mover el indicador del instrumento con tal de que indique cero, para esto se utiliza la perilla que se encuentra en las esquina inferior del visor, se recomienda recostar el instrumento en la mesa y mirarlo desde arriba hasta que no se distinga el reflejo del indicador, para así tener una medición más exacta”. La oración al ser tan extensa dificulta la comprensión, por lo que si tu oración es similar a este ejemplo en cuanto a la estructura, te recomendamos que la organices empleando puntos seguidos o puntos y comas.",

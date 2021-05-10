@@ -27,7 +27,7 @@
               <b-tab title="Estilo" @click="sendFeedbackModal(data_estilo)">
                 <TabAnalisisEstilo />
               </b-tab>
-              <b-tab disabled title="Discursivo" @click="sendFeedbackModal(data_discursivo)">
+              <b-tab title="Discursivo" @click="sendFeedbackModal(data_discursivo)">
                 <TabAnalisisDiscursivo />
               </b-tab>
             </b-tabs>

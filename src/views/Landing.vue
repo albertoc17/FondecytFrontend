@@ -30,7 +30,7 @@
             to="/thot"
             style="btn btn-primary btn-xl text-uppercase js-scroll-trigger"
           >
-            GO TO THOT <b-icon-arrow-up-right> </b-icon-arrow-up-right>
+            Herramienta THOT <b-icon-arrow-up-right> </b-icon-arrow-up-right>
           </router-link>
         </div>
       </div>
@@ -268,12 +268,12 @@
 </template>
 
 <script>
-import Navbar from "@/components/Navbar.vue";
+// import Navbar from "@/components/Navbar.vue";
 import '../assets/css/styles.css'
 export default {
   name: "landing",
   components: {
-    Navbar,
+    // Navbar,
   },
 };
 </script>
