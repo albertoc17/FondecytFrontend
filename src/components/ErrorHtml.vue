@@ -12,8 +12,5 @@
 
 export default {
   name: "ErrorHtml",
-  data() {
-    },
   };
   
-</script>

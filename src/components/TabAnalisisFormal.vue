@@ -25,7 +25,6 @@
 
 <script>
 import { Analisis } from "@/includes/constants.js";
-import { validModel } from "@/includes/functions.js"
 import ErrorHtml from "./ErrorHtml.vue";
 
 export default {
@@ -90,7 +89,7 @@ export default {
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
-      if(validModel(arg.oraciones)){
+      if(arg.oraciones != ""){
         this.html_oraciones = JSON.parse(arg.oraciones).html_response;
         this.fb_oraciones[0].nro_errores = JSON.parse(arg.oraciones).flag.FormalOracionesExtensas;
         this.fb_oraciones[1].nro_errores = JSON.parse(arg.oraciones).flag.FormalOracionesBreves;
@@ -98,7 +97,7 @@ export default {
       else{
         this.showErrorOraciones = true;
       }
-      if(validModel(arg.micro_paragraphs)){
+      if(arg.micro_paragraph != ""){
         this.showErrorOraciones = true;
         this.html_microparrafos = JSON.parse(arg.micro_paragraphs).html_response;
         this.fb_microparrafos[0].nro_errores = JSON.parse(arg.micro_paragraphs).flag.FormalParrafosExtensos;

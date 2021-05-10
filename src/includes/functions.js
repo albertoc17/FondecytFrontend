@@ -1,8 +1,8 @@
 export function validModel(model){
-    if(model!= undefined || !model === ""){
-      return true
+    try {
+      JSON.parse(model);
+    } catch (e) {
+        return false;
     }
-    else{
-      return false
-    }
+    return true;
 }

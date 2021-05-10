@@ -17,7 +17,6 @@
 
 <script>
 import { Analisis } from "@/includes/constants.js";
-import { validModel } from "@/includes/functions.js"
 import ErrorHtml from "./ErrorHtml.vue";
 
 export default {
@@ -56,7 +55,7 @@ export default {
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
-      if (validModel(arg.gerunds)){
+      if (arg.gerunds != ""){
         this.html_gerundios = JSON.parse(arg.gerunds).html_response;
         this.fb_gerundios[0].nro_errores = JSON.parse(arg.gerunds).flag.LexicoGramaticalGerundiosExcesivo;
       }

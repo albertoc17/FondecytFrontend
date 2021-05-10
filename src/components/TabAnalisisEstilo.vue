@@ -40,7 +40,6 @@
 
 <script>
 import { Analisis } from "@/includes/constants.js";
-import { validModel } from "@/includes/functions.js";
 import ErrorHtml from "./ErrorHtml.vue";
 
 export default {
@@ -111,14 +110,14 @@ export default {
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
-      if (validModel(arg.conectores)) {
+      if (arg.conectores != "") {
         this.fb_conectores[0].nro_errores = JSON.parse(
           arg.conectores
         ).flag.EstiloConectores;
       } else {
         this.showErrorConectores = true;
       }
-      if (validModel(arg.passive_voice)) {
+      if (arg.passive_voice != "") {
         this.html_vozpasiva = JSON.parse(arg.passive_voice).html_response;
         this.fb_voz_pasiva[0].nro_errores = JSON.parse(
           arg.passive_voice
@@ -126,7 +125,7 @@ export default {
       } else {
         this.showErrorPassiveVoice = true;
       }
-      if (validModel(arg.fs_person)) {
+      if (arg.fs_person != "") {
         this.html_persona = JSON.parse(arg.fs_person).html_response;
         this.fb_persona[0].nro_errores = JSON.parse(
           arg.fs_person
