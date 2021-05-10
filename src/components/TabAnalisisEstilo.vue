@@ -7,16 +7,31 @@
           active
           @click="sendFeedbackModal(fb_conectores)"
         >
-        <span v-html="html_conectores"></span>
+        <div v-if="showErrorConectores" >
+            <ErrorHtml/>
+          </div>
+          <div v-else>
+            <span v-html="html_conectores"></span>
+          </div>
         </b-tab>
         <b-tab title="Voz Pasiva" @click="sendFeedbackModal(fb_voz_pasiva)">
-          <span v-html="html_vozpasiva"></span>
+          <div v-if="showErrorPassiveVoice" >
+            <ErrorHtml/>
+          </div>
+          <div v-else>
+            <span v-html="html_vozpasiva"></span>
+          </div>
         </b-tab>
         <b-tab
           title="1ª y 2ª Persona Singular"
           @click="sendFeedbackModal(fb_persona)"
         >
-        <span v-html="html_persona"></span>
+          <div v-if="showErrorFsVoice" >
+            <ErrorHtml/>
+          </div>
+          <div v-else>
+            <span v-html="html_persona"></span>
+          </div>
         </b-tab>
       </b-tabs>
     </div>
@@ -25,88 +40,102 @@
 
 <script>
 import { Analisis } from "@/includes/constants.js";
-import { validModel } from "@/includes/functions.js"
-// import errorCard from "@/includes/errorcard.vue";
-const errorCard = "";
+import { validModel } from "@/includes/functions.js";
+import ErrorHtml from "./ErrorHtml.vue";
 
 export default {
   name: "TabAnalisisEstilo",
+  components: {
+    ErrorHtml,
+  },
   data() {
     return {
+      showErrorConectores: false,
+      showErrorPassiveVoice: false,
+      showErrorFsVoice: false,
       html_conectores: "",
       html_vozpasiva: "",
       html_persona: "",
-      fb_conectores: [{
-        feedback_negativo: Analisis.EstiloConectores.feedback_negativo,
-        feedback_positivo: Analisis.EstiloConectores.feedback_positivo,
-        id: "EstiloConectores",
-        label: "Conectores",
-        style: '#ffaa8e',
-        estilo: "naranjo",
-        nro_errores : 0
-      }],
-      fb_voz_pasiva: [{
-        feedback_negativo: Analisis.EstiloVozPasiva.feedback_negativo,
-        feedback_positivo: Analisis.EstiloVozPasiva.feedback_positivo,
-        id: "EstiloVozPasiva",
-        label: "Voz pasiva",
-        style: '#ffaa8e',
-        estilo: "naranjo",
-        nro_errores : 0
-      }],
+      fb_conectores: [
+        {
+          feedback_negativo: Analisis.EstiloConectores.feedback_negativo,
+          feedback_positivo: Analisis.EstiloConectores.feedback_positivo,
+          id: "EstiloConectores",
+          label: "Conectores",
+          style: "#ffaa8e",
+          estilo: "naranjo",
+          nro_errores: 0,
+        },
+      ],
+      fb_voz_pasiva: [
+        {
+          feedback_negativo: Analisis.EstiloVozPasiva.feedback_negativo,
+          feedback_positivo: Analisis.EstiloVozPasiva.feedback_positivo,
+          id: "EstiloVozPasiva",
+          label: "Voz pasiva",
+          style: "#ffaa8e",
+          estilo: "naranjo",
+          nro_errores: 0,
+        },
+      ],
       fb_persona: [
         {
-          feedback_negativo: Analisis.EstiloPrimeraPersonaSingular.feedback_negativo,
-          feedback_positivo: Analisis.EstiloPrimeraPersonaSingular.feedback_positivo,
+          feedback_negativo:
+            Analisis.EstiloPrimeraPersonaSingular.feedback_negativo,
+          feedback_positivo:
+            Analisis.EstiloPrimeraPersonaSingular.feedback_positivo,
           id: "EstiloPrimeraPersonaSingular",
           label: "1ª Persona Singular",
-          style: '#ffaa8e',
+          style: "#ffaa8e",
           estilo: "naranjo",
-          nro_errores : 0
+          nro_errores: 0,
         },
         {
-          feedback_negativo: Analisis.EstiloSegundaPersonaSingular.feedback_negativo,
-          feedback_positivo: Analisis.EstiloSegundaPersonaSingular.feedback_positivo,
+          feedback_negativo:
+            Analisis.EstiloSegundaPersonaSingular.feedback_negativo,
+          feedback_positivo:
+            Analisis.EstiloSegundaPersonaSingular.feedback_positivo,
           id: "EstiloSegundaPersonaSingular",
           label: "2ª Persona Singular",
           style: "#fffa8e",
           estilo: "amarillo",
-          nro_errores : 0
+          nro_errores: 0,
         },
       ],
     };
   },
-  methods:{
-    sendFeedbackModal(feedback){
+  methods: {
+    sendFeedbackModal(feedback) {
       this.$root.$emit("mensaje_feedback_modal", feedback);
     },
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
-      console.log("Validando el modelo")
-      if (validModel(arg.conectores)){
-        console.log("Se valido el modelo")
-        this.html_conectores = errorCard;
-        this.fb_conectores[0].nro_errores = JSON.parse(arg.conectores).flag.EstiloConectores;
+      if (validModel(arg.conectores)) {
+        this.fb_conectores[0].nro_errores = JSON.parse(
+          arg.conectores
+        ).flag.EstiloConectores;
+      } else {
+        this.showErrorConectores = true;
       }
-      else{
-        console.log("modelo fallado ")
-        this.html_conectores = "<p> tula </p>";
-      }
-      if(validModel(arg.passive_voice)){
+      if (validModel(arg.passive_voice)) {
         this.html_vozpasiva = JSON.parse(arg.passive_voice).html_response;
-        this.fb_voz_pasiva[0].nro_errores = JSON.parse(arg.passive_voice).flag.EstiloVozPasiva;
+        this.fb_voz_pasiva[0].nro_errores = JSON.parse(
+          arg.passive_voice
+        ).flag.EstiloVozPasiva;
+      } else {
+        this.showErrorPassiveVoice = true;
       }
-      else{
-        this.html_vozpasiva = errorCard;
-      }
-      if(validModel(arg.fs_person)){
+      if (validModel(arg.fs_person)) {
         this.html_persona = JSON.parse(arg.fs_person).html_response;
-        this.fb_persona[0].nro_errores = JSON.parse(arg.fs_person).flag.EstiloPrimeraPersonaSingular;
-        this.fb_persona[1].nro_errores = JSON.parse(arg.fs_person).flag.EstiloSegundaPersonaSingular;
-      }
-      else{
-        this.html_persona = errorCard;
+        this.fb_persona[0].nro_errores = JSON.parse(
+          arg.fs_person
+        ).flag.EstiloPrimeraPersonaSingular;
+        this.fb_persona[1].nro_errores = JSON.parse(
+          arg.fs_person
+        ).flag.EstiloSegundaPersonaSingular;
+      } else {
+        this.showErrorFsVoice = true;
       }
     });
   },
