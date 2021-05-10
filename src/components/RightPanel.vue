@@ -19,6 +19,9 @@
         </b-tab>
         <b-tab title="Concordancia">
           <TabConcordancia />
+                    <Error />
+
+          error
         </b-tab>
       </b-tabs>
     </div>
@@ -29,6 +32,7 @@
 import Barchart from "./Barchart.vue";
 import TabConcordancia from "./TabConcordancia";
 import Retroalimentacion from "./TabRetroalimentacion.vue";
+import Error from '~/error.vue';
 
 export default {
   name: "RightPanel",
@@ -36,6 +40,7 @@ export default {
     Barchart,
     TabConcordancia,
     Retroalimentacion,
+    Error
   },
   data() {
     return {
@@ -77,7 +82,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #RightPanel {
   text-align: justify;
 }

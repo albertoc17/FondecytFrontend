@@ -12,6 +12,9 @@
 
 <script>
 import { Analisis } from "@/includes/constants.js";
+import { validModel } from "@/includes/functions.js"
+// import errorCard from "@/includes/errorcard.vue";
+const errorCard = "";
 
 export default {
   name: "TabAnalisisLexicoGramatical",
@@ -45,8 +48,13 @@ export default {
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
-      this.html_gerundios = JSON.parse(arg.gerunds).html_response;
-      this.fb_gerundios[0].nro_errores = JSON.parse(arg.gerunds).flag.LexicoGramaticalGerundiosExcesivo;
+      if (validModel(arg.gerunds)){
+        this.html_gerundios = JSON.parse(arg.gerunds).html_response;
+        this.fb_gerundios[0].nro_errores = JSON.parse(arg.gerunds).flag.LexicoGramaticalGerundiosExcesivo;
+      }
+      else{
+        this.gerundios = errorCard;
+      }
     });
   },
 };

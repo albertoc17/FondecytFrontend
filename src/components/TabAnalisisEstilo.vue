@@ -25,6 +25,10 @@
 
 <script>
 import { Analisis } from "@/includes/constants.js";
+import { validModel } from "@/includes/functions.js"
+// import errorCard from "@/includes/errorcard.vue";
+const errorCard = "";
+
 export default {
   name: "TabAnalisisEstilo",
   data() {
@@ -79,14 +83,31 @@ export default {
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
-      this.html_conectores = JSON.parse(arg.conectores).html_response;
-      this.html_vozpasiva = JSON.parse(arg.passive_voice).html_response;
-      this.html_persona = JSON.parse(arg.fs_person).html_response;
-
-      this.fb_conectores[0].nro_errores = JSON.parse(arg.conectores).flag.EstiloConectores;
-      this.fb_voz_pasiva[0].nro_errores = JSON.parse(arg.passive_voice).flag.EstiloVozPasiva;
-      this.fb_persona[0].nro_errores    = JSON.parse(arg.fs_person).flag.EstiloPrimeraPersonaSingular;
-      this.fb_persona[1].nro_errores    = JSON.parse(arg.fs_person).flag.EstiloSegundaPersonaSingular;
+      console.log("Validando el modelo")
+      if (validModel(arg.conectores)){
+        console.log("Se valido el modelo")
+        this.html_conectores = errorCard;
+        this.fb_conectores[0].nro_errores = JSON.parse(arg.conectores).flag.EstiloConectores;
+      }
+      else{
+        console.log("modelo fallado ")
+        this.html_conectores = "<p> tula </p>";
+      }
+      if(validModel(arg.passive_voice)){
+        this.html_vozpasiva = JSON.parse(arg.passive_voice).html_response;
+        this.fb_voz_pasiva[0].nro_errores = JSON.parse(arg.passive_voice).flag.EstiloVozPasiva;
+      }
+      else{
+        this.html_vozpasiva = errorCard;
+      }
+      if(validModel(arg.fs_person)){
+        this.html_persona = JSON.parse(arg.fs_person).html_response;
+        this.fb_persona[0].nro_errores = JSON.parse(arg.fs_person).flag.EstiloPrimeraPersonaSingular;
+        this.fb_persona[1].nro_errores = JSON.parse(arg.fs_person).flag.EstiloSegundaPersonaSingular;
+      }
+      else{
+        this.html_persona = errorCard;
+      }
     });
   },
 };

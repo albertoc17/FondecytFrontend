@@ -80,7 +80,7 @@ import { Analisis } from "@/includes/constants.js";
   }
 </script>
 
-<style>
+<style scoped>
 body{
   background: white;
 }
