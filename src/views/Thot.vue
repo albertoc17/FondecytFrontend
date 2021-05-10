@@ -95,10 +95,10 @@ export default {
         { label: "1ra Persona", count: 0 },
         { label: "2da Persona", count: 0 },
       ],
-      // data_discursivo: [
-      //   { label: "Análisis concordancia", count: 7 },
-      //   { label: "Proposito", count: 3 },
-      // ],
+      data_discursivo: [
+        { label: "Complejidad", count: 0 },
+        // { label: "Proposito", count: 0 },
+      ],
     };
   },
   mounted() {
@@ -112,11 +112,14 @@ export default {
       this.data_estilo[1].count           = JSON.parse(arg.passive_voice).flag.EstiloVozPasiva;
       this.data_estilo[2].count           = JSON.parse(arg.fs_person).flag.EstiloPrimeraPersonaSingular;
       this.data_estilo[3].count           = JSON.parse(arg.fs_person).flag.EstiloSegundaPersonaSingular;
+      this.data_estilo[3].count           = JSON.parse(arg.fs_person).flag.EstiloSegundaPersonaSingular;
+      this.data_discursivo[0].count       = 3
+      // this.data_discursivo[0].count       = JSON.parse(arg.sentence_complexity).flag.EstiloSegundaPersonaSingular;
 
       this.data_general[0].count          = this.sumarNumeroErrores(this.data_lexicoGramatical).count;
       this.data_general[1].count          = this.sumarNumeroErrores(this.data_formal).count;
       this.data_general[2].count          = this.sumarNumeroErrores(this.data_estilo).count;
-      // this.data_general[3].count         = this.sumarNumeroErrores(this.data_discursivo).count;
+      this.data_general[3].count          = this.sumarNumeroErrores(this.data_discursivo).count;
     });
   },
   methods: {

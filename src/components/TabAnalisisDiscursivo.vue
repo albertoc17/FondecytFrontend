@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import { Analisis } from "@/includes/constants.js";
 export default {
   name: "TabAnalisisDiscursivo",
   data() {
@@ -21,7 +22,15 @@ export default {
       html_proposito: "",
       html_complejidad: "",
       fb_proposito: "",
-      fb_complejidad: "",
+      fb_complejidad: [{
+        feedback_negativo: Analisis.DiscursivoComplejidad.feedback_negativo,
+        feedback_positivo: Analisis.DiscursivoComplejidad.feedback_positivo,
+        id: "DiscursivoComplejidad",
+        label: "Complejidad",
+        style: '#ffaa8e',
+        estilo: "naranjo",
+        nro_errores : 0
+      }],
     };
   },
   methods: {
@@ -30,15 +39,14 @@ export default {
     },
   },
   mounted() {
-    // this.$root.$on("mensaje_fileupload", (arg) => {
-
-    //   console.log(arg.sentence_complexity);
-    //   // this.html_proposito = JSON.parse(arg.proposito).html_response;
-    //   this.html_complejidad = JSON.parse(arg.sentence_complexity).html_response;
-
-    //   // this.fb_proposito = JSON.parse(arg.proposito).feedback;
-    //   this.fb_complejidad = JSON.parse(arg.sentence_complexity).feedback;
-    // });
+    this.$root.$on("mensaje_fileupload", (arg) => {
+      console.log(JSON.parse(arg.sentence_complexity).flag); // decirle esta wea aa seba
+      this.html_complejidad = JSON.parse(arg.sentence_complexity).html_response;
+      this.fb_complejidad[0].nro_errores = 3;
+      // this.fb_complejidad[0].nro_errores = JSON.parse(arg.passive_voice).flag.DiscursivoComplejidad;
+      // this.html_proposito = JSON.parse(arg.proposito).html_response;
+      // this.fb_proposito[0].nro_errores = JSON.parse(arg.sentence_complexity).flag.EstiloVozPasiva;
+    });
   },
 };
 </script>
