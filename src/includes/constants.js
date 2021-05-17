@@ -14,7 +14,7 @@ export const Analisis = {
     info: "Recuerda que las oraciones se componen por un sujeto y un predicado y finalizan con un punto seguido.",
   },
   FormalParrafosExtensos: {
-    titulo: "Párrafos Extenso",
+    titulo: "Párrafos Extensos",
     feedback_negativo: "¡Tu párrafo es muy extenso! Se sugiere que la extensión de un párrafo sea de 3 oraciones como mínimo y 5 máximo.",
     info: "Recuerda que las oraciones se componen por un sujeto y un predicado y finalizan con un punto seguido. ",
     feedback_positivo: "¡Felicitaciones! no observamos errores en tu texto. Se identifica una adecuada extensión de párrafos."

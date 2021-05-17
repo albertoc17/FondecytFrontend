@@ -2,7 +2,7 @@
   <div class="card" style="width: 18rem">
     <div class="card-body">
       <h5 class="card-title">Error con el archivo</h5>
-      <p class="card-text">Whops!! Algo fallo uwu.</p>
+      <p class="card-text">Por favor adjunte el archivo que ocasionó el error en la carpeta de Google Drive del Fondecyt.</p>
     </div>
   </div>
 </template> 
@@ -12,5 +12,5 @@
 
 export default {
   name: "ErrorHtml",
-  };
+};
   

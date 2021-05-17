@@ -77,13 +77,14 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 #RightPanel {
   text-align: justify;
+  padding-top: 10px;
 }
 .resumen {
-  /* background-color: rgba(56, 136, 211, 0.15); */
-  padding-top: 15px;
+  /* background-colo  r: rgba(56, 136, 211, 0.15); */
+  padding-top: 600px;
 }
 .amarillo {
   background-color: rgba(246, 248, 102, 0.3);
@@ -96,6 +97,6 @@ export default {
   padding-bottom: 15px;
 }
 /* div.fixed {
-      position: fixed;
-    } */
+  position: fixed;
+} */
 </style>
