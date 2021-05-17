@@ -8,6 +8,8 @@
       <div class="col-md-12">
         <span v-html="feedback_negativo"></span> <span v-html="info"></span>
         <p> A continuación te dejamos un ejemplo de como se evidencia este problema en la escritura de un estudiante: </p>
+        <!-- <section v-if=" analisisId != 'FormalOracionesBreves' && analisisId != 'FormalOracionesExtensas'">
+        </section> -->
         <div class="row">
           <div class="col-md-2"></div>
           <div class="col-md-8">
@@ -80,10 +82,10 @@ export default {
 </script>
 
 <style>
-body{
+body {
   background: white;
 }
-h2{
+h2 {
   color: blue;
 }
 #DetallesFeedback {

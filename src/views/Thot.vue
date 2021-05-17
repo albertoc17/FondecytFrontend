@@ -135,6 +135,12 @@ export default {
 };
 </script>
 
+<style scoped>
+a {
+  color: #007bff !important;
+}
+</style>
+
 <style>
 .splitpanes--vertical > .splitpanes__splitter {
   min-width: 12px;
