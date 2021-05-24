@@ -65,7 +65,6 @@ export default {
           //"http://127.0.0.1:8000/api/Concordancia",
           formData
         );
-        console.log(res.data);
         this.resConcordancia = res.data.html_response;
       } catch (err) {
         console.warn(err);
