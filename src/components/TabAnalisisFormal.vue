@@ -89,23 +89,20 @@ export default {
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
-      if(arg.oraciones != ""){
-        this.html_oraciones = JSON.parse(arg.oraciones).html_response;
-        this.fb_oraciones[0].nro_errores = JSON.parse(arg.oraciones).flag.FormalOracionesExtensas;
-        this.fb_oraciones[1].nro_errores = JSON.parse(arg.oraciones).flag.FormalOracionesBreves;
+      console.log(arg.oraciones);
+      if (arg.oraciones != "") {
+        this.html_oraciones = arg.oraciones.html_response;
+        this.fb_oraciones[0].nro_errores = arg.oraciones.flag.FormalOracionesExtensas;
+        this.fb_oraciones[1].nro_errores = arg.oraciones.flag.FormalOracionesBreves;
       }
-      else{
-        this.showErrorOraciones = true;
+      else this.showErrorOraciones = true;
+
+      if (arg.micro_paragraph != "") {
+        this.html_microparrafos = arg.micro_paragraphs.html_response;
+        this.fb_microparrafos[0].nro_errores = arg.micro_paragraphs.flag.FormalParrafosExtensos;
+        this.fb_microparrafos[1].nro_errores = arg.micro_paragraphs.flag.FormalParrafosBreves;
       }
-      if(arg.micro_paragraph != ""){
-        this.showErrorOraciones = true;
-        this.html_microparrafos = JSON.parse(arg.micro_paragraphs).html_response;
-        this.fb_microparrafos[0].nro_errores = JSON.parse(arg.micro_paragraphs).flag.FormalParrafosExtensos;
-        this.fb_microparrafos[1].nro_errores = JSON.parse(arg.micro_paragraphs).flag.FormalParrafosBreves;
-      }
-      else{
-        this.showErrorMicroParrafos = true;
-      }
+      else this.showErrorMicroParrafos = true;
     });
   },
 };

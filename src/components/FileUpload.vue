@@ -29,8 +29,7 @@
 
 <script>
 import axios from "axios";
-import { validModel } from "@/includes/functions.js"
-
+import { validModel } from "@/includes/functions.js";
 
 export default {
   name: "FileUpload",
@@ -55,14 +54,9 @@ export default {
       formData.append("file", this.file);
       let loader = this.$loading.show({ isFullPage: true, canCancel: false });
       try {
-        this.text = await axios.post(
-          "http://www.redilegra.com/backend/api/FileUploadView",
-          formData
-        );
+        this.res = await axios.post("http://127.0.0.1:8000/api/FileUploadView", formData);
         // this.sendFeedbackModal(this.data_general);
-        // this.passive_voice = JSON.parse(this.text.data.passive_voice);
-        // this.statistics = JSON.parse(this.text.data.statistics);
-        this.sendText(this.text.data);
+        this.sendResToComponents(this.res.data);
         loader.hide();
       } catch (err) {
         console.warn(err);
@@ -72,18 +66,18 @@ export default {
     // sendFeedbackModal(data) {
     //   this.$root.$emit("mensaje_estadistica_modal", data);
     // },
-    sendText(data) {
-      var validateData = this.validateData(data)
-      this.$root.$emit("mensaje_fileupload", validateData);
+    sendResToComponents(data) {
+      // var validateData = this.validateData(data);
+      this.$root.$emit("mensaje_fileupload", data);
     },
-    validateData(data){
+    validateData(data) {
       for (const property in data) {
-        if(!validModel(data[property]) && property!= 'html'){
+        if (!validModel(data[property]) && property != "html") {
           data[property] = "";
         }
       }
       return data;
     },
-  } 
-}
+  },
+};
 </script>

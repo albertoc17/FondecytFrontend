@@ -31,7 +31,7 @@
         </div>
       </div>
     </FormulateForm>
-    <br>
+    <br />
     <div>
       <span v-html="resConcordancia"></span>
     </div>
@@ -57,15 +57,16 @@ export default {
   methods: {
     async submitHandler() {
       try {
-      const formData = new FormData();
-      formData.append("patron", this.patron);
-      formData.append("modelo", this.modelo)
+        const formData = new FormData();
+        formData.append("patron", this.patron);
+        formData.append("modelo", this.modelo);
         let res = await axios.post(
-          "http://www.redilegra.com/backend/api/Concordancia",
+          //"http://www.redilegra.com/backend/api/Concordancia",
+          "http://127.0.0.1:8000/api/Concordancia",
           formData
         );
-        this.resConcordancia = JSON.parse(res.data).html_response;
-        console.log(res);
+        console.log(res.data);
+        this.resConcordancia = res.data.html_response;
       } catch (err) {
         console.warn(err);
       }

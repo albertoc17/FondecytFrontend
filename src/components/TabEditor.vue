@@ -29,7 +29,7 @@ export default {
   mounted(){
     this.$root.$on("mensaje_fileupload", (arg) => {
       this.content = arg.html;
-       });
+    });
   },
 };
 </script>

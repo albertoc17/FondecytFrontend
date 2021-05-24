@@ -3,7 +3,7 @@
     <div class="col-md-12">
       <b-tabs content-class="mt-3">
         <b-tab active title="Gerundios" @click="sendFeedbackModal(fb_gerundios)">
-          <div v-if="showError" >
+          <div v-if="showErrorGerundios" >
             <ErrorHtml/>
           </div>
           <div v-else>
@@ -26,7 +26,7 @@ export default {
   },
   data() {
     return {
-      showError: false,
+      showErrorGerundios: false,
       html_gerundios: "",
       fb_gerundios: [{
         feedback_negativo: Analisis.LexicoGramaticalGerundiosExcesivo.feedback_negativo,
@@ -56,12 +56,10 @@ export default {
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
       if (arg.gerunds != ""){
-        this.html_gerundios = JSON.parse(arg.gerunds).html_response;
-        this.fb_gerundios[0].nro_errores = JSON.parse(arg.gerunds).flag.LexicoGramaticalGerundiosExcesivo;
+        this.html_gerundios = arg.gerunds.html_response;
+        this.fb_gerundios[0].nro_errores = arg.gerunds.flag.LexicoGramaticalGerundiosExcesivo;
       }
-      else{
-        this.showError = true;
-      }
+      else this.showErrorGerundios = true;
     });
   },
 };

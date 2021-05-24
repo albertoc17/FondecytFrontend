@@ -103,18 +103,18 @@ export default {
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
-      this.data_lexicoGramatical[0].count = JSON.parse(arg.gerunds).flag.LexicoGramaticalGerundiosExcesivo;
-      this.data_formal[0].count           = JSON.parse(arg.oraciones).flag.FormalOracionesExtensas;
-      this.data_formal[1].count           = JSON.parse(arg.oraciones).flag.FormalOracionesBreves;
-      this.data_formal[2].count           = JSON.parse(arg.micro_paragraphs).flag.FormalParrafosExtensos;
-      this.data_formal[3].count           = JSON.parse(arg.micro_paragraphs).flag.FormalParrafosBreves;
-      this.data_estilo[0].count           = JSON.parse(arg.conectores).flag.EstiloConectores;
-      this.data_estilo[1].count           = JSON.parse(arg.passive_voice).flag.EstiloVozPasiva;
-      this.data_estilo[2].count           = JSON.parse(arg.fs_person).flag.EstiloPrimeraPersonaSingular;
-      this.data_estilo[3].count           = JSON.parse(arg.fs_person).flag.EstiloSegundaPersonaSingular;
-      this.data_estilo[3].count           = JSON.parse(arg.fs_person).flag.EstiloSegundaPersonaSingular;
-      this.data_discursivo[0].count       = 3
-      // this.data_discursivo[0].count       = JSON.parse(arg.sentence_complexity).flag.EstiloSegundaPersonaSingular;
+      this.data_lexicoGramatical[0].count = arg.gerunds.flag.LexicoGramaticalGerundiosExcesivo;
+      this.data_formal[0].count           = arg.oraciones.flag.FormalOracionesExtensas;
+      this.data_formal[1].count           = arg.oraciones.flag.FormalOracionesBreves;
+      this.data_formal[2].count           = arg.micro_paragraphs.flag.FormalParrafosExtensos;
+      this.data_formal[3].count           = arg.micro_paragraphs.flag.FormalParrafosBreves;
+      this.data_estilo[0].count           = arg.conectores.flag.EstiloConectores;
+      this.data_estilo[1].count           = arg.passive_voice.flag.EstiloVozPasiva;
+      this.data_estilo[2].count           = arg.fs_person.flag.EstiloPrimeraPersonaSingular;
+      this.data_estilo[3].count           = arg.fs_person.flag.EstiloSegundaPersonaSingular;
+      this.data_estilo[3].count           = arg.fs_person.flag.EstiloSegundaPersonaSingular;
+      this.data_discursivo[0].count       = arg.fs_person.flag.DiscursivoComplejidad;
+      // this.data_discursivo[0].count       = arg.sentence_complexity.flag.EstiloSegundaPersonaSingular;
 
       this.data_general[0].count          = this.sumarNumeroErrores(this.data_lexicoGramatical).count;
       this.data_general[1].count          = this.sumarNumeroErrores(this.data_formal).count;

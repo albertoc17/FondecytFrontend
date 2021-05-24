@@ -48,17 +48,15 @@ export default {
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
-      if(arg.sentence_complexity != ""){
-        console.log(JSON.parse(arg.sentence_complexity).flag); // decirle esta wea aa seba
-        this.html_complejidad = JSON.parse(arg.sentence_complexity).html_response;
-        this.fb_complejidad[0].nro_errores = 3;
+      if(arg.sentence_complexity != "") {
+        this.html_complejidad = arg.sentence_complexity.html_response;
+        this.fb_complejidad[0].nro_errores = arg.sentence_complexity.flag.DiscursivoComplejidad;
       }
-      else{
+      else {
         this.showErrorComplejidad = true;
       }
-      // this.fb_complejidad[0].nro_errores = JSON.parse(arg.passive_voice).flag.DiscursivoComplejidad;
-      // this.html_proposito = JSON.parse(arg.proposito).html_response;
-      // this.fb_proposito[0].nro_errores = JSON.parse(arg.sentence_complexity).flag.EstiloVozPasiva;
+      // this.html_proposito = arg.proposito.html_response;
+      // this.fb_proposito[0].nro_errores = arg.sentence_complexity.flag.EstiloVozPasiva;
     });
   },
 };
