@@ -4,8 +4,10 @@
     <div v-if="modoInformacion === 'feedback'">
       <b-tabs content-class="mt-3">
         <b-tab title="Retroalimentación" active>
-          <Barchart :chartData="chartData" />
-          <Retroalimentacion :feedback="feedback" />
+          <div v-if="feedback">
+            <Barchart :chartData="chartData" />
+            <Retroalimentacion :feedback="feedback" />
+          </div>
         </b-tab>
         <b-tab title="Concordancia">
           <TabConcordancia />
@@ -15,7 +17,9 @@
     <div v-else-if="modoInformacion === 'estadistica'">
       <b-tabs content-class="mt-3">
         <b-tab title="Retroalimentación" active>
-          <Barchart :chartData="chartData" />
+          <div v-if="feedback">
+            <Barchart :chartData="chartData" />
+          </div>
         </b-tab>
         <b-tab title="Concordancia">
           <TabConcordancia />

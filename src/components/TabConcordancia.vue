@@ -61,8 +61,8 @@ export default {
         formData.append("patron", this.patron);
         formData.append("modelo", this.modelo);
         let res = await axios.post(
-          //"http://www.redilegra.com/backend/api/Concordancia",
-          "http://127.0.0.1:8000/api/Concordancia",
+          "http://www.redilegra.com/backend/api/Concordancia",
+          //"http://127.0.0.1:8000/api/Concordancia",
           formData
         );
         console.log(res.data);
