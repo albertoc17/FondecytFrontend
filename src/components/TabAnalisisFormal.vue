@@ -63,7 +63,7 @@ export default {
           feedback_negativo: Analisis.FormalParrafosExtensos.feedback_negativo,
           feedback_positivo: Analisis.FormalParrafosExtensos.feedback_positivo,
           id: "FormalParrafosExtensos",
-          label: "Parrafos Extensos",
+          label: "Párrafos Extensos",
           style: '#ffd075',
           estilo: "naranjo",
           nro_errores: 0
@@ -72,7 +72,7 @@ export default {
           feedback_negativo: Analisis.FormalParrafosBreves.feedback_negativo,
           feedback_positivo: Analisis.FormalParrafosBreves.feedback_positivo,
           id: "FormalParrafosBreves",
-          label: "Parrafos Breves",
+          label: "Párrafos Breves",
           style: "#fffa8e",
           estilo: "amarillo",
           nro_errores: 0

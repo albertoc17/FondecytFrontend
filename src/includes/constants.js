@@ -9,8 +9,8 @@ export const Analisis = {
     comentario: "La oración al ser tan extensa dificulta la comprensión, por lo que si tu oración es similar a este ejemplo en cuanto a la estructura, te recomendamos que la organices empleando marcadores discursivos, así como puntos y comas.",
   },
   FormalOracionesBreves: {
-    titulo: "Oraciones Extensas",
-    feedback_negativo: "¡Tu oración es muy extensa! Se recomienda que una oración tenga una extensión entre 18 a 32 palabras.",
+    titulo: "Oraciones Breves",
+    feedback_negativo: "¡Tu oración es muy breve! Se recomienda que una oración tenga una extensión entre 18 a 32 palabras.",
     info: "Recuerda que las oraciones se componen por un sujeto y un predicado y finalizan con un punto seguido.",
   },
   FormalParrafosExtensos: {

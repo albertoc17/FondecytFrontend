@@ -8,24 +8,24 @@
       <div class="col-md-12">
         <span v-html="feedback_negativo"></span> <span v-html="info"></span>
         <p> A continuación te dejamos un ejemplo de como se evidencia este problema en la escritura de un estudiante: </p>
-        <!-- <section v-if=" analisisId != 'FormalOracionesBreves' && analisisId != 'FormalOracionesExtensas'">
-        </section> -->
-        <div class="row">
-          <div class="col-md-2"></div>
-          <div class="col-md-8">
-            <b-alert variant="danger" class="text-center" show>
-              <span v-html="error"></span>
-            </b-alert>
+        <div v-if=" analisisId != 'FormalParrafosExtensos' && analisisId != 'FormalParrafosBreves'">
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+              <b-alert variant="danger" class="text-center" show>
+                <span v-html="error"></span>
+              </b-alert>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <span v-html="comentario"></span>
+          <div class="row">
+            <div class="col-md-12">
+              <span v-html="comentario"></span>
+            </div>
           </div>
-        </div>
-        <br>
-        <div class="text-center">
-          <b-button @click="showEjemploCorregido()" variant="success">Mostrar ejemplo corregido</b-button>
+          <br>
+          <div class="text-center">
+            <b-button @click="showEjemploCorregido()" variant="success">Mostrar ejemplo corregido</b-button>
+          </div>
         </div>
         <br>
         <div v-if="!isHidden" class="row">
