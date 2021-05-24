@@ -4,9 +4,12 @@
     <div v-if="modoInformacion === 'feedback'">
       <b-tabs content-class="mt-3">
         <b-tab title="Retroalimentación" active>
-          <div v-if="feedback">
+          <div v-if="show">
             <Barchart :chartData="chartData" />
             <Retroalimentacion :feedback="feedback" />
+          </div>
+          <div v-else>
+            <h6>Cargue un documento por favor</h6>
           </div>
         </b-tab>
         <b-tab title="Concordancia">
@@ -17,8 +20,11 @@
     <div v-else-if="modoInformacion === 'estadistica'">
       <b-tabs content-class="mt-3">
         <b-tab title="Retroalimentación" active>
-          <div v-if="feedback">
+          <div v-if="show">
             <Barchart :chartData="chartData" />
+          </div>
+          <div v-else>
+            <h6>Cargue un documento por favor</h6>
           </div>
         </b-tab>
         <b-tab title="Concordancia">
@@ -45,10 +51,14 @@ export default {
     return {
       chartData: null,
       feedback: null,
+      show: null,
       modoInformacion: "estadistica",
     };
   },
   mounted() {
+    this.$root.$on("mensaje_fileupload", (data) => {
+      this.show = data;
+    });
     this.$root.$on("mensaje_feedback_modal", (feedback) => {
       this.modoInformacion = "feedback";
       this.feedback = feedback;
