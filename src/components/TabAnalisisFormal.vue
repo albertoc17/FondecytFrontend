@@ -89,7 +89,6 @@ export default {
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
-      console.log(arg.oraciones);
       if (arg.oraciones != "") {
         this.html_oraciones = arg.oraciones.html_response;
         this.fb_oraciones[0].nro_errores = arg.oraciones.flag.FormalOracionesExtensas;

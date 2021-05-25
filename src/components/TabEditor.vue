@@ -1,9 +1,10 @@
 <template>
   <div>
     <quill-editor
-      v-model="content"
-      ref="myQuillEditor"
+      v-model="contentHtml"
       :options="editorOptions"
+      @change="onEditorChange($event)"
+      ref="myQuillEditor"
     />
   </div>
 </template>
@@ -23,12 +24,18 @@ export default {
         readOnly: false,
         theme: "snow",
       },
-      content: "Inserte texto aquí...",
+      contentHtml: "Inserte texto aquí...",
     };
   },
-  mounted(){
+  methods: {
+    onEditorChange({ html, text }) {
+      console.log(html);
+      console.log(text);
+    },
+  },
+  mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
-      this.content = arg.html;
+      this.contentHtml = arg.html;
     });
   },
 };
