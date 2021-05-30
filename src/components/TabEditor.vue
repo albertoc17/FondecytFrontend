@@ -1,8 +1,15 @@
 <template>
-  <div>  
+  <div>
     <div class="sendTextButton">
-      <button class="btn btn-success" @click="sendTextEdited">Enviar Texto</button>
-    </div>        
+      <button class="btn btn-success" @click="sendTextEdited">
+        Enviar Texto
+      </button>
+    </div>
+    <a
+      :href="item.url"
+      v-text="item.label"
+      @click.prevent="downloadItem(item)"
+    />
     <quill-editor
       v-model="contentHtml"
       :options="editorOptions"
@@ -17,7 +24,6 @@ import { quillEditor } from "vue-quill-editor";
 import "../../node_modules/quill/dist/quill.snow.css";
 import axios from "axios";
 
-
 export default {
   name: "TabEditor",
   components: {
@@ -30,8 +36,8 @@ export default {
         theme: "snow",
       },
       contentHtml: "Inserte texto aquí...",
-      html: '',
-      text: '',
+      html: "",
+      text: "",
     };
   },
   methods: {
@@ -44,7 +50,7 @@ export default {
       // var validateData = this.validateData(data);
       this.$root.$emit("mensaje_fileupload", data);
     },
-    async sendTextEdited(){
+    async sendTextEdited() {
       try {
         const formData = new FormData();
         formData.append("html", this.html);
@@ -58,7 +64,6 @@ export default {
       } catch (err) {
         console.warn(err);
       }
-    
     },
   },
   mounted() {
@@ -69,8 +74,7 @@ export default {
 };
 </script>
 <style scoped>
-
-.sendTextButton{
-  margin-bottom: 2%; 
+.sendTextButton {
+  margin-bottom: 2%;
 }
 </style>
