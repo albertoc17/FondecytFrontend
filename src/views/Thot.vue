@@ -113,7 +113,7 @@ export default {
       this.data_estilo[2].count           = arg.fs_person.flag.EstiloPrimeraPersonaSingular;
       this.data_estilo[3].count           = arg.fs_person.flag.EstiloSegundaPersonaSingular;
       this.data_estilo[3].count           = arg.fs_person.flag.EstiloSegundaPersonaSingular;
-      this.data_discursivo[0].count       = arg.fs_person.flag.DiscursivoComplejidad;
+      this.data_discursivo[0].count       = arg.sentence_complexity.flag.DiscursivoComplejidad;
       // this.data_discursivo[0].count       = arg.sentence_complexity.flag.EstiloSegundaPersonaSingular;
 
       this.data_general[0].count          = this.sumarNumeroErrores(this.data_lexicoGramatical).count;
@@ -135,23 +135,19 @@ export default {
 };
 </script>
 
-<style scoped>
-a {
-  color: #007bff !important;
-}
-</style>
-
 <style>
-.splitpanes--vertical > .splitpanes__splitter {
-  min-width: 12px;
-  background: linear-gradient(90deg, rgb(230, 230, 230), rgba(230, 230, 230, 0.6));
-}
-
-.splitpanes__pane {
-  background-color: white !important;
-}
-
+/* AGREGAR ESTA LINEA NO FUNCIONA EN PROD */ 
+/* a { 
+  color: #007bff !important;
+} */
 span {
   text-align: justify;
+}
+.splitpanes--vertical > .splitpanes__splitter {
+  min-width: 12px;
+  background: linear-gradient(90deg, rgb(230, 230, 230), rgba(230, 230, 230, 0.6)); /* color del separador (por alguna razon debe ser con linear-gradient) */
+}
+.splitpanes__pane {
+  background-color: white !important; /* color de los paneles (fondo default era gris) */
 }
 </style>
