@@ -42,7 +42,6 @@ export default {
       //   feedback_positivo: Analisis.LexicoGramaticalRepeticionLexica.feedback_positivo,
       //   id: "LexicoGramaticalRepeticionLexica",
       //   label: "Repetición Léxica",
-      //   estilo: "naranjo",
       //   style: "#fffa8e",
       //   nro_errores : 0
       // }]

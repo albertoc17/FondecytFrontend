@@ -61,11 +61,12 @@ export default {
         );
         // this.sendFeedbackModal(this.data_general);
         this.sendResToComponents(this.res.data);
-        loader.hide();
+        this.makeToast('Documento analizado correctamente.', 'success');
       } catch (err) {
         console.warn(err);
-        loader.hide();
+        this.makeToast('Error: '+err, 'danger');
       }
+      loader.hide();
     },
     // sendFeedbackModal(data) {
     //   this.$root.$emit("mensaje_estadistica_modal", data);
@@ -73,6 +74,15 @@ export default {
     sendResToComponents(data) {
       // var validateData = this.validateData(data);
       this.$root.$emit("mensaje_fileupload", data);
+    },
+    makeToast(message, variant) {
+      let title = variant == 'success' ? 'Operación exitosa' : 'Operación fallida';
+      this.$bvToast.toast(message, {
+        title: title,
+        variant: variant,
+        solid: false,
+        autoHideDelay: 2000,
+      })
     },
     validateData(data) {
       for (const property in data) {

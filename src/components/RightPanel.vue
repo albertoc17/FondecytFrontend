@@ -2,7 +2,7 @@
   <div id="RightPanel">
     <!-- class="position-fixed" -->
     <div v-if="modoInformacion === 'feedback'">
-      <b-tabs content-class="mt-3">
+      <b-tabs v-model="tabIndex" content-class="mt-3">
         <b-tab title="Retroalimentación" active>
           <div v-if="show">
             <Barchart :chartData="chartData" />
@@ -14,6 +14,9 @@
         </b-tab>
         <b-tab title="Concordancia">
           <TabConcordancia />
+        </b-tab>
+        <b-tab title="Detalle retroalimentación">
+          <Detalle />
         </b-tab>
       </b-tabs>
     </div>
@@ -30,6 +33,9 @@
         <b-tab title="Concordancia">
           <TabConcordancia />
         </b-tab>
+        <b-tab title="Detalle retroalimentación">
+          <Detalle />
+        </b-tab>
       </b-tabs>
     </div>
   </div>
@@ -37,20 +43,25 @@
 
 <script>
 import Barchart from "./Barchart.vue";
-import TabConcordancia from "./TabConcordancia";
 import Retroalimentacion from "./TabRetroalimentacion.vue";
+import Detalle from "./Detalle.vue";
+import TabConcordancia from "./TabConcordancia.vue";
+
 
 export default {
   name: "RightPanel",
   components: {
     Barchart,
-    TabConcordancia,
     Retroalimentacion,
+    Detalle,
+    TabConcordancia
   },
   data() {
     return {
+      tabIndex: 0,
       chartData: null,
       feedback: null,
+      id_analisis: null,
       show: null,
       modoInformacion: "estadistica",
     };
@@ -58,6 +69,9 @@ export default {
   mounted() {
     this.$root.$on("mensaje_fileupload", (data) => {
       this.show = data;
+    });
+    this.$root.$on("activeTabIndex", () => {
+      this.tabIndex = 2;
     });
     this.$root.$on("mensaje_feedback_modal", (feedback) => {
       this.modoInformacion = "feedback";
@@ -97,18 +111,7 @@ export default {
   padding-top: 10px;
 }
 .resumen {
-  /* background-colo  r: rgba(56, 136, 211, 0.15); */
   padding-top: 600px;
-}
-.amarillo {
-  background-color: rgba(246, 248, 102, 0.3);
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-.naranjo {
-  background-color: rgba(252, 210, 91, 0.3);
-  padding-top: 15px;
-  padding-bottom: 15px;
 }
 /* div.fixed {
   position: fixed;

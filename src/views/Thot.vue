@@ -2,7 +2,7 @@
   <div id="Thot">
     <Navbar />
     <splitpanes class="default-theme" vertical style="position:'relative' , overflow:'hidden'">
-      <pane min-size="50" size="73" style="height: '119vh', overflowY: 'scroll', overflowX:'hidden'">
+      <pane min-size="50" size="70" style="height: '119vh', overflowY: 'scroll', overflowX:'hidden'">
         <div class="row" style="padding-left: 15px; padding-right: 15px">
           <div class="col-md-12">
             <FileUpload />
@@ -34,7 +34,7 @@
           </div>
         </div>
       </pane>
-      <pane min-size="20" size="27">
+      <pane min-size="20" size="30">
         <div class="row" style="padding-left: 15px; padding-right: 20px">
           <div class="col-md-12">
             <RightPanel />

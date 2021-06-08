@@ -36,7 +36,6 @@ export default {
         id: "DiscursivoComplejidad",
         label: "Complejidad",
         style: '#ffaa8e',
-        estilo: "naranjo",
         nro_errores : 0
       }],
     };

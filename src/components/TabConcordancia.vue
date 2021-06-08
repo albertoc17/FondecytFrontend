@@ -56,6 +56,7 @@ export default {
   },
   methods: {
     async submitHandler() {
+      let loader = this.$loading.show({ isFullPage: true, canCancel: false });
       try {
         const formData = new FormData();
         formData.append("patron", this.patron);
@@ -66,10 +67,22 @@ export default {
           formData
         );
         this.resConcordancia = res.data.html_response;
+        this.makeToast('Análisis de concordancia realizado exitosamente.', 'success');
       } catch (err) {
         console.warn(err);
+        this.makeToast('Error: '+err, 'danger');
       }
+      loader.hide();
     },
+    makeToast(message, variant) {
+      let title = variant == 'success' ? 'Operación exitosa' : 'Operación fallida';
+      this.$bvToast.toast(message, {
+        title: title,
+        variant: variant,
+        solid: false,
+        autoHideDelay: 2000,
+      })
+    }
   },
 };
 </script>

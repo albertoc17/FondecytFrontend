@@ -45,6 +45,7 @@ export default {
       this.$root.$emit("mensaje_fileupload", data);
     },
     async sendTextEdited(){
+      let loader = this.$loading.show({ isFullPage: true, canCancel: false });
       try {
         const formData = new FormData();
         formData.append("html", this.html);
@@ -58,7 +59,7 @@ export default {
       } catch (err) {
         console.warn(err);
       }
-    
+      loader.hide();
     },
   },
   mounted() {
@@ -70,7 +71,7 @@ export default {
 </script>
 <style scoped>
 
-.sendTextButton{
+.sendTextButton {
   margin-bottom: 2%; 
 }
 </style>

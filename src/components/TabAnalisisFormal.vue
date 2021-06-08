@@ -44,8 +44,7 @@ export default {
           feedback_positivo: Analisis.FormalOracionesExtensas.feedback_positivo,
           id: "FormalOracionesExtensas",
           label: "Oraciones Extensas",
-          style: '#ffd075',
-          estilo: "naranjo",
+          style: '#fbba63',
           nro_errores: 0
         },
         {
@@ -53,8 +52,7 @@ export default {
           feedback_positivo: Analisis.FormalOracionesBreves.feedback_positivo,
           id: "FormalOracionesBreves",
           label: "Oraciones Breves",
-          style: "#fffa8e",
-          estilo: "amarillo",
+          style: "#fff492",
           nro_errores: 0
         }
       ],
@@ -64,8 +62,7 @@ export default {
           feedback_positivo: Analisis.FormalParrafosExtensos.feedback_positivo,
           id: "FormalParrafosExtensos",
           label: "Párrafos Extensos",
-          style: '#ffd075',
-          estilo: "naranjo",
+          style: '#fbba63',
           nro_errores: 0
         },
         {
@@ -73,15 +70,13 @@ export default {
           feedback_positivo: Analisis.FormalParrafosBreves.feedback_positivo,
           id: "FormalParrafosBreves",
           label: "Párrafos Breves",
-          style: "#fffa8e",
-          estilo: "amarillo",
+          style: "#fff492",
           nro_errores: 0
         }
       ],
     };
     
   },
-  
   methods:{
     sendFeedbackModal(feedback){
       this.$root.$emit("mensaje_feedback_modal", feedback);
