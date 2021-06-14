@@ -1,8 +1,13 @@
 <template>
-  <div>  
-    <div class="sendTextButton">
-      <button class="btn btn-success" @click="sendTextEdited">Enviar Texto</button>
-    </div>        
+  <div>
+    <div class="buttonContainer">
+      <div>
+        <button class="btn btn-success" @click="sendTextEdited">Enviar Texto</button>
+      </div>
+      <div>
+        <button class="btn btn-success" @click="exportHTML" >Descargar DOC</button>
+      </div>
+    </div>
     <quill-editor
       v-model="contentHtml"
       :options="editorOptions"
@@ -40,6 +45,19 @@ export default {
       this.text = text;
     },
 
+    exportHTML(){
+      var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
+      var postHtml = "</body></html>";
+      var html2doc = preHtml + this.html + postHtml;
+      var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html2doc);
+      var fileDownload = document.createElement("a");
+      document.body.appendChild(fileDownload);
+      fileDownload.href = source;
+      fileDownload.download = 'document.doc';
+      fileDownload.click();
+      document.body.removeChild(fileDownload);
+    },
+
     sendResToComponents(data) {
       // var validateData = this.validateData(data);
       this.$root.$emit("mensaje_fileupload", data);
@@ -69,9 +87,14 @@ export default {
   },
 };
 </script>
-<style scoped>
+<style  >
 
-.sendTextButton {
-  margin-bottom: 2%; 
-}
+  .buttonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 2%;
+  }
+
+
 </style>
