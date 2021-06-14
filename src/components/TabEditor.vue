@@ -5,7 +5,7 @@
         <button class="btn btn-success" @click="sendTextEdited">Enviar Texto</button>
       </div>
       <div>
-        <button class="btn btn-success" @click="exportHTML" >Descargar DOC</button>
+        <button class="btn btn-primary" @click="exportHTML" >Descargar DOC</button>
       </div>
     </div>
     <quill-editor
