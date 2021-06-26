@@ -1,8 +1,7 @@
 <template>
   <div id="RightPanel">
-    <!-- class="position-fixed" -->
     <div v-if="modoInformacion === 'feedback'">
-      <b-tabs v-model="tabIndex" content-class="mt-3">
+      <b-tabs v-model="tabIndex" class="mt-3">
         <b-tab title="Retroalimentación" active>
           <div v-if="show">
             <Barchart :chartData="chartData" />
@@ -109,11 +108,9 @@ export default {
 #RightPanel {
   text-align: justify;
   padding-top: 10px;
+  position: fixed;
 }
 .resumen {
   padding-top: 600px;
 }
-/* div.fixed {
-  position: fixed;
-} */
 </style>

@@ -136,10 +136,6 @@ export default {
 </script>
 
 <style>
-/* AGREGAR ESTA LINEA NO FUNCIONA EN PROD */ 
-/* a { 
-  color: #007bff !important;
-} */
 span {
   text-align: justify;
 }
