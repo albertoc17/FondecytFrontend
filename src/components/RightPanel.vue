@@ -108,7 +108,7 @@ export default {
 #RightPanel {
   text-align: justify;
   padding-top: 10px;
-  position: fixed;
+  overflow-y: scroll;
 }
 .resumen {
   padding-top: 600px;
