@@ -2,7 +2,7 @@
   <div id="Thot">
     <Navbar />
     <splitpanes class="default-theme" vertical style="position:'relative' , overflow:'hidden'">
-      <pane min-size="50" size="70" style="height: '119vh', overflowY: 'scroll', overflowX:'hidden'">
+      <pane min-size="50" size="70" class="leftPane">
         <div class="row" style="padding-left: 15px; padding-right: 15px">
           <div class="col-md-12">
             <FileUpload />
@@ -35,7 +35,7 @@
         </div>
       </pane>
       <pane min-size="20" size="30">
-        <div class="row" style="padding-left: 15px; padding-right: 20px">
+        <div class="row">
           <div class="col-md-12">
             <RightPanel />
           </div>
@@ -145,5 +145,10 @@ span {
 }
 .splitpanes__pane {
   background-color: white !important; /* color de los paneles (fondo default era gris) */
+}
+
+.leftPane {
+  overflow-y: scroll;
+  height: 93vh;
 }
 </style>

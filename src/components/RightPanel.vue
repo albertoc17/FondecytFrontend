@@ -110,7 +110,8 @@ export default {
   padding-top: 10px;
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 90%;
+  height: 93vh;
+  padding: 0;
 }
 .resumen {
   padding-top: 600px;
