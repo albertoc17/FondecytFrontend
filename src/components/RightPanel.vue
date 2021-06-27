@@ -109,6 +109,8 @@ export default {
   text-align: justify;
   padding-top: 10px;
   overflow-y: scroll;
+  overflow-x: hidden;
+  height: 90%;
 }
 .resumen {
   padding-top: 600px;
