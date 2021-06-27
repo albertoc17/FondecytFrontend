@@ -7,9 +7,11 @@
       :style="itemStyle(fb)"
     >
       <div class="col-md-12">
-        <div class="title"><h4> <span class="circle"> {{fb.nro_errores}}</span> {{ fb.label }} </h4></div>
-        <p v-if="fb.nro_errores > 0" style="padding: 0px; margin-left: 3%"> {{ fb.feedback_negativo }} </p>
-        <p v-else                    style="padding: 0px; margin-left: 3%"> {{ fb.feedback_positivo }} </p>
+        <div class="title">
+          <h4><span class="circle"> {{fb.nro_errores}}</span> {{ fb.label }} </h4>
+          <p v-if="fb.nro_errores > 0"> {{ fb.feedback_negativo }} </p>
+          <p v-else> {{ fb.feedback_positivo }} </p>
+        </div>
         <div class="text-center">
           <b-button pill size="sm" class="mt-2 mb-2" variant="dark" @click="getUrl(fb.id)">
             <b-icon icon="tools"></b-icon> Ver detalle
@@ -60,6 +62,6 @@ export default {
 }
 
 .title {
-  margin-left: 3%;
+  margin: 0 3%;
 }
 </style>

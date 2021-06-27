@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <FormulateForm @submit="submitHandler" #default="{ isLoading }">
       <div class="row">
         <div class="col-md-5">
@@ -86,3 +86,10 @@ export default {
   },
 };
 </script>
+<style scoped>
+
+.container{
+  margin: 3%;
+  width: 90%;
+}
+</style>
