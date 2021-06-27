@@ -1,6 +1,6 @@
 <template>
   <div v-if="id_analisis" id="Detalle">
-    <h3>{{ titulo }} </h3>
+    <h3>{{ label }} </h3>
     <div class="row">
       <div class="col-md-12">
         <span v-html="feedback_negativo"></span> <span v-html="info"></span>
@@ -57,7 +57,7 @@ export default {
     return {
       isHidden: true,
       id_analisis: null,
-      titulo: null,
+      label: null,
       feedback_negativo: null,
       info: null,
       error: null,
@@ -73,7 +73,7 @@ export default {
   mounted() {
     this.$root.$on("sendIdAnalisis", (id_analisis) => {
       this.id_analisis = id_analisis;
-      this.titulo = Analisis[id_analisis].titulo;
+      this.label = Analisis[id_analisis].label;
       this.feedback_negativo = Analisis[id_analisis].feedback_negativo;
       this.info = Analisis[id_analisis].info;
       this.error = Analisis[id_analisis].error;

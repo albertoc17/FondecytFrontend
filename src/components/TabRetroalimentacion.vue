@@ -7,11 +7,11 @@
       :style="itemStyle(fb)"
     >
       <div class="col-md-12">
-        <h5> {{ fb.label }} </h5>
+        <h4> <span class="circle"> {{fb.nro_errores}}</span> {{ fb.label }} </h4>
         <p v-if="fb.nro_errores > 0" style="padding: 0px; margin: 0px"> {{ fb.feedback_negativo }} </p>
         <p v-else                    style="padding: 0px; margin: 0px"> {{ fb.feedback_positivo }} </p>
         <div class="text-center">
-          <b-button pill size="sm" class="mt-2 mb-2" variant="info" @click="getUrl(fb.id)">
+          <b-button pill size="sm" class="mt-2 mb-2" variant="dark" @click="getUrl(fb.id)">
             <b-icon icon="tools"></b-icon> Ver detalle
           </b-button>
         </div>
@@ -31,7 +31,6 @@
 
 
 <script>
-
 export default {
   name: "Retroalimentacion",
   data() {
@@ -47,9 +46,25 @@ export default {
       this.$root.$emit("sendIdAnalisis", id_analisis);
     },
     itemStyle(fb) {
-      if(fb.nro_errores > 0) return `background-color: ${fb.style};`;
-      else                   return `background-color: #afd27f;`;
+      if(fb.nro_errores > 0) return `background-color: ${fb.style}; border-bottom: 1px solid; border-top: 1px solid;`;
+      else                   return `background-color: #afd27f; border-bottom: 1px solid; border-top: 1px solid;`;
     }
   },
 };
 </script>
+
+<style>
+.circle {
+  background: black;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: white;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 40px;
+  margin-right: 5px;
+  text-align: center;
+  width: 40px;
+}
+</style>

@@ -56,7 +56,7 @@ export default {
       try {
         this.res = await axios.post(
           "http://www.redilegra.com/backend/api/FileUploadView",
-          //"http://127.0.0.1:8000/api/FileUploadView",
+          // "http://127.0.0.1:8000/api/FileUploadView",
           formData
         );
         // this.sendFeedbackModal(this.data_general);

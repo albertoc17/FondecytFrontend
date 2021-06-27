@@ -10,6 +10,14 @@
             <span v-html="html_complejidad"></span>
           </div>
         </b-tab>
+        <b-tab title="Lecturabilidad" @click="sendFeedbackModal(fb_lecturabilidad)">
+          <div v-if="showErrorComplejidad" >
+            <ErrorHtml/>
+          </div>
+          <div v-else>
+            <span v-html="html_lecturabilidad"></span>
+          </div>
+        </b-tab>
       </b-tabs>
     </div>
   </div>
@@ -20,15 +28,16 @@ import { Analisis } from "@/includes/constants.js";
 import ErrorHtml from "./ErrorHtml.vue";
 
 export default {
-    components: {
-    ErrorHtml,
-  },
   name: "TabAnalisisDiscursivo",
+  components: {
+    ErrorHtml
+  },
   data() {
     return {
       showErrorComplejidad: false,
       html_proposito: "",
       html_complejidad: "",
+      html_lecturabilidad: "",
       fb_proposito: "",
       fb_complejidad: [{
         feedback_negativo: Analisis.DiscursivoComplejidad.feedback_negativo,
@@ -38,6 +47,13 @@ export default {
         style: '#ffaa8e',
         nro_errores : 0
       }],
+      fb_lecturabilidad: [
+        Analisis.DiscursivoLecturabilidadDificil,
+        Analisis.DiscursivoLecturabilidadAlgoDificil,
+        Analisis.DiscursivoLecturabilidadNormal,
+        Analisis.DiscursivoLecturabilidadAlgoFacil,
+        Analisis.DiscursivoLecturabilidadFacil,
+      ],
     };
   },
   methods: {
@@ -47,15 +63,25 @@ export default {
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
-      if(arg.sentence_complexity != "") {
+      console.log(arg.lecturabilidad_parrafo.html_response);
+      if (arg.sentence_complexity != "") {
         this.html_complejidad = arg.sentence_complexity.html_response;
         this.fb_complejidad[0].nro_errores = arg.sentence_complexity.flag.DiscursivoComplejidad;
       }
       else {
         this.showErrorComplejidad = true;
       }
-      // this.html_proposito = arg.proposito.html_response;
-      // this.fb_proposito[0].nro_errores = arg.sentence_complexity.flag.EstiloVozPasiva;
+      if (arg.lecturabilidad_parrafo != "") {
+        this.html_lecturabilidad = arg.lecturabilidad_parrafo.html_response;
+        this.fb_lecturabilidad[0].nro_errores = arg.lecturabilidad_parrafo.flag.DiscursivoLecturabilidadDificil;
+        this.fb_lecturabilidad[1].nro_errores = arg.lecturabilidad_parrafo.flag.DiscursivoLecturabilidadAlgoDificil;
+        this.fb_lecturabilidad[2].nro_errores = arg.lecturabilidad_parrafo.flag.DiscursivoLecturabilidadNormal;
+        this.fb_lecturabilidad[3].nro_errores = arg.lecturabilidad_parrafo.flag.DiscursivoLecturabilidadAlgoFacil;
+        this.fb_lecturabilidad[4].nro_errores = arg.lecturabilidad_parrafo.flag.DiscursivoLecturabilidadFacil;
+      }
+      else {
+        this.showErrorComplejidad = true;
+      }
     });
   },
 };
