@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div id="TabConcordancia">
     <FormulateForm @submit="submitHandler" #default="{ isLoading }">
       <div class="row">
         <div class="col-md-5">
@@ -7,7 +7,7 @@
             type="text"
             name="patron"
             label="Patrón"
-            validation="required|max:20"
+            validation="required"
             v-model="patron"
           />
         </div>
@@ -31,7 +31,6 @@
         </div>
       </div>
     </FormulateForm>
-    <br />
     <div>
       <span v-html="resConcordancia"></span>
     </div>
@@ -86,10 +85,9 @@ export default {
   },
 };
 </script>
-<style scoped>
 
-.container{
+<style>
+#TabConcordancia {
   margin: 3%;
-  width: 90%;
 }
 </style>

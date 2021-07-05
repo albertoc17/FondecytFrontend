@@ -3,31 +3,31 @@
     <Navbar />
     <splitpanes class="default-theme" vertical style="position:'relative' , overflow:'hidden'">
       <pane min-size="50" size="70" class="leftPane">
-        <div class="row" style="padding-left: 15px; padding-right: 15px">
-          <div class="col-md-12">
+        <div class="row" style="margin:0%">
+          <div class="col-md-12" >
             <FileUpload />
             <br />
             <b-tabs content-class="mt-3">
               <b-tab
-                title="Editor de texto"
                 active
-                @click="sendFeedbackModal(data_general)"
+                title="Editor de texto"
+                @click="emitInfo(data_general)"
               >
                 <TabEditor />
               </b-tab>
               <b-tab
                 title="Léxico gramatical"
-                @click="sendFeedbackModal(data_lexicoGramatical)"
+                @click="emitInfo(data_lexicoGramatical)"
               >
                 <TabAnalisisLexicoGramatical />
               </b-tab>
-              <b-tab title="Formal" @click="sendFeedbackModal(data_formal)">
+              <b-tab title="Formal" @click="emitInfo(data_formal)">
                 <TabAnalisisFormal />
               </b-tab>
-              <b-tab title="Estilo" @click="sendFeedbackModal(data_estilo)">
+              <b-tab title="Estilo" @click="emitInfo(data_estilo)">
                 <TabAnalisisEstilo />
               </b-tab>
-              <b-tab title="Discursivo" @click="sendFeedbackModal(data_discursivo)">
+              <b-tab title="Discursivo" @click="emitInfo(data_discursivo)">
                 <TabAnalisisDiscursivo />
               </b-tab>
             </b-tabs>
@@ -74,6 +74,7 @@ export default {
   },
   data() {
     return {
+      estadisticas: null,
       data_general: [
         { label: "Léxico Gramatical", count: 0 },
         { label: "Formal", count: 0 },
@@ -97,12 +98,15 @@ export default {
       ],
       data_discursivo: [
         { label: "Complejidad", count: 0 },
+        { label: "Lecturabilidad", count: 0 },
         // { label: "Proposito", count: 0 },
       ],
     };
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
+      console.table(arg.statistics);
+      this.estadisticas = arg.statistics;
       this.data_lexicoGramatical[0].count = arg.gerunds.flag.LexicoGramaticalGerundiosExcesivo;
       this.data_formal[0].count           = arg.oraciones.flag.FormalOracionesExtensas;
       this.data_formal[1].count           = arg.oraciones.flag.FormalOracionesBreves;
@@ -123,8 +127,8 @@ export default {
     });
   },
   methods: {
-    sendFeedbackModal(data) {
-      this.$root.$emit("mensaje_estadistica_modal", data);
+    emitInfo(data) {
+      this.$root.$emit("infoAnalisisGeneral", data, this.estadisticas);
     },
     sumarNumeroErrores(data) {1
       return data.reduce((a, b) => {

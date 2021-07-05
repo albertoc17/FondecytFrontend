@@ -5,7 +5,7 @@
         <b-tab
           title="Conectores"
           active
-          @click="sendFeedbackModal(fb_conectores)"
+          @click="emitInfo(fb_conectores)"
         >
           <div v-if="showErrorConectores">
             <ErrorHtml />
@@ -14,7 +14,7 @@
             <span v-html="html_conectores"></span>
           </div>
         </b-tab>
-        <b-tab title="Voz Pasiva" @click="sendFeedbackModal(fb_voz_pasiva)">
+        <b-tab title="Voz Pasiva" @click="emitInfo(fb_voz_pasiva)">
           <div v-if="showErrorPassiveVoice">
             <ErrorHtml />
           </div>
@@ -24,7 +24,7 @@
         </b-tab>
         <b-tab
           title="1ª y 2ª Persona Singular"
-          @click="sendFeedbackModal(fb_persona)"
+          @click="emitInfo(fb_persona)"
         >
           <div v-if="showErrorFsVoice">
             <ErrorHtml />
@@ -56,52 +56,20 @@ export default {
       html_vozpasiva: "",
       html_persona: "",
       fb_conectores: [
-        {
-          feedback_negativo: Analisis.EstiloConectores.feedback_negativo,
-          feedback_positivo: Analisis.EstiloConectores.feedback_positivo,
-          id: "EstiloConectores",
-          label: "Conectores",
-          style: "#ffaa8e",
-          nro_errores: 0,
-        },
+        Analisis.EstiloConectores
       ],
       fb_voz_pasiva: [
-        {
-          feedback_negativo: Analisis.EstiloVozPasiva.feedback_negativo,
-          feedback_positivo: Analisis.EstiloVozPasiva.feedback_positivo,
-          id: "EstiloVozPasiva",
-          label: "Voz pasiva",
-          style: "#ffaa8e",
-          nro_errores: 0,
-        },
+        Analisis.EstiloVozPasiva
       ],
       fb_persona: [
-        {
-          feedback_negativo:
-            Analisis.EstiloPrimeraPersonaSingular.feedback_negativo,
-          feedback_positivo:
-            Analisis.EstiloPrimeraPersonaSingular.feedback_positivo,
-          id: "EstiloPrimeraPersonaSingular",
-          label: "1ª Persona Singular",
-          style: "#ffaa8e",
-          nro_errores: 0,
-        },
-        {
-          feedback_negativo:
-            Analisis.EstiloSegundaPersonaSingular.feedback_negativo,
-          feedback_positivo:
-            Analisis.EstiloSegundaPersonaSingular.feedback_positivo,
-          id: "EstiloSegundaPersonaSingular",
-          label: "2ª Persona Singular",
-          style: "#fffa8e",
-          nro_errores: 0,
-        },
-      ],
+        Analisis.EstiloPrimeraPersonaSingular,
+        Analisis.EstiloSegundaPersonaSingular
+      ]
     };
   },
   methods: {
-    sendFeedbackModal(feedback) {
-      this.$root.$emit("mensaje_feedback_modal", feedback);
+    emitInfo(feedback) {
+      this.$root.$emit("infoAnalisisEspecificos", feedback);
     },
   },
   mounted() {

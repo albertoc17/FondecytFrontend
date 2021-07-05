@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12">
       <b-tabs content-class="mt-3">
-        <b-tab active title="Gerundios" @click="sendFeedbackModal(fb_gerundios)">
+        <b-tab active title="Gerundios" @click="emitInfo(fb_gerundios)">
           <div v-if="showErrorGerundios" >
             <ErrorHtml/>
           </div>
@@ -28,28 +28,12 @@ export default {
     return {
       showErrorGerundios: false,
       html_gerundios: "",
-      fb_gerundios: [{
-        feedback_negativo: Analisis.LexicoGramaticalGerundiosExcesivo.feedback_negativo,
-        feedback_positivo: Analisis.LexicoGramaticalGerundiosExcesivo.feedback_positivo,
-        id: "LexicoGramaticalGerundiosExcesivo",
-        label: "Gerundios",
-        estilo: "naranjo",
-        style: "#fffa8e",
-        nro_errores : 0
-      }],
-      // fb_repeticionLexica: [{
-      //   feedback_negativo:  Analisis.LexicoGramaticalRepeticionLexica.feedback_negativo,
-      //   feedback_positivo: Analisis.LexicoGramaticalRepeticionLexica.feedback_positivo,
-      //   id: "LexicoGramaticalRepeticionLexica",
-      //   label: "Repetición Léxica",
-      //   style: "#fffa8e",
-      //   nro_errores : 0
-      // }]
+      fb_gerundios: [Analisis.LexicoGramaticalGerundiosExcesivo],
     };
   },
   methods: {
-    sendFeedbackModal(feedback) {
-      this.$root.$emit("mensaje_feedback_modal", feedback);
+    emitInfo(feedback) {
+      this.$root.$emit("infoAnalisisEspecificos", feedback);
     }
   },
   mounted() {

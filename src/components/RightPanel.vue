@@ -1,41 +1,27 @@
 <template>
   <div id="RightPanel">
-    <div v-if="modoInformacion === 'feedback'">
-      <b-tabs v-model="tabIndex" class="mt-3">
+    <!-- cambiar show por chartData cuando se cargue esta variable al cargar el archivo // TO DO -->
+    <div v-if="show" > 
+      <b-tabs v-model="tabIndex" >
         <b-tab title="Retroalimentación" active>
-          <div v-if="show">
-            <Barchart :chartData="chartData" />
+          <Barchart :chartData="chartData" />
+          <div v-if="modoInformacion === 'feedback'"> 
             <Retroalimentacion :feedback="feedback" />
           </div>
           <div v-else>
-            <h6>Cargue un documento por favor</h6>
+            <Estadisticas :estadisticas="estadisticas" />
           </div>
+        </b-tab>
+        <b-tab title="Detalle retroalimentación">
+          <Detalle :detalle="detalle"/>
         </b-tab>
         <b-tab title="Concordancia">
           <TabConcordancia />
-        </b-tab>
-        <b-tab title="Detalle retroalimentación">
-          <Detalle />
         </b-tab>
       </b-tabs>
     </div>
-    <div v-else-if="modoInformacion === 'estadistica'">
-      <b-tabs content-class="mt-3">
-        <b-tab title="Retroalimentación" active>
-          <div v-if="show">
-            <Barchart :chartData="chartData" />
-          </div>
-          <div v-else>
-            <h6>Cargue un documento por favor</h6>
-          </div>
-        </b-tab>
-        <b-tab title="Concordancia">
-          <TabConcordancia />
-        </b-tab>
-        <b-tab title="Detalle retroalimentación">
-          <Detalle />
-        </b-tab>
-      </b-tabs>
+    <div v-else>
+      <p class="text-center">Cargue un documento por favor</p>
     </div>
   </div>
 </template>
@@ -43,7 +29,8 @@
 <script>
 import Barchart from "./Barchart.vue";
 import Retroalimentacion from "./TabRetroalimentacion.vue";
-import Detalle from "./Detalle.vue";
+import Estadisticas from './Estadisticas.vue';
+import Detalle from "./TabDetalle.vue";
 import TabConcordancia from "./TabConcordancia.vue";
 
 
@@ -52,16 +39,18 @@ export default {
   components: {
     Barchart,
     Retroalimentacion,
+    Estadisticas,
     Detalle,
     TabConcordancia
   },
   data() {
     return {
+      show: null,
       tabIndex: 0,
       chartData: null,
       feedback: null,
-      id_analisis: null,
-      show: null,
+      detalle: null,
+      estadisticas: null,
       modoInformacion: "estadistica",
     };
   },
@@ -69,25 +58,10 @@ export default {
     this.$root.$on("mensaje_fileupload", (data) => {
       this.show = data;
     });
-    this.$root.$on("activeTabIndex", () => {
-      this.tabIndex = 2;
-    });
-    this.$root.$on("mensaje_feedback_modal", (feedback) => {
-      this.modoInformacion = "feedback";
-      this.feedback = feedback;
-      //this.chartData.labels = feedback.map((d) => d.label);
-      this.chartData = {
-        labels: feedback.map((d) => d.label),
-        datasets: [
-          {
-            backgroundColor: feedback.map((d) => d.style),
-            data: feedback.map((d) => d.nro_errores),
-            borderWidth: 2,
-          },
-        ],
-      };
-    });
-    this.$root.$on("mensaje_estadistica_modal", (data) => {
+    this.$root.$on("infoAnalisisGeneral", (data, estadisticas) => {      
+      console.log(estadisticas);
+      this.estadisticas = estadisticas;
+      this.tabIndex = 0;
       this.modoInformacion = "estadistica";
       this.chartData = {
         labels: data.map((d) => d.label),
@@ -100,6 +74,25 @@ export default {
         ],
       };
     });
+    this.$root.$on("infoAnalisisEspecificos", (data) => {
+      this.feedback = data;
+      this.tabIndex = 0;
+      this.modoInformacion = "feedback";
+      this.chartData = {
+        labels: data.map((d) => d.label),
+        datasets: [
+          {
+            backgroundColor: data.map((d) => d.style),
+            data: data.map((d) => d.nro_errores),
+            borderWidth: 2,
+          },
+        ],
+      };
+    });
+    this.$root.$on("infoDetalleFeedback", (detalle) => {
+      this.tabIndex = 1;
+      this.detalle = detalle;
+    });
   },
 };
 </script>
@@ -107,13 +100,9 @@ export default {
 <style>
 #RightPanel {
   text-align: justify;
-  padding-top: 10px;
   overflow-y: scroll;
   overflow-x: hidden;
   height: 93vh;
-  padding: 0;
-}
-.resumen {
-  padding-top: 600px;
+  padding-top: 10px;
 }
 </style>

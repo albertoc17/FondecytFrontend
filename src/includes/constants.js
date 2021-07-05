@@ -15,7 +15,9 @@ export const Analisis = {
     feedback_positivo: "¡Felicitaciones! no observamos un uso excesivo de gerundios en tu texto.",
     error: "“Esta experiencia está diseñada para que los alumnos armen circuitos en serie y en paralelo de resistores, aprendiendo cómo medir sus respectivos voltajes y corrientes en cada uno de los elementos, comprobando así las Leyes de Kirchhoff”.",
     correccion: "“Esta experiencia está diseñada para que los alumnos armen circuitos en serie y en paralelo de resistores, aprendan cómo medir sus respectivos voltajes y corrientes en cada uno de los elementos, y comprueben así las Leyes de Kirchhoff”.",
-    comentario: "Una forma de evitar la repetición de los gerundios, es reformular los verbos."
+    comentario: "Una forma de evitar la repetición de los gerundios, es reformular los verbos.",
+    style: "#FBBA63",
+    nro_errores : 0
   },
   FormalOracionesExtensas: {
     label: "Oraciones Extensas",
@@ -25,6 +27,8 @@ export const Analisis = {
     error: "“Toda resistencia tiene un valor nominal y otro real, teniendo en cuenta lo anterior con una tabla de colores se calcula el valor nominal de las dos resistencias dadas, luego en ambos multímetros se coloca la modalidad para medir resistencia, de acuerdo con el procedimiento puntual que se debe realizar con el analógico, primero conectar ambas terminales caimán de los cables, para crear un puente entre las dos entradas del multímetro, posteriormente se debe mover el indicador del instrumento con tal de que indique cero, para esto se utiliza la perilla que se encuentra en las esquina inferior del visor, se recomienda recostar el instrumento en la mesa y mirarlo desde arriba hasta que no se distinga el reflejo del indicador, para así tener una medición más exacta”.",
     correccion: "“Toda resistencia tiene un valor nominal y otro real. Teniendo en cuenta lo anterior, con una tabla de colores se calcula el valor nominal de las dos resistencias dadas y luego, en ambos multímetros, se coloca la modalidad para medir resistencia. De acuerdo con el procedimiento puntual que se debe realizar con el analógico, primero se debe conectar ambas terminales caimán de los cables, para crear un puente entre las dos entradas del multímetro. Posteriormente, se debe mover el indicador del instrumento con tal de que indique cero, para esto se utiliza la perilla que se encuentra en las esquina inferior del visor. Se recomienda recostar el instrumento en la mesa y mirarlo desde arriba hasta que no se distinga el reflejo del indicador, para así tener una medición más exacta”.",
     comentario: "La oración al ser tan extensa dificulta la comprensión, por lo que si tu oración es similar a este ejemplo en cuanto a la estructura, te recomendamos que la organices empleando marcadores discursivos, así como puntos y comas.",
+    style: "#FBBA63",
+    nro_errores: 0
   },
   FormalOracionesBreves: {
     label: "Oraciones Breves",
@@ -33,7 +37,9 @@ export const Analisis = {
     feedback_positivo: "Se identifica un buen texto, puesto que hay una adecuada extensión de oraciones ¡Sigue así!.",
     error: "“Hemos concluido.”",
     comentario: "Si bien, las oraciones breves no se clasifican como error, su presencia si influye en el estilo del escrito, por lo que se sugiere complementar la idea para lograr una extensión apropiada.",
-    correccion: "“A modo de conclusión, se identifica que las curvas características de un resistor lineal invariante y un resistor no lineal son muy similares, no obstante, el resistor lineal invariante toma valores negativos y positivos”."
+    correccion: "“A modo de conclusión, se identifica que las curvas características de un resistor lineal invariante y un resistor no lineal son muy similares, no obstante, el resistor lineal invariante toma valores negativos y positivos”.",
+    style: "#FFF492",
+    nro_errores: 0
   },
   FormalParrafosExtensos: {
     label: "Párrafos Extensos",
@@ -43,6 +49,8 @@ export const Analisis = {
     error: "",
     comentario: "",
     correccion: "",
+    style: "#FBBA63",
+    nro_errores: 0
   },
   FormalParrafosBreves: {
     label: "Párrafos Breves",
@@ -52,6 +60,8 @@ export const Analisis = {
     error: "",
     comentario: "",
     correccion: "",
+    style: "#FFF492",
+    nro_errores: 0
   },
   // FormalErroresOrtográficos: {
   //   label: "Errores Ortográficos",
@@ -71,6 +81,8 @@ export const Analisis = {
     error: "“Para el caso, armar otro circuito en paralelo el procedimiento lo <strong>encontré</strong> un poco más tedioso y <strong>terminé</strong> por <strong>confundirme</strong> en como agregar el multímetro para cada elemento. Luego, con ayuda de tips de la profesora, <strong>pude</strong> saber cuál parte iba con cuál en la protoboard. <strong>Despejando</strong> esa duda, <strong>pude</strong> empezar a calcular los valores de voltaje y corriente en el circuito”.",
     correccion: "“Para el caso, armar otro circuito en paralelo <strong>fue un</strong> procedimiento  un poco más tedioso, <strong>lo que provocó confusión</strong> en cómo agregar el multímetro para cada elemento. Luego, con ayuda de tips de la profesora, <strong>se logró identificar</strong> cuál parte iba con cuál en la protoboard. <strong>Al despejar</strong> esa duda, <strong>fue posible</strong> empezar a calcular los valores de voltaje y corriente en el circuito”.",
     comentario: "",
+    style: "#ffaa8e",
+    nro_errores: 0
   },
   EstiloSegundaPersonaSingular: {
     label: "Segunda Persona Singular",
@@ -80,6 +92,8 @@ export const Analisis = {
     error: "“Este proceso se repetirá con los diferentes circuitos que se analizarán a lo largo de esta experiencia, pero con la diferencia que en cada uno de estos se utilizará un método distinto y las variables a encontrar serán distintas, dependiendo de lo que te pida indagar en el circuito a analizar respectivamente”.",
     correccion: "“Este proceso se repetirá con los diferentes circuitos que se analizarán a lo largo de esta experiencia, pero con la diferencia que en cada uno de estos se utilizará un método distinto y las variables a encontrar serán distintas, dependiendo de lo que se pida indagar en el circuito a analizar respectivamente”.",
     comentario: "En este caso correspondía emplear la forma impersonal “se”, como se presenta a continuación:",
+    style: "#fffa8e",
+    nro_errores: 0
   },
   EstiloVozPasiva: {
     label: "Voz Pasiva",
@@ -88,7 +102,9 @@ export const Analisis = {
     feedback_positivo: "¡Haz realizado un buen trabajo! No identificamos un exceso de voz pasiva en tu texto.",
     error: "“Los datos presentados en la tabla n°1 fueron identificados y presentados mediante el uso de los manuales de cada fabricante los cuales fueron entregados en laboratorio de mediciones”.",
     correccion: "“Se identificaron y presentaron los datos de la tabla n°1 mediante el uso de los manuales de cada fabricante, los cuales se entregaron en el laboratorio de mediciones”.",
-    comentario: ""
+    comentario: "",
+    style: "#ffaa8e",
+    nro_errores: 0
   },
   EstiloConectores: {
     label: "Conectores",
@@ -97,7 +113,9 @@ export const Analisis = {
     feedback_positivo: "Observamos un buen texto, con un adecuado uso de conectores ¡Buen trabajo!.",
     error: "“Previamente al comienzo de la actividad práctica, fueron dados a conocer los riesgos eléctricos y los métodos de protección. Se mencionó que en caso de descarga eléctrica en un compañero, se debe cortar la corriente desde el interruptor o disyuntor (automático), en este caso instalado en el mesón de trabajo. Por el contrario, nunca se debe tocar a la persona que está recibiendo corriente eléctrica”.",
     correccion: "“Previamente al comienzo de la actividad práctica, fueron dados a conocer los riesgos eléctricos y los métodos de protección. Se mencionó que en caso de descarga eléctrica en un compañero, se debe cortar la corriente desde el interruptor o disyuntor (automático), en este caso instalado en el mesón de trabajo. Además, nunca se debe tocar a la persona que está recibiendo corriente eléctrica”.",
-    comentario: "Debido a que las ideas no se contraponen sino que se añade otra complementando la anterior, en lugar de utilizar el conector “Por el contrario”, se recomienda utilizar un conector aditivo como “Además” o “Asimismo”."
+    comentario: "Debido a que las ideas no se contraponen sino que se añade otra complementando la anterior, en lugar de utilizar el conector “Por el contrario”, se recomienda utilizar un conector aditivo como “Además” o “Asimismo”.",
+    style: "#ffaa8e",
+    nro_errores: 0
   },
   DiscursivoComplejidad: {
     label: "Complejidad",
@@ -107,10 +125,10 @@ export const Analisis = {
     error: "placeholder",
     correccion: "placeholder",
     comentario: "placeholder",
+    style: '#ffaa8e',
+    nro_errores: 0
   },
   DiscursivoLecturabilidadDificil: {
-    nro_errores : 0,
-    style: '#ffaa8e',
     label: "Lecturabilidad Difícil",
     info: "placeholder",
     feedback_negativo: "placeholder",
@@ -118,10 +136,10 @@ export const Analisis = {
     error: "placeholder",
     correccion: "placeholder",
     comentario: "placeholder",
+    style: '#FFADAD',
+    nro_errores: 0
   },
   DiscursivoLecturabilidadAlgoDificil: {
-    nro_errores : 0,
-    style: '#ffaa8e',
     label: "Lecturabilidad Algo Difícil",
     info: "placeholder",
     feedback_negativo: "placeholder",
@@ -129,10 +147,10 @@ export const Analisis = {
     error: "placeholder",
     correccion: "placeholder",
     comentario: "placeholder",
+    style: '#FBBA63',
+    nro_errores: 0
   },
   DiscursivoLecturabilidadNormal: {
-    nro_errores : 0,
-    style: '#ffaa8e',
     label: "Lecturabilidad Normal",
     info: "placeholder",
     feedback_negativo: "placeholder",
@@ -140,10 +158,10 @@ export const Analisis = {
     error: "placeholder",
     correccion: "placeholder",
     comentario: "placeholder",
+    style: '#FFF492',
+    nro_errores: 0
   },
   DiscursivoLecturabilidadAlgoFacil: {
-    nro_errores : 0,
-    style: '#ffaa8e',
     label: "Lecturabilidad Algo Fácil",
     info: "placeholder",
     feedback_negativo: "placeholder",
@@ -151,10 +169,10 @@ export const Analisis = {
     error: "placeholder",
     correccion: "placeholder",
     comentario: "placeholder",
+    style: '#A0C4FF',
+    nro_errores: 0
   },
   DiscursivoLecturabilidadFacil: {
-    nro_errores : 0,
-    style: '#ffaa8e',
     label: "Lecturabilidad Fácil",
     info: "placeholder",
     feedback_negativo: "placeholder",
@@ -162,5 +180,7 @@ export const Analisis = {
     error: "placeholder",
     correccion: "placeholder",
     comentario: "placeholder",
+    style: '#CAFFBF',
+    nro_errores: 0
   }
 }

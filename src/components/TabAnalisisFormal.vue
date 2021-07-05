@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12">
       <b-tabs content-class="mt-3">
-        <b-tab title="Largo de Oraciones" active @click="sendFeedbackModal(fb_oraciones)">
+        <b-tab title="Largo de Oraciones" active @click="emitInfo(fb_oraciones)">
           <div v-if="showErrorOraciones" >
             <ErrorHtml/>
           </div>
@@ -10,7 +10,7 @@
             <span v-html="html_oraciones"></span>
           </div>
         </b-tab>
-        <b-tab title="Micropárrafos" @click="sendFeedbackModal(fb_microparrafos)">
+        <b-tab title="Micropárrafos" @click="emitInfo(fb_microparrafos)">
           <div v-if="showErrorMicroParrafos" >
             <ErrorHtml/>
           </div>
@@ -39,47 +39,19 @@ export default {
       html_oraciones: "",
       html_microparrafos: "",
       fb_oraciones: [
-        {
-          feedback_negativo: Analisis.FormalOracionesExtensas.feedback_negativo,
-          feedback_positivo: Analisis.FormalOracionesExtensas.feedback_positivo,
-          id: "FormalOracionesExtensas",
-          label: "Oraciones Extensas",
-          style: '#fbba63',
-          nro_errores: 0
-        },
-        {
-          feedback_negativo: Analisis.FormalOracionesBreves.feedback_negativo,
-          feedback_positivo: Analisis.FormalOracionesBreves.feedback_positivo,
-          id: "FormalOracionesBreves",
-          label: "Oraciones Breves",
-          style: "#fff492",
-          nro_errores: 0
-        }
+        Analisis.FormalOracionesExtensas,
+        Analisis.FormalOracionesBreves
       ],
       fb_microparrafos: [
-        {
-          feedback_negativo: Analisis.FormalParrafosExtensos.feedback_negativo,
-          feedback_positivo: Analisis.FormalParrafosExtensos.feedback_positivo,
-          id: "FormalParrafosExtensos",
-          label: "Párrafos Extensos",
-          style: '#fbba63',
-          nro_errores: 0
-        },
-        {
-          feedback_negativo: Analisis.FormalParrafosBreves.feedback_negativo,
-          feedback_positivo: Analisis.FormalParrafosBreves.feedback_positivo,
-          id: "FormalParrafosBreves",
-          label: "Párrafos Breves",
-          style: "#fff492",
-          nro_errores: 0
-        }
+        Analisis.FormalParrafosExtensos,
+        Analisis.FormalParrafosBreves
       ],
     };
     
   },
   methods:{
-    sendFeedbackModal(feedback){
-      this.$root.$emit("mensaje_feedback_modal", feedback);
+    emitInfo(feedback){
+      this.$root.$emit("infoAnalisisEspecificos", feedback);
     },
   },
   mounted() {

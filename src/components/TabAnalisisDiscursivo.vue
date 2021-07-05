@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12">
       <b-tabs content-class="mt-3">
-        <b-tab title="Complejidad" active @click="sendFeedbackModal(fb_complejidad)">
+        <b-tab title="Complejidad" active @click="emitInfo(fb_complejidad)">
           <div v-if="showErrorComplejidad" >
             <ErrorHtml/>
           </div>
@@ -10,7 +10,7 @@
             <span v-html="html_complejidad"></span>
           </div>
         </b-tab>
-        <b-tab title="Lecturabilidad" @click="sendFeedbackModal(fb_lecturabilidad)">
+        <b-tab title="Lecturabilidad" @click="emitInfo(fb_lecturabilidad)">
           <div v-if="showErrorComplejidad" >
             <ErrorHtml/>
           </div>
@@ -39,14 +39,9 @@ export default {
       html_complejidad: "",
       html_lecturabilidad: "",
       fb_proposito: "",
-      fb_complejidad: [{
-        feedback_negativo: Analisis.DiscursivoComplejidad.feedback_negativo,
-        feedback_positivo: Analisis.DiscursivoComplejidad.feedback_positivo,
-        id: "DiscursivoComplejidad",
-        label: "Complejidad",
-        style: '#ffaa8e',
-        nro_errores : 0
-      }],
+      fb_complejidad: [
+        Analisis.DiscursivoComplejidad
+      ],
       fb_lecturabilidad: [
         Analisis.DiscursivoLecturabilidadDificil,
         Analisis.DiscursivoLecturabilidadAlgoDificil,
@@ -57,13 +52,12 @@ export default {
     };
   },
   methods: {
-    sendFeedbackModal(analisis) {
-      this.$root.$emit("mensaje_feedback_modal", analisis);
+    emitInfo(analisis) {
+      this.$root.$emit("infoAnalisisEspecificos", analisis);
     },
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
-      console.log(arg.lecturabilidad_parrafo.html_response);
       if (arg.sentence_complexity != "") {
         this.html_complejidad = arg.sentence_complexity.html_response;
         this.fb_complejidad[0].nro_errores = arg.sentence_complexity.flag.DiscursivoComplejidad;

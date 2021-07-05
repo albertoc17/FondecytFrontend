@@ -59,7 +59,7 @@ export default {
           // "http://127.0.0.1:8000/api/FileUploadView",
           formData
         );
-        // this.sendFeedbackModal(this.data_general);
+        // this.emitInfo(this.data_general);
         this.sendResToComponents(this.res.data);
         this.makeToast('Documento analizado correctamente.', 'success');
       } catch (err) {
@@ -68,8 +68,8 @@ export default {
       }
       loader.hide();
     },
-    // sendFeedbackModal(data) {
-    //   this.$root.$emit("mensaje_estadistica_modal", data);
+    // emitInfo(data) {
+    //   this.$root.$emit("infoAnalisisGeneral", data);
     // },
     sendResToComponents(data) {
       // var validateData = this.validateData(data);
