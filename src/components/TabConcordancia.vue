@@ -22,7 +22,7 @@
             v-model="modelo"
           />
         </div>
-        <div class="col-md-1" style="padding-top: 20px">
+        <div class="col-md-2" style="padding-top: 20px">
           <FormulateInput
             type="submit"
             :disabled="isLoading"
@@ -31,8 +31,11 @@
         </div>
       </div>
     </FormulateForm>
-    <div>
-      <span v-html="resConcordancia"></span>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <span v-html="resConcordancia"></span>
+      </div>
     </div>
   </div>
 </template>

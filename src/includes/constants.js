@@ -11,7 +11,7 @@ export const Analisis = {
   LexicoGramaticalGerundiosExcesivo: {
     label: "Gerundios Excesivos",
     info: "Recuerda que el gerundio es una forma no personal del verbo, es decir, que no se encuentra conjugada. No se recomienda utilizar gerundios con tanta frecuencia, por lo que  intenta utilizar oraciones con verbos conjugados, por ejemplo: “Un circuito RLC consta de dos elementos de almacenamiento de energía: el inductor y el capacitor. A estos circuitos se les llama circuitos de segundo orden, porque sus respuestas se describen con ecuaciones diferenciales de segundo orden”.",
-    feedback_negativo: "¡Tu párrafo tiene muchos gerundios! Evita usarlos con mucha frecuencia para que no dificulte la comprensión de tu texto.",
+    feedback_negativo: "¡Tu párrafo tiene muchos gerundios! Evita usarlos con frecuencia para que no dificulte la comprensión de tu texto. Para reformular la oración reemplaza el gerundio por un verbo conjugado y añade un conector.",
     feedback_positivo: "¡Felicitaciones! no observamos un uso excesivo de gerundios en tu texto.",
     error: "“Esta experiencia está diseñada para que los alumnos armen circuitos en serie y en paralelo de resistores, aprendiendo cómo medir sus respectivos voltajes y corrientes en cada uno de los elementos, comprobando así las Leyes de Kirchhoff”.",
     correccion: "“Esta experiencia está diseñada para que los alumnos armen circuitos en serie y en paralelo de resistores, aprendan cómo medir sus respectivos voltajes y corrientes en cada uno de los elementos, y comprueben así las Leyes de Kirchhoff”.",
@@ -131,8 +131,8 @@ export const Analisis = {
   DiscursivoLecturabilidadDificil: {
     label: "Lecturabilidad Difícil",
     info: "placeholder",
-    feedback_negativo: "placeholder",
-    feedback_positivo: "placeholder",
+    feedback_negativo: "¡Excelente!, el grado de lecturabilidad de tu texto se ajusta totalmente al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 0 y 40 puntos, lo que significa que el largo de las palabras y frases de tu texto es ideal.",
+    feedback_positivo: "No se encontraron párrafos con este nivel  de lacturabilidad en tu texto.",
     error: "placeholder",
     correccion: "placeholder",
     comentario: "placeholder",
@@ -142,8 +142,8 @@ export const Analisis = {
   DiscursivoLecturabilidadAlgoDificil: {
     label: "Lecturabilidad Algo Difícil",
     info: "placeholder",
-    feedback_negativo: "placeholder",
-    feedback_positivo: "placeholder",
+    feedback_negativo: "¡Muy bien!, el grado de lecturabilidad de tu texto se ajusta bastante al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 40 y 55 puntos, lo que significa que el largo de las palabras y frases de tu texto es adecuado.",
+    feedback_positivo: "No se encontraron párrafos con este nivel  de lacturabilidad en tu texto.",
     error: "placeholder",
     correccion: "placeholder",
     comentario: "placeholder",
@@ -153,8 +153,8 @@ export const Analisis = {
   DiscursivoLecturabilidadNormal: {
     label: "Lecturabilidad Normal",
     info: "placeholder",
-    feedback_negativo: "placeholder",
-    feedback_positivo: "placeholder",
+    feedback_negativo: "¡Bien!, el grado de lecturabilidad de tu texto se ajusta suficientemente al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 55 y 65 puntos, lo que significa que el largo de las palabras y frases de tu texto es aceptable.",
+    feedback_positivo: "No se encontraron párrafos con este nivel  de lacturabilidad en tu texto.",
     error: "placeholder",
     correccion: "placeholder",
     comentario: "placeholder",
@@ -164,8 +164,8 @@ export const Analisis = {
   DiscursivoLecturabilidadAlgoFacil: {
     label: "Lecturabilidad Algo Fácil",
     info: "placeholder",
-    feedback_negativo: "placeholder",
-    feedback_positivo: "placeholder",
+    feedback_negativo: "El grado de lecturabilidad de tu texto no se ajusta al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 65 y 80 puntos, lo que significa que el largo de las palabras y frases de tu texto no es recomendable.",
+    feedback_positivo: "No se encontraron párrafos con este nivel  de lacturabilidad en tu texto.",
     error: "placeholder",
     correccion: "placeholder",
     comentario: "placeholder",
@@ -175,8 +175,8 @@ export const Analisis = {
   DiscursivoLecturabilidadFacil: {
     label: "Lecturabilidad Fácil",
     info: "placeholder",
-    feedback_negativo: "placeholder",
-    feedback_positivo: "placeholder",
+    feedback_negativo: "El grado de lecturabilidad de tu texto no se ajusta al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 80 y 100 puntos, lo que significa que el largo de las palabras y frases de tu texto es insuficiente.",
+    feedback_positivo: "No se encontraron párrafos con este nivel  de lacturabilidad en tu texto.",
     error: "placeholder",
     correccion: "placeholder",
     comentario: "placeholder",

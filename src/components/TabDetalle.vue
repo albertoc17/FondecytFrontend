@@ -3,34 +3,45 @@
     <h3>{{ detalle.label }} </h3>
     <div class="row">
       <div class="col-md-12">
-        <span v-html="detalle.feedback_negativo"></span> <span v-html="detalle.info"></span>
+        <span v-html="detalle.feedback_negativo"></span>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
+        <span v-html="detalle.info"></span>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-12">
         <p> A continuación te dejamos un ejemplo de como se evidencia este problema en la escritura de un estudiante: </p>
-        <div v-if=" detalle.label != 'Párrafos Extensos' && detalle.label != 'Párrafos Breves'">
-          <div class="row">
-            <div class="col-md-12">
-              <b-alert variant="danger" class="text-center" show>
-                <span v-html="detalle.error"></span>
-              </b-alert>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <span v-html="detalle.comentario"></span>
-            </div>
-          </div>
-          <br>
-          <div class="text-center">
-            <b-button @click="showEjemploCorregido()" variant="success" >Mostrar ejemplo corregido</b-button>
-          </div>
+      </div>
+    </div>
+    <div v-if=" detalle.label != 'Párrafos Extensos' && detalle.label != 'Párrafos Breves'">
+      <div class="row">
+        <div class="col-md-12">
+          <b-alert variant="danger" class="text-center" show>
+            <span v-html="detalle.error"></span>
+          </b-alert>
         </div>
-        <br>
-        <div v-if="!isHidden" class="row">
-          <div class="col-md-12">
-            <b-alert variant="success" class="text-center" show>
-              <span v-html="detalle.correccion"></span>
-            </b-alert>
-          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <span v-html="detalle.comentario"></span>
         </div>
+      </div>
+      <br>
+      <div class="text-center">
+        <b-button @click="showEjemploCorregido()" variant="success" >Mostrar ejemplo corregido</b-button>
+      </div>
+    </div>
+    <br>
+    <div v-if="!isHidden" class="row">
+      <div class="col-md-12">
+        <b-alert variant="success" class="text-center" show>
+          <span v-html="detalle.correccion"></span>
+        </b-alert>
       </div>
     </div>
     <h3>Cápsulas relacionadas</h3>
