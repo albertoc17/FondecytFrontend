@@ -30,7 +30,7 @@
               <b-tab title="Discursivo" @click="emitInfo(data_discursivo)">
                 <TabAnalisisDiscursivo />
               </b-tab>
-               <b-tab title="Proposito" @click="emitInfo(data_discursivo)">
+               <b-tab title="Propósito" @click="emitInfo(data_discursivo)">
                 <TabAnalisisProposito />
               </b-tab>
             </b-tabs>
