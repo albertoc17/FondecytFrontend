@@ -45,8 +45,7 @@ export default {
       this.html = html;
       this.text = text;
     },
-
-    exportHTML(){
+    exportHTML() {
       var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
       var postHtml = "</body></html>";
       var html2doc = preHtml + this.html + postHtml;
@@ -58,12 +57,10 @@ export default {
       fileDownload.click();
       document.body.removeChild(fileDownload);
     },
-
     sendResToComponents(data) {
-      // var validateData = this.validateData(data);
       this.$root.$emit("mensaje_fileupload", data);
     },
-    async sendTextEdited(){
+    async sendTextEdited() {
       let loader = this.$loading.show({ isFullPage: true, canCancel: false });
       try {
         const formData = new FormData();
@@ -99,14 +96,12 @@ export default {
   },
 };
 </script>
-<style  >
 
-  .buttonContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 2%;
-  }
-
-
+<style>
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 2%;
+}
 </style>

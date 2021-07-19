@@ -7,11 +7,9 @@
       :style="itemStyle(fb)"
     >
       <div class="col-md-12">
-        <div class="title">
-          <h4><span class="circle"> {{fb.nro_errores}}</span>{{ fb.label }}</h4>
-          <p v-if="fb.nro_errores > 0"> {{ fb.feedback_negativo }} </p>
-          <p v-else> {{ fb.feedback_positivo }} </p>
-        </div>
+        <h4><span class="circle"> {{fb.nro_errores}}</span>{{ fb.label }}</h4>
+        <p v-if="fb.nro_errores > 0"> {{ fb.feedback_negativo }} </p>
+        <p v-else> {{ fb.feedback_positivo }} </p>
         <div class="text-center">
           <b-button pill size="sm" class="mb-2" variant="dark" @click="verDetalle(fb)">
             <b-icon icon="tools"></b-icon> Ver detalle
@@ -21,7 +19,6 @@
     </div>
   </div>
 </template>
-
 
 <script>
 export default {
@@ -51,11 +48,12 @@ export default {
   border-bottom: 1px solid; border-top: 1px solid;
   padding-top: 2%;
 }
-.title {
-  margin: 0 3%;
-}
+/* .title {
+  margin: 1 3%;
+} */
 .circle {
-  background: black;
+  background: #343a40;
+  border-color: #343a40;
   border-radius: 50%;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
