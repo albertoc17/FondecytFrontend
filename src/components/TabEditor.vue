@@ -25,6 +25,7 @@ import axios from "axios";
 
 export default {
   name: "TabEditor",
+  props: ['proposito'],
   components: {
     quillEditor,
   },
@@ -68,11 +69,22 @@ export default {
         const formData = new FormData();
         formData.append("html", this.html);
         formData.append("text", this.text);
-        let res = await axios.post(
-          "http://www.redilegra.com/backend/api/PostTextRedilegra",
-          //"http://127.0.0.1:8000/api/PostTextRedilegra", // only for dev env.
-          formData
-        );
+        let res;
+        if (this.proposito !== undefined) {
+          formData.append("proposito", this.proposito);
+          res = await axios.post(
+            "http://www.redilegra.com/backend/api/PostTextRedilegra",
+            //"http://127.0.0.1:8000/api/PostTextRedilegra", // only for dev env.
+            formData
+          );
+        }
+        else {
+          res = await axios.post(
+            "http://www.redilegra.com/backend/api/PostTextRedilegra",
+            //"http://127.0.0.1:8000/api/PostTextRedilegra", // only for dev env.
+            formData
+          );
+        }
         this.sendResToComponents(res.data);
       } catch (err) {
         console.warn(err);

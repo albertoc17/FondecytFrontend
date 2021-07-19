@@ -30,6 +30,9 @@
               <b-tab title="Discursivo" @click="emitInfo(data_discursivo)">
                 <TabAnalisisDiscursivo />
               </b-tab>
+               <b-tab title="Proposito" @click="emitInfo(data_discursivo)">
+                <TabAnalisisProposito />
+              </b-tab>
             </b-tabs>
           </div>
         </div>
@@ -52,6 +55,7 @@ import TabAnalisisLexicoGramatical from "@/components/TabAnalisisLexicoGramatica
 import TabAnalisisFormal from "@/components/TabAnalisisFormal.vue";
 import TabAnalisisEstilo from "@/components/TabAnalisisEstilo.vue";
 import TabAnalisisDiscursivo from "@/components/TabAnalisisDiscursivo.vue";
+import TabAnalisisProposito from "@/components/TabAnalisisProposito.vue";
 import RightPanel from "@/components/RightPanel.vue";
 import FileUpload from "@/components/FileUpload.vue";
 
@@ -68,6 +72,7 @@ export default {
     TabAnalisisFormal,
     TabAnalisisEstilo,
     TabAnalisisDiscursivo,
+    TabAnalisisProposito,
     RightPanel,
     FileUpload,
     Navbar,
