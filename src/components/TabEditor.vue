@@ -1,7 +1,6 @@
 <template>
   <div>
     <div  v-if="proposito!=5 && proposito!=4 && proposito!=3 && proposito!=2 && proposito!=1" class="buttonContainer">
-      {{proposito}}
       <div>
         <button class="btn btn-success" @click="sendTextEdited">Enviar Texto</button>
       </div>

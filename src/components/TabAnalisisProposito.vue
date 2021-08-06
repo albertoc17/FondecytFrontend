@@ -7,7 +7,6 @@
             <ErrorHtml />
           </div>
           <div v-else>
-            <div v-html="fb_resumen"></div>
             <TabEditor proposito="1" />
           </div>
         </b-tab>
@@ -16,7 +15,6 @@
             <ErrorHtml />
           </div>
           <div v-else>
-            <div v-html="fb_introduccion"></div>
             <TabEditor proposito="2" />
           </div>
         </b-tab>
@@ -25,7 +23,6 @@
             <ErrorHtml />
           </div>
           <div v-else>
-            <div v-html="fb_desarrollo"></div>
             <TabEditor proposito="3" />
           </div>
         </b-tab>
@@ -34,7 +31,6 @@
             <ErrorHtml />
           </div>
           <div v-else>
-            <div v-html="fb_resultados"></div>
             <TabEditor proposito="4"/>
           </div>
         </b-tab>
@@ -43,7 +39,6 @@
             <ErrorHtml />
           </div>
           <div v-else>
-            <div v-html="fb_conclusion"></div>
             <TabEditor proposito="5"/>
           </div>
         </b-tab>
