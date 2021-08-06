@@ -182,5 +182,60 @@ export const Analisis = {
     comentario: "placeholder",
     style: '#CAFFBF',
     nro_errores: 0
+  },
+  PropositoResumen: {
+    label: "Resumen",
+    info: "placeholder",
+    feedback_negativo: "placeholder",
+    feedback_positivo: "placeholder",
+    error: "placeholder",
+    correccion: "placeholder",
+    comentario: "placeholder",
+    style: '#CAFFBF',
+    nro_errores: 0
+  },
+  PropositoIntroduccion: {
+    label: "Introducción",
+    info: "placeholder",
+    feedback_negativo: "placeholder",
+    feedback_positivo: "placeholder",
+    error: "placeholder",
+    correccion: "placeholder",
+    comentario: "placeholder",
+    style: '#CAFFBF',
+    nro_errores: 0
+  },
+  PropositoDesarrollo: {
+    label: "Desarrollo",
+    info: "placeholder",
+    feedback_negativo: "placeholder",
+    feedback_positivo: "placeholder",
+    error: "placeholder",
+    correccion: "placeholder",
+    comentario: "placeholder",
+    style: '#CAFFBF',
+    nro_errores: 0
+  },
+  PropositoResultados: {
+    label: "Resultados",
+    info: "placeholder",
+    feedback_negativo: "placeholder",
+    feedback_positivo: "placeholder",
+    error: "placeholder",
+    correccion: "placeholder",
+    comentario: "placeholder",
+    style: '#CAFFBF',
+    nro_errores: 0
+  },
+  PropositoConclusion: {
+    label: "Conclusión",
+    info: "placeholder",
+    feedback_negativo: "placeholder",
+    feedback_positivo: "placeholder",
+    error: "placeholder",
+    correccion: "placeholder",
+    comentario: "placeholder",
+    style: '#CAFFBF',
+    nro_errores: 0
   }
 }

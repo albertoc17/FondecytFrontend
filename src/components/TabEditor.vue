@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="buttonContainer">
+    <div  v-if="proposito!=5 && proposito!=4 && proposito!=3 && proposito!=2 && proposito!=1" class="buttonContainer">
+      {{proposito}}
       <div>
         <button class="btn btn-success" @click="sendTextEdited">Enviar Texto</button>
       </div>
@@ -60,6 +61,9 @@ export default {
     sendResToComponents(data) {
       this.$root.$emit("mensaje_fileupload", data);
     },
+    sendResToComponents2(data, proposito) {
+      this.$root.$emit("mensaje_fileupload2", data, proposito);
+    },
     async sendTextEdited() {
       let loader = this.$loading.show({ isFullPage: true, canCancel: false });
       try {
@@ -68,12 +72,13 @@ export default {
         formData.append("text", this.text);
         let res;
         if (this.proposito !== undefined) {
-          formData.append("proposito", this.proposito);
+          formData.append("macromovida", this.proposito);
           res = await axios.post(
             "http://www.redilegra.com/backend/api/PostTextRedilegra",
-            //"http://127.0.0.1:8000/api/PostTextRedilegra", // only for dev env.
+            // "http://127.0.0.1:8000/api/PostTextRedilegra", // only for dev env.
             formData
           );
+          this.sendResToComponents2(res.data, this.proposito);
         }
         else {
           res = await axios.post(
@@ -81,8 +86,8 @@ export default {
             //"http://127.0.0.1:8000/api/PostTextRedilegra", // only for dev env.
             formData
           );
+          this.sendResToComponents(res.data);
         }
-        this.sendResToComponents(res.data);
       } catch (err) {
         console.warn(err);
       }
@@ -91,7 +96,9 @@ export default {
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
-      this.contentHtml = arg.html;
+      if (!this.proposito) {
+        this.contentHtml = arg.html;
+      }
     });
   },
 };

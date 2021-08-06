@@ -59,7 +59,7 @@ export default {
       this.show = data;
     });
     this.$root.$on("infoAnalisisGeneral", (data, estadisticas) => {      
-      console.log(estadisticas);
+      console.log("estadisticas: ", estadisticas);
       this.estadisticas = estadisticas;
       this.tabIndex = 0;
       this.modoInformacion = "estadistica";
