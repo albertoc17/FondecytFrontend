@@ -73,6 +73,7 @@ export default {
     // },
     sendResToComponents(data) {
       // var validateData = this.validateData(data);
+      this.$root.$emit("mensaje_showRightPanel");
       this.$root.$emit("mensaje_fileupload", data);
     },
     makeToast(message, variant) {

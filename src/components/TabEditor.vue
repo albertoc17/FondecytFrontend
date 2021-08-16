@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div  v-if="proposito!=5 && proposito!=4 && proposito!=3 && proposito!=2 && proposito!=1" class="buttonContainer">
+    <div class="buttonContainer">
       <div>
-        <button class="btn btn-success" @click="sendTextEdited">Enviar Texto</button>
+        <button class="btn btn-success" @click="sendTextEdited()">Enviar Texto</button>
       </div>
-      <div>
-        <button class="btn btn-primary" @click="exportHTML" >Descargar DOC</button>
+      <div v-if="proposito!=5 && proposito!=4 && proposito!=3 && proposito!=2 && proposito!=1">
+        <button class="btn btn-primary" @click="exportHTML()" >Descargar DOC</button>
       </div>
     </div>
     <quill-editor
@@ -58,9 +58,12 @@ export default {
       document.body.removeChild(fileDownload);
     },
     sendResToComponents(data) {
+      console.log(data);
+      this.$root.$emit("mensaje_showRightPanel");
       this.$root.$emit("mensaje_fileupload", data);
     },
     sendResToComponents2(data, proposito) {
+      this.$root.$emit("mensaje_showRightPanel");
       this.$root.$emit("mensaje_fileupload2", data, proposito);
     },
     async sendTextEdited() {
@@ -69,20 +72,21 @@ export default {
         const formData = new FormData();
         formData.append("html", this.html);
         formData.append("text", this.text);
-        let res;
+        let res = null;
         if (this.proposito !== undefined) {
           formData.append("macromovida", this.proposito);
           res = await axios.post(
-            "http://www.redilegra.com/backend/api/PostTextRedilegra",
-            // "http://127.0.0.1:8000/api/PostTextRedilegra", // only for dev env.
+            // "http://www.redilegra.com/backend/api/PostTextRedilegra",
+            "http://127.0.0.1:8000/api/Proposito", // only for dev env.
             formData
           );
+          this.contentHtml = res.data.proposito.html_response;
           this.sendResToComponents2(res.data, this.proposito);
         }
         else {
           res = await axios.post(
-            "http://www.redilegra.com/backend/api/PostTextRedilegra",
-            //"http://127.0.0.1:8000/api/PostTextRedilegra", // only for dev env.
+            // "http://www.redilegra.com/backend/api/PostTextRedilegra",
+            "http://127.0.0.1:8000/api/SendText", // only for dev env.
             formData
           );
           this.sendResToComponents(res.data);
@@ -105,9 +109,11 @@ export default {
 
 <style>
 .buttonContainer {
+  justify-content: space-around;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  margin: 2%;
+  margin: 2% auto;
+  width: 25%;
+  min-width: 280px;
 }
 </style>

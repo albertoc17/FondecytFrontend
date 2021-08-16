@@ -30,7 +30,7 @@
               <b-tab title="Discursivo" @click="emitInfo(data_discursivo)">
                 <TabAnalisisDiscursivo />
               </b-tab>
-               <b-tab title="Propósito" @click="emitInfo(data_discursivo)">
+               <b-tab title="Propósito">
                 <TabAnalisisProposito />
               </b-tab>
             </b-tabs>
@@ -58,7 +58,6 @@ import TabAnalisisDiscursivo from "@/components/TabAnalisisDiscursivo.vue";
 import TabAnalisisProposito from "@/components/TabAnalisisProposito.vue";
 import RightPanel from "@/components/RightPanel.vue";
 import FileUpload from "@/components/FileUpload.vue";
-
 import { Splitpanes, Pane } from "splitpanes";
 import "splitpanes/dist/splitpanes.css";
 
@@ -104,13 +103,19 @@ export default {
       data_discursivo: [
         { label: "Complejidad", count: 0 },
         { label: "Lecturabilidad", count: 0 },
-        // { label: "Proposito", count: 0 },
+      ],
+      data_proposito: [
+        { label: "Resumen", count: 0 },
+        { label: "Introducción", count: 0 },
+        { label: "Desarrollo", count: 0 },
+        { label: "Resultados", count: 0 },
+        { label: "Conclusión", count: 0 },
       ],
     };
   },
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
-      console.table(arg.statistics);
+      //console.table(arg.statistics);
       this.estadisticas = arg.statistics;
       this.data_lexicoGramatical[0].count = arg.gerunds.flag.LexicoGramaticalGerundiosExcesivo;
       this.data_formal[0].count           = arg.oraciones.flag.FormalOracionesExtensas;

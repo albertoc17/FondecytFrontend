@@ -191,7 +191,7 @@ export const Analisis = {
     error: "placeholder",
     correccion: "placeholder",
     comentario: "placeholder",
-    style: '#CAFFBF',
+    style: '#ffaa8e',
     nro_errores: 0
   },
   PropositoIntroduccion: {
@@ -202,7 +202,7 @@ export const Analisis = {
     error: "placeholder",
     correccion: "placeholder",
     comentario: "placeholder",
-    style: '#CAFFBF',
+    style: '#ffaa8e',
     nro_errores: 0
   },
   PropositoDesarrollo: {
@@ -213,7 +213,7 @@ export const Analisis = {
     error: "placeholder",
     correccion: "placeholder",
     comentario: "placeholder",
-    style: '#CAFFBF',
+    style: '#ffaa8e',
     nro_errores: 0
   },
   PropositoResultados: {
@@ -224,7 +224,7 @@ export const Analisis = {
     error: "placeholder",
     correccion: "placeholder",
     comentario: "placeholder",
-    style: '#CAFFBF',
+    style: '#ffaa8e',
     nro_errores: 0
   },
   PropositoConclusion: {
@@ -235,7 +235,7 @@ export const Analisis = {
     error: "placeholder",
     correccion: "placeholder",
     comentario: "placeholder",
-    style: '#CAFFBF',
+    style: '#ffaa8e',
     nro_errores: 0
   }
 }

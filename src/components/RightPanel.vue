@@ -4,7 +4,7 @@
     <div v-if="show" > 
       <b-tabs v-model="tabIndex" >
         <b-tab title="Retroalimentación" active>
-          <Barchart :chartData="chartData" />
+          <Barchart v-if="chartData" :chartData="chartData" />
           <div v-if="modoInformacion === 'feedback'"> 
             <Retroalimentacion :feedback="feedback" />
           </div>
@@ -45,7 +45,7 @@ export default {
   },
   data() {
     return {
-      show: null,
+      show: false,
       tabIndex: 0,
       chartData: null,
       feedback: null,
@@ -55,11 +55,10 @@ export default {
     };
   },
   mounted() {
-    this.$root.$on("mensaje_fileupload", (data) => {
-      this.show = data;
+    this.$root.$on("mensaje_showRightPanel", () => {
+      this.show = true;
     });
-    this.$root.$on("infoAnalisisGeneral", (data, estadisticas) => {      
-      console.log("estadisticas: ", estadisticas);
+    this.$root.$on("infoAnalisisGeneral", (data, estadisticas) => {
       this.estadisticas = estadisticas;
       this.tabIndex = 0;
       this.modoInformacion = "estadistica";
