@@ -76,8 +76,8 @@ export default {
         if (this.proposito !== undefined) {
           formData.append("macromovida", this.proposito);
           res = await axios.post(
-            // "http://www.redilegra.com/backend/api/PostTextRedilegra",
-            "http://127.0.0.1:8000/api/Proposito", // only for dev env.
+            "http://www.redilegra.com/backend/api/Proposito",
+            // "http://127.0.0.1:8000/api/Proposito", // only for dev env.
             formData
           );
           this.contentHtml = res.data.proposito.html_response;
@@ -85,8 +85,8 @@ export default {
         }
         else {
           res = await axios.post(
-            // "http://www.redilegra.com/backend/api/PostTextRedilegra",
-            "http://127.0.0.1:8000/api/SendText", // only for dev env.
+            "http://www.redilegra.com/backend/api/SendText",
+            // "http://127.0.0.1:8000/api/SendText", // only for dev env.
             formData
           );
           this.sendResToComponents(res.data);
