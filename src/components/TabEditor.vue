@@ -5,7 +5,7 @@
         <button class="btn btn-success" @click="sendTextEdited()">Enviar texto</button>
       </div>
       <div v-if="proposito!=5 && proposito!=4 && proposito!=3 && proposito!=2 && proposito!=1">
-        <button class="btn btn-primary" @click="exportHTML()" >Descargar archivo</button>
+        <button class="btn btn-primary" @click="exportHTML()">Descargar archivo</button>
       </div>
     </div>
     <quill-editor

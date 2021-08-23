@@ -8,7 +8,8 @@
           </div>
           <div v-else>
             <!-- <span v-html="html_oraciones"></span> -->
-            <TabEditor :html_analisis="html_oraciones"/>
+            <!-- <TabEditor :html_analisis="html_oraciones"/> -->
+            <span v-html="html_oraciones"></span>
           </div>
         </b-tab>
         <b-tab title="Micropárrafos" @click="emitInfo(fb_microparrafos)">
@@ -27,13 +28,13 @@
 <script>
 import { Analisis } from "@/includes/constants.js";
 import ErrorHtml from "./ErrorHtml.vue";
-import TabEditor from "./TabEditor.vue";
+// import TabEditor from "./TabEditor.vue";
 
 export default {
   name: "TabAnalisisFormal",
   components: {
    ErrorHtml,
-   TabEditor
+  //  TabEditor
   },
   data() {
     return {
