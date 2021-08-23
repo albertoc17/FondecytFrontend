@@ -4,12 +4,12 @@
     <div v-if="show" > 
       <b-tabs v-model="tabIndex" >
         <b-tab title="Retroalimentación" active>
-          <Barchart v-if="chartData" :chartData="chartData" />
-          <div v-if="modoInformacion === 'feedback'"> 
-            <Retroalimentacion :feedback="feedback" />
-          </div>
-          <div v-else>
+          <div v-if="modoInformacion === 'estadistica'"> 
+            <Barchart v-if="chartData" :chartData="chartData" />
             <Estadisticas :estadisticas="estadisticas" />
+          </div>
+          <div v-else-if="modoInformacion === 'feedback'"> 
+            <Retroalimentacion :feedback="feedback" />
           </div>
         </b-tab>
         <b-tab title="Detalle retroalimentación">

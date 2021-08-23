@@ -2,10 +2,10 @@
   <div>
     <div class="buttonContainer">
       <div>
-        <button class="btn btn-success" @click="sendTextEdited()">Enviar Texto</button>
+        <button class="btn btn-success" @click="sendTextEdited()">Enviar texto</button>
       </div>
       <div v-if="proposito!=5 && proposito!=4 && proposito!=3 && proposito!=2 && proposito!=1">
-        <button class="btn btn-primary" @click="exportHTML()" >Descargar DOC</button>
+        <button class="btn btn-primary" @click="exportHTML()" >Descargar archivo</button>
       </div>
     </div>
     <quill-editor
@@ -25,7 +25,7 @@ import axios from "axios";
 
 export default {
   name: "TabEditor",
-  props: ['proposito'],
+  props: ['proposito', 'html_analisis'],
   components: {
     quillEditor,
   },
@@ -34,8 +34,9 @@ export default {
       editorOptions: {
         readOnly: false,
         theme: "snow",
+        placeholder: 'Inserte el texto aquí...',
       },
-      contentHtml: "Inserte texto aquí...",
+      contentHtml: this.html_analisis,
       html: '',
       text: '',
     };
@@ -70,6 +71,7 @@ export default {
       let loader = this.$loading.show({ isFullPage: true, canCancel: false });
       try {
         const formData = new FormData();
+        this.html = this.html.replace(/<\/?span[^>]*>/g, "");
         formData.append("html", this.html);
         formData.append("text", this.text);
         let res = null;
@@ -89,6 +91,7 @@ export default {
             // "http://127.0.0.1:8000/api/SendText", // only for dev env.
             formData
           );
+          this.contentHtml = res.data.proposito.html_response;
           this.sendResToComponents(res.data);
         }
       } catch (err) {

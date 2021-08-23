@@ -8,11 +8,11 @@
     >
       <div class="col-md-12">
         <h4><span class="circle"> {{fb.nro_errores}}</span>{{ fb.label }}</h4>
-        <p v-if="fb.nro_errores > 0"> {{ fb.feedback_negativo }} </p>
-        <p v-else> {{ fb.feedback_positivo }} </p>
+        <p v-if="fb.nro_errores > 0" class="mb-2"> {{ fb.feedback_negativo }} </p>
+        <p v-else                    class="mb-2"> {{ fb.feedback_positivo }} </p>
         <div class="text-center">
           <b-button pill size="sm" class="mb-2" variant="dark" @click="verDetalle(fb)">
-            <b-icon icon="tools"></b-icon> Ver detalle
+            Ver Más <b-icon icon="plus-circle"></b-icon>
           </b-button>
         </div>
       </div>
@@ -48,9 +48,6 @@ export default {
   border-bottom: 1px solid; border-top: 1px solid;
   padding-top: 2%;
 }
-/* .title {
-  margin: 1 3%;
-} */
 .circle {
   background: #343a40;
   border-color: #343a40;
