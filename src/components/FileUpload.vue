@@ -10,6 +10,7 @@
             :state="Boolean(file)"
             placeholder="Seleccione el documento... "
             drop-placeholder="Arrastre el archivo..."
+            accept=".doc, .docx, .txt"
           ></b-form-file>
         </div>
         <div class="col-md-3" style="margin: 0px; padding: 0px">
@@ -52,21 +53,27 @@ export default {
     async onSubmit() {
       const formData = new FormData();
       formData.append("file", this.file);
+      console.log(this.file.name);
+      let extension = this.file.name.split('.')[1];
       let loader = this.$loading.show({ isFullPage: true, canCancel: false });
       try {
+        if (!(['docx', 'doc', 'txt'].includes(extension))){
+          throw new Error('Archivo no soportado');
+        }
         this.res = await axios.post(
           //"http://www.redilegra.com/backend/api/FileUploadView",
            "http://127.0.0.1:8000/api/FileUploadView",
           formData
         );
         // this.emitInfo(this.data_general);
+        loader.hide();
         this.sendResToComponents(this.res.data);
         this.makeToast('Documento analizado correctamente.', 'success');
       } catch (err) {
+        loader.hide();
         console.warn(err);
         this.makeToast('Error: '+err, 'danger');
       }
-      loader.hide();
     },
     // emitInfo(data) {
     //   this.$root.$emit("infoAnalisisGeneral", data);
