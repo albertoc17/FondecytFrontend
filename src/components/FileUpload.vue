@@ -54,8 +54,8 @@ export default {
           throw new Error('Archivo no soportado, utilice documentos de extensión .docx o .txt');
         }
         let res = await axios.post(
-          // "http://www.redilegra.com/backend/api/FileUploadView",
-           "http://127.0.0.1:8000/api/FileUploadView",
+          "http://www.redilegra.com/backend/api/FileUploadView",
+           //"http://127.0.0.1:8000/api/FileUploadView",
           formData
         );
         // this.emitInfo(this.data_general);
