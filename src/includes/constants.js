@@ -8,7 +8,8 @@ export const Analisis = {
   //   error: "A continuación, te dejaremos un ejemplo de cómo se evidencia este problema en la escritura de un estudiante: 'Obtenido todo lo anteriormente nombrado se procederá a obtener los errores'.",
   //   correccion: "“A partir de todo lo anteriormente nombrado, se procederá a obtener los errores”.",
   // },
-  LexicoGramaticalGerundiosExcesivo: {
+}
+export const LexicoGramaticalGerundiosExcesivo = {
     label: "Gerundios Excesivos",
     info: "Recuerda que el gerundio es una forma no personal del verbo, es decir, que no se encuentra conjugada. No se recomienda utilizar gerundios con tanta frecuencia, por lo que  intenta utilizar oraciones con verbos conjugados, por ejemplo: “Un circuito RLC consta de dos elementos de almacenamiento de energía: el inductor y el capacitor. A estos circuitos se les llama circuitos de segundo orden, porque sus respuestas se describen con ecuaciones diferenciales de segundo orden”.",
     feedback_negativo: "¡Tu párrafo tiene muchos gerundios! Evita usarlos con frecuencia para que no dificulte la comprensión de tu texto. Para reformular la oración reemplaza el gerundio por un verbo conjugado y añade un conector.",
@@ -18,8 +19,9 @@ export const Analisis = {
     comentario: "Una forma de evitar la repetición de los gerundios, es reformular los verbos.",
     style: "#FBBA63",
     nro_errores : 0
-  },
-  FormalOracionesExtensas: {
+}
+export const Formal = {
+  OracionesExtensas: {
     label: "Oraciones Extensas",
     info: "Recuerda que las oraciones se componen por un sujeto y un predicado y finalizan con un punto seguido.",
     feedback_negativo: "¡Tu oración es muy extensa! Se recomienda que una oración tenga una extensión entre 18 a 32 palabras.",
@@ -30,7 +32,7 @@ export const Analisis = {
     style: "#FBBA63",
     nro_errores: 0
   },
-  FormalOracionesBreves: {
+  OracionesBreves: {
     label: "Oraciones Breves",
     info: "Recuerda que las oraciones se componen por un sujeto y un predicado y finalizan con un punto seguido.",
     feedback_negativo: "¡Tu oración es muy breve! Se recomienda que una oración tenga una extensión entre 18 a 32 palabras.",
@@ -41,7 +43,7 @@ export const Analisis = {
     style: "#FFF492",
     nro_errores: 0
   },
-  FormalParrafosExtensos: {
+  ParrafosExtensos: {
     label: "Párrafos Extensos",
     info: "Recuerda que el párrafo es una unidad de sentido compuesta por diversas oraciones que se caracterizan por desarrollar una idea central.",
     feedback_negativo: "¡Tu párrafo es muy extenso! Se sugiere que la extensión de un párrafo sea de 3 oraciones como mínimo y 5 máximo.",
@@ -52,7 +54,7 @@ export const Analisis = {
     style: "#FBBA63",
     nro_errores: 0
   },
-  FormalParrafosBreves: {
+  ParrafosBreves: {
     label: "Párrafos Breves",
     info: "Recuerda que el párrafo es una unidad de sentido compuesta por diversas oraciones que se caracterizan por desarrollar una idea central.",
     feedback_negativo: "¡Tu párrafo es muy breve! Se sugiere que la extensión de un párrafo sea de 3 oraciones como mínimo y 5 máximo.",
@@ -63,17 +65,9 @@ export const Analisis = {
     style: "#FFF492",
     nro_errores: 0
   },
-  // FormalErroresOrtográficos: {
-  //   label: "Errores Ortográficos",
-  //   feedback_negativo: "Parece que esta palabra se encuentra mal escrita. Revisa las opciones que te recomienda la herramienta.",
-  //   info: "Durante la redacción de un escrito, se sugiere revisar constantemente el texto para evitar errores habituales.",
-  //   ejemplo: "En el siguiente ejemplo se aprecia un error ortográfico presente en un informe: “Identificar y conocer los materiales e instrumentos que se utilizaran durante esta sesión”. La forma correcta en que debe estar escrita la oración anterior es: “Identificar y conocer los materiales e instrumentos que se utilizarán durante esta sesión.” Revisa tu escrito constantemente, puesto que palabras como “utilizaran” estaría bien emplearla en una oración condicional, pero no para una acción futura.",
-  //   error: "“Toda resistencia tiene un valor nominal y otro real, teniendo en cuenta lo anterior con una tabla de colores se calcula el valor nominal de las dos resistencias dadas, luego en ambos multímetros se coloca la modalidad para medir resistencia, de acuerdo con el procedimiento puntual que se debe realizar con el analógico, primero conectar ambas terminales caimán de los cables, para crear un puente entre las dos entradas del multímetro, posteriormente se debe mover el indicador del instrumento con tal de que indique cero, para esto se utiliza la perilla que se encuentra en las esquina inferior del visor, se recomienda recostar el instrumento en la mesa y mirarlo desde arriba hasta que no se distinga el reflejo del indicador, para así tener una medición más exacta”.",
-  //   correccion: "A continuación, observa este mismo ejemplo corregido: “Toda resistencia tiene un valor nominal y otro real. Teniendo en cuenta lo anterior, con una tabla de colores se calcula el valor nominal de las dos resistencias dadas y luego, en ambos multímetros, se coloca la modalidad para medir resistencia. De acuerdo con el procedimiento puntual que se debe realizar con el analógico, primero se debe conectar ambas terminales caimán de los cables, para crear un puente entre las dos entradas del multímetro. Posteriormente, se debe mover el indicador del instrumento con tal de que indique cero, para esto se utiliza la perilla que se encuentra en las esquina inferior del visor. Se recomienda recostar el instrumento en la mesa y mirarlo desde arriba hasta que no se distinga el reflejo del indicador, para así tener una medición más exacta”",
-  //   comentario: "La oración al ser tan extensa dificulta la comprensión, por lo que si tu oración es similar a este ejemplo en cuanto a la estructura, te recomendamos que la organices empleando marcadores discursivos, así como puntos y comas",
-  //   feedback_positivo: "¡Buen trabajo! No se identifican errores ortográficos en tu escrito."
-  // },
-  EstiloPrimeraPersonaSingular: {
+}
+export const Estilo = {
+  PrimeraPersonaSingular: {
     label: "Primera Persona Singular",
     info: "",
     feedback_negativo: "Estás usando la primera persona singular para redactar tu texto. Se aconseja utilizar la tercera persona gramatical, la forma pasiva y la impersonal para la escritura de informes.",
@@ -84,7 +78,7 @@ export const Analisis = {
     style: "#ffaa8e",
     nro_errores: 0
   },
-  EstiloSegundaPersonaSingular: {
+  SegundaPersonaSingular: {
     label: "Segunda Persona Singular",
     info: "",
     feedback_negativo: "Estás usando la segunda persona singular para redactar tu texto. Se aconseja utilizar la tercera persona gramatical, la forma pasiva y la impersonal para la escritura de informes.",
@@ -95,7 +89,7 @@ export const Analisis = {
     style: "#fffa8e",
     nro_errores: 0
   },
-  EstiloVozPasiva: {
+  VozPasiva: {
     label: "Voz Pasiva",
     info: "La voz pasiva es una construcción en la que el sujeto de la oración es pasivo, es decir, que padece la acción denotada por el verbo. La voz pasiva oculta el agente de la acción, pero si consideras pertinente mostrar el agente, utiliza la oración activa, como por ejemplo “Las funciones periódicas son de gran ayuda, ya que permiten graficar a través de ellas la relación existente entre variables”.",
     feedback_negativo: "En esta oración estás usando la voz pasiva excesivamente. Te recomendamos evitar su uso, pero si lo vas a hacer que no sea más de una vez en una misma oración.",
@@ -106,7 +100,7 @@ export const Analisis = {
     style: "#ffaa8e",
     nro_errores: 0
   },
-  EstiloConectores: {
+  Conectores: {
     label: "Conectores",
     info: "Los conectores son unidades invariables que establecen conexiones entre las distintas partes de un texto. Sin ellos la oración no cobra sentido, tal como se evidencia en el enunciado que se presenta a continuación: “el multímetro digital entregó mejores resultados en todas las actividades, (por lo que) es un buen candidato para realizar mediciones en futuros laboratorios, (ya que) también necesita menor cantidad de ajustes que un multímetro análogo”.",
     feedback_negativo: "En esta oración, al parecer, no estás empleando ningún conector. Te recomendamos que los utilices para que las ideas se relacionen de manera clara y que tu texto sea cohesivo.",
@@ -117,73 +111,77 @@ export const Analisis = {
     style: "#ffaa8e",
     nro_errores: 0
   },
-  DiscursivoComplejidad: {
-    label: "Complejidad",
-    info: "placeholder",
-    feedback_negativo: "placeholder",
-    feedback_positivo: "placeholder",
-    error: "placeholder",
-    correccion: "placeholder",
-    comentario: "placeholder",
-    style: '#ffaa8e',
-    nro_errores: 0
-  },
-  DiscursivoLecturabilidadDificil: {
-    label: "Lecturabilidad Difícil",
-    info: "placeholder",
-    feedback_negativo: "¡Excelente!, el grado de lecturabilidad de tu párrafo se ajusta totalmente al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 0 y 40 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es ideal.",
-    feedback_positivo: "No se encontraron párrafos con este nivel de lacturabilidad en tu párrafo.",
-    error: "placeholder",
-    correccion: "placeholder",
-    comentario: "placeholder",
-    style: '#FFADAD',
-    nro_errores: 0
-  },
-  DiscursivoLecturabilidadAlgoDificil: {
-    label: "Lecturabilidad Algo Difícil",
-    info: "placeholder",
-    feedback_negativo: "¡Muy bien!, el grado de lecturabilidad de tu párrafo se ajusta bastante al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 40 y 55 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es adecuado.",
-    feedback_positivo: "No se encontraron párrafos con este nivel de lacturabilidad en tu párrafo.",
-    error: "placeholder",
-    correccion: "placeholder",
-    comentario: "placeholder",
-    style: '#FBBA63',
-    nro_errores: 0
-  },
-  DiscursivoLecturabilidadNormal: {
-    label: "Lecturabilidad Normal",
-    info: "placeholder",
-    feedback_negativo: "¡Bien!, el grado de lecturabilidad de tu párrafo se ajusta suficientemente al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 55 y 65 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es aceptable.",
-    feedback_positivo: "No se encontraron párrafos con este nivel de lacturabilidad en tu párrafo.",
-    error: "placeholder",
-    correccion: "placeholder",
-    comentario: "placeholder",
-    style: '#FFF492',
-    nro_errores: 0
-  },
-  DiscursivoLecturabilidadAlgoFacil: {
-    label: "Lecturabilidad Algo Fácil",
-    info: "placeholder",
-    feedback_negativo: "El grado de lecturabilidad de tu párrafo no se ajusta al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 65 y 80 puntos, lo que significa que el largo de las palabras y frases de tu párrafo no es recomendable.",
-    feedback_positivo: "No se encontraron párrafos con este nivel de lacturabilidad en tu párrafo.",
-    error: "placeholder",
-    correccion: "placeholder",
-    comentario: "placeholder",
-    style: '#A0C4FF',
-    nro_errores: 0
-  },
-  DiscursivoLecturabilidadFacil: {
-    label: "Lecturabilidad Fácil",
-    info: "placeholder",
-    feedback_negativo: "El grado de lecturabilidad de tu párrafo no se ajusta al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 80 y 100 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es insuficiente.",
-    feedback_positivo: "No se encontraron párrafos con este nivel de lacturabilidad en tu párrafo.",
-    error: "placeholder",
-    correccion: "placeholder",
-    comentario: "placeholder",
-    style: '#CAFFBF',
-    nro_errores: 0
-  },
-  PropositoResumen: {
+}
+export const Discursivo = {
+    Complejidad: {
+      label: "Complejidad",
+      info: "placeholder",
+      feedback_negativo: "placeholder",
+      feedback_positivo: "placeholder",
+      error: "placeholder",
+      correccion: "placeholder",
+      comentario: "placeholder",
+      style: '#ffaa8e',
+      nro_errores: 0
+    },
+    LecturabilidadDificil: {
+      label: "Lecturabilidad Difícil",
+      info: "placeholder",
+      feedback_negativo: "¡Excelente!, el grado de lecturabilidad de tu párrafo se ajusta totalmente al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 0 y 40 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es ideal.",
+      feedback_positivo: "No se encontraron párrafos con este nivel de lacturabilidad en tu párrafo.",
+      error: "placeholder",
+      correccion: "placeholder",
+      comentario: "placeholder",
+      style: '#FFADAD',
+      nro_errores: 0
+    },
+    LecturabilidadAlgoDificil: {
+      label: "Lecturabilidad Algo Difícil",
+      info: "placeholder",
+      feedback_negativo: "¡Muy bien!, el grado de lecturabilidad de tu párrafo se ajusta bastante al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 40 y 55 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es adecuado.",
+      feedback_positivo: "No se encontraron párrafos con este nivel de lacturabilidad en tu párrafo.",
+      error: "placeholder",
+      correccion: "placeholder",
+      comentario: "placeholder",
+      style: '#FBBA63',
+      nro_errores: 0
+    },
+    LecturabilidadNormal: {
+      label: "Lecturabilidad Normal",
+      info: "placeholder",
+      feedback_negativo: "¡Bien!, el grado de lecturabilidad de tu párrafo se ajusta suficientemente al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 55 y 65 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es aceptable.",
+      feedback_positivo: "No se encontraron párrafos con este nivel de lacturabilidad en tu párrafo.",
+      error: "placeholder",
+      correccion: "placeholder",
+      comentario: "placeholder",
+      style: '#FFF492',
+      nro_errores: 0
+    },
+    LecturabilidadAlgoFacil: {
+      label: "Lecturabilidad Algo Fácil",
+      info: "placeholder",
+      feedback_negativo: "El grado de lecturabilidad de tu párrafo no se ajusta al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 65 y 80 puntos, lo que significa que el largo de las palabras y frases de tu párrafo no es recomendable.",
+      feedback_positivo: "No se encontraron párrafos con este nivel de lacturabilidad en tu párrafo.",
+      error: "placeholder",
+      correccion: "placeholder",
+      comentario: "placeholder",
+      style: '#A0C4FF',
+      nro_errores: 0
+    },
+    LecturabilidadFacil: {
+      label: "Lecturabilidad Fácil",
+      info: "placeholder",
+      feedback_negativo: "El grado de lecturabilidad de tu párrafo no se ajusta al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 80 y 100 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es insuficiente.",
+      feedback_positivo: "No se encontraron párrafos con este nivel de lacturabilidad en tu párrafo.",
+      error: "placeholder",
+      correccion: "placeholder",
+      comentario: "placeholder",
+      style: '#CAFFBF',
+      nro_errores: 0
+    },
+  }
+export const Proposito = {
+  Resumen: {
     label: "Resumen",
     info: "placeholder",
     feedback_negativo: "placeholder",
@@ -194,7 +192,7 @@ export const Analisis = {
     style: '#ffaa8e',
     nro_errores: 0
   },
-  PropositoIntroduccion: {
+  Introduccion: {
     label: "Introducción",
     info: "placeholder",
     feedback_negativo: "placeholder",
@@ -205,7 +203,7 @@ export const Analisis = {
     style: '#ffaa8e',
     nro_errores: 0
   },
-  PropositoDesarrollo: {
+  Desarrollo: {
     label: "Desarrollo",
     info: "placeholder",
     feedback_negativo: "placeholder",
@@ -216,7 +214,7 @@ export const Analisis = {
     style: '#ffaa8e',
     nro_errores: 0
   },
-  PropositoResultados: {
+  Resultados: {
     label: "Resultados",
     info: "placeholder",
     feedback_negativo: "placeholder",
@@ -227,7 +225,7 @@ export const Analisis = {
     style: '#ffaa8e',
     nro_errores: 0
   },
-  PropositoConclusion: {
+  Conclusion: {
     label: "Conclusión",
     info: "placeholder",
     feedback_negativo: "placeholder",

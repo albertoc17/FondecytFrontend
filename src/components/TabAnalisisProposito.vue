@@ -52,7 +52,7 @@
 <script>
 import ErrorHtml from "./ErrorHtml.vue";
 import TabEditor from "./TabEditor.vue";
-import { Analisis } from "@/includes/constants.js";
+import { Proposito } from "@/includes/constants.js";
 
 export default {
   name: "TabAnalisisProposito",
@@ -72,11 +72,11 @@ export default {
       showErrorDesarrollo: false,
       showErrorResultados: false,
       showErrorConclusion: false,
-      fb_resumen: [Analisis.PropositoResumen],
-      fb_introduccion: [Analisis.PropositoIntroduccion],
-      fb_desarrollo: [Analisis.PropositoDesarrollo],
-      fb_resultados: [Analisis.PropositoResultados],
-      fb_conclusion: [Analisis.PropositoConclusion]
+      fb_resumen: [Proposito.Resumen],
+      fb_introduccion: [Proposito.Introduccion],
+      fb_desarrollo: [Proposito.Desarrollo],
+      fb_resultados: [Proposito.Resultados],
+      fb_conclusion: [Proposito.Conclusion]
     };
   },
   methods: {

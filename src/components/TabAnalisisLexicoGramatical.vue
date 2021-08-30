@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import { Analisis } from "@/includes/constants.js";
+import { LexicoGramaticalGerundiosExcesivo } from "@/includes/constants.js";
 import ErrorHtml from "./ErrorHtml.vue";
 
 export default {
@@ -28,7 +28,7 @@ export default {
     return {
       showErrorGerundios: false,
       html_gerundios: "",
-      fb_gerundios: [Analisis.LexicoGramaticalGerundiosExcesivo],
+      fb_gerundios: [LexicoGramaticalGerundiosExcesivo],
     };
   },
   methods: {

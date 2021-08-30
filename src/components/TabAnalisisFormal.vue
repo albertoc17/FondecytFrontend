@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { Analisis } from "@/includes/constants.js";
+import { Formal } from "@/includes/constants.js";
 import ErrorHtml from "./ErrorHtml.vue";
 // import TabEditor from "./TabEditor.vue";
 
@@ -43,12 +43,12 @@ export default {
       html_oraciones: "",
       html_microparrafos: "",
       fb_oraciones: [
-        Analisis.FormalOracionesExtensas,
-        Analisis.FormalOracionesBreves
+        Formal.OracionesExtensas,
+        Formal.OracionesBreves
       ],
       fb_microparrafos: [
-        Analisis.FormalParrafosExtensos,
-        Analisis.FormalParrafosBreves
+        Formal.ParrafosExtensos,
+        Formal.ParrafosBreves
       ],
     };
     

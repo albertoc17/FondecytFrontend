@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { Analisis } from "@/includes/constants.js";
+import { Discursivo } from "@/includes/constants.js";
 import ErrorHtml from "./ErrorHtml.vue";
 
 export default {
@@ -40,14 +40,14 @@ export default {
       html_lecturabilidad: "",
       fb_proposito: "",
       fb_complejidad: [
-        Analisis.DiscursivoComplejidad
+        Discursivo.Complejidad
       ],
       fb_lecturabilidad: [
-        Analisis.DiscursivoLecturabilidadDificil,
-        Analisis.DiscursivoLecturabilidadAlgoDificil,
-        Analisis.DiscursivoLecturabilidadNormal,
-        Analisis.DiscursivoLecturabilidadAlgoFacil,
-        Analisis.DiscursivoLecturabilidadFacil,
+        Discursivo.LecturabilidadDificil,
+        Discursivo.LecturabilidadAlgoDificil,
+        Discursivo.LecturabilidadNormal,
+        Discursivo.LecturabilidadAlgoFacil,
+        Discursivo.LecturabilidadFacil,
       ],
     };
   },

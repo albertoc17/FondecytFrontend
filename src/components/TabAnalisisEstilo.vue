@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { Analisis } from "@/includes/constants.js";
+import { Estilo } from "@/includes/constants.js";
 import ErrorHtml from "./ErrorHtml.vue";
 
 export default {
@@ -56,14 +56,14 @@ export default {
       html_vozpasiva: "",
       html_persona: "",
       fb_conectores: [
-        Analisis.EstiloConectores
+        Estilo.Conectores
       ],
       fb_voz_pasiva: [
-        Analisis.EstiloVozPasiva
+        Estilo.VozPasiva
       ],
       fb_persona: [
-        Analisis.EstiloPrimeraPersonaSingular,
-        Analisis.EstiloSegundaPersonaSingular
+        Estilo.PrimeraPersonaSingular,
+        Estilo.SegundaPersonaSingular
       ]
     };
   },
