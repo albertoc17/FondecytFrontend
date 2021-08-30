@@ -59,7 +59,6 @@ export default {
       document.body.removeChild(fileDownload);
     },
     sendResToComponents(data) {
-      console.log(data);
       this.$root.$emit("mensaje_showRightPanel");
       this.$root.$emit("mensaje_fileupload", data);
     },

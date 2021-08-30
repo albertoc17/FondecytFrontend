@@ -3,14 +3,14 @@
     <form @submit.prevent="onSubmit">
       <br />
       <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-5">
-          <b-form-file  :class="custom-file-input"
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <b-form-file
             v-model="file"
             :state="Boolean(file)"
-            placeholder="Seleccione el documento... "
-            drop-placeholder="Arrastre el archivo..."
-            accept=".doc, .docx, .txt"
+            placeholder="Seleccione el archivo (docx o txt)"
+            drop-placeholder="Arrastre el archivo (docx o txt)"
+            accept=".docx, .txt"
           ></b-form-file>
         </div>
         <div class="col-md-3" style="margin: 0px; padding: 0px">
@@ -47,16 +47,15 @@ export default {
     async onSubmit() {
       const formData = new FormData();
       formData.append("file", this.file);
-      console.log(this.file.name);
       let extension = this.file.name.split('.')[1];
       let loader = this.$loading.show({ isFullPage: true, canCancel: false });
       try {
         if (!(['docx', 'doc', 'txt'].includes(extension))) {
-          throw new Error('Archivo no soportado');
+          throw new Error('Archivo no soportado, utilice documentos de extensión .docx o .txt');
         }
-        this.res = await axios.post(
-          "http://www.redilegra.com/backend/api/FileUploadView",
-           //"http://127.0.0.1:8000/api/FileUploadView",
+        let res = await axios.post(
+          // "http://www.redilegra.com/backend/api/FileUploadView",
+           "http://127.0.0.1:8000/api/FileUploadView",
           formData
         );
         // this.emitInfo(this.data_general);
