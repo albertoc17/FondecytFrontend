@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-5">
-          <b-form-file
+          <b-form-file  :class="custom-file-input"
             v-model="file"
             :state="Boolean(file)"
             placeholder="Seleccione el documento... "
@@ -54,9 +54,9 @@ export default {
         if (!(['docx', 'doc', 'txt'].includes(extension))) {
           throw new Error('Archivo no soportado');
         }
-        let res = await axios.post(
-          //"http://www.redilegra.com/backend/api/FileUploadView",
-           "http://127.0.0.1:8000/api/FileUploadView",
+        this.res = await axios.post(
+          "http://www.redilegra.com/backend/api/FileUploadView",
+           //"http://127.0.0.1:8000/api/FileUploadView",
           formData
         );
         // this.emitInfo(this.data_general);
@@ -97,3 +97,8 @@ export default {
   },
 };
 </script>
+<style>
+.custom-file-input:lang(es) ~ .custom-file-label::after {
+  content: 'Explorar';
+}
+</style>
