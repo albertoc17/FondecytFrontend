@@ -54,7 +54,7 @@ export default {
         if (!(['docx', 'doc', 'txt'].includes(extension))) {
           throw new Error('Archivo no soportado');
         }
-        this.res = await axios.post(
+        let res = await axios.post(
           "http://www.redilegra.com/backend/api/FileUploadView",
            //"http://127.0.0.1:8000/api/FileUploadView",
           formData
