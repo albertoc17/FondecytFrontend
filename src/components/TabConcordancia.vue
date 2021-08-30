@@ -72,7 +72,7 @@ export default {
         this.makeToast('Análisis de concordancia realizado exitosamente.', 'success');
       } catch (err) {
         console.warn(err);
-        this.makeToast('Error: '+err, 'danger');
+        this.makeToast(err, 'danger');
       }
       loader.hide();
     },

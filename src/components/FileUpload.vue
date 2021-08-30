@@ -17,12 +17,6 @@
           <button class="btn btn-success">Enviar documento</button>
         </div>
       </div>
-      <!-- <FormulateInput
-        type="file"
-        name="file"
-        label="Escoja o arrestre un archivo..."
-        validation="mime:application/msword"
-      />      -->
     </form>
   </div>
 </template>
@@ -57,22 +51,22 @@ export default {
       let extension = this.file.name.split('.')[1];
       let loader = this.$loading.show({ isFullPage: true, canCancel: false });
       try {
-        if (!(['docx', 'doc', 'txt'].includes(extension))){
+        if (!(['docx', 'doc', 'txt'].includes(extension))) {
           throw new Error('Archivo no soportado');
         }
-        this.res = await axios.post(
+        let res = await axios.post(
           //"http://www.redilegra.com/backend/api/FileUploadView",
            "http://127.0.0.1:8000/api/FileUploadView",
           formData
         );
         // this.emitInfo(this.data_general);
         loader.hide();
-        this.sendResToComponents(this.res.data);
+        this.sendResToComponents(res.data);
         this.makeToast('Documento analizado correctamente.', 'success');
       } catch (err) {
         loader.hide();
         console.warn(err);
-        this.makeToast('Error: '+err, 'danger');
+        this.makeToast(err, 'danger');
       }
     },
     // emitInfo(data) {
