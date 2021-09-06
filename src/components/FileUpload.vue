@@ -8,9 +8,9 @@
           <b-form-file
             v-model="file"
             :state="Boolean(file)"
-            placeholder="Seleccione el archivo (docx o txt)"
-            drop-placeholder="Arrastre el archivo (docx o txt)"
-            accept=".docx, .txt"
+            placeholder="Seleccione el archivo (doc, docx, txt)"
+            drop-placeholder="Arrastre el archivo (doc, docx, txt)"
+            accept=".doc, .docx, .txt"
           ></b-form-file>
         </div>
         <div class="col-md-3" style="margin: 0px; padding: 0px">
@@ -55,7 +55,7 @@ export default {
         }
         let res = await axios.post(
           "http://www.redilegra.com/backend/api/FileUploadView",
-           //"http://127.0.0.1:8000/api/FileUploadView",
+          //  "http://127.0.0.1:8000/api/FileUploadView",
           formData
         );
         // this.emitInfo(this.data_general);

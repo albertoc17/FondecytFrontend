@@ -20,7 +20,7 @@
             height="50"
           />
         </b-navbar-nav>
-        </b-collapse>
+      </b-collapse>
     </b-navbar>    
   </div>
 </template>
