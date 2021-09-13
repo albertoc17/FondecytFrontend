@@ -189,7 +189,7 @@ export const Proposito = {
     error: "placeholder",
     correccion: "placeholder",
     comentario: "placeholder",
-    style: '#ffaa8e',
+    style: '#FFADAD',
     nro_errores: 0
   },
   Introduccion: {
@@ -200,7 +200,7 @@ export const Proposito = {
     error: "placeholder",
     correccion: "placeholder",
     comentario: "placeholder",
-    style: '#ffaa8e',
+    style: '#FBBA63',
     nro_errores: 0
   },
   Desarrollo: {
@@ -211,7 +211,7 @@ export const Proposito = {
     error: "placeholder",
     correccion: "placeholder",
     comentario: "placeholder",
-    style: '#ffaa8e',
+    style: '#FFF492',
     nro_errores: 0
   },
   Resultados: {
@@ -222,7 +222,7 @@ export const Proposito = {
     error: "placeholder",
     correccion: "placeholder",
     comentario: "placeholder",
-    style: '#ffaa8e',
+    style: '#A0C4FF',
     nro_errores: 0
   },
   Conclusion: {
@@ -233,7 +233,7 @@ export const Proposito = {
     error: "placeholder",
     correccion: "placeholder",
     comentario: "placeholder",
-    style: '#ffaa8e',
+    style: '#CAFFBF',
     nro_errores: 0
   }
 }

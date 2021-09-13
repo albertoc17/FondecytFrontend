@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import Landing from '@/views/Landing.vue'
 import Thot from '@/views/Thot.vue'
 
-
 Vue.use(Router)
 
 export default new Router({

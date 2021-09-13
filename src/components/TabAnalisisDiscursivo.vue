@@ -7,7 +7,13 @@
             <ErrorHtml/>
           </div>
           <div v-else>
-            <span v-html="html_complejidad"></span>
+            <quill-editor
+              v-model="html_complejidad"
+              :options="editorOptions"
+              @change="onEditorChange($event)"
+              ref="myQuillEditor"
+            />
+            <!-- <span v-html="html_complejidad"></span> -->
           </div>
         </b-tab>
         <b-tab title="Lecturabilidad" @click="emitInfo(fb_lecturabilidad)">
@@ -18,27 +24,42 @@
             <span v-html="html_lecturabilidad"></span>
           </div>
         </b-tab>
+        <b-tab title="Propósito" @click="emitInfo(fb_proposito)">
+          <div v-if="showErrorProposito" >
+            <ErrorHtml/>
+          </div>
+          <div v-else>
+            <quill-editor
+              v-model="html_proposito"
+              :options="editorOptions"
+              @change="onEditorChange($event)"
+              ref="myQuillEditor"
+            />
+          </div>
+        </b-tab>
       </b-tabs>
+      
     </div>
   </div>
 </template>
 
 <script>
 import { Discursivo } from "@/includes/constants.js";
+import { Proposito } from "@/includes/constants.js";
+import { quillEditor } from "vue-quill-editor";
 import ErrorHtml from "./ErrorHtml.vue";
 
 export default {
   name: "TabAnalisisDiscursivo",
   components: {
-    ErrorHtml
+    ErrorHtml,
+    quillEditor
   },
   data() {
     return {
       showErrorComplejidad: false,
-      html_proposito: "",
       html_complejidad: "",
       html_lecturabilidad: "",
-      fb_proposito: "",
       fb_complejidad: [
         Discursivo.Complejidad
       ],
@@ -49,11 +70,29 @@ export default {
         Discursivo.LecturabilidadAlgoFacil,
         Discursivo.LecturabilidadFacil,
       ],
+      showErrorProposito: false,
+      html_proposito: "",
+      fb_proposito: [
+        Proposito.Resumen,
+        Proposito.Introduccion,
+        Proposito.Desarrollo,
+        Proposito.Resultados,
+        Proposito.Conclusion,
+      ],
+      editorOptions: {
+        readOnly: false,
+        theme: "snow",
+        placeholder: 'Inserte el texto aquí...',
+      },
     };
   },
   methods: {
     emitInfo(analisis) {
       this.$root.$emit("infoAnalisisEspecificos", analisis);
+    },
+    onEditorChange({ html, text }) {
+      this.html = html;
+      this.text = text;
     },
   },
   mounted() {
@@ -75,6 +114,16 @@ export default {
       }
       else {
         this.showErrorComplejidad = true;
+      }
+      if (arg.proposito != "") {
+        this.html_proposito = arg.proposito.html_response;
+        this.fb_proposito[0].nro_errores = arg.proposito.flag.MM0;
+        this.fb_proposito[1].nro_errores = arg.proposito.flag.MM1;
+        this.fb_proposito[2].nro_errores = arg.proposito.flag.MM2;
+        this.fb_proposito[3].nro_errores = arg.proposito.flag.MM3;
+        this.fb_proposito[4].nro_errores = arg.proposito.flag.MM4;
+      } else {
+        this.showErrorProposito = true;
       }
     });
   },

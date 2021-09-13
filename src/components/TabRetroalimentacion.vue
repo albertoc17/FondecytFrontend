@@ -33,7 +33,7 @@ export default {
       this.$root.$emit("infoDetalleFeedback", detalle);
     },
     itemStyle(fb) {
-      if (fb.nro_errores > 0) return `background-color: ${fb.style};`;
+      if (fb.nro_errores != 999999) return `background-color: ${fb.style};`;
       else                    return `background-color: #afd27f;`;
     }
   },
