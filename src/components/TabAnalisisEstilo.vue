@@ -11,7 +11,12 @@
             <ErrorHtml />
           </div>
           <div v-else>
-            <span v-html="html_conectores"></span>
+            <quill-editor
+              v-model="html_conectores"
+              :options="editorOptions"
+              @change="onEditorChange($event)"
+              ref="myQuillEditor"
+            />
           </div>
         </b-tab>
         <b-tab title="Voz Pasiva" @click="emitInfo(fb_voz_pasiva)">
@@ -19,7 +24,12 @@
             <ErrorHtml />
           </div>
           <div v-else>
-            <span v-html="html_vozpasiva"></span>
+            <quill-editor
+              v-model="html_vozpasiva"
+              :options="editorOptions"
+              @change="onEditorChange($event)"
+              ref="myQuillEditor"
+            />
           </div>
         </b-tab>
         <b-tab
@@ -30,7 +40,12 @@
             <ErrorHtml />
           </div>
           <div v-else>
-            <span v-html="html_persona"></span>
+            <quill-editor
+              v-model="html_persona"
+              :options="editorOptions"
+              @change="onEditorChange($event)"
+              ref="myQuillEditor"
+            />
           </div>
         </b-tab>
       </b-tabs>
@@ -41,11 +56,14 @@
 <script>
 import { Estilo } from "@/includes/constants.js";
 import ErrorHtml from "./ErrorHtml.vue";
+import { quillEditor } from "vue-quill-editor";
+import "../../node_modules/quill/dist/quill.snow.css";
 
 export default {
   name: "TabAnalisisEstilo",
   components: {
     ErrorHtml,
+    quillEditor
   },
   data() {
     return {

@@ -7,9 +7,12 @@
             <ErrorHtml/>
           </div>
           <div v-else>
-            <!-- <span v-html="html_oraciones"></span> -->
-            <!-- <TabEditor :html_analisis="html_oraciones"/> -->
-            <span v-html="html_oraciones"></span>
+            <quill-editor
+              v-model="html_oraciones"
+              :options="editorOptions"
+              @change="onEditorChange($event)"
+              ref="myQuillEditor"
+            />
           </div>
         </b-tab>
         <b-tab title="Micropárrafos" @click="emitInfo(fb_microparrafos)">
@@ -17,7 +20,12 @@
             <ErrorHtml/>
           </div>
           <div v-else>
-            <span v-html="html_microparrafos"></span>
+            <quill-editor
+              v-model="html_microparrafos"
+              :options="editorOptions"
+              @change="onEditorChange($event)"
+              ref="myQuillEditor"
+            />
           </div>
         </b-tab>
       </b-tabs>
@@ -28,13 +36,13 @@
 <script>
 import { Formal } from "@/includes/constants.js";
 import ErrorHtml from "./ErrorHtml.vue";
-// import TabEditor from "./TabEditor.vue";
-
+import { quillEditor } from "vue-quill-editor";
+import "../../node_modules/quill/dist/quill.snow.css";
 export default {
   name: "TabAnalisisFormal",
   components: {
-   ErrorHtml,
-  //  TabEditor
+    ErrorHtml,
+    quillEditor,
   },
   data() {
     return {

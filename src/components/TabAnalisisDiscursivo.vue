@@ -21,7 +21,12 @@
             <ErrorHtml/>
           </div>
           <div v-else>
-            <span v-html="html_lecturabilidad"></span>
+            <quill-editor
+              v-model="html_lecturabilidad"
+              :options="editorOptions"
+              @change="onEditorChange($event)"
+              ref="myQuillEditor"
+            />
           </div>
         </b-tab>
         <b-tab title="Propósito" @click="emitInfo(fb_proposito)">

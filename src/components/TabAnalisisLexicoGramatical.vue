@@ -7,7 +7,12 @@
             <ErrorHtml/>
           </div>
           <div v-else>
-            <span v-html="html_gerundios"></span>
+             <quill-editor
+                v-model="html_gerundios"
+                :options="editorOptions"
+                @change="onEditorChange($event)"
+                ref="myQuillEditor"
+              />
           </div>
         </b-tab>
       </b-tabs>
@@ -16,6 +21,8 @@
 </template>
 
 <script>
+import { quillEditor } from "vue-quill-editor";
+import "../../node_modules/quill/dist/quill.snow.css";
 import { LexicoGramaticalGerundiosExcesivo } from "@/includes/constants.js";
 import ErrorHtml from "./ErrorHtml.vue";
 
@@ -23,6 +30,7 @@ export default {
   name: "TabAnalisisLexicoGramatical",
   components: {
     ErrorHtml,
+    quillEditor,
   },
   data() {
     return {
