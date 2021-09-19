@@ -50,12 +50,12 @@
   
 <script>
 import Navbar from "@/components/Navbar.vue";
-import TabEditor from "@/components/TabEditor.vue";
-import TabAnalisisLexicoGramatical from "@/components/TabAnalisisLexicoGramatical.vue";
-import TabAnalisisFormal from "@/components/TabAnalisisFormal.vue";
-import TabAnalisisEstilo from "@/components/TabAnalisisEstilo.vue";
-import TabAnalisisDiscursivo from "@/components/TabAnalisisDiscursivo.vue";
-import TabAnalisisProposito from "@/components/TabAnalisisProposito.vue";
+import TabEditor from "@/components/Tabs/TabEditor.vue";
+import TabAnalisisLexicoGramatical from "@/components/Tabs/TabAnalisisLexicoGramatical.vue";
+import TabAnalisisFormal from "@/components/Tabs/TabAnalisisFormal.vue";
+import TabAnalisisEstilo from "@/components/Tabs/TabAnalisisEstilo.vue";
+import TabAnalisisDiscursivo from "@/components/Tabs/TabAnalisisDiscursivo.vue";
+import TabAnalisisProposito from "@/components/Tabs/TabAnalisisProposito.vue";
 import RightPanel from "@/components/RightPanel.vue";
 import FileUpload from "@/components/FileUpload.vue";
 import { Splitpanes, Pane } from "splitpanes";

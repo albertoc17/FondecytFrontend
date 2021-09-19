@@ -55,9 +55,9 @@
 
 <script>
 import { Estilo } from "@/includes/constants.js";
-import ErrorHtml from "./ErrorHtml.vue";
+import ErrorHtml from "../ErrorHtml.vue";
 import { quillEditor } from "vue-quill-editor";
-import "../../node_modules/quill/dist/quill.snow.css";
+import "../../../node_modules/quill/dist/quill.snow.css";
 
 export default {
   name: "TabAnalisisEstilo",

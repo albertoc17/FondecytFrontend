@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import ErrorHtml from "./ErrorHtml.vue";
+import ErrorHtml from "../ErrorHtml.vue";
 import TabEditor from "./TabEditor.vue";
 import { Proposito } from "@/includes/constants.js";
 

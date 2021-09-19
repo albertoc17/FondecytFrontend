@@ -52,7 +52,8 @@
 import { Discursivo } from "@/includes/constants.js";
 import { Proposito } from "@/includes/constants.js";
 import { quillEditor } from "vue-quill-editor";
-import ErrorHtml from "./ErrorHtml.vue";
+import "../../../node_modules/quill/dist/quill.snow.css";
+import ErrorHtml from "../ErrorHtml.vue";
 
 export default {
   name: "TabAnalisisDiscursivo",

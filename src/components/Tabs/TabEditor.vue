@@ -19,7 +19,7 @@
 
 <script>
 import { quillEditor } from "vue-quill-editor";
-import "../../node_modules/quill/dist/quill.snow.css";
+import "../../../node_modules/quill/dist/quill.snow.css";
 import axios from "axios";
 
 

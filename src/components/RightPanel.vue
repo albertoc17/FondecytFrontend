@@ -28,10 +28,10 @@
 
 <script>
 import Barchart from "./Barchart.vue";
-import Retroalimentacion from "./TabRetroalimentacion.vue";
+import Retroalimentacion from "./Tabs/TabRetroalimentacion.vue";
 import Estadisticas from './Estadisticas.vue';
-import Detalle from "./TabDetalle.vue";
-import TabConcordancia from "./TabConcordancia.vue";
+import Detalle from "./Tabs/TabDetalle.vue";
+import TabConcordancia from "./Tabs/TabConcordancia.vue";
 
 
 export default {
