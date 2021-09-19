@@ -21,6 +21,7 @@
 import { quillEditor } from "vue-quill-editor";
 import "../../../node_modules/quill/dist/quill.snow.css";
 import axios from "axios";
+import {PREHTML, POSTHTML} from "@/includes/constants"
 
 
 export default {
@@ -47,9 +48,7 @@ export default {
       this.text = text;
     },
     exportHTML() {
-      var preHtml = "<html xmlns:o='urn:schemas-microsoft-com:office:office' xmlns:w='urn:schemas-microsoft-com:office:word' xmlns='http://www.w3.org/TR/REC-html40'><head><meta charset='utf-8'><title>Export HTML To Doc</title></head><body>";
-      var postHtml = "</body></html>";
-      var html2doc = preHtml + this.html + postHtml;
+      var html2doc = PREHTML + this.html + POSTHTML;
       var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html2doc);
       var fileDownload = document.createElement("a");
       document.body.appendChild(fileDownload);
