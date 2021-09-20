@@ -10,7 +10,7 @@
             <b-tabs content-class="mt-3">
               <b-tab v-for="(a, index) in analisis" :key="index"
                 :title="index"
-                @click="emitInfo(a)"
+                @click="emitInfo(a.TiposAnalisis)"
               >
                 <TabGeneral :tipo_analisis="a"/>
               </b-tab>

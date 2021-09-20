@@ -66,12 +66,13 @@ export default {
         formData.append("tipo_analisis", this.tipo_analisis);
         let res = null;
         res = await axios.post(
-          // "http://www.redilegra.com/backend/api/SendText",
-          "http://127.0.0.1:8000/api/SendText2", // only for dev env.
+          "http://www.redilegra.com/backend/api/SendText2",
+          // "http://127.0.0.1:8000/api/SendText2", // only for dev env.
           formData
         );
+
         this.contentHtml = res.data.tipo_analisis.html_response;
-        console.log(res.data.tipo_analisis);
+        console.log(res.data.tipo_analisis.html_response);
         this.sendResToComponents(res.data);
       } catch (err) {
         console.warn(err);

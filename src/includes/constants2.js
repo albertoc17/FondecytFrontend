@@ -132,6 +132,22 @@ export const Analisis = {
         }
       },
       endpoint: "conectores"
+    },
+    Conectores2: {
+      TiposAnalisis:  {
+        Conectores2: {
+          label: "Conectores2",
+          info: "placeholder",
+          feedback_negativo: "placeholder",
+          feedback_positivo: "placeholder",
+          error: "placeholder",
+          correccion: "placeholder",
+          comentario: "placeholder",
+          style: "#ffaa8e",
+          nro_errores: 0
+        }
+      },
+      endpoint: "conectores2"
     }
   },
   Discursivo: {
