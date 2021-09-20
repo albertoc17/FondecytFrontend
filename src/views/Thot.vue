@@ -8,30 +8,11 @@
             <FileUpload />
             <br />
             <b-tabs content-class="mt-3">
-              <b-tab
-                active
-                title="Editor de texto"
-                @click="emitInfo(data_general)"
+              <b-tab v-for="(a, index) in analisis" :key="index"
+                :title="index"
+                @click="emitInfo(a)"
               >
-                <TabEditor />
-              </b-tab>
-              <b-tab
-                title="Léxico gramatical"
-                @click="emitInfo(data_lexicoGramatical)"
-              >
-                <TabAnalisisLexicoGramatical />
-              </b-tab>
-              <b-tab title="Formal" @click="emitInfo(data_formal)">
-                <TabAnalisisFormal />
-              </b-tab>
-              <b-tab title="Estilo" @click="emitInfo(data_estilo)">
-                <TabAnalisisEstilo />
-              </b-tab>
-              <b-tab title="Discursivo" @click="emitInfo(data_discursivo)">
-                <TabAnalisisDiscursivo />
-              </b-tab>
-              <b-tab title="Propósito">
-                <TabAnalisisProposito />
+                <TabGeneral :tipo_analisis="a"/>
               </b-tab>
             </b-tabs>
           </div>
@@ -50,14 +31,10 @@
   
 <script>
 import Navbar from "@/components/Navbar.vue";
-import TabEditor from "@/components/Tabs/TabEditor.vue";
-import TabAnalisisLexicoGramatical from "@/components/Tabs/TabAnalisisLexicoGramatical.vue";
-import TabAnalisisFormal from "@/components/Tabs/TabAnalisisFormal.vue";
-import TabAnalisisEstilo from "@/components/Tabs/TabAnalisisEstilo.vue";
-import TabAnalisisDiscursivo from "@/components/Tabs/TabAnalisisDiscursivo.vue";
-import TabAnalisisProposito from "@/components/Tabs/TabAnalisisProposito.vue";
+import TabGeneral from "@/components/Tabs/TabGeneral.vue";
 import RightPanel from "@/components/RightPanel.vue";
 import FileUpload from "@/components/FileUpload.vue";
+import { Analisis } from "@/includes/constants2.js";
 import { Splitpanes, Pane } from "splitpanes";
 import "splitpanes/dist/splitpanes.css";
 
@@ -66,18 +43,14 @@ export default {
   components: {
     Splitpanes,
     Pane,
-    TabEditor,
-    TabAnalisisLexicoGramatical,
-    TabAnalisisFormal,
-    TabAnalisisEstilo,
-    TabAnalisisDiscursivo,
-    TabAnalisisProposito,
+    TabGeneral,
     RightPanel,
     FileUpload,
     Navbar,
   },
   data() {
     return {
+      analisis: Analisis,
       estadisticas: null,
       data_general: [
         { label: "Léxico Gramatical", count: 0 },
@@ -116,6 +89,7 @@ export default {
   mounted() {
     this.$root.$on("mensaje_fileupload", (arg) => {
       //console.table(arg.statistics);
+      
       this.estadisticas = arg.statistics;
       this.data_lexicoGramatical[0].count = arg.gerunds.flag.LexicoGramaticalGerundiosExcesivo;
       this.data_formal[0].count           = arg.oraciones.flag.FormalOracionesExtensas;

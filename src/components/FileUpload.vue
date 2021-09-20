@@ -72,7 +72,6 @@ export default {
     //   this.$root.$emit("infoAnalisisGeneral", data);
     // },
     sendResToComponents(data) {
-      // var validateData = this.validateData(data);
       this.$root.$emit("mensaje_showRightPanel");
       this.$root.$emit("mensaje_fileupload", data);
     },
