@@ -1,4 +1,6 @@
+/*eslint-disable-global-require */
 import Vue from 'vue'
+import Vuex from 'vuex'
 import App from './App.vue'
 import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -10,8 +12,9 @@ import "vue-loading-overlay/dist/vue-loading.css";
 import VueFormulate from '@braid/vue-formulate'
 import { es } from '@braid/vue-formulate-i18n'
 import './assets/css/vueFormulate.css'
-
+import store from '@/store';
 Vue.config.productionTip = false
+Vue.use(Vuex)
 Vue.use(VueRouter)
 Vue.use(BootstrapVue)
 Vue.use(BootstrapVueIcons)
@@ -20,8 +23,10 @@ Vue.use(VueFormulate,  {
   plugins: [ es ],
   locale: 'es'
 })
+
 new Vue({
   el: '#app',
+  store,
   router,
   components: {
     App

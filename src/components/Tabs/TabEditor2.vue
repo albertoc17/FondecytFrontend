@@ -72,7 +72,7 @@ export default {
         );
 
         this.contentHtml = res.data.tipo_analisis.html_response;
-        console.log(res.data.tipo_analisis.html_response);
+        console.log(res.data.tipo_analisis);
         this.sendResToComponents(res.data);
       } catch (err) {
         console.warn(err);
