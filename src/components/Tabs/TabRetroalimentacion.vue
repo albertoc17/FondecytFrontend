@@ -2,7 +2,7 @@
   <div id="TabRetroalimentacion">
     <div
       class="row feedbackRow"
-      v-for="(fb, index) in feedback"
+      v-for="(fb, index) in feedback" 
       :key="index"
       :style="itemStyle(fb)"
     >
@@ -23,11 +23,12 @@
 <script>
 export default {
   name: "TabRetroalimentacion",
+  props: ['feedback'],
   data() {
     return {
+      
     };
   },
-  props: ['feedback'],
   methods: {
     verDetalle(detalle) {
       this.$root.$emit("infoDetalleFeedback", detalle);
