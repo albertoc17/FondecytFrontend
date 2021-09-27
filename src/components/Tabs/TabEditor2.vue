@@ -17,8 +17,8 @@
 import { quillEditor } from "vue-quill-editor";
 import "../../../node_modules/quill/dist/quill.snow.css";
 import axios from "axios";
-import {PREHTML, POSTHTML} from "@/includes/constants"
-
+import {PREHTML, POSTHTML} from "@/includes/constants";
+import { mapActions } from 'vuex';
 export default {
   name: "TabEditor",
   props: ['tipo_analisis'],
@@ -38,9 +38,14 @@ export default {
     };
   },
   methods: {
+    ...mapActions({
+      saveHtmlGerundios: 'saveHtmlGerundios',
+      tabSelected: 'saveTabSelected'
+    }),
     onEditorChange({ html, text }) {
       this.html = html;
       this.text = text;
+      console.log(this.tipo_analisis);
     },
     exportHTML() {
       var html2doc = PREHTML + this.html + POSTHTML;
@@ -63,15 +68,16 @@ export default {
         this.html = this.html.replace(/<\/?span[^>]*>/g, "");
         formData.append("html", this.html);
         formData.append("text", this.text);
-        formData.append("tipo_analisis", this.tipo_analisis);
+        formData.append("tipo_analisis", this.tipo_analisis.endpoint);
         let res = null;
         res = await axios.post(
           "http://www.redilegra.com/backend/api/SendText2",
             // "http://127.0.0.1:8000/api/SendText2", // only for dev env.
-          formData
+          formData 
         );
-
         this.contentHtml = res.data.tipo_analisis.html_response;
+        this.saveHtmlGerundios(this.contentHtml);
+        console.log(this.saveHtmlGerundios)
         console.log(res.data.tipo_analisis);
         this.sendResToComponents(res.data);
       } catch (err) {

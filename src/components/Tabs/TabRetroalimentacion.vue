@@ -2,7 +2,7 @@
   <div id="TabRetroalimentacion">
     <div
       class="row feedbackRow"
-      v-for="(fb, index) in feedback" 
+      v-for="(fb, index) in wea" 
       :key="index"
       :style="itemStyle(fb)"
     >
@@ -21,13 +21,23 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: "TabRetroalimentacion",
-  props: ['feedback'],
   data() {
     return {
-      
+      feedback: null,
     };
+  },
+  computed: {
+    ...mapGetters({
+      tabSelected : 'getTabSelected'
+    }),
+    wea() {
+      console.log('holas', this.tabSelected);
+      return this.tabSelected;
+    }
   },
   methods: {
     verDetalle(detalle) {

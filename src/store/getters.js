@@ -23,5 +23,8 @@ const getters = {
   gethtmlProposito(state) {
     return state.htmlProposito
   },
+  getTabSelected(state) {
+    return state.TabSelected
+  },
 }
 export default getters;

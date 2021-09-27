@@ -10,7 +10,7 @@
             <ErrorHtml/>
           </div>
           <div v-else>
-            <TabEditor2 :tipo_analisis="a.endpoint"/>
+            <TabEditor2 :tipo_analisis="a"  class="tabeditor"/>
           </div>
         </b-tab>
       </b-tabs>
@@ -21,6 +21,7 @@
 <script>
 import TabEditor2 from "@/components/Tabs/TabEditor2.vue";
 import ErrorHtml from "../ErrorHtml.vue";
+import { mapActions } from 'vuex';
 
 export default {
   name: "TabGeneral",
@@ -37,9 +38,18 @@ export default {
     };
   },
   methods: {
+    ...mapActions({
+      tabSelected: 'saveTabSelected'
+    }),
     emitInfo(feedback) {
-      this.$root.$emit("infoAnalisisEspecificos", feedback);
+      this.tabSelected(feedback);
+      console.log('feddback', feedback);
     }
   }
 };
 </script>
+<style scoped>
+.tabeditor {
+  border: 5px solid red;
+}
+</style>

@@ -15,6 +15,7 @@ const initialState = {
   htmlConectores: null,
   htmlLecturabilidad: null,
   htmlProposito: null,
+  TabSelected: null,
 }
 
 const store = new Vuex.Store({

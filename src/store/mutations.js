@@ -25,6 +25,9 @@ const mutations = {
   sethtmlProposito(state, data) {
     Vue.set(state, "htmlProposito", data);
   },
+  setTabSelected(state, data) {
+    Vue.set(state, "TabSelected", data);
+  },
 };
 
 export default mutations;

@@ -1,6 +1,6 @@
 const actions = {
   saveHtmlGerundios: ({ commit }, data) => {
-    commit("saveHtmlGerundios", data);
+    commit("setHtmlGerundios", data);
   },
   savehtmlOraciones: ({ commit }, data) => {
    commit("sethtmlOraciones", data);
@@ -23,6 +23,9 @@ const actions = {
   savehtmlProposito: ({ commit }, data) => {
    commit("sethtmlProposito", data);
   },
+  saveTabSelected: ({ commit }, data) => {
+    commit("setTabSelected", data);
+   },
 }
 
 export default actions;
