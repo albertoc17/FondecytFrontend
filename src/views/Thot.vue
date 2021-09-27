@@ -55,7 +55,6 @@ import TabAnalisisLexicoGramatical from "@/components/Tabs/TabAnalisisLexicoGram
 import TabAnalisisFormal from "@/components/Tabs/TabAnalisisFormal.vue";
 import TabAnalisisEstilo from "@/components/Tabs/TabAnalisisEstilo.vue";
 import TabAnalisisDiscursivo from "@/components/Tabs/TabAnalisisDiscursivo.vue";
-import TabAnalisisProposito from "@/components/Tabs/TabAnalisisProposito.vue";
 import RightPanel from "@/components/RightPanel.vue";
 import FileUpload from "@/components/FileUpload.vue";
 import { Splitpanes, Pane } from "splitpanes";
@@ -71,7 +70,6 @@ export default {
     TabAnalisisFormal,
     TabAnalisisEstilo,
     TabAnalisisDiscursivo,
-    TabAnalisisProposito,
     RightPanel,
     FileUpload,
     Navbar,
