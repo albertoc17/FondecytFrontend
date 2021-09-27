@@ -4,7 +4,7 @@
       class="row feedbackRow"
       v-for="(fb, index) in wea" 
       :key="index"
-      :style="itemStyle(fb)"
+      :style="fb.style"
     >
       <div class="col-md-12">
         <h4><span class="circle"> {{fb.nro_errores}}</span>{{ fb.label }}</h4>
@@ -43,10 +43,9 @@ export default {
     verDetalle(detalle) {
       this.$root.$emit("infoDetalleFeedback", detalle);
     },
-    itemStyle(fb) {
-      if (fb.nro_errores != 999999) return `background-color: ${fb.style};`;
-      else                    return `background-color: #afd27f;`;
-    }
+    // itemStyle(fb) {
+    //   return `background-color: ${fb.style};`;
+    // }
   },
 };
 </script>

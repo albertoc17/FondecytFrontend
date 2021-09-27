@@ -34,9 +34,9 @@ import Navbar from "@/components/Navbar.vue";
 import TabGeneral from "@/components/Tabs/TabGeneral.vue";
 import RightPanel from "@/components/RightPanel.vue";
 import FileUpload from "@/components/FileUpload.vue";
-import { Analisis } from "@/includes/constants2.js";
 import { Splitpanes, Pane } from "splitpanes";
 import "splitpanes/dist/splitpanes.css";
+import { Analisis } from "@/includes/constants2.js";
 
 export default {
   name: "Thot",
@@ -112,7 +112,8 @@ export default {
   },
   methods: {
     emitInfo(data) {
-      this.$root.$emit("infoAnalisisGeneral", data, this.estadisticas);
+      console.log("ignorar", data);
+      // this.$root.$emit("infoAnalisisGeneral", data, this.estadisticas);
     },
     sumarNumeroErrores(data) {1
       return data.reduce((a, b) => {

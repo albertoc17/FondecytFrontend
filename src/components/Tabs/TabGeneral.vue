@@ -42,14 +42,14 @@ export default {
       tabSelected: 'saveTabSelected'
     }),
     emitInfo(feedback) {
+      console.log('tabgeneral feedback', feedback);
       this.tabSelected(feedback);
-      console.log('feddback', feedback);
     }
   }
 };
 </script>
 <style scoped>
-.tabeditor {
+/* .tabeditor {
   border: 5px solid red;
-}
+} */
 </style>

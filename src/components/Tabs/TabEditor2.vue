@@ -1,8 +1,12 @@
 <template>
   <div>
     <div class="buttonContainer">
-      <button class="btn btn-success" @click="sendTextEdited()">Enviar texto</button>
-      <button class="btn btn-primary" @click="exportHTML()">Descargar archivo</button>
+      <button class="btn btn-success" @click="sendTextEdited()">
+        Enviar texto
+      </button>
+      <button class="btn btn-primary" @click="exportHTML()">
+        Descargar archivo
+      </button>
     </div>
     <quill-editor
       v-model="contentHtml"
@@ -16,12 +20,12 @@
 <script>
 import { quillEditor } from "vue-quill-editor";
 import "../../../node_modules/quill/dist/quill.snow.css";
+import { mapActions } from "vuex";
 import axios from "axios";
-import {PREHTML, POSTHTML} from "@/includes/constants";
-import { mapActions } from 'vuex';
+import { PREHTML, POSTHTML } from "@/includes/constants2.js";
 export default {
   name: "TabEditor",
-  props: ['tipo_analisis'],
+  props: ["tipo_analisis"],
   components: {
     quillEditor,
   },
@@ -33,14 +37,14 @@ export default {
       editorOptions: {
         readOnly: false,
         theme: "snow",
-        placeholder: 'Inserte el texto aquí...',
+        placeholder: "Inserte el texto aquí...",
       },
     };
   },
   methods: {
     ...mapActions({
-      saveHtmlGerundios: 'saveHtmlGerundios',
-      tabSelected: 'saveTabSelected'
+      saveHtmlGerundios: "saveHtmlGerundios",
+      tabSelected: "saveTabSelected",
     }),
     onEditorChange({ html, text }) {
       this.html = html;
@@ -49,11 +53,13 @@ export default {
     },
     exportHTML() {
       var html2doc = PREHTML + this.html + POSTHTML;
-      var source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(html2doc);
+      var source =
+        "data:application/vnd.ms-word;charset=utf-8," +
+        encodeURIComponent(html2doc);
       var fileDownload = document.createElement("a");
       document.body.appendChild(fileDownload);
       fileDownload.href = source;
-      fileDownload.download = 'document.doc';
+      fileDownload.download = "document.doc";
       fileDownload.click();
       document.body.removeChild(fileDownload);
     },
@@ -64,28 +70,28 @@ export default {
     async sendTextEdited() {
       let loader = this.$loading.show({ isFullPage: true, canCancel: false });
       try {
-        const formData = new FormData();
         this.html = this.html.replace(/<\/?span[^>]*>/g, "");
+        const formData = new FormData();
         formData.append("html", this.html);
         formData.append("text", this.text);
         formData.append("tipo_analisis", this.tipo_analisis.endpoint);
-        let res = null;
-        res = await axios.post(
+        let res = await axios.post(
           "http://www.redilegra.com/backend/api/SendText2",
-            // "http://127.0.0.1:8000/api/SendText2", // only for dev env.
-          formData 
+          // "http://127.0.0.1:8000/api/SendText2", // only for dev env.
+          formData
         );
         this.contentHtml = res.data.tipo_analisis.html_response;
         this.saveHtmlGerundios(this.contentHtml);
-        console.log(this.saveHtmlGerundios)
-        console.log(res.data.tipo_analisis);
-        this.sendResToComponents(res.data);
+        //console.log(this.saveHtmlGerundios)
+        //console.log(res.data.tipo_analisis);
+        // this.sendResToComponents(res.data);
+        this.$root.$emit("mensaje_showRightPanel");
       } catch (err) {
         console.warn(err);
       }
       loader.hide();
     },
-  }
+  },
 };
 </script>
 
