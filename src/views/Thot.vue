@@ -9,10 +9,10 @@
             <br />
             <b-tabs content-class="mt-3">
               <b-tab v-for="(a, index) in analisis" :key="index"
-                :title="index"
-                @click="emitInfo(a.TiposAnalisis)"
+                :title="a.tabTitle"
+                @click="emitInfo(a)"
               >
-                <TabGeneral :tipo_analisis="a"/>
+                <TabGeneral :analysisTypes="a.analysisTypes"/>
               </b-tab>
             </b-tabs>
           </div>
@@ -30,6 +30,7 @@
 </template>
   
 <script>
+import { mapActions } from "vuex";
 import Navbar from "@/components/Navbar.vue";
 import TabGeneral from "@/components/Tabs/TabGeneral.vue";
 import RightPanel from "@/components/RightPanel.vue";
@@ -111,10 +112,14 @@ export default {
     });
   },
   methods: {
-    emitInfo(data) {
-      console.log("ignorar", data);
-      // this.$root.$emit("infoAnalisisGeneral", data, this.estadisticas);
+    ...mapActions(["saveGroupSelected"]),
+    emitInfo(feedback) {
+      this.saveGroupSelected(feedback);
     },
+    // emitInfo(data) {
+    //   console.log("ignorar", data);
+    //   // this.$root.$emit("infoAnalisisGeneral", data, this.estadisticas);
+    // },
     sumarNumeroErrores(data) {1
       return data.reduce((a, b) => {
         return {count: a.count + b.count} 

@@ -2,16 +2,13 @@
   <div class="row">
     <div class="col-md-12">
       <b-tabs content-class="mt-3">
-        <b-tab v-for="(a, index) in tipo_analisis" :key="index"
-          :title="index"
-          @click="emitInfo(a.TiposAnalisis)"
+        <b-tab
+          v-for="(a, index) in analysisTypes"
+          :key="index"
+          :title="a.analysisTitle"
+          @click="emitInfo(a.feedbackTypes)"
         >
-          <div v-if="showError">
-            <ErrorHtml/>
-          </div>
-          <div v-else>
-            <TabEditor2 :tipo_analisis="a"  class="tabeditor"/>
-          </div>
+          <TabEditor2 :endpoint="a.endpoint" />
         </b-tab>
       </b-tabs>
     </div>
@@ -20,36 +17,23 @@
 
 <script>
 import TabEditor2 from "@/components/Tabs/TabEditor2.vue";
-import ErrorHtml from "../ErrorHtml.vue";
-import { mapActions } from 'vuex';
+import { mapActions } from "vuex";
 
 export default {
   name: "TabGeneral",
-  props: ['tipo_analisis'],
+  props: ["analysisTypes"],
   components: {
-    TabEditor2,
-    ErrorHtml
+    TabEditor2
   },
   data() {
     return {
-      html_response: "",
-      showError: false,
-      html: "",
     };
   },
   methods: {
-    ...mapActions({
-      tabSelected: 'saveTabSelected'
-    }),
+    ...mapActions(["saveTabSelected"]),
     emitInfo(feedback) {
-      console.log('tabgeneral feedback', feedback);
-      this.tabSelected(feedback);
-    }
-  }
+      this.saveTabSelected(feedback);
+    },
+  },
 };
 </script>
-<style scoped>
-/* .tabeditor {
-  border: 5px solid red;
-} */
-</style>

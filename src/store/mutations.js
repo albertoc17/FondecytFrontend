@@ -26,7 +26,10 @@ const mutations = {
     Vue.set(state, "htmlProposito", data);
   },
   setTabSelected(state, data) {
-    Vue.set(state, "TabSelected", data);
+    Vue.set(state, "tabSelected", data);
+  },
+  setGroupSelected(state, data) {
+    Vue.set(state, "groupSelected", data);
   },
 };
 

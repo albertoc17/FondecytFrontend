@@ -2,16 +2,58 @@
   <div id="TabRetroalimentacion">
     <div
       class="row feedbackRow"
-      v-for="(fb, index) in wea" 
+      v-for="(fb, index) in tabSelected"
       :key="index"
-      :style="fb.style"
+      :style="'background-color:' + fb.style"
     >
       <div class="col-md-12">
-        <h4><span class="circle"> {{fb.nro_errores}}</span>{{ fb.label }}</h4>
-        <p v-if="fb.nro_errores > 0" class="mb-2"> {{ fb.feedback_negativo }} </p>
-        <p v-else                    class="mb-2"> {{ fb.feedback_positivo }} </p>
+        <h4>
+          <span class="circle">{{ fb.nro_errores }}</span>
+          <span> {{ fb.feedbackTitle }} </span>
+        </h4>
+        <p v-if="fb.nro_errores > 0">
+          {{ fb.negativeFeedback }}
+        </p>
+        <p v-else-if="fb.nro_errores == 0">
+          {{ fb.positiveFeedback }}
+        </p>
+        <div
+          v-if="fb.urlGenially"
+          style="
+            position: relative;
+            padding-bottom: 56.25%;
+            padding-top: 0;
+            height: 0;
+            margin-bottom: 2%;
+          "
+        >
+          <iframe
+            frameborder="0"
+            width="1200"
+            height="675"
+            style="
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+            "
+            :src="fb.urlGenially"
+            type="text/html"
+            allowscriptaccess="always"
+            allowfullscreen="true"
+            scrolling="yes"
+            allownetworking="all"
+          ></iframe>
+        </div>
         <div class="text-center">
-          <b-button pill size="sm" class="mb-2" variant="dark" @click="verDetalle(fb)">
+          <b-button
+            pill
+            size="sm"
+            class="mb-2"
+            variant="dark"
+            @click="verDetalle(fb)"
+          >
             Ver Más <b-icon icon="plus-circle"></b-icon>
           </b-button>
         </div>
@@ -21,7 +63,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapState } from "vuex";
 
 export default {
   name: "TabRetroalimentacion",
@@ -31,21 +73,12 @@ export default {
     };
   },
   computed: {
-    ...mapGetters({
-      tabSelected : 'getTabSelected'
-    }),
-    wea() {
-      console.log('holas', this.tabSelected);
-      return this.tabSelected;
-    }
+    ...mapState(["tabSelected"]),
   },
   methods: {
     verDetalle(detalle) {
       this.$root.$emit("infoDetalleFeedback", detalle);
     },
-    // itemStyle(fb) {
-    //   return `background-color: ${fb.style};`;
-    // }
   },
 };
 </script>
@@ -55,7 +88,8 @@ export default {
   margin: 3%;
 }
 .feedbackRow {
-  border-bottom: 1px solid; border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
   padding-top: 2%;
 }
 .circle {

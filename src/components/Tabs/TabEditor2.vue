@@ -8,29 +8,37 @@
         Descargar archivo
       </button>
     </div>
-    <quill-editor
-      v-model="contentHtml"
-      :options="editorOptions"
-      @change="onEditorChange($event)"
-      ref="myQuillEditor"
-    />
+    <div v-if="showError">
+      <ErrorHtml/>
+    </div>
+    <div v-else>
+      <quill-editor
+        v-model="contentHtml"
+        :options="editorOptions"
+        @change="onEditorChange($event)"
+        ref="myQuillEditor"
+      />
+    </div>
   </div>
 </template>
 
 <script>
+import ErrorHtml from "../ErrorHtml.vue";
 import { quillEditor } from "vue-quill-editor";
 import "../../../node_modules/quill/dist/quill.snow.css";
-import { mapActions } from "vuex";
 import axios from "axios";
 import { PREHTML, POSTHTML } from "@/includes/constants2.js";
+import { mapActions } from "vuex";
 export default {
   name: "TabEditor",
-  props: ["tipo_analisis"],
+  props: ["endpoint"],
   components: {
-    quillEditor,
+    ErrorHtml,
+    quillEditor
   },
   data() {
     return {
+      showError: false,
       contentHtml: "",
       html: "",
       text: "",
@@ -49,7 +57,6 @@ export default {
     onEditorChange({ html, text }) {
       this.html = html;
       this.text = text;
-      console.log(this.tipo_analisis);
     },
     exportHTML() {
       var html2doc = PREHTML + this.html + POSTHTML;
@@ -70,11 +77,12 @@ export default {
     async sendTextEdited() {
       let loader = this.$loading.show({ isFullPage: true, canCancel: false });
       try {
+        this.$root.$emit("mensaje_showRightPanel");
         this.html = this.html.replace(/<\/?span[^>]*>/g, "");
         const formData = new FormData();
         formData.append("html", this.html);
         formData.append("text", this.text);
-        formData.append("tipo_analisis", this.tipo_analisis.endpoint);
+        formData.append("tipo_analisis", this.endpoint);
         let res = await axios.post(
           "http://www.redilegra.com/backend/api/SendText2",
           // "http://127.0.0.1:8000/api/SendText2", // only for dev env.
@@ -82,12 +90,12 @@ export default {
         );
         this.contentHtml = res.data.tipo_analisis.html_response;
         this.saveHtmlGerundios(this.contentHtml);
-        //console.log(this.saveHtmlGerundios)
-        //console.log(res.data.tipo_analisis);
+        // console.log(res.data.tipo_analisis.flag)
+        // res.data.tipo_analisis.flag.map((d) => console.log(d.label));
         // this.sendResToComponents(res.data);
-        this.$root.$emit("mensaje_showRightPanel");
       } catch (err) {
         console.warn(err);
+        this.showError = true;
       }
       loader.hide();
     },

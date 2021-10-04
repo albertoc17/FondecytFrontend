@@ -24,8 +24,14 @@ const actions = {
    commit("sethtmlProposito", data);
   },
   saveTabSelected: ({ commit }, data) => {
+    console.log("wardiola: ", data);
     commit("setTabSelected", data);
-   },
+  },
+  saveGroupSelected: ({ commit }, data) => {
+    console.log("group: ", data);
+    // let asd = data.map((d) => d.label)
+    commit("setGroupSelected", data);
+  }
 }
 
 export default actions;
