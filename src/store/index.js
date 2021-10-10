@@ -7,14 +7,38 @@ import mutations from './mutations'
 Vue.use(Vuex)
 
 const initialState = {
-  htmlGerundios: null,
-  htmlOraciones: null,
-  htmlParrafos: null,
-  htmlPersona: null,
-  htmlVozPasiva: null,
-  htmlConectores: null,
-  htmlLecturabilidad: null,
-  htmlProposito: null,
+  gerundios: {
+    html: null,
+    nro_errores: 0,
+  },
+  oraciones: {
+    html: null,
+    nro_errores: 0,
+  },
+  parrafos: {
+    html: null,
+    nro_errores: 0,
+  },
+  persona: {
+    html: null,
+    nro_errores: 0,
+  },
+  vozPasiva: {
+    html: null,
+    nro_errores: 0,
+  },
+  conectores: {
+    html: null,
+    nro_errores: 0,
+  },
+  lecturabilidad: {
+    html: null,
+    nro_errores: 0,
+  },
+  proposito: {
+    html: null,
+    nro_errores: 0,
+  },
   tabSelected: null,
   groupSelected: null,
 }

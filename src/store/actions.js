@@ -28,7 +28,7 @@ const actions = {
     commit("setTabSelected", data);
   },
   saveGroupSelected: ({ commit }, data) => {
-    console.log("group: ", data);
+    // console.log("group: ", data);
     // let asd = data.map((d) => d.label)
     commit("setGroupSelected", data);
   }

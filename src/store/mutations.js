@@ -2,7 +2,7 @@ import Vue from "vue";
 
 const mutations = {
   setHtmlGerundios(state, data) {
-    Vue.set(state, "htmlGerundios", data);
+    Vue.set(state.gerundios, data);
   },
   sethtmlOraciones(state, data) {
     Vue.set(state, "htmlOraciones", data);

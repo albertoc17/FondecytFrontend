@@ -29,6 +29,7 @@ import "../../../node_modules/quill/dist/quill.snow.css";
 import axios from "axios";
 import { PREHTML, POSTHTML } from "@/includes/constants2.js";
 import { mapActions } from "vuex";
+
 export default {
   name: "TabEditor",
   props: ["endpoint"],
@@ -88,9 +89,17 @@ export default {
           // "http://127.0.0.1:8000/api/SendText2", // only for dev env.
           formData
         );
+        switch (this.endpoint) {
+          case "gerunds":
+            this.saveHtmlGerundios(this.contentHtml);
+            break;
+        
+          default:
+            break;
+        }
+        console.log(res.data);
         this.contentHtml = res.data.tipo_analisis.html_response;
-        this.saveHtmlGerundios(this.contentHtml);
-        // console.log(res.data.tipo_analisis.flag)
+        console.log(res.data.tipo_analisis.flag);
         // res.data.tipo_analisis.flag.map((d) => console.log(d.label));
         // this.sendResToComponents(res.data);
       } catch (err) {

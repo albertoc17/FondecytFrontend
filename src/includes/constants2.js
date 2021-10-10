@@ -12,7 +12,7 @@ export const Analisis = {
             errorCorrection: "“Esta experiencia está diseñada para que los alumnos armen circuitos en serie y en paralelo de resistores, aprendan cómo medir sus respectivos voltajes y corrientes en cada uno de los elementos, y comprueben así las Leyes de Kirchhoff”.",
             errorComment: "Una forma de evitar la repetición de los gerundios, es reformular los verbos.",
             style: "#FBBA63",
-            nro_errores : 0 ,
+            nro_errores : 0,
           }
         },
         analysisTitle: "Gerundios",
