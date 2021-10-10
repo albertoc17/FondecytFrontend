@@ -94,7 +94,7 @@ export const Analisis = {
             errorExample: "“Para el caso, armar otro circuito en paralelo el procedimiento lo <strong>encontré</strong> un poco más tedioso y <strong>terminé</strong> por <strong>confundirme</strong> en como agregar el multímetro para cada elemento. Luego, con ayuda de tips de la profesora, <strong>pude</strong> saber cuál parte iba con cuál en la protoboard. <strong>Despejando</strong> esa duda, <strong>pude</strong> empezar a calcular los valores de voltaje y corriente en el circuito”.",
             errorCorrection: "“Para el caso, armar otro circuito en paralelo <strong>fue un</strong> procedimiento  un poco más tedioso, <strong>lo que provocó confusión</strong> en cómo agregar el multímetro para cada elemento. Luego, con ayuda de tips de la profesora, <strong>se logró identificar</strong> cuál parte iba con cuál en la protoboard. <strong>Al despejar</strong> esa duda, <strong>fue posible</strong> empezar a calcular los valores de voltaje y corriente en el circuito”.",
             errorComment: "",
-            style: "#ffaa8e",
+            style: "#FBBA63",
             nro_errores: 0
           },
           SegundaPersonaSingular: {
@@ -105,7 +105,7 @@ export const Analisis = {
             errorExample: "“Este proceso se repetirá con los diferentes circuitos que se analizarán a lo largo de esta experiencia, pero con la diferencia que en cada uno de estos se utilizará un método distinto y las variables a encontrar serán distintas, dependiendo de lo que te pida indagar en el circuito a analizar respectivamente”.",
             errorCorrection: "“Este proceso se repetirá con los diferentes circuitos que se analizarán a lo largo de esta experiencia, pero con la diferencia que en cada uno de estos se utilizará un método distinto y las variables a encontrar serán distintas, dependiendo de lo que se pida indagar en el circuito a analizar respectivamente”.",
             errorComment: "En este caso correspondía emplear la forma impersonal “se”, como se presenta a continuación:",
-            style: "#fffa8e",
+            style: "#FFF492",
             nro_errores: 0
           }
         },
@@ -122,7 +122,7 @@ export const Analisis = {
             errorExample: "“Los datos presentados en la tabla n°1 fueron identificados y presentados mediante el uso de los manuales de cada fabricante los cuales fueron entregados en laboratorio de mediciones”.",
             errorCorrection: "“Se identificaron y presentaron los datos de la tabla n°1 mediante el uso de los manuales de cada fabricante, los cuales se entregaron en el laboratorio de mediciones”.",
             errorComment: "",
-            style: "#ffaa8e",
+            style: "#FBBA63",
             nro_errores: 0
           }
         },
@@ -131,25 +131,19 @@ export const Analisis = {
       },
       Conectores: {
         feedbackTypes:  {
-          Conectores: {
-            feedbackTitle: "Conectores",
+          ausenciaConectores: {
+            feedbackTitle: "Ausencia de Conectores",
             feedbackComment: "Los conectores son unidades invariables que establecen conexiones entre las distintas partes de un texto. Sin ellos la oración no cobra sentido, tal como se evidencia en el enunciado que se presenta a continuación: “el multímetro digital entregó mejores resultados en todas las actividades, (por lo que) es un buen candidato para realizar mediciones en futuros laboratorios, (ya que) también necesita menor cantidad de ajustes que un multímetro análogo”.",
             negativeFeedback: "En esta oración, al parecer, no estás empleando ningún conector. Te recomendamos que los utilices para que las ideas se relacionen de manera clara y que tu texto sea cohesivo.",
             positiveFeedback: "Observamos un buen texto, con un adecuado uso de conectores ¡Buen trabajo!.",
             errorExample: "“Previamente al comienzo de la actividad práctica, fueron dados a conocer los riesgos eléctricos y los métodos de protección. Se mencionó que en caso de descarga eléctrica en un compañero, se debe cortar la corriente desde el interruptor o disyuntor (automático), en este caso instalado en el mesón de trabajo. Por el contrario, nunca se debe tocar a la persona que está recibiendo corriente eléctrica”.",
             errorCorrection: "“Previamente al comienzo de la actividad práctica, fueron dados a conocer los riesgos eléctricos y los métodos de protección. Se mencionó que en caso de descarga eléctrica en un compañero, se debe cortar la corriente desde el interruptor o disyuntor (automático), en este caso instalado en el mesón de trabajo. Además, nunca se debe tocar a la persona que está recibiendo corriente eléctrica”.",
             errorComment: "Debido a que las ideas no se contraponen sino que se añade otra complementando la anterior, en lugar de utilizar el conector “Por el contrario”, se recomienda utilizar un conector aditivo como “Además” o “Asimismo”.",
-            style: "#ffaa8e",
+            style: "#FBBA63",
             nro_errores: 0
-          }
-        },
-        analysisTitle: "Conectores",
-        endpoint: "conectores"
-      },
-      Conectores2: {
-        feedbackTypes:  {
-          Conectores2: {
-            feedbackTitle: "Conectores2",
+          },
+          conectoresRepetidos: {
+            feedbackTitle: "Conectores Repetidos",
             feedbackComment: "placeholder",
             negativeFeedback: "placeholder",
             positiveFeedback: "placeholder",
@@ -157,13 +151,31 @@ export const Analisis = {
             errorCorrection: "placeholder",
             errorComment: "placeholder",
             urlGenially: 'https://view.genial.ly/60cd376d3adac80cfe6f5e52',
-            style: "#ffaa8e",
+            style: "#FFF492",
             nro_errores: 0
           }
         },
-        analysisTitle: "Conectores 2",
-        endpoint: "conectores2"
+        analysisTitle: "Conectores",
+        endpoint: "conectores"
       }
+      // Conectores2: {
+      //   feedbackTypes:  {
+      //     Conectores2: {
+      //       feedbackTitle: "Conectores2",
+      //       feedbackComment: "placeholder",
+      //       negativeFeedback: "placeholder",
+      //       positiveFeedback: "placeholder",
+      //       errorExample: "placeholder",
+      //       errorCorrection: "placeholder",
+      //       errorComment: "placeholder",
+      //       urlGenially: 'https://view.genial.ly/60cd376d3adac80cfe6f5e52',
+      //       style: "#ffaa8e",
+      //       nro_errores: 0
+      //     }
+      //   },
+      //   analysisTitle: "Conectores 2",
+      //   endpoint: "conectores2"
+      // }
     },
     tabTitle: "Estilo"
   },
@@ -179,7 +191,7 @@ export const Analisis = {
             errorExample: "placeholder",
             errorCorrection: "placeholder",
             errorComment: "placeholder",
-            style: '#ffaa8e',
+            style: '#FBBA63',
             nro_errores: 0
           }
         },

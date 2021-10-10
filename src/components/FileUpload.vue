@@ -58,14 +58,15 @@ export default {
           //  "http://127.0.0.1:8000/api/FileUploadView",
           formData
         );
+        console.log(res.data);
+        // this.sendResToComponents(res.data);
         // this.emitInfo(this.data_general);
-        loader.hide();
-        this.sendResToComponents(res.data);
         this.makeToast('Documento analizado correctamente.', 'success');
       } catch (err) {
-        loader.hide();
         console.warn(err);
         this.makeToast(err, 'danger');
+      } finally {
+        loader.hide();
       }
     },
     // emitInfo(data) {
