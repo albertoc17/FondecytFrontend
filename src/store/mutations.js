@@ -22,15 +22,15 @@ const mutations = {
   },
   setVozPasiva(state, {html, error}) {
     state.vozPasiva.html = html;
-    state.vozPasiva.errores.nro_errores = error.EstiloVozPasiva;
+    state.vozPasiva.nro_errores = error.EstiloVozPasiva;
   },
   setConectores(state, {html, error}) {
     state.conectores.html = html;
-    state.conectores.errores.nro_errores = error.EstiloConectores;  
+    state.conectores.nro_errores = error.EstiloConectores;  
   },
   setComplejidad(state, {html, error}) {
     state.complejidad.html = html;
-    state.complejidad.errores.nro_errores = error.DiscursivoComplejidad;  
+    state.complejidad.nro_errores = error.DiscursivoComplejidad;  
   },
   setLecturabilidad(state, {html, error}) {
     state.lecturabilidad.html = html;
