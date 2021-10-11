@@ -1,27 +1,30 @@
 const actions = {
-  saveHtmlGerundios: ({ commit }, data) => {
-    commit("setHtmlGerundios", data);
+  saveHtmlGerundios: ({ commit }, {html, errores}) => {
+    commit("setHtmlGerundios", {html, errores});
   },
-  savehtmlOraciones: ({ commit }, data) => {
-   commit("sethtmlOraciones", data);
+  saveOraciones: ({ commit },{html, error}) => {
+   commit("sethtmlOraciones", {html, error});
   },
-  savehtmlParrafos: ({ commit }, data) => {
-   commit("sethtmlParrafos", data);
+  saveParrafos: ({ commit }, {html, error}) => {
+   commit("setParrafos", {html, error});
   },
-  savehtmlPersona: ({ commit }, data) => {
-   commit("sethtmlPersona", data);
+  savePersona: ({ commit }, {html, error}) => {
+   commit("setPersona", {html, error});
   },
-  savehtmlVozPasiva: ({ commit }, data) => {
-   commit("sethtmlVozPasiva", data);
+  saveVozPasiva: ({ commit }, {html, error}) => {
+   commit("setVozPasiva", {html, error});
   },
-  savehtmlConectores: ({ commit }, data) => {
-   commit("sethtmlConectores", data);
+  saveConectores: ({ commit }, {html, error}) => {
+   commit("setConectores", {html, error});
   },
-  savehtmlLecturabilidad: ({ commit }, data) => {
-   commit("sethtmlLecturabilidad", data);
+  saveComplejidad: ({ commit }, {html, error}) => {
+    commit("setComplejidad", {html, error});
+   },
+  saveLecturabilidad: ({ commit }, {html, error}) => {
+   commit("setLecturabilidad", {html, error});
   },
-  savehtmlProposito: ({ commit }, data) => {
-   commit("sethtmlProposito", data);
+  saveProposito: ({ commit }, {html, error}) => {
+   commit("setProposito", {html, error});
   },
   saveTabSelected: ({ commit }, data) => {
     console.log("wardiola: ", data);

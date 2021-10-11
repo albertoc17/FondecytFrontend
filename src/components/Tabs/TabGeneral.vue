@@ -6,7 +6,7 @@
           v-for="(a, index) in analysisTypes"
           :key="index"
           :title="a.analysisTitle"
-          @click="emitInfo(a.feedbackTypes)"
+          @click="emitInfo(a.endpoint)"
         >
           <TabEditor2 :endpoint="a.endpoint" />
         </b-tab>

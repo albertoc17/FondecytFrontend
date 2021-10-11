@@ -13,15 +13,24 @@ const initialState = {
   },
   oraciones: {
     html: null,
-    nro_errores: 0,
+    errores: {
+      Extensas: 0,
+      Breves: 0,
+    }
   },
   parrafos: {
     html: null,
-    nro_errores: 0,
+    errores: {
+      Extensas: 0,
+      Breves: 0,
+    }
   },
   persona: {
     html: null,
-    nro_errores: 0,
+    errores: {
+      Extensas: 0,
+      Breves: 0,
+    }
   },
   vozPasiva: {
     html: null,
@@ -31,13 +40,29 @@ const initialState = {
     html: null,
     nro_errores: 0,
   },
-  lecturabilidad: {
+  complejidad: {
     html: null,
     nro_errores: 0,
   },
+  lecturabilidad: {
+    html: null,
+    errores: {
+      algoDificil: 0,
+      algoFacil: 0,
+      Dificil: 0,
+      Facil: 0,
+      normal: 0,
+    }
+  },
   proposito: {
     html: null,
-    nro_errores: 0,
+    errores: {
+      Mm0: 0,
+      Mm1: 0,
+      Mm2: 0,
+      Mm3: 0,
+      Mm4: 0,
+    }
   },
   tabSelected: null,
   groupSelected: null,

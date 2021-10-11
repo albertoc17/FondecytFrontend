@@ -1,29 +1,52 @@
 import Vue from "vue";
 
 const mutations = {
-  setHtmlGerundios(state, data) {
-    Vue.set(state.gerundios, data);
+  setHtmlGerundios(state, html, errores = 0) {
+    state.gerundios.html = html;
+    state.gerundios.nro_errores = errores;
   },
-  sethtmlOraciones(state, data) {
-    Vue.set(state, "htmlOraciones", data);
+  sethtmlOraciones(state, {html, error}) {
+    state.oraciones.html = html;
+    state.oraciones.errores.Extensas = error.FormalOracionesExtensas;
+    state.oraciones.errores.Breves = error.FormalOracionesBreves;
   },
-  sethtmlParrafos(state, data) {
-    Vue.set(state, "htmlParrafos", data);
+  setParrafos(state, {html, error}) {
+    state.parrafos.html = html;
+    state.parrafos.errores.Extensas = error.FormalParrafosExtensas;
+    state.parrafos.errores.Breves = error.FormalParrafosBreves;
   },
-  sethtmlPersona(state, data) {
-    Vue.set(state, "htmlPersona", data);
+  setPersona(state, {html, error}) {
+    state.persona.html = html;
+    state.persona.errores.Extensas = error.EstiloSegundaPersonaSingular;
+    state.persona.errores.Breves = error.EstiloPrimeraPersonaSingular;
   },
-  sethtmlVozPasiva(state, data) {
-    Vue.set(state, "htmlVozPasiva", data);
+  setVozPasiva(state, {html, error}) {
+    state.vozPasiva.html = html;
+    state.vozPasiva.errores.nro_errores = error.EstiloVozPasiva;
   },
-  sethtmlConectores(state, data) {
-    Vue.set(state, "htmlConectores", data);
+  setConectores(state, {html, error}) {
+    state.conectores.html = html;
+    state.conectores.errores.nro_errores = error.EstiloConectores;  
   },
-  sethtmlLecturabilidad(state, data) {
-    Vue.set(state, "htmlLecturabilidad", data);
+  setComplejidad(state, {html, error}) {
+    state.complejidad.html = html;
+    state.complejidad.errores.nro_errores = error.DiscursivoComplejidad;  
   },
-  sethtmlProposito(state, data) {
-    Vue.set(state, "htmlProposito", data);
+  setLecturabilidad(state, {html, error}) {
+    state.lecturabilidad.html = html;
+    state.lecturabilidad.errores.algoDificil = error.DiscursivoComplejidadAlgoDificil;
+    state.lecturabilidad.errores.algoFacil = error.DiscursivoComplejidadAlgoFacil;  
+    state.lecturabilidad.errores.Dificil = error.DiscursivoComplejidadDificil;  
+    state.lecturabilidad.errores.Facil = error.DiscursivoComplejidadFacil; 
+    state.lecturabilidad.errores.Normal = error.DiscursivoComplejidadNormal;
+  },
+  setProposito(state, {html, error}) {
+    state.proposito.html = html;
+    state.proposito.errores.Mm0 = error.MM0;
+    state.proposito.errores.Mm1 = error.MM1;  
+    state.proposito.errores.Mm2 = error.MM2;  
+    state.proposito.errores.Mm3 = error.MM3; 
+    state.proposito.errores.Mm4 = error.MM4;
   },
   setTabSelected(state, data) {
     Vue.set(state, "tabSelected", data);

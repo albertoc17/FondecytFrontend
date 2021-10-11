@@ -54,6 +54,14 @@ export default {
     ...mapActions({
       saveHtmlGerundios: "saveHtmlGerundios",
       tabSelected: "saveTabSelected",
+      saveOraciones: "saveOraciones",
+      saveParrafos: "saveParrafos",
+      savePersona: "savePersona",
+      saveVozPasiva: "saveVozPasiva",
+      saveConectores: "saveConectores",
+      saveComplejidad: "saveComplejidad",
+      saveLecturabilidad: "saveLecturabilidad",
+      saveProposito: "saveProposito"
     }),
     onEditorChange({ html, text }) {
       this.html = html;
@@ -89,17 +97,48 @@ export default {
           // "http://127.0.0.1:8000/api/SendText2", // only for dev env.
           formData
         );
+        this.contentHtml = res.data.tipo_analisis.html_response;
+        // eslint-disable-next-line no-unused-vars
+        var payload = null;
         switch (this.endpoint) {
           case "gerunds":
-            this.saveHtmlGerundios(this.contentHtml);
+            this.saveHtmlGerundios(this.contentHtml, res.data.tipo_analisis.flag);
             break;
-        
+          case "oraciones":
+            payload = { 'html' : this.contentHtml, 'error': res.data.tipo_analisis.flag }
+            this.saveOraciones(payload);
+            break;
+          case "micro_paragraphs":
+            payload = { 'html' : this.contentHtml, 'error': res.data.tipo_analisis.flag }
+            this.saveParrafos(payload);
+            break;
+          case "fs_person":
+            payload = { 'html' : this.contentHtml, 'error': res.data.tipo_analisis.flag }
+            this.savePersona(payload);
+            break;
+          case "passive_voice":
+            payload = { 'html' : this.contentHtml, 'error': res.data.tipo_analisis.flag }
+            this.saveVozPasiva(payload);
+            break;
+          case "conectores":
+            payload = { 'html' : this.contentHtml, 'error': res.data.tipo_analisis.flag }
+            this.saveConectores(payload);
+            break;
+          case "sentence_complexity":
+            payload = { 'html' : this.contentHtml, 'error': res.data.tipo_analisis.flag }
+            this.saveComplejidad(payload);
+            break;
+          case "lecturabilidad_parrafo":
+            payload = { 'html' : this.contentHtml, 'error': res.data.tipo_analisis.flag }
+            this.saveLecturabilidad(payload);
+            break;
+          case "proposito":
+            payload = { 'html' : this.contentHtml, 'error': res.data.tipo_analisis.flag }
+            this.saveProposito(payload);
+            break;
           default:
             break;
         }
-        console.log(res.data);
-        this.contentHtml = res.data.tipo_analisis.html_response;
-        console.log(res.data.tipo_analisis.flag);
         // res.data.tipo_analisis.flag.map((d) => console.log(d.label));
         // this.sendResToComponents(res.data);
       } catch (err) {
