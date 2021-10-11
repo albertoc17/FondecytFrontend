@@ -24,6 +24,7 @@
 
 <script>
 import axios from "axios";
+import { mapActions } from 'vuex';
 import { validModel } from "@/includes/functions.js";
 
 export default {
@@ -31,19 +32,21 @@ export default {
   data() {
     return {
       file: null,
-      passive_voice: null,
-      statistics: null,
-      oraciones: null,
-      data_general: [
-        { label: "Gerundios", count: 0 },
-        { label: "Formal", count: 0 },
-        { label: "Estilo", count: 0 },
-        { label: "Discursivo", count: 0 },
-      ],
-      flags: null,
     };
   },
   methods: {
+    ...mapActions([
+      "saveGerundios",
+      "saveOraciones",
+      "saveParrafos",
+      "savePersona",
+      "saveVozPasiva",
+      "saveConectores",
+      "saveComplejidad",
+      "saveLecturabilidad",
+      "saveProposito",
+      "saveTabSelected"
+    ]),
     async onSubmit() {
       const formData = new FormData();
       formData.append("file", this.file);
@@ -51,16 +54,24 @@ export default {
       let loader = this.$loading.show({ isFullPage: true, canCancel: false });
       try {
         if (!(['docx', 'doc', 'txt'].includes(extension))) {
-          throw new Error('Archivo no soportado, utilice documentos de extensión .docx o .txt');
+          throw new Error('Archivo no soportado, utilice documentos con extensión .doc, .docx o .txt');
         }
         let res = await axios.post(
-          "http://www.redilegra.com/backend/api/FileUploadView",
-          //  "http://127.0.0.1:8000/api/FileUploadView",
+          // "http://www.redilegra.com/backend/api/FileUploadView",
+           "http://127.0.0.1:8000/api/FileUploadView",
           formData
         );
         console.log(res.data);
-        // this.sendResToComponents(res.data);
-        // this.emitInfo(this.data_general);
+        this.$root.$emit("mensaje_showRightPanel");
+        this.saveGerundios({ 'html' : res.data.gerunds.html_response, 'error': res.data.gerunds.flag });
+        this.saveOraciones(({ 'html' : res.data.oraciones.html_response, 'error': res.data.oraciones.flag }));
+        this.saveParrafos(({ 'html' : res.data.micro_paragraphs.html_response, 'error': res.data.micro_paragraphs.flag }));
+        this.savePersona(({ 'html' : res.data.fs_person.html_response, 'error': res.data.fs_person.flag }));
+        // this.saveVozPasiva(({ 'html' : res.data.passive_voice.html_response, 'error': res.data.passive_voice.flag }));
+        this.saveConectores(({ 'html' : res.data.conectores.html_response, 'error': res.data.conectores.flag }));
+        this.saveComplejidad(({ 'html' : res.data.sentence_complexity.html_response, 'error': res.data.sentence_complexity.flag }));
+        this.saveLecturabilidad(({ 'html' : res.data.lecturabilidad_parrafo.html_response, 'error': res.data.lecturabilidad_parrafo.flag }));
+        // this.saveProposito(({ 'html' : res.data.proposito.html_response, 'error': res.data.proposito.flag }));
         this.makeToast('Documento analizado correctamente.', 'success');
       } catch (err) {
         console.warn(err);
@@ -68,13 +79,6 @@ export default {
       } finally {
         loader.hide();
       }
-    },
-    // emitInfo(data) {
-    //   this.$root.$emit("infoAnalisisGeneral", data);
-    // },
-    sendResToComponents(data) {
-      this.$root.$emit("mensaje_showRightPanel");
-      this.$root.$emit("mensaje_fileupload", data);
     },
     makeToast(message, variant) {
       let title = variant == 'success' ? 'Operación exitosa' : 'Operación fallida';
@@ -96,6 +100,7 @@ export default {
   },
 };
 </script>
+
 <style>
 .custom-file-input:lang(es) ~ .custom-file-label::after {
   content: 'Explorar';

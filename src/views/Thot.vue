@@ -37,7 +37,7 @@ import RightPanel from "@/components/RightPanel.vue";
 import FileUpload from "@/components/FileUpload.vue";
 import { Splitpanes, Pane } from "splitpanes";
 import "splitpanes/dist/splitpanes.css";
-import { Analisis } from "@/includes/constants2.js";
+import { Analisis } from "@/includes/constants.js";
 
 export default {
   name: "Thot",

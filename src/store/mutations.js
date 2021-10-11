@@ -1,54 +1,57 @@
 import Vue from "vue";
 
 const mutations = {
-  setHtmlGerundios(state, html, errores = 0) {
+  setGerundios(state, {html, error}) {
+    console.log(error);
     state.gerundios.html = html;
-    state.gerundios.nro_errores = errores;
+    state.gerundios.feedbackTypes.gerundiosExcesivos.nro_errores = error.LexicoGramaticalGerundiosExcesivo;
   },
-  sethtmlOraciones(state, {html, error}) {
+  setOraciones(state, {html, error}) {
+    console.log(error);
     state.oraciones.html = html;
-    state.oraciones.errores.Extensas = error.FormalOracionesExtensas;
-    state.oraciones.errores.Breves = error.FormalOracionesBreves;
+    state.oraciones.feedbackTypes.oracionesExtensas.nro_errores = error.FormalOracionesExtensas;
+    state.oraciones.feedbackTypes.oracionesBreves.nro_errores = error.FormalOracionesBreves;
   },
   setParrafos(state, {html, error}) {
     state.parrafos.html = html;
-    state.parrafos.errores.Extensas = error.FormalParrafosExtensas;
-    state.parrafos.errores.Breves = error.FormalParrafosBreves;
+    state.parrafos.feedbackTypes.parrafosExtensos.nro_errores = error.FormalParrafosExtensos;
+    state.parrafos.feedbackTypes.parrafosBreves.nro_errores = error.FormalParrafosBreves;
   },
   setPersona(state, {html, error}) {
     state.persona.html = html;
-    state.persona.errores.Extensas = error.EstiloSegundaPersonaSingular;
-    state.persona.errores.Breves = error.EstiloPrimeraPersonaSingular;
+    state.persona.feedbackTypes.primeraPersonaSingular.nro_errores = error.EstiloSegundaPersonaSingular;
+    state.persona.feedbackTypes.segundaPersonaSingular.nro_errores = error.EstiloPrimeraPersonaSingular;
   },
   setVozPasiva(state, {html, error}) {
     state.vozPasiva.html = html;
-    state.vozPasiva.nro_errores = error.EstiloVozPasiva;
+    state.vozPasiva.feedbackTypes.vozPasiva.nro_errores = error.EstiloVozPasiva;
   },
   setConectores(state, {html, error}) {
     state.conectores.html = html;
-    state.conectores.nro_errores = error.EstiloConectores;  
+    state.conectores.feedbackTypes.ausenciaConectores.nro_errores = error.EstiloConectores;
+    state.conectores.feedbackTypes.conectoresRepetidos.nro_errores = error.FlagRepeticionConectores;
   },
   setComplejidad(state, {html, error}) {
     state.complejidad.html = html;
-    state.complejidad.nro_errores = error.DiscursivoComplejidad;  
+    state.complejidad.feedbackTypes.complejidad.nro_errores = error.DiscursivoComplejidad;
   },
   setLecturabilidad(state, {html, error}) {
     state.lecturabilidad.html = html;
-    state.lecturabilidad.errores.algoDificil = error.DiscursivoComplejidadAlgoDificil;
-    state.lecturabilidad.errores.algoFacil = error.DiscursivoComplejidadAlgoFacil;  
-    state.lecturabilidad.errores.Dificil = error.DiscursivoComplejidadDificil;  
-    state.lecturabilidad.errores.Facil = error.DiscursivoComplejidadFacil; 
-    state.lecturabilidad.errores.Normal = error.DiscursivoComplejidadNormal;
+    state.lecturabilidad.feedbackTypes.dificil.nro_errores = error.DiscursivoLecturabilidadDificil;
+    state.lecturabilidad.feedbackTypes.algoDificil.nro_errores = error.DiscursivoLecturabilidadAlgoDificil; 
+    state.lecturabilidad.feedbackTypes.normal.nro_errores = error.DiscursivoLecturabilidadNormal;
+    state.lecturabilidad.feedbackTypes.algoFacil.nro_errores = error.DiscursivoLecturabilidadAlgoFacil;
+    state.lecturabilidad.feedbackTypes.facil.nro_errores = error.DiscursivoLecturabilidadDificil;
   },
   setProposito(state, {html, error}) {
     state.proposito.html = html;
-    state.proposito.errores.Mm0 = error.MM0;
-    state.proposito.errores.Mm1 = error.MM1;  
-    state.proposito.errores.Mm2 = error.MM2;  
-    state.proposito.errores.Mm3 = error.MM3; 
-    state.proposito.errores.Mm4 = error.MM4;
+    state.proposito.feedbackTypes.resumen.nro_errores = error.Proposito;
+    state.proposito.feedbackTypes.introduccion.nro_errores = error.Proposito;  
+    state.proposito.feedbackTypes.desarrollo.nro_errores = error.Proposito;  
+    state.proposito.feedbackTypes.resultados.nro_errores = error.Proposito; 
+    state.proposito.feedbackTypes.conclusion.nro_errores = error.Proposito;
   },
-  setTabSelected(state, data) {
+  setSelectedTab(state, data) {
     Vue.set(state, "tabSelected", data);
   },
   setGroupSelected(state, data) {

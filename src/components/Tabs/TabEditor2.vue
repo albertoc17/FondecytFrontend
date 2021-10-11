@@ -27,7 +27,7 @@ import ErrorHtml from "../ErrorHtml.vue";
 import { quillEditor } from "vue-quill-editor";
 import "../../../node_modules/quill/dist/quill.snow.css";
 import axios from "axios";
-import { PREHTML, POSTHTML } from "@/includes/constants2.js";
+import { PREHTML, POSTHTML } from "@/includes/constants.js";
 import { mapActions } from "vuex";
 
 export default {
@@ -51,18 +51,18 @@ export default {
     };
   },
   methods: {
-    ...mapActions({
-      saveHtmlGerundios: "saveHtmlGerundios",
-      tabSelected: "saveTabSelected",
-      saveOraciones: "saveOraciones",
-      saveParrafos: "saveParrafos",
-      savePersona: "savePersona",
-      saveVozPasiva: "saveVozPasiva",
-      saveConectores: "saveConectores",
-      saveComplejidad: "saveComplejidad",
-      saveLecturabilidad: "saveLecturabilidad",
-      saveProposito: "saveProposito"
-    }),
+    ...mapActions([
+      "saveGerundios",
+      "saveOraciones",
+      "saveParrafos",
+      "savePersona",
+      "saveVozPasiva",
+      "saveConectores",
+      "saveComplejidad",
+      "saveLecturabilidad",
+      "saveProposito",
+      "saveTabSelected"
+    ]),
     onEditorChange({ html, text }) {
       this.html = html;
       this.text = text;
@@ -79,10 +79,6 @@ export default {
       fileDownload.click();
       document.body.removeChild(fileDownload);
     },
-    sendResToComponents(data) {
-      this.$root.$emit("mensaje_showRightPanel");
-      this.$root.$emit("mensaje_fileupload_new", data);
-    },
     async sendTextEdited() {
       let loader = this.$loading.show({ isFullPage: true, canCancel: false });
       try {
@@ -98,49 +94,40 @@ export default {
           formData
         );
         this.contentHtml = res.data.tipo_analisis.html_response;
+        console.log(res.data.tipo_analisis.flag);
         // eslint-disable-next-line no-unused-vars
-        var payload = null;
+        const payload = { 'html' : this.contentHtml, 'error': res.data.tipo_analisis.flag }
         switch (this.endpoint) {
           case "gerunds":
-            this.saveHtmlGerundios(this.contentHtml, res.data.tipo_analisis.flag);
+            this.saveGerundios(payload);
             break;
           case "oraciones":
-            payload = { 'html' : this.contentHtml, 'error': res.data.tipo_analisis.flag }
             this.saveOraciones(payload);
             break;
           case "micro_paragraphs":
-            payload = { 'html' : this.contentHtml, 'error': res.data.tipo_analisis.flag }
             this.saveParrafos(payload);
             break;
           case "fs_person":
-            payload = { 'html' : this.contentHtml, 'error': res.data.tipo_analisis.flag }
             this.savePersona(payload);
             break;
           case "passive_voice":
-            payload = { 'html' : this.contentHtml, 'error': res.data.tipo_analisis.flag }
             this.saveVozPasiva(payload);
             break;
           case "conectores":
-            payload = { 'html' : this.contentHtml, 'error': res.data.tipo_analisis.flag }
             this.saveConectores(payload);
             break;
           case "sentence_complexity":
-            payload = { 'html' : this.contentHtml, 'error': res.data.tipo_analisis.flag }
             this.saveComplejidad(payload);
             break;
           case "lecturabilidad_parrafo":
-            payload = { 'html' : this.contentHtml, 'error': res.data.tipo_analisis.flag }
             this.saveLecturabilidad(payload);
             break;
           case "proposito":
-            payload = { 'html' : this.contentHtml, 'error': res.data.tipo_analisis.flag }
             this.saveProposito(payload);
             break;
           default:
             break;
         }
-        // res.data.tipo_analisis.flag.map((d) => console.log(d.label));
-        // this.sendResToComponents(res.data);
       } catch (err) {
         console.warn(err);
         this.showError = true;

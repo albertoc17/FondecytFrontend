@@ -6,7 +6,7 @@
           v-for="(a, index) in analysisTypes"
           :key="index"
           :title="a.analysisTitle"
-          @click="emitInfo(a.endpoint)"
+          @click="saveSelectedTab(a.endpoint)"
         >
           <TabEditor2 :endpoint="a.endpoint" />
         </b-tab>
@@ -25,15 +25,9 @@ export default {
   components: {
     TabEditor2
   },
-  data() {
-    return {
-    };
-  },
+
   methods: {
-    ...mapActions(["saveTabSelected"]),
-    emitInfo(feedback) {
-      this.saveTabSelected(feedback);
-    },
+    ...mapActions(["saveSelectedTab"])
   },
 };
 </script>

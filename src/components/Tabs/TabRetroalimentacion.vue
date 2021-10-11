@@ -2,7 +2,7 @@
   <div id="TabRetroalimentacion">
     <div
       class="row feedbackRow"
-      v-for="(fb, index) in tabSelected"
+      v-for="(fb, index) in getRetroalimentacion.feedbackTypes"
       :key="index"
       :style="'background-color:' + fb.style"
     >
@@ -63,9 +63,8 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapGetters } from "vuex";
  
-
 export default {
   name: "TabRetroalimentacion",
   data() {
@@ -74,7 +73,7 @@ export default {
     };
   },
   computed: {
-    ...mapState(["tabSelected"]),
+    ...mapGetters(["getRetroalimentacion"]),
   },
   methods: {
     verDetalle(detalle) {

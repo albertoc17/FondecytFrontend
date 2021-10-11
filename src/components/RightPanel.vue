@@ -11,7 +11,7 @@
           <div v-else-if="modoInformacion === 'retroalimentacion'">
             <TabRetroalimentacion :feedback="feedback" />
           </div> -->
-          <Barchart :chartData="chartData" />
+          <Barchart :chartData="chartData" v-if="1==2"/>
           <TabRetroalimentacion :feedback="feedback" />
         </b-tab>
         <b-tab title="Detalle retroalimentación">
