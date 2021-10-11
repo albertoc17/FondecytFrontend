@@ -25,7 +25,6 @@ export default {
   components: {
     TabEditor2
   },
-
   methods: {
     ...mapActions(["saveSelectedTab"])
   },

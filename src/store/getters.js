@@ -47,7 +47,7 @@ const getters = {
       case "proposito":
         return state.proposito;
       default:
-        break;
+        return state.default;
     }
   },
 }

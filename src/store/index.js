@@ -10,7 +10,7 @@ Vue.use(Vuex)
 
 const initialState = {
   gerundios: {
-    html: null,
+    html: "",
     feedbackTypes: {
       gerundiosExcesivos: {
         feedbackTitle: "Gerundios Excesivos",
@@ -26,7 +26,7 @@ const initialState = {
     },
   },
   oraciones: {
-    html: null,
+    html: "",
     feedbackTypes: {
       oracionesExtensas: {
         feedbackTitle: "Oraciones Extensas",
@@ -53,7 +53,7 @@ const initialState = {
     }
   },
   parrafos: {
-    html: null,
+    html: "",
     feedbackTypes: {
       parrafosExtensos: {
         feedbackTitle: "Párrafos Extensos",
@@ -80,7 +80,7 @@ const initialState = {
     }
   },
   persona: {
-    html: null,
+    html: "",
     feedbackTypes:  {
       primeraPersonaSingular: {
         feedbackTitle: "Primera Persona Singular",
@@ -107,7 +107,7 @@ const initialState = {
     }
   },
   vozPasiva: {
-    html: null,
+    html: "",
     feedbackTypes:  {
       vozPasiva: {
         feedbackTitle: "Voz Pasiva",
@@ -123,7 +123,7 @@ const initialState = {
     },  
   },
   conectores: {
-    html: null,
+    html: "",
     feedbackTypes: {
       ausenciaConectores: {
         feedbackTitle: "Ausencia de Conectores",
@@ -151,7 +151,7 @@ const initialState = {
     }
   },
   complejidad: {
-    html: null,
+    html: "",
     feedbackTypes: {
       complejidad: {
         feedbackTitle: "Complejidad",
@@ -167,7 +167,7 @@ const initialState = {
     },
   },
   lecturabilidad: {
-    html: null,
+    html: "",
     feedbackTypes: {
       dificil: {
         feedbackTitle: "Lecturabilidad Difícil",
@@ -227,7 +227,7 @@ const initialState = {
     },
   },
   proposito: {
-    html: null,
+    html: "",
     feedbackTypes: {
       resumen: {
         feedbackTitle: "Resumen",
@@ -285,6 +285,10 @@ const initialState = {
         nro_errores: 0
       }
     },
+  },
+  default: {
+    html: "",
+    feedbackTypes: {},
   },
   tabSelected: null,
   groupSelected: null,

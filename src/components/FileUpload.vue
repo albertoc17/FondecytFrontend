@@ -63,15 +63,15 @@ export default {
         );
         console.log(res.data);
         this.$root.$emit("mensaje_showRightPanel");
-        this.saveGerundios({ 'html' : res.data.gerunds.html_response, 'error': res.data.gerunds.flag });
+        if (res.data.gerunds.html_response) this.saveGerundios({ 'html' : res.data.gerunds.html_response, 'error': res.data.gerunds.flag });
         this.saveOraciones(({ 'html' : res.data.oraciones.html_response, 'error': res.data.oraciones.flag }));
         this.saveParrafos(({ 'html' : res.data.micro_paragraphs.html_response, 'error': res.data.micro_paragraphs.flag }));
         this.savePersona(({ 'html' : res.data.fs_person.html_response, 'error': res.data.fs_person.flag }));
-        // this.saveVozPasiva(({ 'html' : res.data.passive_voice.html_response, 'error': res.data.passive_voice.flag }));
+        this.saveVozPasiva(({ 'html' : res.data.passive_voice.html_response, 'error': res.data.passive_voice.flag }));
         this.saveConectores(({ 'html' : res.data.conectores.html_response, 'error': res.data.conectores.flag }));
         this.saveComplejidad(({ 'html' : res.data.sentence_complexity.html_response, 'error': res.data.sentence_complexity.flag }));
         this.saveLecturabilidad(({ 'html' : res.data.lecturabilidad_parrafo.html_response, 'error': res.data.lecturabilidad_parrafo.flag }));
-        // this.saveProposito(({ 'html' : res.data.proposito.html_response, 'error': res.data.proposito.flag }));
+        this.saveProposito(({ 'html' : res.data.proposito.html_response, 'error': res.data.proposito.flag }));
         this.makeToast('Documento analizado correctamente.', 'success');
       } catch (err) {
         console.warn(err);

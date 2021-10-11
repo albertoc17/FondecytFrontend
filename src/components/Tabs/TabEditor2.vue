@@ -13,7 +13,7 @@
     </div>
     <div v-else>
       <quill-editor
-        v-model="contentHtml"
+        v-model="getRetroalimentacion.html"
         :options="editorOptions"
         @change="onEditorChange($event)"
         ref="myQuillEditor"
@@ -28,7 +28,7 @@ import { quillEditor } from "vue-quill-editor";
 import "../../../node_modules/quill/dist/quill.snow.css";
 import axios from "axios";
 import { PREHTML, POSTHTML } from "@/includes/constants.js";
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   name: "TabEditor",
@@ -40,7 +40,6 @@ export default {
   data() {
     return {
       showError: false,
-      contentHtml: "",
       html: "",
       text: "",
       editorOptions: {
@@ -49,6 +48,9 @@ export default {
         placeholder: "Inserte el texto aquí...",
       },
     };
+  },
+  computed: {
+    ...mapGetters(["getRetroalimentacion"]),
   },
   methods: {
     ...mapActions([
@@ -61,7 +63,7 @@ export default {
       "saveComplejidad",
       "saveLecturabilidad",
       "saveProposito",
-      "saveTabSelected"
+      "saveSelectedTab"
     ]),
     onEditorChange({ html, text }) {
       this.html = html;
@@ -82,7 +84,7 @@ export default {
     async sendTextEdited() {
       let loader = this.$loading.show({ isFullPage: true, canCancel: false });
       try {
-        this.$root.$emit("mensaje_showRightPanel");
+        //this.$root.$emit("mensaje_showRightPanel");
         this.html = this.html.replace(/<\/?span[^>]*>/g, "");
         const formData = new FormData();
         formData.append("html", this.html);
@@ -93,10 +95,10 @@ export default {
           // "http://127.0.0.1:8000/api/SendText2", // only for dev env.
           formData
         );
-        this.contentHtml = res.data.tipo_analisis.html_response;
+        this.$root.$emit("mensaje_showRightPanel");
         console.log(res.data.tipo_analisis.flag);
-        // eslint-disable-next-line no-unused-vars
-        const payload = { 'html' : this.contentHtml, 'error': res.data.tipo_analisis.flag }
+        this.saveSelectedTab(this.endpoint);
+        const payload = { 'html' : res.data.tipo_analisis.html_response, 'error': res.data.tipo_analisis.flag }
         switch (this.endpoint) {
           case "gerunds":
             this.saveGerundios(payload);

@@ -2,12 +2,11 @@ import Vue from "vue";
 
 const mutations = {
   setGerundios(state, {html, error}) {
-    console.log(error);
     state.gerundios.html = html;
     state.gerundios.feedbackTypes.gerundiosExcesivos.nro_errores = error.LexicoGramaticalGerundiosExcesivo;
+    // state.lexicoGramatical.nro_errores = error.LexicoGramaticalGerundiosExcesivo;
   },
   setOraciones(state, {html, error}) {
-    console.log(error);
     state.oraciones.html = html;
     state.oraciones.feedbackTypes.oracionesExtensas.nro_errores = error.FormalOracionesExtensas;
     state.oraciones.feedbackTypes.oracionesBreves.nro_errores = error.FormalOracionesBreves;
@@ -52,6 +51,7 @@ const mutations = {
     state.proposito.feedbackTypes.conclusion.nro_errores = error.Proposito;
   },
   setSelectedTab(state, data) {
+    console.log("asd: ", data);
     Vue.set(state, "tabSelected", data);
   },
   setGroupSelected(state, data) {
