@@ -4,21 +4,22 @@
     <div v-if="show">
       <b-tabs v-model="tabIndex">
         <b-tab title="Retroalimentación" active>
-          <!-- <div v-if="modoInformacion === 'estadisticas'">
-            <Barchart v-if="chartData" :chartData="chartData" />
-            <Estadisticas :estadisticas="estadisticas" />
+          <div v-if="!getRetroalimentacion.feedbackTypes">
+            <Barchart :chartData="getChartData" />
+            <Estadisticas :estadisticas="getEstadisticasGenerales" />
           </div>
-          <div v-else-if="modoInformacion === 'retroalimentacion'">
-            <TabRetroalimentacion :feedback="feedback" />
-          </div> -->
-          <Barchart :chartData="chartData" v-if="1==2"/>
-          <TabRetroalimentacion :feedback="feedback" />
+          <div v-else>
+            <TabRetroalimentacion :feedbackTypes="getRetroalimentacion.feedbackTypes" />
+          </div>
         </b-tab>
-        <b-tab title="Detalle retroalimentación">
+        <b-tab title="Detalle">
           <TabDetalle :detalle="detalle" />
         </b-tab>
         <b-tab title="Concordancia">
           <TabConcordancia />
+        </b-tab>
+        <b-tab title="Cápsulas informativas">
+          hola
         </b-tab>
       </b-tabs>
     </div>
@@ -55,9 +56,9 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapGetters } from "vuex";
 import Barchart from "./Barchart.vue";
-// import Estadisticas from './Estadisticas.vue';
+import Estadisticas from './Estadisticas.vue';
 import TabRetroalimentacion from "./Tabs/TabRetroalimentacion.vue";
 import TabDetalle from "./Tabs/TabDetalle.vue";
 import TabConcordancia from "./Tabs/TabConcordancia.vue";
@@ -66,48 +67,24 @@ export default {
   name: "RightPanel",
   components: {
     Barchart,
-    // Estadisticas,
+    Estadisticas,
     TabRetroalimentacion,
     TabDetalle,
     TabConcordancia,
   },
   data() {
     return {
-      show: false,
       tabIndex: 0,
-      chartData: null,
-      feedback: null,
+      show: false,
       detalle: null,
-      estadisticas: null,
-      modoInformacion: "estadistica",
     };
   },
   computed: {
-    ...mapState(["groupSelected"]),
+    ...mapGetters(["getChartData", "getRetroalimentacion", "getEstadisticasGenerales"]),
   },
   mounted() {
     this.$root.$on("mensaje_showRightPanel", () => {
       this.show = true;
-    });
-    this.$root.$on("infoAnalisisGeneral", (data, estadisticas) => {
-      this.estadisticas = estadisticas;
-      // this.tabIndex = 0;
-      this.modoInformacion = "estadistica";
-      this.chartData = {
-        labels: data.map((d) => d.label),
-        datasets: [
-          {
-            backgroundColor: "#F87979",
-            data: data.map((d) => d.count),
-            borderWidth: 2,
-          },
-        ],
-      };
-    });
-    this.$root.$on("infoAnalisisEspecificos", (feedback) => {
-      this.feedback = feedback;
-      // this.tabIndex = 0;
-      this.modoInformacion = "feedback";
     });
     this.$root.$on("infoDetalleFeedback", (detalle) => {
       this.tabIndex = 1;

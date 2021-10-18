@@ -26,12 +26,14 @@ const actions = {
   saveProposito: ({ commit }, { html, error }) => {
     commit("setProposito", { html, error });
   },
-  saveSelectedTab: ({ commit }, data) => {
-    commit("setSelectedTab", data);
+  saveEstadisticasGenerales: ({ commit }, data) => {
+    commit("setEstadisticasGenerales", data);
   },
-  saveGroupSelected: ({ commit }, data) => {
-    // console.log("group: ", data);
-    commit("setGroupSelected", data);
+  saveAnalysisTab: ({ commit }, data) => {
+    commit("setAnalysisTab", data);
+  },
+  saveAnalysisGroupTab: ({ commit }, data) => {
+    commit("setAnalysisGroupTab", data);
   }
 }
 

@@ -36,6 +36,7 @@ export default {
   },
   methods: {
     ...mapActions([
+      "saveEstadisticasGenerales",
       "saveGerundios",
       "saveOraciones",
       "saveParrafos",
@@ -45,7 +46,6 @@ export default {
       "saveComplejidad",
       "saveLecturabilidad",
       "saveProposito",
-      "saveTabSelected"
     ]),
     async onSubmit() {
       const formData = new FormData();
@@ -57,13 +57,14 @@ export default {
           throw new Error('Archivo no soportado, utilice documentos con extensión .doc, .docx o .txt');
         }
         let res = await axios.post(
-          // "http://www.redilegra.com/backend/api/FileUploadView",
-           "http://127.0.0.1:8000/api/FileUploadView",
+          "http://www.redilegra.com/backend/api/FileUploadView",
+          // "http://127.0.0.1:8000/api/FileUploadView",
           formData
         );
         console.log(res.data);
         this.$root.$emit("mensaje_showRightPanel");
-        if (res.data.gerunds.html_response) this.saveGerundios({ 'html' : res.data.gerunds.html_response, 'error': res.data.gerunds.flag });
+        this.saveEstadisticasGenerales(res.data.statistics);
+        this.saveGerundios({ 'html' : res.data.gerunds.html_response, 'error': res.data.gerunds.flag });
         this.saveOraciones(({ 'html' : res.data.oraciones.html_response, 'error': res.data.oraciones.flag }));
         this.saveParrafos(({ 'html' : res.data.micro_paragraphs.html_response, 'error': res.data.micro_paragraphs.flag }));
         this.savePersona(({ 'html' : res.data.fs_person.html_response, 'error': res.data.fs_person.flag }));

@@ -287,11 +287,12 @@ const initialState = {
     },
   },
   default: {
-    html: "",
-    feedbackTypes: {},
+    html: null,
+    feedbackTypes: null
   },
-  tabSelected: null,
-  groupSelected: null,
+  estadisticasGenerales: null,
+  AnalysisTab: null,
+  analysisGroupTab: null,
 }
 
 const store = new Vuex.Store({

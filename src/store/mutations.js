@@ -44,18 +44,20 @@ const mutations = {
   },
   setProposito(state, {html, error}) {
     state.proposito.html = html;
-    state.proposito.feedbackTypes.resumen.nro_errores = error.Proposito;
-    state.proposito.feedbackTypes.introduccion.nro_errores = error.Proposito;  
-    state.proposito.feedbackTypes.desarrollo.nro_errores = error.Proposito;  
-    state.proposito.feedbackTypes.resultados.nro_errores = error.Proposito; 
-    state.proposito.feedbackTypes.conclusion.nro_errores = error.Proposito;
+    state.proposito.feedbackTypes.resumen.nro_errores = error.MM0;
+    state.proposito.feedbackTypes.introduccion.nro_errores = error.MM1;  
+    state.proposito.feedbackTypes.desarrollo.nro_errores = error.MM2;  
+    state.proposito.feedbackTypes.resultados.nro_errores = error.MM3; 
+    state.proposito.feedbackTypes.conclusion.nro_errores = error.MM4;
   },
-  setSelectedTab(state, data) {
-    console.log("asd: ", data);
-    Vue.set(state, "tabSelected", data);
+  setEstadisticasGenerales(state, data) {
+    Vue.set(state, "estadisticasGenerales", data);
   },
-  setGroupSelected(state, data) {
-    Vue.set(state, "groupSelected", data);
+  setAnalysisTab(state, data) {
+    Vue.set(state, "AnalysisTab", data);
+  },
+  setAnalysisGroupTab(state, data) {
+    Vue.set(state, "analysisGroupTab", data);
   },
 };
 

@@ -1,23 +1,25 @@
 <template>
-  <div>
-    <div class="buttonContainer">
-      <button class="btn btn-success" @click="sendTextEdited()">
-        Enviar texto
-      </button>
-      <button class="btn btn-primary" @click="exportHTML()">
-        Descargar archivo
-      </button>
-    </div>
-    <div v-if="showError">
-      <ErrorHtml/>
-    </div>
-    <div v-else>
-      <quill-editor
-        v-model="getRetroalimentacion.html"
-        :options="editorOptions"
-        @change="onEditorChange($event)"
-        ref="myQuillEditor"
-      />
+  <div id="TabEditor">
+    <div v-if="getRetroalimentacion.feedbackTypes">
+      <div class="buttonContainer">
+        <button class="btn btn-success" @click="sendTextEdited()">
+          Enviar texto
+        </button>
+        <button class="btn btn-primary" @click="exportHTML()">
+          Descargar archivo
+        </button>
+      </div>
+      <div v-if="showError">
+        <ErrorHtml />
+      </div>
+      <div>
+        <quill-editor
+          v-model="getRetroalimentacion.html"
+          :options="editorOptions"
+          @change="onEditorChange($event)"
+          ref="myQuillEditor"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -35,7 +37,7 @@ export default {
   props: ["endpoint"],
   components: {
     ErrorHtml,
-    quillEditor
+    quillEditor,
   },
   data() {
     return {
@@ -63,7 +65,7 @@ export default {
       "saveComplejidad",
       "saveLecturabilidad",
       "saveProposito",
-      "saveSelectedTab"
+      "saveAnalysisTab",
     ]),
     onEditorChange({ html, text }) {
       this.html = html;
@@ -84,7 +86,6 @@ export default {
     async sendTextEdited() {
       let loader = this.$loading.show({ isFullPage: true, canCancel: false });
       try {
-        //this.$root.$emit("mensaje_showRightPanel");
         this.html = this.html.replace(/<\/?span[^>]*>/g, "");
         const formData = new FormData();
         formData.append("html", this.html);
@@ -97,8 +98,11 @@ export default {
         );
         this.$root.$emit("mensaje_showRightPanel");
         console.log(res.data.tipo_analisis.flag);
-        this.saveSelectedTab(this.endpoint);
-        const payload = { 'html' : res.data.tipo_analisis.html_response, 'error': res.data.tipo_analisis.flag }
+        this.saveAnalysisTab(this.endpoint);
+        const payload = {
+          html: res.data.tipo_analisis.html_response,
+          error: res.data.tipo_analisis.flag,
+        };
         switch (this.endpoint) {
           case "gerunds":
             this.saveGerundios(payload);
