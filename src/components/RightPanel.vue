@@ -25,32 +25,6 @@
     </div>
     <div v-else>
       <p class="text-center">Cargue un documento por favor</p>
-      <p style="font-size: 10px">
-        Dino es una empresa de estrategia, desarrollo e innovación tecnológica,
-        la cual se dedica a desarrollar sistemas informáticos para satisfacer
-        las necesidades de un cliente o negocio y somos muy bacanes para hacer
-        proyectos informáticos esta es una oración muy larga. Al plantear un
-        proyecto, se hace énfasis en proponer a nuestros clientes soluciones
-        estudiadas cuidadosamente y diseñadas a medida. Nuestras soluciones se
-        caracterizan por ser innovadoras, eficientes y de la más alta calidad.
-        Además, se utilizan técnicas y estrategias de última generación,
-        garantizando así la entrega de soluciones actualizadas a las corrientes
-        tecnológicas de la actualidad. Gracias a esto, se logra entregar a los
-        clientes soluciones satisfactorias y eficientes, capaces de cumplir con
-        estándares de calidad de usuarios y competir en el mercado del
-        desarrollo tecnológico. Nuestra empresa se compone de un equipo de
-        trabajo de estudiantes de la escuela de informática de la PUCV,
-        altamente capacitados en la formulación y ejecución de proyectos
-        informáticos. Los miembros del equipo destacan en capacidades de
-        identificación y resolución de problemas, trabajo en equipo,
-        planteamiento de soluciones y gestión de proyectos. Las habilidades
-        conjuntas de los miembros del equipo permiten a la empresa abordar
-        proyectos de cualquier escala y complejidad. Los proyectos de la empresa
-        se desarrollan en un ambiente profesional y estructurado, utilizando
-        metodologías y técnicas que forman parte del estado del arte del
-        desarrollo informático, y creo que esta oración es muy largo sí señor
-        así es si si si. Se han recogiendo los testimonios.
-      </p>
     </div>
   </div>
 </template>
