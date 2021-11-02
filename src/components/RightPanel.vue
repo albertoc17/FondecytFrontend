@@ -60,6 +60,9 @@ export default {
     this.$root.$on("mensaje_showRightPanel", () => {
       this.show = true;
     });
+    this.$root.$on("tabRetro", () => {
+      this.tabIndex = 0;
+    });
     this.$root.$on("infoDetalleFeedback", (detalle) => {
       this.tabIndex = 1;
       this.detalle = detalle;

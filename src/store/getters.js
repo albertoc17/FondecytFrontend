@@ -30,7 +30,6 @@ const getters = {
     return state.AnalysisTab
   },
   getRetroalimentacion(state) {
-    console.log("getRetroalimentacion: ", state.AnalysisTab);
     switch (state.AnalysisTab) {
       case "gerunds":
         return state.gerundios;
@@ -55,7 +54,6 @@ const getters = {
     }
   },
   getChartData(state) {
-    console.log("getchartdata: ", state.analysisGroupTab);
     let chartData = null;
     switch (state.analysisGroupTab) {
       case "lexicoGramatical":

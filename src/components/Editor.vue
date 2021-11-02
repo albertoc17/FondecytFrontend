@@ -1,6 +1,6 @@
 <template>
-  <div id="TabEditor">
-    <div v-if="getRetroalimentacion.feedbackTypes">
+  <div id="Editor">
+    <div v-if="feedbackTypes">
       <div class="buttonContainer">
         <button class="btn btn-success" @click="sendTextEdited()">
           Enviar texto
@@ -14,7 +14,7 @@
       </div>
       <div>
         <quill-editor
-          v-model="getRetroalimentacion.html"
+          v-model="contentHtml"
           :options="editorOptions"
           @change="onEditorChange($event)"
           ref="myQuillEditor"
@@ -25,15 +25,15 @@
 </template>
 
 <script>
-import ErrorHtml from "../ErrorHtml.vue";
+import ErrorHtml from "./ErrorHtml.vue";
 import { quillEditor } from "vue-quill-editor";
-import "../../../node_modules/quill/dist/quill.snow.css";
+import "../../node_modules/quill/dist/quill.snow.css";
 import axios from "axios";
 import { PREHTML, POSTHTML } from "@/includes/constants.js";
 import { mapActions, mapGetters } from "vuex";
 
 export default {
-  name: "TabEditor",
+  name: "Editor",
   props: ["endpoint"],
   components: {
     ErrorHtml,
@@ -53,6 +53,12 @@ export default {
   },
   computed: {
     ...mapGetters(["getRetroalimentacion"]),
+    contentHtml () {
+      return this.getRetroalimentacion.html;
+    },
+    feedbackTypes () {
+      return this.getRetroalimentacion.feedbackTypes;
+    }
   },
   methods: {
     ...mapActions([

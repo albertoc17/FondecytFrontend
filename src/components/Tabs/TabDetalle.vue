@@ -3,11 +3,11 @@
     <h4>{{ detalle.feedbackTitle }} </h4>
     <div class="row">
       <div class="col-md-12">
-        <span v-html="detalle.negativeFeedback"></span> <span v-html="detalle.feedbackComment"></span>
+        <span v-html="detalle.negativeFeedback"></span> <span v-if="detalle.feedbackComment" v-html="detalle.feedbackComment"></span>
       </div>
     </div>
     <br>
-    <div v-if=" detalle.feedbackTitle != 'Párrafos Extensos' && detalle.feedbackTitle != 'Párrafos Breves'">
+    <div v-if="detalle.errorExample">
       <div class="row">
         <div class="col-md-12">
           <p> A continuación te dejamos un ejemplo de como se evidencia este problema en la escritura de un estudiante: </p>
@@ -30,22 +30,20 @@
         <b-button @click="showEjemploCorregido()" variant="success" >Mostrar ejemplo corregido</b-button>
       </div>
       <br>
-    </div>
-    <div v-if="!isHidden" class="row">
+      <div v-if="!isHidden" class="row">
       <div class="col-md-12">
         <b-alert variant="success" class="text-center" show>
           <span v-html="detalle.errorCorrection"></span>
         </b-alert>
       </div>
+      </div>
     </div>
-    <h3>Cápsulas relacionadas</h3>
-    <div class="row">
-      <div class="col-md-12">
-        <ul>
-          <li> Capsula 1 </li>
-          <li> Capsula 2 </li>
-          <li> Capsula 3 </li>
-        </ul>
+    <div v-else>
+      <div class="row">
+        <div class="col-md-12">
+          <p>Un ejemplo de párrafo categorizado con este grado de lecturabilidad se presenta a continuación:</p> 
+          <span v-html="detalle.example"></span>
+        </div>
       </div>
     </div>
   </div>

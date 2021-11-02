@@ -6,9 +6,12 @@
           v-for="(a, index) in analysisTypes"
           :key="index"
           :title="a.analysisTitle"
-          @click="saveAnalysisTab(a.endpoint)"
+          @click="
+            saveAnalysisTab(a.endpoint);
+            tabRetro();
+          "
         >
-          <TabEditor :endpoint="a.endpoint" />
+          <Editor :endpoint="a.endpoint" />
         </b-tab>
       </b-tabs>
     </div>
@@ -16,17 +19,20 @@
 </template>
 
 <script>
-import TabEditor from "@/components/Tabs/TabEditor.vue";
+import Editor from "@/components/Editor.vue";
 import { mapActions } from "vuex";
 
 export default {
   name: "TabGeneral",
   props: ["analysisTypes"],
   components: {
-    TabEditor,
+    Editor,
   },
   methods: {
     ...mapActions(["saveAnalysisTab", "saveAnalysisGroupTab"]),
+    tabRetro() {
+      this.$root.$emit("tabRetro");
+    },
   },
 };
 </script>
