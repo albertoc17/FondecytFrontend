@@ -1,0 +1,47 @@
+
+/////// MEDIA QUERIES ///////
+/* para utilizar los mixins llamarlos de la siguiente forma en el código sass: @include nombre_mixin */
+
+// listado de media queries:
+
+//  @include media(xxs) // mobile small (min-width : 320px)
+//  @include media(xs)  // mobile medium (min-width : 480px)
+//  @include media(sm)  // tablet (min-width: 768px)
+//	@include media(md)  // desktop pequeño (min-width: 992px)
+//	@include media(lg)  // desktop mediano(min-width: 1200px)
+//	@include media(xl)  // desktop grande (min-width: 1400px)
+
+
+//mixin para media queries
+@mixin media($consulta)
+
+	$media-xxs: "(max-width: 426px)" //movil pequeño
+	$media-xs: "(min-width: 426px) and (max-width: 767px)" //movil mediano
+	$media-sm: "(min-width: 767px) and (max-width: 991px)" //tablet
+	$media-md: "(min-width: 991px) and (max-width: 1277px)" //desktop pequeño
+	$media-lg: "(min-width: 1277px) and (max-width: 1399px)" //desktop mediano
+	$media-xl: "(min-width: 1399px)" //desktop grande
+
+	@if $consulta == xxs
+		@media #{$media-xxs}
+			@content
+
+	@if $consulta == xs
+		@media #{$media-xs}
+			@content
+
+	@else if $consulta == sm
+		@media #{$media-sm}
+			@content
+
+	@else if $consulta == md
+		@media #{$media-md}
+			@content
+
+	@else if $consulta == lg
+		@media #{$media-lg}
+			@content
+
+	@else if $consulta == xl
+		@media #{$media-xl}
+			@content

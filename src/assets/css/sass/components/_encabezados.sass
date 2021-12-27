@@ -1,0 +1,83 @@
+// Encabezado sección
+@mixin titular-seccion
+
+	.cont-tit
+		margin-bottom: 40px
+
+		/////// media query ///////
+
+		@include media(xxs) // mobile small (min-width : 320px)
+			padding-bottom: 0
+
+		@include media(xs)  // mobile medium (min-width : 480px)
+			padding-bottom: 0
+
+		.epig
+			text-align: center
+			text-transform: uppercase
+			margin-bottom: 20px
+			font-size: $txt_lg
+			line-height: 178%
+			letter-spacing: .2px
+			@include font-main-regular
+
+			/////// media query ///////
+
+			@include media(xxs) // mobile small (min-width : 320px)
+				// font-size: $txt_xs
+				font-size: $txt_sm
+			@include media(xs)  // mobile medium (min-width : 480px)
+				// font-size: $txt_xs
+				font-size: $txt_sm
+
+		.tit
+			font-size: $titular_sm
+			text-align: center
+			color: $dark-grey
+			margin: 0 auto
+			margin-bottom: 20px
+			line-height: 148.68%
+			@include font-main-bold
+			
+			/////// media query ///////
+
+			@include media(xxs) // mobile small (min-width : 320px)
+				font-size: $titular_md
+				text-align: center
+				width: 100%
+				margin-bottom: 0
+
+			@include media(xs)  // mobile medium (min-width : 480px)
+				font-size: $titular_md
+				text-align: center
+				width: 100%
+				margin-bottom: 0
+			@include media(sm)  // tablet (min-width: 768px)
+				font-size: 30px
+
+		.baj
+			max-width: 1000px
+			text-align: center
+			margin: 0 auto
+			line-height: 178%
+			letter-spacing: .3px
+			font-size: $titular_sm
+			color: $dark-grey
+			@include font-main-regular
+
+			/////// media query ///////
+
+			@include media(xxs) // mobile small (min-width : 320px)
+				font-size: $txt_xs
+				font-size: $txt_sm
+			@include media(xs)  // mobile medium (min-width : 480px)
+				font-size: $txt_xs
+				font-size: $txt_sm
+			@include media(sm)  // tablet (min-width: 768px)
+				font-size: $titular_xs
+
+			a
+				color: $blue
+				text-decoration: underline
+
+@include titular-seccion

@@ -1,0 +1,305 @@
+
+.sidenav
+	height: 100vh
+	width: 320px
+	position: fixed
+	z-index: 1
+	top: 0
+	left: 0
+	background-color: #fff
+	overflow-x: hidden
+	overflow-y: auto
+	scrollbar-color: #bdbdbd #dfdfdf
+	scrollbar-width: thin
+
+	&::-webkit-scrollbar
+		width: 8px
+
+	&::-webkit-scrollbar-track
+		background: #dfdfdf
+		border-radius: 5px
+
+	&::-webkit-scrollbar-thumb
+		background: #bdbdbd
+		border-radius: 5px
+
+	li 
+		> a
+			padding: 14px
+			text-decoration: none
+			color: #192b41
+			@include flex
+			@include flex-align-center
+			@include flex-justify-start
+
+	
+	.cont-logo
+		padding: 20px
+		img
+			width: 105px
+
+	.subtit
+		color: rgba(55, 73, 87, 0.5)
+		margin-bottom: 10px
+		padding: 10px
+		font-size: $txt_sm
+		border-bottom: 1px solid $grey
+		@include font-main-bold
+
+
+
+	.row-accordion
+		margin-bottom: 15px
+		padding: 0 20px
+
+	.enc-accordion
+		cursor: pointer
+		padding: 12px
+		width: 100%
+		text-align: left
+		transition: 0.4s all ease
+		border-radius: 5px
+		@include flex
+		@include flex-align-center
+		@include flex-justify-spacebetween
+
+		.content
+			@include flex
+			@include flex-align-center
+
+		.ic-txt
+			display: inline-block
+			margin-right: 10px
+			width: 24px
+			height: 24px
+			transition: $transicion
+			background-image: url('../../imag/v1/icon/ic_comment_g.svg')
+			background-repeat: no-repeat
+			background-position: 0
+			background-size: 100%
+
+		&:hover
+			@include blue-gradient
+
+			.ic-txt
+				background-image: url('../../imag/v1/icon/ic_comment_w.svg')
+
+			.btn-accordion
+				background-image: url('../../imag/v1/icon/chevron_r_w.svg')
+			p
+				color: $blanco
+		
+		/////// media query ///////
+
+		@include media(xxs) // mobile small (min-width : 320px)
+			padding: 10px 15px
+		@include media(xs)  // mobile medium (min-width : 480px)
+			padding: 10px 15px
+
+		&.active
+			.btn-accordion
+				background-image: url('../../imag/v1/icon/chevron_r_w.svg')
+
+			.ic-txt
+				background-image: url('../../imag/v1/icon/ic_comment_w.svg')
+
+		p
+
+			font-size: $txt
+			text-transform: uppercase
+			color: $dark-grey
+			@include font-main-bold
+		
+			/////// media query ///////
+
+			@include media(xxs) // mobile small (min-width : 320px)
+				font-size: $txt_sm
+				line-height: 1.3
+			@include media(xs)  // mobile medium (min-width : 480px)
+				font-size: $txt_sm
+				line-height: 1.3
+
+	.btn-accordion
+		width: 13px
+		height: 13px
+		transition: $transicion
+		background-image: url('../../imag/v1/icon/chevron_r_n.svg')
+		background-repeat: no-repeat
+		background-position: 0
+		background-size: 100%
+		border: none
+		outline: none
+		
+		
+
+		@include font-main-bold
+
+	.active, .accordion:hover
+		@include blue-gradient
+
+		p
+			color: $blanco
+
+	.panel
+		background-color: white
+		padding-top: 10px
+
+		li
+			a
+				border-radius: 5px
+				padding-left: 40px
+				@include flex
+				@include flex-justify-spacebetween
+
+				.arrow
+					width: 13px
+					height: 13px
+					background-image: url('../../imag/v1/icon/chevron_r_g.svg')
+					background-repeat: no-repeat
+					background-position: 0
+					background-size: 100%
+
+			+ li
+				margin-top: 5px
+
+			&.link-active, &:hover
+				a
+					color: $blanco
+					@include blue-gradient
+					@include font-main-bold
+
+					.arrow
+						background-image: url('../../imag/v1/icon/chevron_r_w.svg')
+
+
+// navegación con tabs
+.block-tabs
+	padding-right: 10px !important
+
+	.cont-tit
+		margin-bottom: 20px
+		.tit
+			margin-bottom: 0
+			text-align: left
+
+	.tab-btns
+		margin-bottom: 20px
+		@include flex
+		@include flex-justify-start
+		@include flex-align-start
+
+		@include media(lg)  // desktop mediano(min-width: 1200px)
+			overflow-x: auto
+			overflow-y: visible
+			min-height: 60px
+
+		a
+			font-size: $txt_sm
+			color: rgba(55, 73, 87, 0.8)
+			position: relative
+			padding: 12px
+			text-align: center
+			@include flex-width(1, 0, auto)
+
+			@include media(lg)  // desktop mediano(min-width: 1200px)
+				font-size: 13px
+				padding: 12px 5px
+
+			&:before
+				content: ''
+				position: absolute
+				left: 0
+				right: 0
+				height: 3px
+				width: 100%
+				margin: 0 auto
+				background-color: rgba(243, 247, 250, 1)
+				bottom: -3px
+				transition: $transicion
+
+				/////// media query ///////
+
+				@include media(xxs) // mobile small (min-width : 320px)
+					bottom: 0
+				@include media(xs)  // mobile medium (min-width : 480px)
+					bottom: 0
+				@include media(sm) // tablet (min-width: 768px)
+					bottom: 0
+				@include media(md)  // desktop pequeño (min-width: 992px)
+					bottom: 0
+
+			&.active
+				color: $dark-grey
+				@include font-main-bold
+				&:before
+					background-color: $blue
+
+
+	.tab-content
+		visibility: hidden
+		height: 0
+		opacity: 0
+		padding: 0
+		transition: $transicion
+
+		/////// media query ///////
+
+		@include media(xxs) // mobile small (min-width : 320px)
+			padding: 0 10px
+		@include media(xs)  // mobile medium (min-width : 480px)
+			padding: 0 10px
+
+
+		.content
+			display: none
+			@include flex-column
+
+		&.active
+			visibility: visible
+			opacity: 1
+			height: 100%
+
+			.content
+				@include flex
+
+
+		.wrapper
+			//max-height: 78vh
+			max-height: calc(100vh - 190px)
+			padding-right: 5px
+			overflow: auto
+			scrollbar-color: #bdbdbd #dfdfdf
+			scrollbar-width: thin
+
+			@include media(lg)  // desktop mediano(min-width: 1200px)
+
+				max-height: calc(100vh - 210px)
+
+			&::-webkit-scrollbar
+				width: 8px
+
+			&::-webkit-scrollbar-track
+				background: #dfdfdf
+				border-radius: 5px
+
+			&::-webkit-scrollbar-thumb
+				background: #bdbdbd
+				border-radius: 5px
+
+			.cont-graphic
+				padding-bottom: 20px
+
+				.cont-txt
+					margin-top: 30px
+					li
+						font-size: $txt_sm
+						color: $dark-grey
+						text-transform: uppercase
+
+						+ li
+							margin-top: 10px
+
+						.number
+							@include font-main-bold
+
+			

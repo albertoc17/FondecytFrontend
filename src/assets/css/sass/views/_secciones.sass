@@ -1,0 +1,212 @@
+//contenedor cards
+.cont-cards
+	padding: 20px 0
+	@include flex
+
+	.auxi
+		>.cont-btn
+			text-align: center
+			padding: 40px 0
+					
+			/////// media query ///////
+
+			@include media(xxs) // mobile small (min-width : 320px)
+				padding: 0
+			@include media(xs)  // mobile medium (min-width : 480px)
+				padding: 0
+
+			.btn-main
+					
+				/////// media query ///////
+
+				@include media(xxs) // mobile small (min-width : 320px)
+					width: 100%
+				@include media(xs)  // mobile medium (min-width : 480px)
+					width: 100%
+
+.dashboard
+	background-color: rgba(18, 115, 235, 0.2)
+
+	.row
+		padding: 20px
+		height: 100vh
+		overflow: hidden
+		@include flex
+		@include flex-align-stretch
+
+	.container
+		background-color: $blanco
+		border-radius: 5px
+		padding: 15px
+		height: 100%
+		@include flex
+		@include flex-column
+
+		.enc-txt
+			@include flex
+			@include flex-align-end
+
+			.tit
+				font-size: $titular_sm
+				color: $dark-grey
+				margin-right: 10px
+				@include font-main-bold
+
+			.doc-name
+				font-size: 13px
+				color: rgba(55, 73, 87, 0.5)
+
+
+		.btn-bar
+			margin-top: 30px
+			@include flex
+			@include flex-justify-spacebetween
+
+			.cont-btn
+				padding-top: 0
+				@include flex
+
+				.d-flex + .btn-sec
+					margin-left: 10px
+
+				.btn-sec
+
+					.icon-download
+						display: inline-block
+						width: 20px
+						height: 20px
+						background-image: url("../../imag/v1/icon/ic_download.svg")
+						background-repeat: no-repeat
+						background-position: 7%
+						background-size: 100%
+						margin-right: 10px
+
+		.cont-editor
+			padding: 20px 0
+			@include flex-width(1, 0, auto)
+
+			.tools-ex
+				width: auto
+
+			.cont-text
+				margin-top: 20px
+				background-color: #F6F4F4
+				border-radius: 10px
+				padding: 30px 10px 20px 20px
+
+				.wrapper
+
+					//max-height: 62vh
+					max-height: calc(100vh - 305px)
+					padding-right: 10px
+					overflow: auto
+					scrollbar-color: #bdbdbd #dfdfdf
+					scrollbar-width: thin
+
+					&::-webkit-scrollbar
+						width: 8px
+
+					&::-webkit-scrollbar-track
+						background: #dfdfdf
+						border-radius: 5px
+
+					&::-webkit-scrollbar-thumb
+						background: #bdbdbd
+						border-radius: 5px
+
+
+				p
+					color: #333333
+					line-height: 1.5
+					padding: 0 10px
+
+					+ p
+						margin-top: 10px
+
+					&.bg-red
+						background: rgba(241, 152, 152, 0.3)
+						padding: 10px
+
+					&.bg-yellow
+						background: rgba(241, 225, 75, 0.3)
+						padding: 10px
+
+
+.inicio
+	@include light-blue-gradient
+
+	.auxi
+		max-width: 900px
+
+	.content-main
+		height: 100vh
+		@include flex
+		@include flex-align-center
+		background-size: 584px
+		background-position: 95%
+		background-repeat: no-repeat
+
+		.tit
+			font-size: $titular_lg
+			color: $dark-grey
+			margin-bottom: 60px
+			@include font-main-bold
+
+		.subtit
+			font-size: $titular_xs
+			color: $dark-grey
+			margin-bottom: 30px
+
+		.d-flex
+			.btn-file
+				padding: 35px 55px 35px 130px
+				background-image: url("../../imag/v1/icon/ic_add_file.svg")
+				background-size: 65px
+				border: 1px solid $blue
+				background-position: 18%
+				font-size: $titular_xs
+				color: $blue
+				transition: .3s all ease
+				@include font-main-bold
+
+				&:hover 
+					animation: pulse 1s
+					transition: .3s
+					background-color: rgb(228 240 255 / 50%)
+					
+					@keyframes pulse
+					
+						0%
+							transform: scale(1)
+						70%
+							transform: scale(.9)
+						100%
+							transform: scale(1)
+
+
+
+		.sub-txt
+			margin-top: 60px
+			color: $dark-grey
+			font-size: $titular_xs
+
+			.link
+				color: $blue
+				@include font-main-bold
+				transition: $transicion
+
+				.arrow-r
+					background-image: url("../../imag/v1/icon/chevron_r_b.svg")
+					background-repeat: no-repeat
+					background-position: 7%
+					background-size: 100%
+					z-index: 1
+					width: 15px
+					height: 15px
+					vertical-align: middle
+					position: relative
+					margin-left: 4px
+					display: inline-block
+
+				&:hover
+					opacity: .7

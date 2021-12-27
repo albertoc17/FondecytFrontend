@@ -1,0 +1,138 @@
+
+// botón principal
+@mixin btn-main($background, $color, $padding)
+		
+	.btn-main
+		display: inline-block
+		font-size: $txt_sm
+		color: $color
+		text-align: center
+		padding: $padding
+		background-color: $background
+		letter-spacing: .5px
+		border-radius: 3rem
+		text-transform: uppercase
+		@include inline-flex
+		@include flex-align-center
+		@include flex-justify-center
+		@include font-main-bold
+
+		/////// media query ///////
+
+		@include media(xxs) // mobile small (min-width : 320px)
+			padding: 16px 20px
+		@include media(xs)  // mobile medium (min-width : 480px)
+			padding: 16px 20px
+
+		&.more
+			color: $grey
+			border-bottom: 4px solid $grey
+			margin-left: 20px
+
+		img
+			width: 25px
+			margin-right: 10px
+
+@include btn-main($dark-grey, $blanco, 12px 20px)
+
+
+@mixin btn-more($color, $bg-color, $border-color, $font-size, $padding)
+
+	.btn-sec
+		font-size: $font-size
+		color: $color
+		padding: $padding
+		text-align: center
+		border: 1px solid $border-color
+		background-color: $bg-color
+		border-radius: 3rem
+		letter-spacing: .2px
+		transition: $transicion
+		@include flex
+		@include flex-align-center
+
+		/////// media query ///////
+
+		@include media(xxs) // mobile small (min-width : 320px)
+			padding: 14px 10px
+			min-width: 76px
+			font-size: $txt_lg
+		@include media(xs)  // mobile medium (min-width : 480px)
+			padding: 14px 10px
+			min-width: 76px
+			font-size: $txt_lg
+
+		img
+			margin-right: 5px
+
+		&:hover
+			border-color: $dark-grey
+
+		&.btn-border
+			border: 1px solid $red
+
+
+
+@include btn-more($dark-grey, $blanco, rgba(99, 99, 121, 0.25), $txt_sm, 10px 20px) // $color, $bg-color, $border-color, $font-size, $padding
+
+.cont-btn
+	padding: 40px 0 0
+
+	/////// media query ///////
+
+	@include media(xxs) // mobile small (min-width : 320px)
+		padding: 15px 0 0
+	@include media(xs)  // mobile medium (min-width : 480px)
+		padding: 15px 0 0
+	@include media(md)  // desktop pequeño (min-width: 992px)
+		padding: 20px 0 0
+
+	a + a
+		margin-left: 20px
+
+		/////// media query ///////
+
+		@include media(xxs) // mobile small (min-width : 320px)
+			margin-left: 10px
+		@include media(xs)  // mobile medium (min-width : 480px)
+			margin-left: 10px
+		@include media(md)  // desktop pequeño (min-width: 992px)
+			margin-left: 10px
+
+.btn-disabled
+	background-color: rgba(55, 73, 87, 0.2)
+	color: $blanco
+	text-transform: uppercase
+	cursor: inherit
+
+
+.btn-full
+	@include flex
+	@include flex-justify-center
+
+.d-flex
+	@include flex
+	@include flex-align-center
+
+	.file
+		display: none
+	
+	.btn-file
+		border: 1px solid rgba(99, 99, 121, 0.25)
+		box-sizing: border-box
+		padding: 12px 20px 12px 50px
+		transition: all 0.6s
+		color: $dark-grey
+		font-size: $txt_lg
+		vertical-align: middle
+		border-radius: 3rem
+		margin-right: 0
+		cursor: pointer
+		width: auto
+		background-image: url("../../imag/v1/icon/ic_file_reload.svg")
+		background-repeat: no-repeat
+		background-position: 7%
+		background-size: 20px
+		
+		&:hover
+			border-color: $dark-grey

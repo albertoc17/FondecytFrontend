@@ -1,14 +1,15 @@
 <template>
   <div id="Editor">
-    <div v-if="feedbackTypes">
-      <div class="buttonContainer">
+    <br>
+    <div v-if="!feedbackTypes">
+      <!-- <div class="buttonContainer">
         <button class="btn btn-success" @click="sendTextEdited()">
           Enviar texto
         </button>
         <button class="btn btn-primary" @click="exportHTML()">
           Descargar archivo
         </button>
-      </div>
+      </div> -->
       <div v-if="showError">
         <ErrorHtml />
       </div>

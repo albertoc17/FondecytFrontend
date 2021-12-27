@@ -1,0 +1,137 @@
+
+/////// VARIABLES SASS ///////
+
+// ========== colores proyecto ========== //
+
+$grey: #F3F7FA
+$dark-grey: #374957
+
+$light-blue: #129DEB
+$green: #3ABA6F
+$blue: #1273EB
+$red: #D32F2F
+
+// ========== colores generales ========== //
+$blanco: #ffffff
+$negro: #070707
+
+// ========== colores redes sociales ========== //
+
+$bg_facebook: #1877f2
+$bg_twitter: #1da1f2
+$bg_youtube: #cc0000
+$bg_whatsapp: #25D366
+$bg_linkedin: #0077B5
+
+@mixin blue-gradient
+	background: rgb(18,115,235)
+	background: -moz-linear-gradient(108deg, rgba(18,115,235,1) 0%, rgba(18,157,235,1) 100%)
+	background: -webkit-linear-gradient(108deg, rgba(18,115,235,1) 0%, rgba(18,157,235,1) 100%)
+	background: linear-gradient(108deg, rgba(18,115,235,1) 0%, rgba(18,157,235,1) 100%)
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1273eb",endColorstr="#129deb",GradientType=1)
+
+@mixin dark-blue-gradient
+	background: rgb(55,73,87)
+	background: -moz-linear-gradient(100deg, rgba(55,73,87,1) 0%, rgba(18,115,235,1) 100%)
+	background: -webkit-linear-gradient(100deg, rgba(55,73,87,1) 0%, rgba(18,115,235,1) 100%)
+	background: linear-gradient(100deg, rgba(55,73,87,1) 0%, rgba(18,115,235,1) 100%)
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#374957",endColorstr="#1273eb",GradientType=1)
+
+@mixin light-blue-gradient
+	background: rgb(18,115,235)
+	background: -moz-linear-gradient(103deg, rgba(18,115,235,0.48) 0%, rgba(18,157,235,0) 100%)
+	background: -webkit-linear-gradient(103deg, rgba(18,115,235,0.48) 0%, rgba(18,157,235,0) 100%)
+	background: linear-gradient(103deg, rgba(18,115,235,0.48) 0%, rgba(18,157,235,0) 100%)
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1273eb",endColorstr="#129deb",GradientType=1)
+
+// ========== transparencias ========== //
+
+$negro_80: rgba(0, 0, 0, .8)
+$negro_60: rgba(0, 0, 0, .6)
+$negro_50: rgba(0, 0, 0, .5)
+$negro_40: rgba(0, 0, 0, .4)
+$negro_20: rgba(0, 0, 0, .2)
+$negro_10: rgba(0, 0, 0, .1)
+$grey_40: rgba(203, 203, 203, .4)
+$blanco_95:	rgba(255, 255, 255, .95)
+$blanco_80: rgba(255, 255, 255, .8)
+$blanco_60: rgba(255, 255, 255, .6)
+$blanco_50: rgba(255, 255, 255, .5)
+$blanco_30: rgba(255, 255, 255, .3)
+$blanco_20: rgba(255, 255, 255, .2)
+$transparente: rgba(255, 255, 255, 0)
+
+// ========== fuentes ========== //
+
+
+//Mixin para fontface
+
+// =============================================================================
+// String Replace
+// =============================================================================
+
+@function str-replace($string, $search, $replace: "")
+	$index: str-index($string, $search)
+	@if $index
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace)
+	
+	@return $string
+
+// =============================================================================
+// Font Face
+// =============================================================================
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg)
+	$src: null
+	$extmods: ( eot: "?", svg: "#" + str-replace($name, " ", "_") )
+	$formats: ( otf: "opentype", ttf: "truetype" )
+	@each $ext in $exts
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext)
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext)
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma)
+	
+	@font-face
+		font-family: quote($name)
+		font-style: $style
+		font-weight: $weight
+		src: $src
+
+
+// tipografías fontface
+
+@include font-face(Lato-Regular, "../fonts/Lato-Regular", normal, woff2 woff)
+@include font-face(Lato-Bold, "../fonts/Lato-Bold", normal, woff2 woff)
+
+// mixin variables tipográficas
+
+@mixin font-main-regular
+	font-family: 'Lato-Regular',Helvetica Neue,-apple-system,"system-ui",BlinkMacSystemFont,sans-serif
+
+@mixin font-main-italic
+	font-family: 'Lato-Regular',Helvetica Neue,-apple-system,"system-ui",BlinkMacSystemFont,sans-serif
+	font-style: italic
+
+@mixin font-main-bold
+	font-family: 'Lato-Bold',Helvetica Neue,-apple-system,"system-ui",BlinkMacSystemFont,sans-serif
+
+@mixin font-main-bold-italic
+	font-family: 'Lato-Bold',Helvetica Neue,-apple-system,"system-ui",BlinkMacSystemFont,sans-serif
+	font-style: italic
+
+// ========== tamaños tipográficos========== //
+
+$titular_xl: 100px // 6.25rem h1
+$titular_lg: 60px //h2
+$titular_port: 50px // h3
+$titular_md: 30px // h4
+$titular_sm: 24px // h5
+$titular_xs: 20px //1.25rem h6
+$txt_lg: 16px //1rem
+$txt: 15px
+$txt_sm: 14px //14px
+$txt_xs: 12px //12px
+
+
+// ========== generales ========== //
+
+$transicion: .2s all ease
+$border_radius: 30px

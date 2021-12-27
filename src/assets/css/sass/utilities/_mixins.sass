@@ -1,0 +1,198 @@
+
+/////// MIXINS ///////
+/* para utilizar los mixins llamarlos de la siguiente forma en el código sass: @include nombre_mixin */
+/* para utilizar mixins variables llamar de la siguiente forma: @include nombre_mixin(variable1, variable2, ...) */
+
+
+
+// ========== estilos componentes ========== //
+
+@mixin padding-section
+	padding: 60px 0
+
+	/////// media query ///////
+
+	@include media(xxs) // mobile small (min-width : 320px)
+		padding: 30px 0
+	@include media(xs)  // mobile medium (min-width : 480px)
+		padding: 30px 0
+
+// ========== Estructurales========== //
+
+@mixin hover-zoom
+	&:hover
+		transition: $transicion
+		-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2)
+		-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2)
+		box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2)
+		transform: scale(1.007)
+
+// superponer velo
+@mixin overlay
+	position: absolute
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	z-index: 2
+
+// imagenes ancho full
+@mixin imagen
+	img
+		display: block
+		width: 100%
+
+// sombra paralela cajas
+@mixin sombra-caja
+	-webkit-box-shadow: 0px 0px 12px 2px rgb(0 0 0 / 10%)
+	-moz-box-shadow: 0px 0px 12px 2px rgb(0 0 0 / 10%)
+	box-shadow: 0px 0px 12px 2px rgb(0 0 0 / 10%)
+
+// ========== Gradientes========== //
+
+@mixin grad-1
+	&:before
+		content: ''
+		left: 0
+		right: 0
+		top: 0
+		bottom: 0
+		position: absolute
+		background: rgb(0,0,0)
+		background: -moz-linear-gradient(153deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%)
+		background: -webkit-linear-gradient(153deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%)
+		background: linear-gradient(153deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.6) 100%)
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1)
+
+@mixin grad-2
+	&:before
+		content: ''
+		left: 0
+		right: 0
+		top: 0
+		bottom: 0
+		position: absolute
+		background: rgb(0,0,0)
+		background: -moz-linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 21%, rgba(0,0,0,0.7) 100%)
+		background: -webkit-linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 21%, rgba(0,0,0,0.7) 100%)
+		background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 21%, rgba(0,0,0,0.7) 100%)
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1)
+
+@mixin grad-azul
+	&:before
+		content: ''
+		left: 0
+		right: 0
+		top: 0
+		bottom: 0
+		position: absolute
+		background: rgb(18,115,235)
+		background: -moz-linear-gradient(108deg, rgba(18,115,235,1) 0%, rgba(18,157,235,1) 100%)
+		background: -webkit-linear-gradient(108deg, rgba(18,115,235,1) 0%, rgba(18,157,235,1) 100%)
+		background: linear-gradient(108deg, rgba(18,115,235,1) 0%, rgba(18,157,235,1) 100%)
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1273eb",endColorstr="#129deb",GradientType=1)
+
+
+// ========== Generales========== //
+
+// ocultar o mostrar contenido en dispositivos
+
+@mixin only-mobile // mostrar solo en móvil
+
+	@include media(xxs) // mobile small (min-width : 320px)
+		display: block
+
+	@include media(xs) // mobile medium (min-width : 480px)
+		display: block
+
+	@include media(sm) // tablet (min-width: 768px)
+		display: none !important
+
+	@include media(md) // desktop pequeño (min-width: 992px)
+		display: none !important
+
+	@include media(lg) // desktop mediano (min-width: 1200px)
+		display: none !important
+
+	@include media(xl) // desktop grande (min-width: 1400px)
+		display: none !important
+
+@mixin only-tablet // mostrar solo en tablet
+
+	@include media(xxs) // mobile small (min-width : 320px)
+		display: none !important
+
+	@include media(xs) // mobile medium (min-width : 480px)
+		display: none !important
+
+	@include media(sm) // tablet (min-width: 768px)
+		display: block
+
+	@include media(md) // desktop pequeño (min-width: 992px)
+		display: block
+
+	@include media(lg) // desktop mediano (min-width: 1200px)
+		display: none !important
+
+	@include media(xl) // desktop grande (min-width: 1400px)
+		display: none !important
+
+@mixin responsive // mostrar solo en mobile y tablet
+
+	@include media(xxs) // mobile small (min-width : 320px)
+		display: block
+
+	@include media(xs) // mobile medium (min-width : 480px)
+		display: block
+
+	@include media(sm) // tablet (min-width: 768px)
+		display: block
+
+	@include media(md) // desktop pequeño (min-width: 992px)
+		display: none
+
+	@include media(lg) // desktop mediano (min-width: 1200px)
+		display: none !important
+
+	@include media(xl) // desktop grande (min-width: 1400px)
+		display: none !important
+
+@mixin med // mostrar solo en tablet y desktop
+
+	@include media(xxs) // mobile small (min-width : 320px)
+		display: none !important
+
+	@include media(xs) // mobile medium (min-width : 480px)
+		display: none !important
+
+	@include media(sm) // tablet (min-width: 768px)
+		display: block
+
+	@include media(md) // desktop pequeño (min-width: 992px)
+		display: block
+
+	@include media(lg) // desktop mediano(min-width: 1200px)
+		display: block
+
+	@include media(xl) // desktop grande (min-width: 1400px)
+		display: block
+
+@mixin only-desktop // mostrar solo en desktop
+
+	@include media(xxs) // mobile small (min-width : 320px)
+		display: none !important
+
+	@include media(xs) // mobile medium (min-width : 480px)
+		display: none !important
+
+	@include media(sm) // tablet (min-width: 768px)
+		display: none !important
+
+	@include media(md) // desktop pequeño (min-width: 992px)
+		display: none !important
+
+	@include media(lg) // desktop mediano (min-width: 1400px)
+		display: block
+
+	@include media(xl) // desktop grande (min-width: 1400px)
+		display: block

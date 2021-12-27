@@ -1,0 +1,301 @@
+
+/////// Estilos globales ///////
+
+
+// ========== Atributos generales ========== //
+
+
+html
+	font-size: 16px
+	-webkit-text-size-adjust: none
+	scroll-behavior: auto
+	-webkit-font-smoothing: antialiased
+	-moz-osx-font-smoothing: grayscale
+body
+	background: $blanco
+	@include font-main-regular
+	
+*
+	box-sizing: border-box
+	@include font-main-regular
+
+	&:after, &:before
+		box-sizing: border-box
+a
+	text-decoration: none
+	outline: none
+	color: $negro
+
+input, select, .select, textarea
+	padding: 20px 40px 20px 30px
+	border: none
+	transition: .5s all ease
+	background: $blanco
+	border: 1px solid $grey
+	border-radius: 10px
+	outline: none
+
+	/////// media query ///////
+
+	@include media(xxs) // mobile small (min-width : 320px)
+		padding: 15px 30px 15px 20px
+	@include media(xs)  // mobile medium (min-width : 480px)
+		padding: 15px 30px 15px 20px
+
+	&:focus
+		border: 1px solid $blue !important
+		// background-color: $grey
+
+input
+	&::placeholder
+		color: $grey
+
+	&::-webkit-input-placeholder
+		color: $grey
+
+	&:-ms-input-placeholder
+		color: $grey
+
+select
+	-webkit-appearance: none
+	-moz-appearance:    none
+	appearance:         none
+	outline: none
+
+	background-image: url('../../imag/v1/icon/ic_chevron_down.svg')
+	background-repeat: no-repeat
+	background-position: calc(100% - 5px) 50%
+	background-size: 24px
+
+textarea
+	resize: none
+	max-height: 120px
+
+button
+	border: none
+button, input
+	background: none
+	outline: none
+
+button
+	cursor: pointer
+
+img
+	display: block
+	width: 100%
+	@include flex-align-self-center
+	@include flex-width(0, 0, auto)
+
+.img-wrap
+	img
+		@include flex-align-self-center
+		@include flex-width(0, 0, auto)
+
+.sticky_sub
+	top: 0
+	left: 0
+	right: 0
+	z-index: 10
+	padding: 13px 0
+	position: fixed !important
+	background-color: $blanco !important
+	transition: $transicion
+	-webkit-box-shadow: 0px 3px 5px -3px rgba(0,0,0,0.14)
+	-moz-box-shadow: 0px 3px 5px -3px rgba(0,0,0,0.14)
+	box-shadow: 0px 3px 5px -3px rgba(0,0,0,0.14)
+
+.noscroll
+	overflow: hidden
+
+body.inheritCursors *
+	cursor: inherit !important
+
+
+// ========== Clases predefinidas ========== //
+
+.main
+	margin-left: 320px
+	height: 100vh
+
+.separa
+	width: 100%
+	clear: both 
+	height: 0
+	display: block 
+	margin: 0
+	padding: 0
+
+.hide
+	display: none !important
+
+.show
+	display: block !important
+
+.aleft
+	float: left
+
+.text-center
+	text-align: center !important
+
+.text-left
+	text-align: left !important	
+
+.txt-light
+	@include font-main-regular
+
+.container
+	width: 100%
+.auxi
+	width: 100% 
+	max-width: 1280px 
+	margin: 0 auto
+
+	/////// media query ///////
+
+	@include media(xxs) // mobile small (min-width : 320px)
+		padding: 0 10px
+
+	@include media(xs)  // mobile medium (min-width : 480px)
+		padding: 0 15px
+
+	@include media(sm)  // tablet (min-width: 768px)
+		padding: 0 15px
+
+	@include media(md)  // desktop pequeño (min-width: 992px)
+		padding: 0 15px
+
+	@include media(xl) //(min-width: 1200px)
+		max-width: 92%
+
+.responsive
+	display: none
+.access1
+	height: 0
+	width: 100%
+	color: $transparente
+	overflow: hidden
+
+.desktop
+	@include med
+.mobile
+	@include only-mobile
+
+.bg-azul
+	background-color: $blue
+
+.bg-gris
+	background-color: $grey
+
+.bg-gris-oscuro
+	background-color: $dark-grey
+
+.bold
+	@include font-main-bold
+
+.art-row
+	article
+		margin-bottom: 0
+
+
+// ========== Estilos generales ========== //
+.menujq
+
+	>ul >li >ul
+		display: none
+
+.modal-selector
+	padding: 40px 60px 60px !important
+	border-radius: 5px !important
+	max-height: 90vh
+	height: 100%
+	max-width: 900px !important
+	width: 100%
+
+	/////// media query ///////
+
+	@include media(xxs) // mobile small (min-width : 320px)
+		padding: 30px 20px !important
+		max-width: 95% !important
+	@include media(xs)  // mobile medium (min-width : 480px)
+		padding: 30px 20px !important
+		max-width: 95% !important
+
+	.cont-btn
+		padding-top: 0
+		padding-bottom: 20px
+		text-align: right
+
+	.btn-close
+		position: relative
+		padding: 10px 0
+
+		img
+			width: 15px
+
+	.content
+
+		.tit
+			font-size: 35px
+			color: $dark-grey
+			margin-bottom: 40px
+			@include font-main-bold
+
+		p
+			color: $dark-grey
+			font-size: $titular_xs
+			line-height: 1.5
+
+			.txt-dest
+				color: $blue
+				@include font-main-bold
+
+			.link
+				color: $blue
+				text-decoration: underline
+				@include font-main-bold
+
+			+ p
+				margin-top: 40px
+
+
+.fancybox-content
+	border-radius: 20px
+	overflow: auto
+	scrollbar-color: #bdbdbd #dfdfdf
+	scrollbar-width: thin
+
+	&::-webkit-scrollbar
+		width: 8px
+
+	&::-webkit-scrollbar-track
+		background: #dfdfdf
+		border-radius: 5px
+
+	&::-webkit-scrollbar-thumb
+		background: #bdbdbd
+		border-radius: 5px
+
+
+//Estilos video responsive
+.media
+	position: relative
+	padding-bottom: 56.25%
+	padding-top: 30px
+	height: 0
+	overflow: hidden
+	margin: 30px 0
+
+.cont_video
+	iframe
+		width: 100%
+
+.media iframe,.media object,.media embed
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+
+.inv
+	@include row-reverse
+

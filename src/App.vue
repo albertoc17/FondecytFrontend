@@ -19,3 +19,9 @@ export default {
   overflow: hidden;
 }
 </style>
+
+<style>
+@import './assets/css/css/jquery.fancybox.min.css';
+@import './assets/css/css/main.css';
+@import './assets/css/css/gridpak.css';
+</style>
