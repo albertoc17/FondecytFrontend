@@ -3,27 +3,31 @@
     <!-- logo -->
     <figure class="cont-logo">
       <a href="#">
-        <img src="imag/v1/logos/logo_main.svg" alt="" />
+        <img src="@/assets/imag/v1/logos/logo_main.svg" alt="" />
       </a>
     </figure>
     <h2 class="subtit">Criterios de evaluación</h2>
 
     <section class="cont-accordion">
-      <div class="row-accordion">
-        <div class="enc-accordion active">
+      <div
+        v-for="(a, index) in analisis"
+        :key="index"
+        @click="
+          saveAnalysisGroupTab(index);
+          saveAnalysisTab(null);
+        "
+        class="row-accordion"
+      >
+        <div class="enc-accordion"> <!-- class="enc-accordion active" --> 
           <div class="content">
             <span class="ic-txt"></span>
-            <p>Léxico gramatical</p>
+            <p> {{ a.tabTitle }} </p>
           </div>
           <span class="btn-accordion"></span>
         </div>
-        <ul class="panel">
-          <li>
-            <a href=""> Gerundios <span class="arrow"></span></a>
-          </li>
-        </ul>
+        <SubSidenav :analysisTypes="a.analysisTypes"/>
       </div>
-      <div class="row-accordion">
+      <!-- <div class="row-accordion">
         <div class="enc-accordion">
           <div class="content">
             <span class="ic-txt"></span>
@@ -54,7 +58,7 @@
               Primera y segunda persona <span class="arrow"></span>
             </a>
           </li>
-          <li class="link-active">
+          <li>
             <a href=""> Voz pasiva <span class="arrow"></span></a>
           </li>
           <li>
@@ -81,14 +85,31 @@
             <a href=""> Propósito <span class="arrow"></span></a>
           </li>
         </ul>
-      </div>
+      </div> -->
     </section>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+import { Analisis } from "@/includes/constants.js";
+import SubSidenav from "@/components/SubSidenav.vue";
+
 export default {
   name: "Sidenav",
+  components: {
+    // TabGeneral,
+    // FileUpload,
+    SubSidenav
+  },
+  data() {
+    return {
+      analisis: Analisis,
+    };
+  },
+  methods: {
+    ...mapActions(["saveAnalysisGroupTab", "saveAnalysisTab"]),
+  },
 };
 </script>
 
