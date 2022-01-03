@@ -9,23 +9,21 @@
     <h2 class="subtit">Criterios de evaluación</h2>
 
     <section class="cont-accordion">
-      <div
-        v-for="(a, index) in analisis"
-        :key="index"
-        @click="
-          saveAnalysisGroupTab(index);
-          saveAnalysisTab(null);
-        "
-        class="row-accordion"
-      >
-        <div class="enc-accordion"> <!-- class="enc-accordion active" --> 
+      <div v-for="(a, index) in analisis" :key="index" class="row-accordion">
+        <div
+          @click="
+            saveAnalysisGroupTab(index);
+            saveAnalysisTab(null);
+          "
+          class="enc-accordion"
+        > <!-- class="enc-accordion active" -->
           <div class="content">
             <span class="ic-txt"></span>
-            <p> {{ a.tabTitle }} </p>
+            <p>{{ a.tabTitle }}</p>
           </div>
           <span class="btn-accordion"></span>
         </div>
-        <SubSidenav :analysisTypes="a.analysisTypes"/>
+        <SubSidenav :analysisTypes="a.analysisTypes" />
       </div>
       <!-- <div class="row-accordion">
         <div class="enc-accordion">
@@ -100,7 +98,7 @@ export default {
   components: {
     // TabGeneral,
     // FileUpload,
-    SubSidenav
+    SubSidenav,
   },
   data() {
     return {

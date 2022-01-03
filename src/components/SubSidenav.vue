@@ -1,16 +1,18 @@
 <template>
   <div id="SubSidenav">
-    <ul
-      v-for="(a, index) in analysisTypes"
-      :key="index"
-      @click="
-        saveAnalysisTab(a.endpoint);
-        tabRetro();
-      "
-      class="panel"
-    >
-      <li> <!-- class="link-active" -->
-        <a :href="'##'+index"> {{ a.analysisTitle }} <span class="arrow"></span></a>
+    <ul class="panel">
+      <!-- class="link-active" -->
+      <li
+        v-for="(a, index) in analysisTypes"
+        :key="index"
+        @click="
+          saveAnalysisTab(a.endpoint);
+          tabRetro();
+        "
+      >
+        <a :href="'##' + index">
+          {{ a.analysisTitle }} <span class="arrow"></span
+        ></a>
       </li>
     </ul>
   </div>

@@ -5,28 +5,8 @@
         <h1 class="tit">Tu texto</h1>
         <p class="doc-name">mecanicacuantica.doc</p>
       </header>
-      <div class="btn-bar">
-        <div class="cont-btn">
-          <div class="d-flex">
-            <input type="file" name="file1" id="file1" class="file" />
-            <input
-              type="button"
-              class="btn-file btn-sec"
-              value="Reemplazar el documento"
-            />
-          </div>
-          <a href="" class="btn-sec">
-            <span class="icon-download"></span> Descarga tu texto
-          </a>
-        </div>
-        <button class="btn-main btn-disabled" type="button" disabled>
-          Evaluar texto
-        </button>
-        <button class="btn-main" type="button" style="display: none">
-          Evaluar texto
-        </button>
-      </div>
-      <Editor />
+      <FileUpload />
+      <Editor2 />
       <!-- <div class="cont-editor">
         <img
           class="tools-ex"
@@ -121,16 +101,14 @@
 <script>
 import { mapActions } from "vuex";
 import { Analisis } from "@/includes/constants.js";
-// import TabGeneral from "@/components/Tabs/TabGeneral.vue";
-// import FileUpload from "@/components/FileUpload.vue";
-import Editor from "@/components/Editor.vue";
+import FileUpload from "@/components/FileUpload.vue";
+import Editor2 from "@/components/Editor2.vue";
 
 export default {
   name: "LeftPanel",
   components: {
-    // TabGeneral,
-    // FileUpload,
-    Editor
+    FileUpload,
+    Editor2
   },
   data() {
     return {

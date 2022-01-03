@@ -27,10 +27,11 @@ const getters = {
     return state.estadisticasGenerales
   },
   getAnalysisTab(state) {
-    return state.AnalysisTab
+    return state.analysisTab
   },
   getRetroalimentacion(state) {
-    switch (state.AnalysisTab) {
+    console.log("getRetroalimentacion: ", state.analysisTab);
+    switch (state.analysisTab) {
       case "gerunds":
         return state.gerundios;
       case "oraciones":

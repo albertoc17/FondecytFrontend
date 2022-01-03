@@ -281,7 +281,7 @@ const initialState = {
     feedbackTypes: null
   },
   estadisticasGenerales: null,
-  AnalysisTab: null,
+  analysisTab: null,
   analysisGroupTab: null,
 }
 
