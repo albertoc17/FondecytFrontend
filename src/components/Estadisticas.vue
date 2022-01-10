@@ -1,22 +1,23 @@
 <template>
-  <div id="Estadisticas" v-if="estadisticas">
-    <h4>Estadísticas</h4>
-    <div class="row">
-      <div class="col-md-12">
-        Número de Párrafos: {{ estadisticas.analysis.paragraphs }}
-      </div>
+  <div class="estadisticasContainer" v-if="estadisticas">
+    <div class="titulo">
+      <h4>Estadísticas</h4>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-        Número de Oraciones: {{ estadisticas.analysis.total_sentences }}
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12">
-        Número de Palabras: {{ estadisticas.analysis.total_words }}
-      </div>
+    <div class="cont-graphic">
+      <ul class="cont-txt">
+        <li>
+          Número de Párrafos: <span class="number"> {{ estadisticas.analysis.paragraphs }}</span>
+        </li>
+        <li>
+          Número de Oraciones: <span class="number">{{ estadisticas.analysis.total_sentences }}</span>
+        </li>
+        <li>
+          Número de Palabras: <span class="number">{{ estadisticas.analysis.total_words }}</span>
+        </li>
+      </ul>
     </div>
   </div>
+  
 </template>
 
 <script>
@@ -31,9 +32,10 @@ export default {
 </script>
 
 <style>
-#Estadisticas {
-  margin: 5%;
-  text-align: center;
+.estadisticasContainer {
+  display: flex;
+  flex-direction: column;
 }
+
 </style>
   

@@ -45,15 +45,13 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getRetroalimentacion"]),
     contentHtml () {
       return this.getRetroalimentacion.html;
     },
     feedbackTypes () {
       return this.getRetroalimentacion.feedbackTypes;
-    }
-  },
-  methods: {
+    },
+    ...mapGetters(["getRetroalimentacion"]),
     ...mapActions([
       "saveGerundios",
       "saveOraciones",
@@ -66,6 +64,8 @@ export default {
       "saveProposito",
       "saveAnalysisTab",
     ]),
+  },
+  methods: {
     onEditorChange({ html, text }) {
       this.html = html;
       this.text = text;

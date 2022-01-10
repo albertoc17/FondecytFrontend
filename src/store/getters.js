@@ -1,27 +1,27 @@
 const getters = {
-  gethtmlGerundios(state) {
-    return state.htmlGerundios;
+  getGerundios(state) {
+    return state.gerundios;
   },
-  gethtmlOraciones(state) {
-    return state.htmlOraciones;
+  getOraciones(state) {
+    return state.oraciones;
   },
-  gethtmlParrafos(state) {
-    return state.htmlParrafos;
+  getParrafos(state) {
+    return state.parrafos;
   },
-  gethtmlPersona(state) {
-    return state.htmlPersona
+  getPersona(state) {
+    return state.persona;
   },
-  gethtmlVozPasiva(state) {
-    return state.htmlVozPasiva
+  getVozPasiva(state) {
+    return state.vozPasiva;
   },
-  gethtmlConectores(state) {
-    return state.htmlConectores
+  getConectores(state) {
+    return state.conectores;
   },
-  gethtmlLecturabilidad(state) {
-    return state.htmlLecturabilidad
+  getLecturabilidad(state) {
+    return state.lecturabilidad;
   },
-  gethtmlProposito(state) {
-    return state.htmlProposito
+  getProposito(state) {
+    return state.proposito;
   },
   getEstadisticasGenerales(state) {
     return state.estadisticasGenerales

@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import { Analisis } from "@/includes/constants.js";
 import TabRetroalimentacion2 from "@/components/TabRetroalimentacion2.vue";
 // import TabGeneral from "@/components/Tabs/TabGeneral.vue";
@@ -48,8 +48,9 @@ export default {
       analisis: Analisis,
     };
   },
-  methods: {
+  computed: {
     ...mapActions(["saveAnalysisGroupTab", "saveAnalysisTab"]),
+    ...mapGetters({retroalimentacion: "getRetroalimentacion"}),
   },
 };
 </script>
