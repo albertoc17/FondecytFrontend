@@ -1,46 +1,50 @@
 <template>
   <div id="SubSidenav">
     <ul class="panel">
-      <!-- class="link-active" -->
       <li
         v-for="(a, index) in analysisTypes"
         :key="index"
+        v-bind:class="{ 'link-active': isSelected(index) }"
         @click="
-          saveAnalysisTab(a.endpoint);
+          saveAnalysisTab({
+            endpoint: a.endpoint,
+            selected: index,
+          });
           tabRetro();
         "
       >
-        <a :href="'##' + index">
-          {{ a.analysisTitle }} <span class="arrow"></span
-        ></a>
+        <!-- <a :href="'##' + index"> -->
+        <a href="#"> {{ a.analysisTitle }} <span class="arrow"></span> </a>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import { Analisis } from "@/includes/constants.js";
 
 export default {
   name: "Sidenav",
   props: ["analysisTypes"],
-  components: {
-    // TabGeneral,
-    // FileUpload,
-  },
+  components: {},
   data() {
     return {
       analisis: Analisis,
     };
+  },
+  computed: {
+    ...mapGetters(["getSelectedTabIndex"]),
   },
   methods: {
     ...mapActions(["saveAnalysisTab", "saveAnalysisGroupTab"]),
     tabRetro() {
       this.$root.$emit("tabRetro");
     },
+    isSelected(i) {
+      return i === this.getSelectedTabIndex;
+    },
   },
 };
 </script>
-
 

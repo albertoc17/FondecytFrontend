@@ -29,8 +29,8 @@ const actions = {
   saveEstadisticasGenerales: ({ commit }, data) => {
     commit("setEstadisticasGenerales", data);
   },
-  saveAnalysisTab: ({ commit }, data) => {
-    commit("setAnalysisTab", data);
+  saveAnalysisTab: ({ commit }, { endpoint, selected }) => {
+    commit("setAnalysisTab", {endpoint, selected});
   },
   saveAnalysisGroupTab: ({ commit }, data) => {
     commit("setAnalysisGroupTab", data);

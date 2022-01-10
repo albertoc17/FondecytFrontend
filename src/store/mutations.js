@@ -53,8 +53,9 @@ const mutations = {
   setEstadisticasGenerales(state, data) {
     Vue.set(state, "estadisticasGenerales", data);
   },
-  setAnalysisTab(state, data) {
-    Vue.set(state, "analysisTab", data);
+  setAnalysisTab(state, {endpoint, selected}) {
+    Vue.set(state, "analysisTab", endpoint);
+    Vue.set(state, "selectedTabIndex", selected);
   },
   setAnalysisGroupTab(state, data) {
     Vue.set(state, "analysisGroupTab", data);
