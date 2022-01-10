@@ -29,6 +29,9 @@ const getters = {
   getAnalysisTab(state) {
     return state.analysisTab
   },
+  getSelectedTabIndex(state) {
+    return state.selectedTabIndex;
+  },
   getRetroalimentacion(state) {
     console.log("getRetroalimentacion: ", state.analysisTab);
     switch (state.analysisTab) {
@@ -79,8 +82,8 @@ const getters = {
               backgroundColor: "#F87979",
               data: [
                 state.oraciones.feedbackTypes.oracionesExtensas.nro_errores,
-                state.oraciones.feedbackTypes.oracionesBreves.nro_errores, 
-                state.parrafos.feedbackTypes.parrafosExtensos.nro_errores, 
+                state.oraciones.feedbackTypes.oracionesBreves.nro_errores,
+                state.parrafos.feedbackTypes.parrafosExtensos.nro_errores,
                 state.parrafos.feedbackTypes.parrafosBreves.nro_errores
               ],
               borderWidth: 2
@@ -90,7 +93,7 @@ const getters = {
         break;
       case "estilo":
         chartData = {
-          labels: ["Primera persona", "Segunda persona", "Voz Pasiva", "Falta Conectores",  "Conectores Repetidos"],
+          labels: ["Primera persona", "Segunda persona", "Voz Pasiva", "Falta Conectores", "Conectores Repetidos"],
           datasets: [
             {
               backgroundColor: "#F87979",

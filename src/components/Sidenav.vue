@@ -17,7 +17,7 @@
           "
           class="enc-accordion"
         > <!-- class="enc-accordion active" -->
-          <div class="content">
+          <div class="content ">
             <span class="ic-txt"></span>
             <p>{{ a.tabTitle }}</p>
           </div>
@@ -96,9 +96,7 @@ import SubSidenav from "@/components/SubSidenav.vue";
 export default {
   name: "Sidenav",
   components: {
-    // TabGeneral,
-    // FileUpload,
-    SubSidenav,
+    SubSidenav
   },
   data() {
     return {
@@ -110,5 +108,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+figure {
+  margin:0;
+}
+</style>
 
 
