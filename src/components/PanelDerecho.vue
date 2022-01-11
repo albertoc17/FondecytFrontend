@@ -7,20 +7,17 @@
       <!-- tabs -->
       <div class="content">
         <nav class="tabs__bar tab-btns">
-          <a
-            href="#"
-            class="tab active"
-            data-toggle-target=".tab-content-1"
-            >Acerca de tu texto
+          <a href="#" class="tab active" data-toggle-target=".tab-content-1">
+            Acerca de tu texto
           </a>
-          <a href="#" class="tab" data-toggle-target=".tab-content-2"
-            >Concordancia
+          <a href="#" class="tab" data-toggle-target=".tab-content-2">
+            Concordancia
           </a>
-          <a href="#" class="tab" data-toggle-target=".tab-content-3"
-            >Cápsulas
+          <a href="#" class="tab" data-toggle-target=".tab-content-3">
+            Cápsulas
           </a>
         </nav>
-        <TabRetroalimentacion2 /> 
+        <TabRetroalimentacion3 />
         <div class="tab-content tab-content-2">b</div>
         <div class="tab-content tab-content-3">c</div>
       </div>
@@ -32,16 +29,14 @@
 <script>
 import { mapActions, mapGetters } from "vuex";
 import { Analisis } from "@/includes/constants.js";
-import TabRetroalimentacion2 from "@/components/TabRetroalimentacion2.vue";
+import TabRetroalimentacion3 from "@/components/TabRetroalimentacion3.vue";
 // import TabGeneral from "@/components/Tabs/TabGeneral.vue";
 // import FileUpload from "@/components/FileUpload.vue";
 
 export default {
   name: "LeftPanel",
   components: {
-    // TabGeneral,
-    // FileUpload,
-    TabRetroalimentacion2
+    TabRetroalimentacion3,
   },
   data() {
     return {
@@ -50,7 +45,7 @@ export default {
   },
   computed: {
     ...mapActions(["saveAnalysisGroupTab", "saveAnalysisTab"]),
-    ...mapGetters({retroalimentacion: "getRetroalimentacion"}),
+    ...mapGetters({ retroalimentacion: "getRetroalimentacion" }),
   },
 };
 </script>

@@ -1,9 +1,9 @@
 <template>
   <div class="estadisticasContainer" v-if="estadisticas">
-    <div class="titulo">
+    <!-- <div class="titulo">
       <h4>Estadísticas</h4>
-    </div>
-    <div class="cont-graphic">
+    </div> -->
+    <!-- <div class="cont-graphic"> -->
       <ul class="cont-txt">
         <li>
           Número de Párrafos: <span class="number"> {{ estadisticas.analysis.paragraphs }}</span>
@@ -15,18 +15,24 @@
           Número de Palabras: <span class="number">{{ estadisticas.analysis.total_words }}</span>
         </li>
       </ul>
-    </div>
+    <!-- </div> -->
   </div>
   
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: "Estadisticas",
-  props: ["estadisticas"],
   data() {
     return {
     };
+  },
+  computed: {
+    ...mapGetters({
+      estadisticas: "getEstadisticasGenerales",
+    }),
   },
 };
 </script>
@@ -36,6 +42,5 @@ export default {
   display: flex;
   flex-direction: column;
 }
-
 </style>
   

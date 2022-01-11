@@ -8,14 +8,14 @@
         vertical
         style="position:'relative', overflow:'hidden'"
         >
-          <pane min-size="50" size="60">
+          <pane min-size="50" size="50">
             <div class="row">
               <div class="col lg-12">
                 <PanelIzquierdo />
               </div>
             </div>
           </pane>
-          <pane min-size="20" size="40">
+          <pane min-size="20" size="50">
             <div class="row">
               <div class="col lg-12">
                 <PanelDerecho />
