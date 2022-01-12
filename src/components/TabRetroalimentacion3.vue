@@ -9,12 +9,10 @@
           <div
             v-for="(fb, index) in retroalimentacion.feedbackTypes"
             :key="index"
-            class="box-dest"
-            v-bind:class="{'bg-green': fb.nro_errores == 0 }"
+            :class="color(fb)"
           >
             <div class="cont-tit">
               <img v-if="fb.nro_errores == 0" class="ic-check" src="../assets/imag/v1/icon/ic_check_w.svg" alt="" />
-              <div v-else-if="fb.nro_errores > 0" :class="color(fb.feedbackTitle)"></div>
               <h3 class="tit">
                 {{ fb.feedbackTitle }} ({{ fb.nro_errores }} encontrados)
               </h3>
@@ -58,10 +56,13 @@ export default {
   },
   methods: {
     color(feedback) {
-      if(FEEDBACKSTYPESTRED.includes(feedback)){
-        return "circle-color circle-red";
+      if(feedback.nro_errores == 0){
+        return 'box-dest bg-green';
+      }
+      if(FEEDBACKSTYPESTRED.includes(feedback.feedbackTitle)){
+        return "box-dest bg-red";
       } else {
-        return "circle-color circle-yellow";
+        return "box-dest bg-yellow";
       }
     }
   },

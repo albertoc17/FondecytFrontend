@@ -34,6 +34,17 @@
 		@include flex
 		@include flex-align-stretch
 
+		.lg-8	
+		
+			@include media(lg) // desktop mediano (min-width: 1200px)
+				width: 65%
+
+		.lg-4
+			border-left-width: 12px
+
+			@include media(lg) // desktop mediano (min-width: 1200px)
+				width: 35%
+
 	.container
 		background-color: $blanco
 		border-radius: 5px
@@ -124,11 +135,21 @@
 						margin-top: 10px
 
 					&.bg-red
-						background: rgba(241, 152, 152, 0.3)
+						background: #FFAFAF
 						padding: 10px
 
 					&.bg-yellow
-						background: rgba(241, 225, 75, 0.3)
+						background: #EAF198
+						padding: 10px
+
+					&.bg-orange
+						background: #FFD18B
+						padding: 10px
+					&.bg-blue
+						background: #84D1FD
+						padding: 10px
+					&.bg-lightgreen
+						background: #7EFDB3
 						padding: 10px
 
 

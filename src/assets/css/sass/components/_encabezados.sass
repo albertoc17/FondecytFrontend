@@ -81,3 +81,29 @@
 				text-decoration: underline
 
 @include titular-seccion
+
+.status-bar
+	position: absolute
+	left: 0
+	right: 0
+	top: 0
+	background-color: $green
+	z-index: 2
+	padding: 9px 0
+
+	.auxi
+		max-width: 97%
+		@include flex
+		@include flex-align-center
+		@include flex-justify-spacebetween
+
+		.cont-txt
+			@include flex
+			@include flex-align-center
+
+			img
+				width: 30px
+				margin-right: 15px
+
+	.txt
+		color: $blanco

@@ -14,9 +14,6 @@
 		@include flex-align-stretch
 		@include flex-width(1, 0, auto)
 
-		@include dark-blue-gradient
-
-
 		+ .box-dest
 			margin-top: 10px
 
@@ -35,7 +32,7 @@
 			@include flex-align-center
 
 		.tit
-			color: $blanco
+			color: $dark-grey
 			font-size: $titular_xs
 			line-height: 1.4
 			@include font-main-bold
@@ -53,7 +50,7 @@
 
 		.baj
 			line-height: 1.3
-			color: $blanco
+			color: $dark-grey
 			font-size: $txt_sm
 			@include font-main-regular
 
@@ -100,9 +97,9 @@
 					min-width: 100%
 
 			.btn-sec
-				border-color: rgba(255, 255, 255, 0.2)
-				color: $blanco
-				background: none
+				border-color: #9FA3A6
+				color: $dark-grey
+				background-color: $blanco
 
 				&:hover
 					color: $blue
@@ -112,25 +109,26 @@
 			width: 35px
 			margin-right: 15px
 
-		.circle-color
-			display: inline-block
-			flex: none
-			width: 31px
-			height: 31px
-			margin-right: 15px
-			border-radius: 50%
-			background-color: $blanco
-			border: 3px solid $blanco
-
-			&.circle-red
-				background-color: #F19898
-
-			&.circle-yellow
-				background-color: #F4D04E
-
 		&.bg-green
 			background: none
 			background-color: $green
+
+			.tit, .baj
+				color: $blanco
+
+		&.bg-red
+			background: #FFAFAF
+
+		&.bg-yellow
+			background: #EAF198
+
+		&.bg-orange
+			background: #FFD18B
+		&.bg-blue
+			background: #84D1FD
+		&.bg-lightgreen
+			background: #7EFDB3
+
 
 
 @include caja-destacada
@@ -205,3 +203,40 @@
 
 
 @include caja-secundaria
+
+// caja horizontal
+@mixin caja-horizontal
+
+	.box-hor
+		a
+			@include flex
+			@include flex-align-start
+
+		.img-wrap
+			position: relative
+			@include flex-width(0, 0, 120px)
+
+			.ic-play
+				position: absolute
+				height: 40px
+				width: 40px
+				background-image: url('../../imag/v1/icon/ic_play.svg')
+				background-repeat: no-repeat
+				background-position: center
+				background-size: 100%
+				left: calc(50% - 20px)
+				top: calc(50% - 20px)
+
+		.cont-txt
+			padding: 8px 0 8px 15px
+
+			.subtit
+				color: $dark-grey
+				line-height: 1.5
+				@include font-main-bold
+
+		+ .box-hor
+			margin-top: 17px
+
+@include caja-horizontal
+

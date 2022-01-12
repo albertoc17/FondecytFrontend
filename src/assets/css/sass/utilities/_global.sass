@@ -24,7 +24,7 @@ body
 a
 	text-decoration: none
 	outline: none
-	color: $negro
+	color: $dark-grey
 
 input, select, .select, textarea
 	padding: 20px 40px 20px 30px
@@ -48,13 +48,13 @@ input, select, .select, textarea
 
 input
 	&::placeholder
-		color: $grey
+		color: $dark-grey
 
 	&::-webkit-input-placeholder
-		color: $grey
+		color: $dark-grey
 
 	&:-ms-input-placeholder
-		color: $grey
+		color: $dark-grey
 
 select
 	-webkit-appearance: none
@@ -62,10 +62,10 @@ select
 	appearance:         none
 	outline: none
 
-	background-image: url('../../imag/v1/icon/ic_chevron_down.svg')
+	background-image: url('../../imag/v1/icon/chevron_down.svg')
 	background-repeat: no-repeat
-	background-position: calc(100% - 5px) 50%
-	background-size: 24px
+	background-position: calc(100% - 10px) 50%
+	background-size: 12px
 
 textarea
 	resize: none
@@ -225,6 +225,17 @@ body.inheritCursors *
 		padding-bottom: 20px
 		text-align: right
 
+		&.btn-center
+			text-align: center
+
+		.btn-main
+			padding: 25px 30px
+			background: rgb(18,115,235)
+			background: -moz-linear-gradient(108deg, rgba(18,115,235,1) 0%, rgba(18,157,235,1) 100%)
+			background: -webkit-linear-gradient(108deg, rgba(18,115,235,1) 0%, rgba(18,157,235,1) 100%)
+			background: linear-gradient(108deg, rgba(18,115,235,1) 0%, rgba(18,157,235,1) 100%)
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1273eb",endColorstr="#129deb",GradientType=1)
+
 	.btn-close
 		position: relative
 		padding: 10px 0
@@ -239,6 +250,9 @@ body.inheritCursors *
 			color: $dark-grey
 			margin-bottom: 40px
 			@include font-main-bold
+
+		img
+			padding: 15px 0
 
 		p
 			color: $dark-grey

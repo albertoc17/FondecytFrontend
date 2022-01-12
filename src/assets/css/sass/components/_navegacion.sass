@@ -191,7 +191,7 @@
 		@include media(lg)  // desktop mediano(min-width: 1200px)
 			overflow-x: auto
 			overflow-y: visible
-			min-height: 60px
+			min-height: 40px
 
 		a
 			font-size: $txt_sm
@@ -302,4 +302,62 @@
 						.number
 							@include font-main-bold
 
-			
+		&.tab-content-2
+			.baj
+				padding-top: 15px
+				line-height: 1.5
+				color: $dark-grey
+
+			.filterbar
+				padding: 30px 0 15px
+				@include flex
+				@include flex-align-center
+
+				.form-group
+					margin-right: 5px
+					@include flex-width(0, 1, 50%)
+
+					label, h3
+						color: $dark-grey
+						margin-bottom: 5px
+						display: block
+						@include font-main-bold
+
+					input, select
+						width: 100%
+						padding: 13px 15px
+						border-color: #B9B9BC
+						border-radius: 5px
+						font-size: $txt_lg
+						color: $dark-grey
+
+					input
+						&::placeholder
+							color: #99a8b4
+
+						&::-webkit-input-placeholder
+							color: #99a8b4
+
+						&:-ms-input-placeholder
+							color: #99a8b4
+
+				.btn-main
+					background-color: $blue
+					padding: 11px 20px
+					height: auto
+					margin-top: 15px
+					font-size: $txt_sm
+
+			.txt-box
+				.txt-result
+					background-color: $grey
+					padding: 20px
+					line-height: 1.4
+					color: $dark-grey
+
+					+ .txt-result
+						margin-top: 5px
+
+					.highlight
+						background: rgba(241, 152, 152, 0.3)
+						padding: 3px 2px

@@ -133,6 +133,10 @@
 		background-repeat: no-repeat
 		background-position: 7%
 		background-size: 20px
+
+		@include media(lg) // desktop mediano (min-width: 1200px)
+			padding: 12px 20px 12px 40px
+			background-position: 5%
 		
 		&:hover
 			border-color: $dark-grey
