@@ -9,7 +9,7 @@
           <div
             v-for="(fb, index) in retroalimentacion.feedbackTypes"
             :key="index"
-            :class="color(fb)"
+            :class="fb.style"
           >
             <div class="cont-tit">
               <img v-if="fb.nro_errores == 0" class="ic-check" src="../assets/imag/v1/icon/ic_check_w.svg" alt="" />
@@ -43,7 +43,7 @@
 <script>
 import { mapGetters } from "vuex";
 import Estadisticas from "./Estadisticas.vue";
-import { FEEDBACKSTYPESTRED } from "@/includes/constants.js";
+import { FEEDBACKSTYPESTDISABLED } from "@/includes/constants.js";
 
 
 export default {
@@ -56,13 +56,8 @@ export default {
   },
   methods: {
     color(feedback) {
-      if(feedback.nro_errores == 0){
+      if(feedback.nro_errores == 0 && !FEEDBACKSTYPESTDISABLED.includes(feedback.feedbackTitle)){
         return 'box-dest bg-green';
-      }
-      if(FEEDBACKSTYPESTRED.includes(feedback.feedbackTitle)){
-        return "box-dest bg-red";
-      } else {
-        return "box-dest bg-yellow";
       }
     }
   },
