@@ -45,6 +45,8 @@
 <script>
 import { mapGetters } from "vuex";
 import Estadisticas from "./Estadisticas.vue";
+import { FEEDBACKSTYPESTRED } from "@/includes/constants.js";
+
 
 export default {
   name: "TabRetroalimentacion3",
@@ -56,31 +58,10 @@ export default {
   },
   methods: {
     color(feedback) {
-      switch(feedback){
-        case "Oraciones Extensas":
-          return "circle-color circle-red";
-        case "Gerundios Excesivos":
-          return "circle-color circle-red";
-        case "Oraciones Breves":
-          return "circle-color circle-yellow";
-        case "Párrafos Extensos":
-          return "circle-color circle-red";
-        case "Párrafos Breves":
-          return "circle-color circle-yellow";
-        case "Primera Persona Singular":
-          return "circle-color circle-red";
-        case "Segunda Persona Singular":
-          return "circle-color circle-yellow";
-        case "Voz Pasiva":
-          return "circle-color circle-red";
-        case "Ausencia de Conectores":
-          return "circle-color circle-red";
-        case "Conectores Repetidos":
-          return "circle-color circle-yellow";
-        case "Complejidad":
-          return "circle-color circle-red";
-        default:
-          return "circle-color circle-red";
+      if(FEEDBACKSTYPESTRED.includes(feedback)){
+        return "circle-color circle-red";
+      } else {
+        return "circle-color circle-yellow";
       }
     }
   },
