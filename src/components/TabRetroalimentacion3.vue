@@ -14,7 +14,7 @@
           >
             <div class="cont-tit">
               <img v-if="fb.nro_errores == 0" class="ic-check" src="../assets/imag/v1/icon/ic_check_w.svg" alt="" />
-              <div v-else-if="fb.nro_errores > 0" class="circle-color circle-red"></div>
+              <div v-else-if="fb.nro_errores > 0" :class="color(fb.feedbackTitle)"></div>
               <h3 class="tit">
                 {{ fb.feedbackTitle }} ({{ fb.nro_errores }} encontrados)
               </h3>
@@ -53,6 +53,36 @@ export default {
   },
   data() {
     return {};
+  },
+  methods: {
+    color(feedback) {
+      switch(feedback){
+        case "Oraciones Extensas":
+          return "circle-color circle-red";
+        case "Gerundios Excesivos":
+          return "circle-color circle-red";
+        case "Oraciones Breves":
+          return "circle-color circle-yellow";
+        case "Párrafos Extensos":
+          return "circle-color circle-red";
+        case "Párrafos Breves":
+          return "circle-color circle-yellow";
+        case "Primera Persona Singular":
+          return "circle-color circle-red";
+        case "Segunda Persona Singular":
+          return "circle-color circle-yellow";
+        case "Voz Pasiva":
+          return "circle-color circle-red";
+        case "Ausencia de Conectores":
+          return "circle-color circle-red";
+        case "Conectores Repetidos":
+          return "circle-color circle-yellow";
+        case "Complejidad":
+          return "circle-color circle-red";
+        default:
+          return "circle-color circle-red";
+      }
+    }
   },
   computed: {
     ...mapGetters({
