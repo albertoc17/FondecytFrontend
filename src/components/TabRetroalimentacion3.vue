@@ -9,7 +9,8 @@
           <div
             v-for="(fb, index) in retroalimentacion.feedbackTypes"
             :key="index"
-            :class="fb.style"
+            class="box-dest"
+            :class="cardColor(fb)"
           >
             <div class="cont-tit">
               <img v-if="fb.nro_errores == 0" class="ic-check" src="../assets/imag/v1/icon/ic_check_w.svg" alt="" />
@@ -55,10 +56,9 @@ export default {
     return {};
   },
   methods: {
-    color(feedback) {
-      if(feedback.nro_errores == 0 && !FEEDBACKSTYPESTDISABLED.includes(feedback.feedbackTitle)){
-        return 'box-dest bg-green';
-      }
+    cardColor(fb) {
+      if (fb.nro_errores == 0 && !FEEDBACKSTYPESTDISABLED.includes(fb.feedbackTitle)) return 'bg-green';
+      return fb.style;
     }
   },
   computed: {

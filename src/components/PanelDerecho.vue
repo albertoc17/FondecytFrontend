@@ -7,10 +7,10 @@
       <!-- tabs -->
       <div class="content">
         <nav class="tabs__bar tab-btns">
-          <a href="#" class="tab active" data-toggle-target=".tab-content-1">
+          <a href="#" class="tab " data-toggle-target=".tab-content-1">
             Acerca de tu texto
           </a>
-          <a href="#" class="tab" data-toggle-target=".tab-content-2">
+          <a href="#" class="tab active" data-toggle-target=".tab-content-2">
             Concordancia
           </a>
           <a href="#" class="tab" data-toggle-target=".tab-content-3">
