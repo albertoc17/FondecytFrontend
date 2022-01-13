@@ -65,8 +65,6 @@ import TabRetroalimentacion3 from "@/components/TabRetroalimentacion3.vue";
 import TabConcordancia from "@/components/Tabs/TabConcordancia.vue";
 import TabCapsulas from "@/components/Tabs/TabCapsulas.vue";
 
-// import FileUpload from "@/components/FileUpload.vue";
-
 export default {
   name: "LeftPanel",
   components: {
