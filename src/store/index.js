@@ -20,7 +20,7 @@ const initialState = {
         errorExample: "“Esta experiencia está diseñada para que los alumnos armen circuitos en serie y en paralelo de resistores, aprendiendo cómo medir sus respectivos voltajes y corrientes en cada uno de los elementos, comprobando así las Leyes de Kirchhoff”.",
         errorCorrection: "“Esta experiencia está diseñada para que los alumnos armen circuitos en serie y en paralelo de resistores, aprendan cómo medir sus respectivos voltajes y corrientes en cada uno de los elementos, y comprueben así las Leyes de Kirchhoff”.",
         errorComment: "Una forma de evitar la repetición de los gerundios, es reformular los verbos.",
-        style: "#FBBA63",
+        style: "bg-red",
         nro_errores : 0
       }
     },
@@ -36,7 +36,7 @@ const initialState = {
         errorExample: "“Toda resistencia tiene un valor nominal y otro real, teniendo en cuenta lo anterior con una tabla de colores se calcula el valor nominal de las dos resistencias dadas, luego en ambos multímetros se coloca la modalidad para medir resistencia, de acuerdo con el procedimiento puntual que se debe realizar con el analógico, primero conectar ambas terminales caimán de los cables, para crear un puente entre las dos entradas del multímetro, posteriormente se debe mover el indicador del instrumento con tal de que indique cero, para esto se utiliza la perilla que se encuentra en las esquina inferior del visor, se recomienda recostar el instrumento en la mesa y mirarlo desde arriba hasta que no se distinga el reflejo del indicador, para así tener una medición más exacta”.",
         errorCorrection: "“Toda resistencia tiene un valor nominal y otro real. Teniendo en cuenta lo anterior, con una tabla de colores se calcula el valor nominal de las dos resistencias dadas y luego, en ambos multímetros, se coloca la modalidad para medir resistencia. De acuerdo con el procedimiento puntual que se debe realizar con el analógico, primero se debe conectar ambas terminales caimán de los cables, para crear un puente entre las dos entradas del multímetro. Posteriormente, se debe mover el indicador del instrumento con tal de que indique cero, para esto se utiliza la perilla que se encuentra en las esquina inferior del visor. Se recomienda recostar el instrumento en la mesa y mirarlo desde arriba hasta que no se distinga el reflejo del indicador, para así tener una medición más exacta”.",
         errorComment: "La oración al ser tan extensa dificulta la comprensión, por lo que si tu oración es similar a este ejemplo en cuanto a la estructura, te recomendamos que la organices empleando marcadores discursivos, así como puntos y comas.",
-        style: "#FBBA63",
+        style: "bg-red",
         nro_errores: 0,
       },
       oracionesBreves: {
@@ -47,7 +47,7 @@ const initialState = {
         errorExample: "“Hemos concluido.”",
         errorCorrection: "“A modo de conclusión, se identifica que las curvas características de un resistor lineal invariante y un resistor no lineal son muy similares, no obstante, el resistor lineal invariante toma valores negativos y positivos”.",
         errorComment: "Si bien, las oraciones breves no se clasifican como error, su presencia si influye en el estilo del escrito, por lo que se sugiere complementar la idea para lograr una extensión apropiada.",
-        style: "#FFF492",
+        style: "bg-yellow",
         nro_errores: 0,
       }
     }
@@ -63,7 +63,7 @@ const initialState = {
         errorExample: "",
         errorComment: "",
         errorCorrection: "",
-        style: "#FBBA63",
+        style: "bg-red",
         nro_errores: 0,
       },
       parrafosBreves: {
@@ -74,7 +74,7 @@ const initialState = {
         errorExample: "",
         errorComment: "",
         errorCorrection: "",
-        style: "#FFF492",
+        style: "bg-yellow",
         nro_errores: 0,
       }
     }
@@ -90,7 +90,7 @@ const initialState = {
         errorExample: "“Para el caso, armar otro circuito en paralelo el procedimiento lo <strong>encontré</strong> un poco más tedioso y <strong>terminé</strong> por <strong>confundirme</strong> en como agregar el multímetro para cada elemento. Luego, con ayuda de tips de la profesora, <strong>pude</strong> saber cuál parte iba con cuál en la protoboard. <strong>Despejando</strong> esa duda, <strong>pude</strong> empezar a calcular los valores de voltaje y corriente en el circuito”.",
         errorCorrection: "“Para el caso, armar otro circuito en paralelo <strong>fue un</strong> procedimiento  un poco más tedioso, <strong>lo que provocó confusión</strong> en cómo agregar el multímetro para cada elemento. Luego, con ayuda de tips de la profesora, <strong>se logró identificar</strong> cuál parte iba con cuál en la protoboard. <strong>Al despejar</strong> esa duda, <strong>fue posible</strong> empezar a calcular los valores de voltaje y corriente en el circuito”.",
         errorComment: "",
-        style: "#FBBA63",
+        style: "bg-red",
         nro_errores: 0
       },
       segundaPersonaSingular: {
@@ -101,7 +101,7 @@ const initialState = {
         errorExample: "“Este proceso se repetirá con los diferentes circuitos que se analizarán a lo largo de esta experiencia, pero con la diferencia que en cada uno de estos se utilizará un método distinto y las variables a encontrar serán distintas, dependiendo de lo que te pida indagar en el circuito a analizar respectivamente”.",
         errorCorrection: "“Este proceso se repetirá con los diferentes circuitos que se analizarán a lo largo de esta experiencia, pero con la diferencia que en cada uno de estos se utilizará un método distinto y las variables a encontrar serán distintas, dependiendo de lo que se pida indagar en el circuito a analizar respectivamente”.",
         errorComment: "En este caso correspondía emplear la forma impersonal “se”, como se presenta a continuación:",
-        style: "#FFF492",
+        style: "bg-yellow",
         nro_errores: 0
       }
     }
@@ -117,7 +117,7 @@ const initialState = {
         errorExample: "“Los datos presentados en la tabla n°1 fueron identificados y presentados mediante el uso de los manuales de cada fabricante los cuales fueron entregados en laboratorio de mediciones”.",
         errorCorrection: "“Se identificaron y presentaron los datos de la tabla n°1 mediante el uso de los manuales de cada fabricante, los cuales se entregaron en el laboratorio de mediciones”.",
         errorComment: "",
-        style: "#FBBA63",
+        style: "bg-red",
         nro_errores: 0
       }
     },  
@@ -133,7 +133,7 @@ const initialState = {
         errorExample: "“Previamente al comienzo de la actividad práctica, fueron dados a conocer los riesgos eléctricos y los métodos de protección. Se mencionó que en caso de descarga eléctrica en un compañero, se debe cortar la corriente desde el interruptor o disyuntor (automático), en este caso instalado en el mesón de trabajo. Por el contrario, nunca se debe tocar a la persona que está recibiendo corriente eléctrica”.",
         errorCorrection: "“Previamente al comienzo de la actividad práctica, fueron dados a conocer los riesgos eléctricos y los métodos de protección. Se mencionó que en caso de descarga eléctrica en un compañero, se debe cortar la corriente desde el interruptor o disyuntor (automático), en este caso instalado en el mesón de trabajo. Además, nunca se debe tocar a la persona que está recibiendo corriente eléctrica”.",
         errorComment: "Debido a que las ideas no se contraponen sino que se añade otra complementando la anterior, en lugar de utilizar el conector “Por el contrario”, se recomienda utilizar un conector aditivo como “Además” o “Asimismo”.",
-        style: "#FBBA63",
+        style: "bg-red",
         nro_errores: 0
       },
       conectoresRepetidos: {
@@ -145,7 +145,7 @@ const initialState = {
         errorCorrection: "placeholder",
         errorComment: "placeholder",
         urlGenially: 'https://view.genial.ly/60cd376d3adac80cfe6f5e52',
-        style: "#FFF492",
+        style: "bg-yellow",
         nro_errores: 0
       }
     }
@@ -161,7 +161,7 @@ const initialState = {
         errorExample: "placeholder",
         errorCorrection: "placeholder",
         errorComment: "placeholder",
-        style: '#FBBA63',
+        style: "bg-red",
         nro_errores: 0
       }
     },
@@ -175,7 +175,7 @@ const initialState = {
         negativeFeedback: "¡Excelente!, el grado de lecturabilidad de tu párrafo se ajusta totalmente al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 0 y 40 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es ideal.",
         positiveFeedback: "No se encontraron párrafos con este nivel de lacturabilidad en tu texto.",
         example: "“Un parque eólico se define como un conjunto de generadores eólicos conectados entre sí para inyectar energía eléctrica a un sistema eléctrico” (37,25).",
-        style: '#FFADAD',
+        style: "bg-red",
         nro_errores: 0
       },
       algoDificil: {
@@ -184,7 +184,7 @@ const initialState = {
         negativeFeedback: "¡Muy bien!, el grado de lecturabilidad de tu párrafo se ajusta bastante al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 40 y 55 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es adecuado.",
         positiveFeedback: "No se encontraron párrafos con este nivel de lacturabilidad en tu texto.",
         example: "“La Energía Hidráulica es un tipo de energía renovable convencional, se obtiene del aprovechamiento de las energías cinéticas y potencial de la corriente del agua o los saltos de aguas naturales” (50,66).",
-        style: '#FBBA63',
+        style: "bg-yellow",
         nro_errores: 0
       },
       normal: {
@@ -193,7 +193,7 @@ const initialState = {
         negativeFeedback: "¡Bien!, el grado de lecturabilidad de tu párrafo se ajusta suficientemente al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 55 y 65 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es aceptable.",
         positiveFeedback: "No se encontraron párrafos con este nivel de lacturabilidad en tu texto.",
         example: "“Cuando se habla de la huella de carbono de la energía, esta contempla al sector eléctrico contribuyendo con el 35% de las emisiones de dióxido de carbono a nivel global”. (56,39)",
-        style: '#FFF492',
+        style: "bg-lightgreen",
         nro_errores: 0
       },
       algoFacil: {
@@ -202,7 +202,7 @@ const initialState = {
         negativeFeedback: "El grado de lecturabilidad de tu párrafo no se ajusta al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 65 y 80 puntos, lo que significa que el largo de las palabras y frases de tu párrafo no es recomendable.",
         positiveFeedback: "No se encontraron párrafos con este nivel de lacturabilidad en tu texto.",
         example: "“Dispositivo que se utiliza para aprovechar la energía contenida en el viento y transformarla en eléctrica. Una turbina obtiene su potencia de entrada convirtiendo la energía cinética del viento en un par (fuerza de giro), el cual actúa sobre las palas”. (66,33)",
-        style: '#A0C4FF',
+        style: "bg-orange",
         nro_errores: 0
       },
       facil: {
@@ -211,7 +211,7 @@ const initialState = {
         negativeFeedback: "El grado de lecturabilidad de tu párrafo no se ajusta al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 80 y 100 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es insuficiente.",
         positiveFeedback: "No se encontraron párrafos con este nivel de lacturabilidad en tu texto.",
         example: "“Tal día como hoy de hace ciento diez (110) años, o lo que es lo mismo el 26 de octubre de 1906, el físico e inventor estadounidense Lee De Forest (1873-1961), anunciaba el descubrimiento del tubo de vacío de tres elementos”. (88,81)",
-        style: '#CAFFBF',
+        style: "bg-blue",
         nro_errores: 0
       }
     },
@@ -227,7 +227,7 @@ const initialState = {
         errorExample: "placeholder",
         errorCorrection: "placeholder",
         errorComment: "placeholder",
-        style: '#FFADAD',
+        style: "bg-red",
         nro_errores: 0
       },
       introduccion: {
@@ -238,7 +238,7 @@ const initialState = {
         errorExample: "placeholder",
         errorCorrection: "placeholder",
         errorComment: "placeholder",
-        style: '#FBBA63',
+        style: "bg-yellow",
         nro_errores: 0
       },
       desarrollo: {
@@ -249,7 +249,7 @@ const initialState = {
         errorExample: "placeholder",
         errorCorrection: "placeholder",
         errorComment: "placeholder",
-        style: '#FFF492',
+        style: "bg-lightgreen",
         nro_errores: 0
       },
       resultados: {
@@ -260,7 +260,7 @@ const initialState = {
         errorExample: "placeholder",
         errorCorrection: "placeholder",
         errorComment: "placeholder",
-        style: '#A0C4FF',
+        style: "bg-orange",
         nro_errores: 0
       },
       conclusion: {
@@ -271,7 +271,7 @@ const initialState = {
         errorExample: "placeholder",
         errorCorrection: "placeholder",
         errorComment: "placeholder",
-        style: '#CAFFBF',
+        style: "bg-blue",
         nro_errores: 0
       }
     },
