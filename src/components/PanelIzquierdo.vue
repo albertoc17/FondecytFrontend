@@ -35,11 +35,10 @@ export default {
 </script>
 
 <style>
-/* #PanelIzquierdo {
+#PanelIzquierdo {
   text-align: justify;
   overflow-y: scroll;
   overflow-x: hidden;
-  height: 93vh;
-  padding-top: 10px;
-} */
+  height: 95vh;
+} 
 </style>

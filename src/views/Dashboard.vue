@@ -6,7 +6,7 @@
         <splitpanes
         class="default-theme"
         vertical
-        style="position:'relative', overflow:'hidden'"
+        style="position:'relative'"
         >
           <pane min-size="50" size="50">
             <div class="row">
