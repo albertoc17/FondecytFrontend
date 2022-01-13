@@ -4,7 +4,7 @@
       <li
         v-for="(a, index) in analysisTypes"
         :key="index"
-        v-bind:class="{ 'link-active': isSelected(index) }"
+        :class="{ 'link-active': isSelected(index) }"
         @click="
           saveAnalysisTab({
             endpoint: a.endpoint,

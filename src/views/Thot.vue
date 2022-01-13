@@ -39,16 +39,9 @@ export default {
 </script>
 
 <style>
-span {
-  text-align: justify;
-}
 .splitpanes--vertical > .splitpanes__splitter {
-  min-width: 12px;
-  background: linear-gradient(
-    90deg,
-    rgb(230, 230, 230),
-    rgba(230, 230, 230, 0.6)
-  ); /* color del separador (por alguna razon debe ser con linear-gradient) */
+  /* min-width: 12px !important; */
+  background: linear-gradient(90deg, rgb(230, 230, 230), rgba(230, 230, 230, 0.6)) !important; 
 }
 .splitpanes__pane {
   background-color: white !important; /* color de los paneles (fondo default era gris) */
