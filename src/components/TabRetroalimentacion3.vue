@@ -30,8 +30,14 @@
               data-modal="true"
               href="javascript:;"
               class="btn-sec"
+              @click="showDetalles(fb.feedbackTitle)"            
               >Ver más</a
             >
+          </div>
+          <div>
+            <b-modal :id="fb.feedbackTitle">
+              <DetallesFeedback :feedback="fb"/>
+            </b-modal>
           </div>
         </div>
       </div>
@@ -42,12 +48,14 @@
 <script>
 import { mapGetters } from "vuex";
 import Estadisticas from "./Estadisticas.vue";
+import DetallesFeedback from "./DetallesFeedback.vue";
 import { FEEDBACKSTYPESTDISABLED } from "@/includes/constants.js";
 
 export default {
   name: "TabRetroalimentacion3",
   components: {
-    Estadisticas
+    Estadisticas,
+    DetallesFeedback
   },
   data() {
     return {};
@@ -56,6 +64,11 @@ export default {
     cardColor(fb) {
       if (fb.nro_errores == 0 && !FEEDBACKSTYPESTDISABLED.includes(fb.feedbackTitle)) return 'bg-green';
       return fb.style;
+    },
+    showDetalles(modal){
+      console.log(modal);
+      this.$root.$emit('bv::show::modal', modal, '#btnShow')
+
     }
   },
   computed: {
