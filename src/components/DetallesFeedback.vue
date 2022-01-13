@@ -8,11 +8,19 @@
       <div class="errorContainer">
         <div class="errorCorrectionContainer">
           <p class="card-text"> {{feedback.errorCorrection}}</p>
-          <p class="card-text"> {{feedback.errorComment}}</p>
+          <div class="greenBar"></div>
+          <div class="errorContainer">
+            <img src="../assets/img/Vector.png" class="vectorImg">
+            <p class="card-text"> {{feedback.errorComment}}</p>
+          </div>
         </div>
         <div class="errorExampleContainer">
           <p class="card-text"> {{feedback.errorExample}}</p>
-          <p class="card-text"> {{feedback.errorComment}}</p>
+          <div class="redBar"></div>
+          <div class="errorContainer">
+            <img src="../assets/img/BadVector.png" class="vectorImg">
+            <p class="card-text"> {{feedback.errorComment}}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -34,9 +42,28 @@ export default {
   justify-content: space-between;
 }
 
+.redBar {
+  background-color: rgba(211, 47, 47, 1);
+  height: 12px;
+  width: 100%;
+  margin: 2% 0;
+}
+
+.greenBar {
+  background-color: rgba(58, 186, 111, 1);
+  height: 12px;
+  width: 100%;
+  margin: 2% 0;
+}
+
+.vectorImg {
+  height: 18px;
+  width: 18px;
+  margin-right: 5%;
+}
 .errorCorrectionContainer {
   background-color: rgba(58, 186, 111, 0.1);
-  padding: 5%;
+  padding: 4%;
   margin-right: 5%;
   text-align: justify;
 }
