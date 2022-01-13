@@ -3,6 +3,8 @@
     <div class="card-body">
       <h5 class="card-title">{{feedback.feedbackTitle}}</h5>
       <p class="card-text"> {{feedback.feedbackComment}}</p>
+      <br>
+      <p class="card-text">A continuación te dejamos un ejemplo de como se evidencia este problema en la escritura de un estudiante:</p>
       <div class="errorContainer">
         <div class="errorCorrectionContainer">
           <p class="card-text"> {{feedback.errorCorrection}}</p>

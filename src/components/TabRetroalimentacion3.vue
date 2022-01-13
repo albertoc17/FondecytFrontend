@@ -35,7 +35,7 @@
             >
           </div>
           <div>
-            <b-modal :id="fb.feedbackTitle" size="lg">
+            <b-modal :id="fb.feedbackTitle" size="lg" hide-footer>
               <DetallesFeedback :feedback="fb"/>
             </b-modal>
           </div>
