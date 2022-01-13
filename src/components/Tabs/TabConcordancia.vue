@@ -1,39 +1,43 @@
 <template>
   <div id="TabConcordancia">
-    <FormulateForm @submit="submitHandler" #default="{ isLoading }">
-      <div class="concordanciaContainer">
-        <div class="col-md-5">
-          <FormulateInput
-            type="text"
-            name="patron"
-            label="Patrón"
-            validation="required"
-            v-model="patron"
-          />
+    <div class="wrapper">
+      <p class="baj" style="margin:0">Aquí va escrita la instrucción para el usuario Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget</p>
+      <FormulateForm class="filterbar" @submit="submitHandler" #default="{ isLoading }">
+        <div class="form-group">
+          <div class="form-group">
+            <FormulateInput
+              type="text"
+              name="patron"
+              label="Patrón"
+              label-class="control-label"
+              placeholder="Patrón"
+              v-model="patron"
+            />
+          </div>
         </div>
-        <div class="col-md-4">
-          <FormulateInput
-            type="select"
-            name="modelo"
-            label="Modelo"
-            placeholder="Seleccione"
-            validation="required"
-            :options="optionsTipoModelo"
-            v-model="modelo"
-          />
+        <div class="form-group">
+          <div class="form-group">
+            <FormulateInput
+              type="select"
+              name="modelo"
+              label="Modelo"
+              label-class="control-label"
+              placeholder="Seleccione"
+              :options="optionsTipoModelo"
+              v-model="modelo"
+            />
+          </div>
         </div>
-        <div class="col-md-2" style="padding-top: 20px">
-          <FormulateInput
-            type="submit"
-            :disabled="isLoading"
-            :label="isLoading ? 'Cargando...' : 'BUSCAR'"
-            class="formulate-input"
-          />
-        </div>
+        <FormulateInput
+          type="submit"
+          :disabled="isLoading"
+          :label="isLoading ? 'Cargando...' : 'BUSCAR'"
+          class="formulate-input"
+        />
+      </FormulateForm>
+      <div class="txt-box">
+        <span v-html="resConcordancia"></span>
       </div>
-    </FormulateForm>
-    <div class="resConcordancia" >
-      <span v-html="resConcordancia"></span>
     </div>
   </div>
 </template>
@@ -69,29 +73,26 @@ export default {
         console.log(res);
         this.resConcordancia = res.data.html_response;
         console.log(this.resConcordancia);
-        this.makeToast('Análisis de concordancia realizado exitosamente.', 'success');
+        this.makeToast(
+          "Análisis de concordancia realizado exitosamente.",
+          "success"
+        );
       } catch (err) {
         console.warn(err);
-        this.makeToast(err, 'danger');
+        this.makeToast(err, "danger");
       }
       loader.hide();
     },
     makeToast(message, variant) {
-      let title = variant == 'success' ? 'Operación exitosa' : 'Operación fallida';
+      let title =
+        variant == "success" ? "Operación exitosa" : "Operación fallida";
       this.$bvToast.toast(message, {
         title: title,
         variant: variant,
         solid: false,
         autoHideDelay: 2000,
-      })
-    }
+      });
+    },
   },
 };
 </script>
-
-<style scoped>
-.concordanciaContainer {
-  display: flex;
-  flex-direction: row;
-}
-</style>

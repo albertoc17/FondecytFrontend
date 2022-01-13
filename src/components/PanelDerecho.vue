@@ -62,7 +62,6 @@ import { mapActions, mapGetters } from "vuex";
 import { Analisis } from "@/includes/constants.js";
 import TabRetroalimentacion3 from "@/components/TabRetroalimentacion3.vue";
 import TabConcordancia from "@/components/Tabs/TabConcordancia.vue";
-// import FileUpload from "@/components/FileUpload.vue";
 
 export default {
   name: "LeftPanel",
