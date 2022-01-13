@@ -1,7 +1,7 @@
 <template>
   <div id="TabConcordancia">
     <FormulateForm @submit="submitHandler" #default="{ isLoading }">
-      <div class="row">
+      <div class="concordanciaContainer">
         <div class="col-md-5">
           <FormulateInput
             type="text"
@@ -26,16 +26,14 @@
           <FormulateInput
             type="submit"
             :disabled="isLoading"
-            :label="isLoading ? 'Cargando...' : 'Buscar'"
+            :label="isLoading ? 'Cargando...' : 'BUSCAR'"
+            class="formulate-input"
           />
         </div>
       </div>
     </FormulateForm>
-    <br>
-    <div class="row">
-      <div class="col-md-12">
-        <span v-html="resConcordancia"></span>
-      </div>
+    <div class="resConcordancia" >
+      <span v-html="resConcordancia"></span>
     </div>
   </div>
 </template>
@@ -68,7 +66,9 @@ export default {
           //"http://127.0.0.1:8000/api/Concordancia",
           formData
         );
+        console.log(res);
         this.resConcordancia = res.data.html_response;
+        console.log(this.resConcordancia);
         this.makeToast('Análisis de concordancia realizado exitosamente.', 'success');
       } catch (err) {
         console.warn(err);
@@ -89,8 +89,9 @@ export default {
 };
 </script>
 
-<style>
-#TabConcordancia {
-  margin: 3%;
+<style scoped>
+.concordanciaContainer {
+  display: flex;
+  flex-direction: row;
 }
 </style>

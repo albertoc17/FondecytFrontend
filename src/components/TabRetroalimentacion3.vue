@@ -5,11 +5,12 @@
         <div class="estadisticas">
           <Estadisticas />
         </div>
+        <TabConcordancia />
         <div v-if="retroalimentacion.feedbackTypes">
           <div
             v-for="(fb, index) in retroalimentacion.feedbackTypes"
             :key="index"
-            :class="fb.style"
+            :class="color(fb)"
           >
             <div class="cont-tit">
               <img v-if="fb.nro_errores == 0" class="ic-check" src="../assets/imag/v1/icon/ic_check_w.svg" alt="" />
@@ -43,6 +44,7 @@
 <script>
 import { mapGetters } from "vuex";
 import Estadisticas from "./Estadisticas.vue";
+import TabConcordancia from "./Tabs/TabConcordancia.vue";
 import { FEEDBACKSTYPESTDISABLED } from "@/includes/constants.js";
 
 
@@ -50,6 +52,7 @@ export default {
   name: "TabRetroalimentacion3",
   components: {
     Estadisticas,
+    TabConcordancia
   },
   data() {
     return {};
