@@ -49,7 +49,8 @@
           class="tabs__content tab-content tab-content-3"
           :class="{ 'active': isSelected(2) }"
         >
-          asdasdasdasd
+        <TabCapsulas />
+
         </div>
       </div>
       <!-- / tabs -->
@@ -62,6 +63,8 @@ import { mapActions, mapGetters } from "vuex";
 import { Analisis } from "@/includes/constants.js";
 import TabRetroalimentacion3 from "@/components/TabRetroalimentacion3.vue";
 import TabConcordancia from "@/components/Tabs/TabConcordancia.vue";
+import TabCapsulas from "@/components/Tabs/TabCapsulas.vue";
+
 // import FileUpload from "@/components/FileUpload.vue";
 
 export default {
@@ -69,6 +72,7 @@ export default {
   components: {
     TabRetroalimentacion3,
     TabConcordancia,
+    TabCapsulas,
   },
   data() {
     return {

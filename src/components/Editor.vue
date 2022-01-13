@@ -1,15 +1,7 @@
 <template>
   <div id="Editor">
     <br>
-    <div v-if="!feedbackTypes">
-      <!-- <div class="buttonContainer">
-        <button class="btn btn-success" @click="sendTextEdited()">
-          Enviar texto
-        </button>
-        <button class="btn btn-primary" @click="exportHTML()">
-          Descargar archivo
-        </button>
-      </div> -->
+    <div v-if="feedbackTypes">
       <div v-if="showError">
         <ErrorHtml />
       </div>
@@ -53,15 +45,13 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getRetroalimentacion"]),
     contentHtml () {
       return this.getRetroalimentacion.html;
     },
     feedbackTypes () {
       return this.getRetroalimentacion.feedbackTypes;
-    }
-  },
-  methods: {
+    },
+    ...mapGetters(["getRetroalimentacion"]),
     ...mapActions([
       "saveGerundios",
       "saveOraciones",
@@ -74,26 +64,18 @@ export default {
       "saveProposito",
       "saveAnalysisTab",
     ]),
+  },
+  methods: {
     onEditorChange({ html, text }) {
       this.html = html;
       this.text = text;
-    },
-    exportHTML() {
-      var html2doc = PREHTML + this.html + POSTHTML;
-      var source =
-        "data:application/vnd.ms-word;charset=utf-8," +
-        encodeURIComponent(html2doc);
-      var fileDownload = document.createElement("a");
-      document.body.appendChild(fileDownload);
-      fileDownload.href = source;
-      fileDownload.download = "document.doc";
-      fileDownload.click();
-      document.body.removeChild(fileDownload);
     },
     async sendTextEdited() {
       let loader = this.$loading.show({ isFullPage: true, canCancel: false });
       try {
         this.html = this.html.replace(/<\/?span[^>]*>/g, "");
+        this.html = this.html.replace(/<\/?img[^>]*>/g, "");
+        
         const formData = new FormData();
         formData.append("html", this.html);
         formData.append("text", this.text);
@@ -146,6 +128,18 @@ export default {
         this.showError = true;
       }
       loader.hide();
+    },
+    exportHTML() {
+      var html2doc = PREHTML + this.html + POSTHTML;
+      var source =
+        "data:application/vnd.ms-word;charset=utf-8," +
+        encodeURIComponent(html2doc);
+      var fileDownload = document.createElement("a");
+      document.body.appendChild(fileDownload);
+      fileDownload.href = source;
+      fileDownload.download = "document.doc";
+      fileDownload.click();
+      document.body.removeChild(fileDownload);
     },
   },
 };

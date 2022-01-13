@@ -6,7 +6,7 @@
         <p class="doc-name">mecanicacuantica.doc</p>
       </header>
       <FileUpload />
-      <Editor2 />
+      <Editor />
     </div>
   </div>
 </template>
@@ -15,13 +15,13 @@
 import { mapActions } from "vuex";
 import { Analisis } from "@/includes/constants.js";
 import FileUpload from "@/components/FileUpload.vue";
-import Editor2 from "@/components/Editor2.vue";
+import Editor from "@/components/Editor.vue";
 
 export default {
   name: "LeftPanel",
   components: {
     FileUpload,
-    Editor2
+    Editor
   },
   data() {
     return {
