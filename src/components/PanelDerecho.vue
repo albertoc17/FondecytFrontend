@@ -37,7 +37,7 @@
         </nav>
         <div class="tabs__content tab-content tab-content-1"
           :class="{ 'active': isSelected(0) }">
-          <TabRetroalimentacion3 />
+          <TabRetroalimentacion />
         </div>
         <div
           class="tabs__content tab-content tab-content-2"
@@ -61,14 +61,14 @@
 <script>
 import { mapActions, mapGetters } from "vuex";
 import { Analisis } from "@/includes/constants.js";
-import TabRetroalimentacion3 from "@/components/TabRetroalimentacion3.vue";
+import TabRetroalimentacion from "@/components/TabRetroalimentacion.vue";
 import TabConcordancia from "@/components/Tabs/TabConcordancia.vue";
 import TabCapsulas from "@/components/Tabs/TabCapsulas.vue";
 
 export default {
   name: "LeftPanel",
   components: {
-    TabRetroalimentacion3,
+    TabRetroalimentacion,
     TabConcordancia,
     TabCapsulas,
   },

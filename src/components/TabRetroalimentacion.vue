@@ -1,5 +1,5 @@
 <template>
-  <div id="TabRetroalimentacion3">
+  <div id="TabRetroalimentacion">
     <div class="wrapper">
       <div class="estadisticas">
         <Estadisticas />
@@ -52,7 +52,7 @@ import DetallesFeedback from "./DetallesFeedback.vue";
 import { FEEDBACKSTYPESTDISABLED } from "@/includes/constants.js";
 
 export default {
-  name: "TabRetroalimentacion3",
+  name: "TabRetroalimentacion",
   components: {
     Estadisticas,
     DetallesFeedback

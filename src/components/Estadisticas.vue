@@ -41,6 +41,7 @@ export default {
 .estadisticasContainer {
   display: flex;
   flex-direction: column;
+  padding: 3% 0;
 }
 </style>
   
