@@ -60,6 +60,9 @@ const mutations = {
   setAnalysisGroupTab(state, data) {
     Vue.set(state, "analysisGroupTab", data);
   },
+  setFilename(state, data) {
+    Vue.set(state, "filename", data);
+  },
 };
 
 export default mutations;

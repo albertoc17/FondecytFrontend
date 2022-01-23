@@ -32,6 +32,9 @@ const getters = {
   getSelectedTabIndex(state) {
     return state.selectedTabIndex;
   },
+  getFilename(state) {
+    return state.filename;
+  },
   getRetroalimentacion(state) {
     console.log("getRetroalimentacion: ", state.analysisTab);
     switch (state.analysisTab) {

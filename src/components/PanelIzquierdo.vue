@@ -3,24 +3,24 @@
     <div class="container">
       <header class="enc-txt">
         <h1 class="tit">Tu texto</h1>
-        <p class="doc-name">mecanicacuantica.doc</p>
+        <p class="doc-name">{{ this.filename }}</p>
       </header>
-      <FileUpload />
+      <FileHandler />
       <Editor />
     </div>
   </div>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import { Analisis } from "@/includes/constants.js";
-import FileUpload from "@/components/FileUpload.vue";
+import FileHandler from "@/components/FileHandler.vue";
 import Editor from "@/components/Editor.vue";
 
 export default {
   name: "LeftPanel",
   components: {
-    FileUpload,
+    FileHandler,
     Editor
   },
   data() {
@@ -31,6 +31,9 @@ export default {
   methods: {
     ...mapActions(["saveAnalysisGroupTab", "saveAnalysisTab"]),
   },
+  computed: {
+    ...mapGetters({filename: "getFilename"})
+  }
 };
 </script>
 

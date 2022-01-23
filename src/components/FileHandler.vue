@@ -1,48 +1,15 @@
 <template>
-  <div id="FileUpload">
-
+  <div id="FileHandler">
     <div class="btn-bar">
       <div class="cont-btn">
         <div class="d-flex">
-          <input type="file" name="file1" id="file1" class="file" />
-          <input
-            type="button"
-            class="btn-file btn-sec"
-            value="Reemplazar el documento"
-          />
+          <label for="file" class="btn-file btn-sec">Reemplazar el documento</label>
+          <input style="display: none"  type="file" id="file" ref="file" value="Reemplazar el documento" v-on:change="handleFileUpload()" />
         </div>
-        <a href="" class="btn-sec"><span class="icon-download"></span> Descarga tu texto  </a>
+        <button class="btn-sec" @click="exportHTML()"><span class="icon-download" ></span> Descarga tu texto  </button>
       </div>
-      <button class="btn-main btn-disabled" type="button" disabled>
+      <button class="btn-main" type="button" v-on:click="onSubmit()">
         Evaluar texto
-      </button>
-      <button class="btn-main" type="button" style="display: none">
-        Evaluar texto
-      </button>
-    </div>
-    
-    <div class="btn-bar">
-      <form @submit.prevent="onSubmit">
-        <div class="cont-btn">
-          <div class="d-flex">
-            <b-form-file
-              v-model="file"
-              :state="Boolean(file)"
-              placeholder="Seleccione el archivo (doc, docx, txt)"
-              drop-placeholder="Arrastre el archivo (doc, docx, txt)"
-              accept=".doc, .docx, .txt"
-            ></b-form-file>
-          </div>
-        </div>
-        <button class="btn-main">
-          Evaluar texto
-        </button>
-      </form>
-      <button class="btn-main" type="button" style="display: none">
-        Evaluar texto
-      </button>
-      <button class="btn-sec" @click="exportHTML()">
-        <span class="icon-download"></span> Descargar archivo
       </button>
     </div>
   </div>
@@ -51,8 +18,9 @@
 
 <script>
 import axios from "axios";
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import { validModel } from "@/includes/functions.js";
+import { PREHTML, POSTHTML } from "@/includes/constants.js";
 
 export default {
   name: "FileUpload",
@@ -60,6 +28,9 @@ export default {
     return {
       file: null,
     };
+  },
+  computed: {
+    ...mapGetters({retroalimentacion: "getRetroalimentacion", fileName: "getFilename", analysisType: "getAnalysisTab"})
   },
   methods: {
     ...mapActions([
@@ -73,7 +44,14 @@ export default {
       "saveComplejidad",
       "saveLecturabilidad",
       "saveProposito",
+      "saveFilename"
     ]),
+    handleFileUpload() {
+      this.file = this.$refs.file.files[0];
+      console.log(this.file.name);
+      console.log("handlerFile", this.file )
+      this.saveFilename(this.file.name)
+    },
     async onSubmit() {
       const formData = new FormData();
       formData.append("file", this.file);
@@ -158,12 +136,26 @@ export default {
       }
       return data;
     },
+    exportHTML() {
+      if(this.retroalimentacion.html === null){
+        this.makeToast("No se adjuntó el archivo.", "danger");
+        return;
+      }
+      var html2doc = PREHTML + this.retroalimentacion.html + POSTHTML;
+      var source =
+        "data:application/vnd.ms-word;charset=utf-8," +
+        encodeURIComponent(html2doc);
+      var fileDownload = document.createElement("a");
+      document.body.appendChild(fileDownload);
+      fileDownload.href = source;
+      fileDownload.download = `${this.fileName}-${this.analysisType}-corregido.doc`;
+      fileDownload.click();
+      document.body.removeChild(fileDownload);
+    },
   },
 };
 </script>
 
-<style>
-.custom-file-input:lang(es) ~ .custom-file-label::after {
-  content: "Explorar";
-}
-</style>
+<style  scoped>
+
+</style>>

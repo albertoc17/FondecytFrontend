@@ -283,7 +283,8 @@ const initialState = {
   estadisticasGenerales: null,
   analysisTab: null,
   analysisGroupTab: null,
-  selectedTabIndex: "gerundios"
+  selectedTabIndex: "gerundios",
+  filename: "mecanicacuantica.doc",
 }
 
 const store = new Vuex.Store({

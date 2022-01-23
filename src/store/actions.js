@@ -34,6 +34,9 @@ const actions = {
   },
   saveAnalysisGroupTab: ({ commit }, data) => {
     commit("setAnalysisGroupTab", data);
+  },
+  saveFilename: ({ commit }, data) => {
+    commit("setFilename", data);
   }
 }
 
