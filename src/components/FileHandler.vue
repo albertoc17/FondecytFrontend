@@ -23,7 +23,7 @@ import { validModel } from "@/includes/functions.js";
 import { PREHTML, POSTHTML } from "@/includes/constants.js";
 
 export default {
-  name: "FileUpload",
+  name: "FileHandler",
   data() {
     return {
       file: null,
@@ -44,7 +44,8 @@ export default {
       "saveComplejidad",
       "saveLecturabilidad",
       "saveProposito",
-      "saveFilename"
+      "saveFilename",
+      "saveAnalysisTab"
     ]),
     handleFileUpload() {
       this.file = this.$refs.file.files[0];
@@ -110,6 +111,7 @@ export default {
           html: res.data.proposito.html_response,
           error: res.data.proposito.flag,
         });
+        this.saveAnalysisTab({endpoint: "gerunds", selected: "gerundios"});
         this.makeToast("Documento analizado correctamente.", "success");
       } catch (err) {
         console.warn(err);

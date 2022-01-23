@@ -6,7 +6,7 @@
         <img src="@/assets/imag/v1/logos/logo_main.svg" alt="" />
       </a>
     </figure>
-    <h2 class="subtit">Criterios de evaluación</h2>
+    <h2 class="subtit">Tipos de Análisis</h2>
 
     <section class="cont-accordion">
       <div v-for="(a, index) in analisis" :key="index" class="row-accordion">
