@@ -1,6 +1,10 @@
 <template>
   <div id="Dashboard" class="dashboard">
-    <div class="content-main">
+    <!-- v-if="!retroalimentacion.html" -->
+    <div v-if="1==2" class="content-main">
+      <Inicio />
+    </div>
+    <div else class="content-main">
       <Sidenav />
       <div class="main">
         <splitpanes
@@ -8,14 +12,14 @@
         vertical
         style="position:'relative'"
         >
-          <pane min-size="50" size="50">
+          <pane min-size="50" size="65">
             <div class="row">
               <div class="col lg-12">
                 <PanelIzquierdo />
               </div>
             </div>
           </pane>
-          <pane min-size="20" size="50">
+          <pane min-size="20" size="35">
             <div class="row">
               <div class="col lg-12">
                 <PanelDerecho />
@@ -23,14 +27,15 @@
             </div>
           </pane>
         </splitpanes>
-      </div>  
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-// import Navbar from "@/components/Navbar.vue";
+import { mapGetters } from "vuex";
 import Sidenav from "@/components/Sidenav.vue";
+import Inicio from "@/components/Inicio.vue";
 import PanelIzquierdo from "@/components/PanelIzquierdo.vue";
 import PanelDerecho from "@/components/PanelDerecho.vue";
 import { Splitpanes, Pane } from "splitpanes";
@@ -41,12 +46,18 @@ export default {
   components: {
     Splitpanes,
     Pane,
+    Inicio,
     Sidenav,
     PanelIzquierdo,
     PanelDerecho
   },
   data() {
     return {};
+  },
+  computed: {
+    ...mapGetters({
+      retroalimentacion: "getRetroalimentacion",
+    }),
   },
 };
 
