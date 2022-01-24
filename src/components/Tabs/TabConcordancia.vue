@@ -70,9 +70,7 @@ export default {
           //"http://127.0.0.1:8000/api/Concordancia",
           formData
         );
-        console.log(res);
         this.resConcordancia = res.data.html_response;
-        console.log(this.resConcordancia);
         this.makeToast(
           "Análisis de concordancia realizado exitosamente.",
           "success"

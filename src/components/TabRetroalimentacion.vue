@@ -66,9 +66,7 @@ export default {
       return fb.style;
     },
     showDetalles(modal){
-      console.log(modal);
       this.$root.$emit('bv::show::modal', modal, '#btnShow')
-
     }
   },
   computed: {

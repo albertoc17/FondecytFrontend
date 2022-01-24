@@ -49,8 +49,6 @@ export default {
     ]),
     handleFileUpload() {
       this.file = this.$refs.file.files[0];
-      console.log(this.file.name);
-      console.log("handlerFile", this.file )
       this.saveFilename(this.file.name)
     },
     async onSubmit() {

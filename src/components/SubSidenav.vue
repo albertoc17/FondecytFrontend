@@ -13,7 +13,6 @@
           tabRetro();
         "
       >
-        <!-- <a :href="'##' + index"> -->
         <a href="#"> {{ a.analysisTitle }} <span class="arrow"></span> </a>
       </li>
     </ul>

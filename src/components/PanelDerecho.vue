@@ -66,7 +66,7 @@ import TabConcordancia from "@/components/Tabs/TabConcordancia.vue";
 import TabCapsulas from "@/components/Tabs/TabCapsulas.vue";
 
 export default {
-  name: "LeftPanel",
+  name: "PanelDerecho",
   components: {
     TabRetroalimentacion,
     TabConcordancia,

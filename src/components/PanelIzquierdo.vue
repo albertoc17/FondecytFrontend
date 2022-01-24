@@ -18,7 +18,7 @@ import FileHandler from "@/components/FileHandler.vue";
 import Editor from "@/components/Editor.vue";
 
 export default {
-  name: "LeftPanel",
+  name: "PanelIzquierdo",
   components: {
     FileHandler,
     Editor
