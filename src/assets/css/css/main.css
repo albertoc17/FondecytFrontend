@@ -52,7 +52,18 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-
+@font-face {
+  font-family: "Lato-Regular";
+  font-style: woff2 woff;
+  font-weight: normal;
+  src: url("../fonts/Lato-Regular.eot?") format("eot"), url("../fonts/Lato-Regular.woff2") format("woff2"), url("../fonts/Lato-Regular.woff") format("woff"), url("../fonts/Lato-Regular.ttf") format("truetype"), url("../fonts/Lato-Regular.svg#Lato-Regular") format("svg");
+}
+@font-face {
+  font-family: "Lato-Bold";
+  font-style: woff2 woff;
+  font-weight: normal;
+  src: url("../fonts/Lato-Bold.eot?") format("eot"), url("../fonts/Lato-Bold.woff2") format("woff2"), url("../fonts/Lato-Bold.woff") format("woff"), url("../fonts/Lato-Bold.ttf") format("truetype"), url("../fonts/Lato-Bold.svg#Lato-Bold") format("svg");
+}
 /* para utilizar los mixins llamarlos de la siguiente forma en el código sass: @include nombre_mixin */
 /* para utilizar los mixins llamarlos de la siguiente forma en el código sass: @mixin nombre_mixin */
 /* para utilizar los mixins llamarlos de la siguiente forma en el código sass: @include nombre_mixin */
@@ -695,6 +706,7 @@ footer, header, hgroup, menu, nav, section {
   position: absolute;
   height: 40px;
   width: 40px;
+  background-image: url("../../imag/v1/icon/ic_play.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
@@ -1235,6 +1247,7 @@ select {
   -moz-appearance: none;
   appearance: none;
   outline: none;
+  background-image: url("../../imag/v1/icon/chevron_down.svg");
   background-repeat: no-repeat;
   background-position: calc(100% - 10px) 50%;
   background-size: 12px;
@@ -1619,8 +1632,10 @@ body.inheritCursors * {
 .dashboard {
   background-color: rgba(18, 115, 235, 0.2);
 }
-.dashboard .row {
+.dashboard .default-theme, .dashboard splitpanes {
   padding: 20px;
+}
+.dashboard .row {
   height: 100vh;
   overflow: hidden;
   display: flex;

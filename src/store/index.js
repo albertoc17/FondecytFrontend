@@ -173,7 +173,7 @@ const initialState = {
         feedbackTitle: "Lecturabilidad Difícil",
         feedbackComment: "",
         negativeFeedback: "¡Excelente!, el grado de lecturabilidad de tu párrafo se ajusta totalmente al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 0 y 40 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es ideal.",
-        positiveFeedback: "No se encontraron párrafos con este nivel de lacturabilidad en tu texto.",
+        positiveFeedback: "No se encontraron párrafos con este nivel de lecturabilidad en tu texto.",
         example: "Un ejemplo de párrafo categorizado con un grado de lecturabilidad muy difícil es el que se presenta a continuación: “Un parque eólico se define como un conjunto de generadores eólicos conectados entre sí para inyectar energía eléctrica a un sistema eléctrico” (37,25)",
         style: "bg-red",
         nro_errores: 0
@@ -182,7 +182,7 @@ const initialState = {
         feedbackTitle: "Lecturabilidad Algo Difícil",
         feedbackComment: "",
         negativeFeedback: "¡Muy bien!, el grado de lecturabilidad de tu párrafo se ajusta bastante al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 40 y 55 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es adecuado.",
-        positiveFeedback: "No se encontraron párrafos con este nivel de lacturabilidad en tu texto.",
+        positiveFeedback: "No se encontraron párrafos con este nivel de lecturabilidad en tu texto.",
         example: "Un ejemplo de párrafo categorizado con un grado de lecturabilidad algo difícil es el que se presenta a continuación: “La Energía Hidráulica es un tipo de energía renovable convencional, se obtiene del aprovechamiento de las energías cinéticas y potencial de la corriente del agua o los saltos de aguas naturales” (50,66)",
         style: "bg-yellow",
         nro_errores: 0
@@ -191,7 +191,7 @@ const initialState = {
         feedbackTitle: "Lecturabilidad Normal",
         feedbackComment: "",
         negativeFeedback: "¡Bien!, el grado de lecturabilidad de tu párrafo se ajusta suficientemente al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 55 y 65 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es aceptable.",
-        positiveFeedback: "No se encontraron párrafos con este nivel de lacturabilidad en tu texto.",
+        positiveFeedback: "No se encontraron párrafos con este nivel de lecturabilidad en tu texto.",
         example: "“Cuando se habla de la huella de carbono de la energía, esta contempla al sector eléctrico contribuyendo con el 35% de las emisiones de dióxido de carbono a nivel global”. (56,39)",
         style: "bg-lightgreen",
         nro_errores: 0
@@ -200,7 +200,7 @@ const initialState = {
         feedbackTitle: "Lecturabilidad Algo Fácil",
         feedbackComment: "",
         negativeFeedback: "El grado de lecturabilidad de tu párrafo no se ajusta al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 65 y 80 puntos, lo que significa que el largo de las palabras y frases de tu párrafo no es recomendable.",
-        positiveFeedback: "No se encontraron párrafos con este nivel de lacturabilidad en tu texto.",
+        positiveFeedback: "No se encontraron párrafos con este nivel de lecturabilidad en tu texto.",
         example: "“Dispositivo que se utiliza para aprovechar la energía contenida en el viento y transformarla en eléctrica. Una turbina obtiene su potencia de entrada convirtiendo la energía cinética del viento en un par (fuerza de giro), el cual actúa sobre las palas”. (66,33)",
         style: "bg-orange",
         nro_errores: 0
@@ -209,7 +209,7 @@ const initialState = {
         feedbackTitle: "Lecturabilidad Fácil",
         feedbackComment: "",
         negativeFeedback: "El grado de lecturabilidad de tu párrafo no se ajusta al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 80 y 100 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es insuficiente.",
-        positiveFeedback: "No se encontraron párrafos con este nivel de lacturabilidad en tu texto.",
+        positiveFeedback: "No se encontraron párrafos con este nivel de lecturabilidad en tu texto.",
         example: "“Tal día como hoy de hace ciento diez (110) años, o lo que es lo mismo el 26 de octubre de 1906, el físico e inventor estadounidense Lee De Forest (1873-1961), anunciaba el descubrimiento del tubo de vacío de tres elementos”. (88,81)",
         style: "bg-blue",
         nro_errores: 0

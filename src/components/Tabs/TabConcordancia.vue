@@ -1,7 +1,7 @@
 <template>
   <div id="TabConcordancia">
     <div class="wrapper">
-      <p class="baj" style="margin:0">Aquí va escrita la instrucción para el usuario Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget</p>
+      <p class="baj" style="margin:0">Si tienes dudas de como usar una palabra o expresión (Patrón), en esta sección puedes buscarla y revisar como se ha utilizado en textos generales en español (Modelo General), así como en informes de ingeniería (Modelo Específico). </p>
       <FormulateForm class="filterbar" @submit="submitHandler" #default="{ isLoading }">
         <div class="form-group">
           <div class="form-group">

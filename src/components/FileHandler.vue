@@ -3,8 +3,8 @@
     <div class="btn-bar">
       <div class="cont-btn">
         <div class="d-flex">
-          <label for="file" class="btn-file btn-sec">Reemplazar el documento</label>
-          <input style="display: none"  type="file" id="file" ref="file" value="Reemplazar el documento" v-on:change="handleFileUpload()" />
+          <label for="file" class="btn-file btn-sec">{{ fileInputLabel }}</label>
+          <input style="display: none" type="file" id="file" ref="file" value="Reemplazar el documento" v-on:change="handleFileUpload()" />
         </div>
         <button class="btn-sec" @click="exportHTML()"><span class="icon-download" ></span> Descarga tu texto  </button>
       </div>
@@ -30,7 +30,11 @@ export default {
     };
   },
   computed: {
-    ...mapGetters({retroalimentacion: "getRetroalimentacion", fileName: "getFilename", analysisType: "getAnalysisTab"})
+    ...mapGetters({retroalimentacion: "getRetroalimentacion", fileName: "getFilename", analysisType: "getAnalysisTab"}),
+    fileInputLabel: function () {
+      if (this.retroalimentacion.html) return "Reemplazar el documento";
+      return "Carga tu texto aquí"
+    }
   },
   methods: {
     ...mapActions([

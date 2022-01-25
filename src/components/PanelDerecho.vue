@@ -2,7 +2,7 @@
   <div id="PanelDerecho">
     <div class="container block-tabs">
       <header class="cont-tit">
-        <h2 class="tit">Retroalimentación</h2>
+        <h2 class="tit">Acerca de tu texto y otros apoyos</h2>
       </header>
       <!-- tabs -->
       <div class="content">
@@ -14,7 +14,7 @@
             :class="{ 'active': isSelected(0) }"
             @click="selected = 0"
           >
-            Acerca de tu texto
+            Análisis
           </a>
           <a
             href="#"
