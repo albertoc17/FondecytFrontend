@@ -16,11 +16,13 @@ import './assets/css/vueFormulate.css'
 // import './assets/js-local/jquery/jquery-3.6.0.min.js'
 
 Vue.config.productionTip = false
-Vue.use(Vuex)
-Vue.use(VueRouter)
-Vue.use(BootstrapVue)
-Vue.use(BootstrapVueIcons)
-Vue.use(Loading);
+Vue.use(
+  Vuex, 
+  VueRouter,
+  BootstrapVue,
+  BootstrapVueIcons,
+  Loading
+)
 Vue.use(VueFormulate, {
   plugins: [es],
   locale: 'es'
