@@ -158,4 +158,13 @@ export default {
   flex-direction: row;
   justify-content: center;
 }
+
+@media (max-width: 767px) {
+  .content-main {
+    margin-left: 5%;
+  }
+ .img {
+   display: none;
+ }
+}
 </style>
