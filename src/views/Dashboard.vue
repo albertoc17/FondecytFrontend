@@ -1,10 +1,6 @@
 <template>
   <div id="Dashboard" class="dashboard">
-    <!-- v-if="!retroalimentacion.html" -->
-    <div v-if="1==2" class="content-main">
-      <Inicio />
-    </div>
-    <div else class="content-main">
+    <div class="content-main">
       <Sidenav />
       <div class="main">
         <splitpanes
@@ -35,7 +31,6 @@
 <script>
 import { mapGetters } from "vuex";
 import Sidenav from "@/components/Sidenav.vue";
-import Inicio from "@/components/Inicio.vue";
 import PanelIzquierdo from "@/components/PanelIzquierdo.vue";
 import PanelDerecho from "@/components/PanelDerecho.vue";
 import { Splitpanes, Pane } from "splitpanes";
@@ -46,7 +41,6 @@ export default {
   components: {
     Splitpanes,
     Pane,
-    Inicio,
     Sidenav,
     PanelIzquierdo,
     PanelDerecho
