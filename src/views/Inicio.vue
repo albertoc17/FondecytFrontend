@@ -1,21 +1,25 @@
 <template>
   <div id="Inicio" class="inicio">
-    <div class="content-main" style="background-image: url(imag/v1/master/ilustracion_1.png);">
-		<div class="auxi">
-			<div class="content">
-				<h1 class="tit">¡Bienvenido a PEUMO!</h1>
-				
-				<div class="cont-file">
-					<h3 class="subtit">Por favor, carga tu documento (doc, docx, txt)</h3>
-					<div class="d-flex">
-						<label for="file" class="btn-file btn-sec">{{ fileInputLabel }}</label>
-						<input style="display: none" type="file" id="file" ref="file" value="Reemplazar el documento" v-on:change="handleFileUpload()" />
-					</div>
-				</div>
-				<p class="sub-txt">O si prefieres, <a class="link" @click="goToDashboard">comienza escribiendo en nuestro editor <span class="arrow-r"></span></a></p>
-			</div>
-		</div>
-	</div>
+    <div class="inicioContainer">
+      <div class="content-main">
+        <div class="auxi">
+          <div class="content">
+            <h1 class="tit">¡Bienvenido a PEUMO!</h1>
+            <div class="cont-file">
+              <h3 class="subtit">Por favor, carga tu documento (doc, docx, txt)</h3>
+              <div class="d-flex">
+                <label for="file" class="btn-file btn-sec">{{ fileInputLabel }}</label>
+                <input style="display: none" type="file" id="file" ref="file" value="Reemplazar el documento" v-on:change="handleFileUpload()" />
+              </div>
+            </div>
+            <p class="sub-txt">O si prefieres, <a class="link" @click="goToDashboard">comienza escribiendo en nuestro editor <span class="arrow-r"></span></a></p>
+          </div>
+        </div>
+      </div>
+      <div class="img">
+        <img src="../assets/img/inicio.png" class="vectorImg">
+      </div>
+    </div>
   </div>
 </template>
 
@@ -148,3 +152,10 @@ export default {
   }
 };
 </script>
+<style scoped>
+.inicioContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+</style>
