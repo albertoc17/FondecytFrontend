@@ -1,5 +1,6 @@
 <template>
-  <div id="Dashboard" class="dashboard">
+<div>
+  <div id="Dashboard" class="dashboard" v-if="!showError">
     <div class="content-main">
       <Sidenav />
       <div class="main">
@@ -26,6 +27,10 @@
       </div>
     </div>
   </div>
+  <div v-else>
+    <ErrorPageMobile />
+  </div>
+</div>
 </template>
 
 <script>
@@ -33,6 +38,7 @@ import { mapGetters } from "vuex";
 import Sidenav from "@/components/Sidenav.vue";
 import PanelIzquierdo from "@/components/PanelIzquierdo.vue";
 import PanelDerecho from "@/components/PanelDerecho.vue";
+import ErrorPageMobile from "@/components/ErrorPageMobile.vue";
 import { Splitpanes, Pane } from "splitpanes";
 import "splitpanes/dist/splitpanes.css";
 
@@ -43,22 +49,31 @@ export default {
     Pane,
     Sidenav,
     PanelIzquierdo,
-    PanelDerecho
+    PanelDerecho,
+    ErrorPageMobile
   },
   data() {
-    return {};
+    return {
+      showError: false
+    };
   },
   computed: {
     ...mapGetters({
       retroalimentacion: "getRetroalimentacion",
     }),
   },
+  created() {
+    window.addEventListener("resize", () => {
+      if(window.innerWidth < 767){
+        this.showError = true;
+      } else{
+        this.showError = false;
+      }
+    });
+  }
+
 };
 
-// cerrar modal
-// $('.modal-selector .btn-sec').click(function () {
-//   $.fancybox.close();
-// });
 </script>
 
 <style>
@@ -77,11 +92,4 @@ span {
   background-color: white !important; /* color de los paneles (fondo default era gris) */
 }
 </style>
-
-<!--
-<script src="js-local/jquery/jquery-3.6.0.min.js"></script>
-<script src="js-local/jquery/jquery-migrate-1.2.1.min.js"></script>
-<script src="js-local/js-global.js"></script>
-<script src="js-local/fancybox/jquery.fancybox.min.js"></script>
- -->
 
