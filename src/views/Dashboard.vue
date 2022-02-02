@@ -63,6 +63,9 @@ export default {
     }),
   },
   created() {
+    if(window.innerWidth < 767){
+      this.showError = true;
+    }
     window.addEventListener("resize", () => {
       if(window.innerWidth < 767){
         this.showError = true;
