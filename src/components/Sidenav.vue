@@ -20,7 +20,7 @@
             <span class="ic-txt"></span>
             <p>{{ a.tabTitle }}</p>
           </div>
-          <span class="btn-accordion"></span>
+          <!-- <span class="btn-accordion"></span> -->
         </div>
         <SubSidenav :analysisTypes="a.analysisTypes" />
       </div>

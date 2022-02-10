@@ -44,7 +44,6 @@ const mutations = {
   },
   setProposito(state, {html, error}) {
     state.proposito.html = html;
-    state.proposito.feedbackTypes.resumen.nro_errores = error.MM0;
     state.proposito.feedbackTypes.introduccion.nro_errores = error.MM1;  
     state.proposito.feedbackTypes.desarrollo.nro_errores = error.MM2;  
     state.proposito.feedbackTypes.resultados.nro_errores = error.MM3; 

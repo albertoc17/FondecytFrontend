@@ -219,26 +219,26 @@ const initialState = {
   proposito: {
     html: "",
     feedbackTypes: {
-      resumen: {
-        feedbackTitle: "Resumen",
-        feedbackComment: "El propósito del este apartado es sintetizar el contenido del informe, por lo tanto, se espera que se anuncien los principales temas que se presentarán en él. Te recomendamos considerar lo anterior y, evaluar si se ajusta o no a lo requerido, para corregir en caso de ser necesario.",
-        negativeFeedback: "Esta oración cumple con el propósito discursivo del resumen.",
-        positiveFeedback: "No se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
-        errorExample: "placeholder",
-        errorCorrection: "placeholder",
-        errorComment: "placeholder",
-        style: "bg-red",
-        nro_errores: 0
-      },
+      // resumen: {
+      //   feedbackTitle: "Resumen",
+      //   feedbackComment: "El propósito del este apartado es sintetizar el contenido del informe, por lo tanto, se espera que se anuncien los principales temas que se presentarán en él. Te recomendamos considerar lo anterior y, evaluar si se ajusta o no a lo requerido, para corregir en caso de ser necesario.",
+      //   negativeFeedback: "Esta oración cumple con el propósito discursivo del resumen.",
+      //   positiveFeedback: "No se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
+      //   errorExample: "",
+      //   errorCorrection: "",
+      //   errorComment: "",
+      //   style: "bg-red",
+      //   nro_errores: 0
+      // },
       introduccion: {
         feedbackTitle: "Introducción",
         feedbackComment: "El propósito de este apartado es orientar al lector en relación con el tema, presentar los supuestos conceptuales más relevantes que guían la investigación, indicar su propósito y justificar la relevancia de realizar la investigación. Te recomendamos considerar lo anterior y, evaluar si se ajusta o no a lo requerido, para corregir en caso de ser necesario.",
         negativeFeedback: "Esta oración cumple con el propósito discursivo de la introducción.",
         positiveFeedback: "No se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
-        errorExample: "placeholder",
-        errorCorrection: "placeholder",
-        errorComment: "placeholder",
-        style: "bg-yellow",
+        errorExample: "",
+        errorCorrection: "",
+        errorComment: "",
+        style: "bg-red",
         nro_errores: 0
       },
       desarrollo: {
@@ -246,10 +246,10 @@ const initialState = {
         feedbackComment: "El propósito del este apartado consiste en describir los procesos realizados para llevar a cabo el estudio, en donde se incluyen los materiales y metodología a utilizar. Te recomendamos considerar lo anterior y, evaluar si se ajusta o no a lo requerido, para corregir en caso de ser necesario.",
         negativeFeedback: "Esta oración cumple con el propósito discursivo del desarollo.",
         positiveFeedback: "No se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
-        errorExample: "placeholder",
-        errorCorrection: "placeholder",
-        errorComment: "placeholder",
-        style: "bg-lightgreen",
+        errorExample: "",
+        errorCorrection: "",
+        errorComment: "",
+        style: "bg-yellow",
         nro_errores: 0
       },
       resultados: {
@@ -257,10 +257,10 @@ const initialState = {
         feedbackComment: "El propósito de este apartado es presentar los resultados y proponer una interpretación de ellos de acuerdo con las investigaciones previas presentadas en el desarrollo. Te recomendamos considerar lo anterior y, evaluar si se ajusta o no a lo requerido, para corregir en caso de ser necesario.",
         negativeFeedback: "Esta oración cumple con el propósito discursivo de los resultados.",
         positiveFeedback: "No se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
-        errorExample: "placeholder",
-        errorCorrection: "placeholder",
-        errorComment: "placeholder",
-        style: "bg-orange",
+        errorExample: "",
+        errorCorrection: "",
+        errorComment: "",
+        style: "bg-lightgreen",
         nro_errores: 0
       },
       conclusion: {
@@ -268,10 +268,10 @@ const initialState = {
         feedbackComment: "El propósito de este apartado es concluir el informe, recordando al lector los aspectos más relevantes y proponiendo una interpretación de los hallazgos obtenidos, presentando proyecciones del trabajo realizado. Te recomendamos considerar lo anterior y, evaluar si se ajusta o no a lo requerido, para corregir en caso de ser necesario.",
         negativeFeedback: "Esta oración cumple con el propósito discursivo de la conclusión.",
         positiveFeedback: "No se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
-        errorExample: "placeholder",
-        errorCorrection: "placeholder",
-        errorComment: "placeholder",
-        style: "bg-blue",
+        errorExample: "",
+        errorCorrection: "",
+        errorComment: "",
+        style: "bg-orange",
         nro_errores: 0
       }
     },
@@ -284,7 +284,7 @@ const initialState = {
   analysisTab: null,
   analysisGroupTab: null,
   selectedTabIndex: "gerundios",
-  filename: "mecanicacuantica.doc",
+  filename: "tuTexto.docx",
 }
 
 const store = new Vuex.Store({

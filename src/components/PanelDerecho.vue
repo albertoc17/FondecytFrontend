@@ -49,8 +49,7 @@
           class="tabs__content tab-content tab-content-3"
           :class="{ 'active': isSelected(2) }"
         >
-        <TabCapsulas />
-
+          <TabCapsulas />
         </div>
       </div>
       <!-- / tabs -->
