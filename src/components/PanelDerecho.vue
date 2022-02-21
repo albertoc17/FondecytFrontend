@@ -61,8 +61,8 @@
 import { mapActions, mapGetters } from "vuex";
 import { Analisis } from "@/includes/constants.js";
 import TabRetroalimentacion from "@/components/TabRetroalimentacion.vue";
-import TabConcordancia from "@/components/Tabs/TabConcordancia.vue";
-import TabCapsulas from "@/components/Tabs/TabCapsulas.vue";
+import TabConcordancia from "@/components/TabConcordancia.vue";
+import TabCapsulas from "@/components/TabCapsulas.vue";
 
 export default {
   name: "PanelDerecho",
@@ -78,7 +78,7 @@ export default {
     };
   },
   computed: {
-    ...mapActions(["saveAnalysisGroupTab", "saveAnalysisTab"]),
+    ...mapActions(["saveAnalysisGroupTab", "saveAnalisisPantalla"]),
     ...mapGetters({ retroalimentacion: "getRetroalimentacion" }),
   },
   methods: {

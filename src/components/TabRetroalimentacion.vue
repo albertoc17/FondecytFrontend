@@ -3,6 +3,7 @@
     <div class="estadisticas">
       <Estadisticas />
     </div>
+    <p v-if="retroalimentacion.ayuda">{{ retroalimentacion.ayuda }} asdasd</p>
     <div>
       <div
         v-for="(fb, index) in retroalimentacion.feedbackTypes"
@@ -11,7 +12,7 @@
         :class="cardColor(fb)"
       >
         <div class="cont-tit">
-          <img v-if="fb.nro_errores == 0" class="ic-check" src="../assets/imag/v1/icon/ic_check_w.svg" alt="" />
+          <img v-if="fb.nro_errores == 0 && !retroalimentacion.ayuda" class="ic-check" src="../assets/imag/v1/icon/ic_check_w.svg" alt="" />
           <h3 class="tit">
             {{ fb.feedbackTitle }} ({{ fb.nro_errores }} encontrados)
           </h3>
@@ -34,7 +35,7 @@
           >
         </div>
         <div>
-          <b-modal :id="fb.feedbackTitle" size="lg" hide-footer>
+          <b-modal :id="fb.feedbackTitle" size="lg" hide-footer hide-header>
             <DetallesFeedback :feedback="fb"/>
           </b-modal>
         </div>
@@ -45,9 +46,8 @@
   
 <script>
 import { mapGetters } from "vuex";
-import Estadisticas from "./Estadisticas.vue";
-import DetallesFeedback from "./DetallesFeedback.vue";
-import { FEEDBACKSTYPESTDISABLED } from "@/includes/constants.js";
+import Estadisticas from "@/components/Estadisticas.vue";
+import DetallesFeedback from "@/components/DetallesFeedback.vue";
 
 export default {
   name: "TabRetroalimentacion",
@@ -60,7 +60,7 @@ export default {
   },
   methods: {
     cardColor(fb) {
-      if (fb.nro_errores == 0 && !FEEDBACKSTYPESTDISABLED.includes(fb.feedbackTitle)) return 'bg-green';
+      if (fb.nro_errores == 0 && !this.retroalimentacion.ayuda) return 'bg-green';
       return fb.style;
     },
     showDetalles(modal) {

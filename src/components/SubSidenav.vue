@@ -6,7 +6,7 @@
         :key="index"
         :class="{ 'link-active': isSelected(index) }"
         @click="
-          saveAnalysisTab({
+          saveAnalisisPantalla({
             endpoint: a.endpoint,
             selected: index,
           });
@@ -36,7 +36,7 @@ export default {
     ...mapGetters(["getSelectedTabIndex"]),
   },
   methods: {
-    ...mapActions(["saveAnalysisTab", "saveAnalysisGroupTab"]),
+    ...mapActions(["saveAnalisisPantalla", "saveAnalysisGroupTab"]),
     tabRetro() {
       this.$root.$emit("tabRetro");
     },

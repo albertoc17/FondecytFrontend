@@ -9,11 +9,9 @@
     <h2 class="subtit">Tipos de Análisis</h2>
     <section class="cont-accordion">
       <div v-for="(a, index) in analisis" :key="index" class="row-accordion">
+        <!-- saveAnalysisGroupTab(index);
+            saveAnalisisPantalla(null); -->
         <div
-          @click="
-            saveAnalysisGroupTab(index);
-            saveAnalysisTab(null);
-          "
           class="enc-accordion"
         > <!-- class="enc-accordion active" -->
           <div class="content ">
@@ -44,7 +42,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["saveAnalysisGroupTab", "saveAnalysisTab"]),
+    ...mapActions(["saveAnalysisGroupTab", "saveAnalisisPantalla"]),
   },
 };
 </script>

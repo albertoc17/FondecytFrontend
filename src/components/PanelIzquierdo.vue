@@ -29,7 +29,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["saveAnalysisGroupTab", "saveAnalysisTab"]),
+    ...mapActions(["saveAnalysisGroupTab", "saveAnalisisPantalla"]),
   },
   computed: {
     ...mapGetters({filename: "getFilename"})

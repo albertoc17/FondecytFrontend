@@ -168,6 +168,7 @@ const initialState = {
   },
   lecturabilidad: {
     html: "",
+    // ayuda: 'Para el análisis de lecturabilidad.',    
     feedbackTypes: {
       dificil: {
         feedbackTitle: "Lecturabilidad Difícil",
@@ -218,12 +219,12 @@ const initialState = {
   },
   proposito: {
     html: "",
-    feedbackTypes: {
+    ayuda: 'Para el análisis de propósitos discursivos utilizamos sistemas de aprendizaje automático en base a muchos informes de ingeniería. Por lo mismo, las sugerencias no siempre calzarán de manera perfecta con tu texto. Si necesitas más ayuda, revisa las opciones "Ver más" de cada retroalimentación y las cápsulas informativas.',    feedbackTypes: {
       // resumen: {
       //   feedbackTitle: "Resumen",
-      //   feedbackComment: "El propósito del este apartado es sintetizar el contenido del informe, por lo tanto, se espera que se anuncien los principales temas que se presentarán en él. Te recomendamos considerar lo anterior y, evaluar si se ajusta o no a lo requerido, para corregir en caso de ser necesario.",
-      //   negativeFeedback: "Esta oración cumple con el propósito discursivo del resumen.",
-      //   positiveFeedback: "No se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
+      //   feedbackComment: "El propósito de este apartado es sintetizar el contenido del informe, por lo tanto, se espera que se anuncien los principales temas que se presentarán en él. Te recomendamos considerar lo anterior y, evaluar si se ajusta o no a lo requerido, para corregir en caso de ser necesario.",
+      //   negativeFeedback: "Creemos que esta oración cumple con el propósito discursivo del resumen.",
+      //   positiveFeedback: "Al parecer no se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
       //   errorExample: "",
       //   errorCorrection: "",
       //   errorComment: "",
@@ -233,8 +234,8 @@ const initialState = {
       introduccion: {
         feedbackTitle: "Introducción",
         feedbackComment: "El propósito de este apartado es orientar al lector en relación con el tema, presentar los supuestos conceptuales más relevantes que guían la investigación, indicar su propósito y justificar la relevancia de realizar la investigación. Te recomendamos considerar lo anterior y, evaluar si se ajusta o no a lo requerido, para corregir en caso de ser necesario.",
-        negativeFeedback: "Esta oración cumple con el propósito discursivo de la introducción.",
-        positiveFeedback: "No se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
+        negativeFeedback: "Creemos que esta oración cumple con el propósito discursivo de la sección Introducción. Revisa si las oraciones están de acuerdo al propósito de la sección.",
+        positiveFeedback: "Al parecer no se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
         errorExample: "",
         errorCorrection: "",
         errorComment: "",
@@ -243,9 +244,9 @@ const initialState = {
       },
       desarrollo: {
         feedbackTitle: "Desarrollo",
-        feedbackComment: "El propósito del este apartado consiste en describir los procesos realizados para llevar a cabo el estudio, en donde se incluyen los materiales y metodología a utilizar. Te recomendamos considerar lo anterior y, evaluar si se ajusta o no a lo requerido, para corregir en caso de ser necesario.",
-        negativeFeedback: "Esta oración cumple con el propósito discursivo del desarollo.",
-        positiveFeedback: "No se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
+        feedbackComment: "El propósito de este apartado consiste en describir los procesos realizados para llevar a cabo el estudio, en donde se incluyen los materiales y metodología a utilizar. Te recomendamos considerar lo anterior y, evaluar si se ajusta o no a lo requerido, para corregir en caso de ser necesario.",
+        negativeFeedback: "Creemos que esta oración cumple con el propósito discursivo de la sección Desarollo. Revisa si las oraciones están de acuerdo al propósito de la sección.",
+        positiveFeedback: "Al parecer no se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
         errorExample: "",
         errorCorrection: "",
         errorComment: "",
@@ -255,8 +256,8 @@ const initialState = {
       resultados: {
         feedbackTitle: "Resultados",
         feedbackComment: "El propósito de este apartado es presentar los resultados y proponer una interpretación de ellos de acuerdo con las investigaciones previas presentadas en el desarrollo. Te recomendamos considerar lo anterior y, evaluar si se ajusta o no a lo requerido, para corregir en caso de ser necesario.",
-        negativeFeedback: "Esta oración cumple con el propósito discursivo de los resultados.",
-        positiveFeedback: "No se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
+        negativeFeedback: "Creemos que esta oración cumple con el propósito discursivo de la sección Resultados. Revisa si las oraciones están de acuerdo al propósito de la sección.",
+        positiveFeedback: "Al parecer no se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
         errorExample: "",
         errorCorrection: "",
         errorComment: "",
@@ -266,8 +267,8 @@ const initialState = {
       conclusion: {
         feedbackTitle: "Conclusión",
         feedbackComment: "El propósito de este apartado es concluir el informe, recordando al lector los aspectos más relevantes y proponiendo una interpretación de los hallazgos obtenidos, presentando proyecciones del trabajo realizado. Te recomendamos considerar lo anterior y, evaluar si se ajusta o no a lo requerido, para corregir en caso de ser necesario.",
-        negativeFeedback: "Esta oración cumple con el propósito discursivo de la conclusión.",
-        positiveFeedback: "No se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
+        negativeFeedback: "Creemos que esta oración cumple con el propósito discursivo de la sección Conclusión. Revisa si las oraciones están de acuerdo al propósito de la sección.",
+        positiveFeedback: "Al parecer no se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
         errorExample: "",
         errorCorrection: "",
         errorComment: "",
@@ -280,11 +281,12 @@ const initialState = {
     html: null,
     feedbackTypes: null
   },
-  estadisticasGenerales: null,
   analysisTab: null,
   analysisGroupTab: null,
+  estadisticasGenerales: null,
   selectedTabIndex: "gerundios",
   filename: "tuTexto.docx",
+  textoEditor: "",
 }
 
 const store = new Vuex.Store({

@@ -833,7 +833,7 @@ footer, header, hgroup, menu, nav, section {
   background-position: 0;
   background-size: 100%;
 }
-.sidenav .enc-accordion:hover {
+/* .sidenav .enc-accordion:hover {
   background: #1273eb;
   background: -moz-linear-gradient(108deg, #1273eb 0%, #129deb 100%);
   background: -webkit-linear-gradient(108deg, #1273eb 0%, #129deb 100%);
@@ -848,7 +848,7 @@ footer, header, hgroup, menu, nav, section {
 }
 .sidenav .enc-accordion:hover p {
   color: #ffffff;
-}
+} */
 @media (max-width: 426px) {
   .sidenav .enc-accordion {
     padding: 10px 15px;

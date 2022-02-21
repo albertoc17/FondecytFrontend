@@ -35,8 +35,10 @@ const getters = {
   getFilename(state) {
     return state.filename;
   },
+  getTextoEditor(state) {
+    return state.textoEditor;
+  },
   getRetroalimentacion(state) {
-    console.log("getRetroalimentacion: ", state.analysisTab);
     switch (state.analysisTab) {
       case "gerunds":
         return state.gerundios;

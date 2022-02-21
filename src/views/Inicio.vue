@@ -26,8 +26,6 @@
 <script>
 import { mapActions, mapGetters } from "vuex";
 import axios from "axios";
-import { validModel } from "@/includes/functions.js";
-
 
 export default {
   name: "Inicio",
@@ -53,7 +51,7 @@ export default {
       "saveLecturabilidad",
       "saveProposito",
       "saveFilename",
-      "saveAnalysisTab"
+      "saveAnalisisPantalla"
     ]),
     handleFileUpload() {
       this.file = this.$refs.file.files[0];
@@ -84,7 +82,6 @@ export default {
           // "http://127.0.0.1:8000/api/FileUploadView",
           formData
         );
-        this.$root.$emit("mensaje_showRightPanel");
         this.saveEstadisticasGenerales(res.data.statistics);
         this.saveGerundios({
           html: res.data.gerunds.html_response,
@@ -122,7 +119,7 @@ export default {
           html: res.data.proposito.html_response,
           error: res.data.proposito.flag,
         });
-        this.saveAnalysisTab({endpoint: "gerunds", selected: "gerundios"});
+        this.saveAnalisisPantalla({endpoint: "gerunds", selected: "gerundios"});
         this.makeToast("Documento analizado correctamente.", "success");
       } catch (err) {
         console.warn(err);
@@ -140,14 +137,6 @@ export default {
         solid: false,
         autoHideDelay: 2000,
       });
-    },
-    validateData(data) {
-      for (const property in data) {
-        if (!validModel(data[property]) && property != "html") {
-          data[property] = "";
-        }
-      }
-      return data;
     }
   }
 };

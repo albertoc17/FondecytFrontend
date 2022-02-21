@@ -4,7 +4,6 @@ const mutations = {
   setGerundios(state, {html, error}) {
     state.gerundios.html = html;
     state.gerundios.feedbackTypes.gerundiosExcesivos.nro_errores = error.LexicoGramaticalGerundiosExcesivo;
-    // state.lexicoGramatical.nro_errores = error.LexicoGramaticalGerundiosExcesivo;
   },
   setOraciones(state, {html, error}) {
     state.oraciones.html = html;
@@ -52,7 +51,7 @@ const mutations = {
   setEstadisticasGenerales(state, data) {
     Vue.set(state, "estadisticasGenerales", data);
   },
-  setAnalysisTab(state, {endpoint, selected}) {
+  setAnalisisPantalla(state, {endpoint, selected}) {
     Vue.set(state, "analysisTab", endpoint);
     Vue.set(state, "selectedTabIndex", selected);
   },
@@ -62,6 +61,9 @@ const mutations = {
   setFilename(state, data) {
     Vue.set(state, "filename", data);
   },
+  setTextoEditor(state, data) {
+    Vue.set(state, "textoEditor", data);
+  }
 };
 
 export default mutations;

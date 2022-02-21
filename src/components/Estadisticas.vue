@@ -1,15 +1,19 @@
 <template id="Estadisticas">
-  <ul v-if="estadisticas" class="cont-txt">
-    <li>
-      Número de Párrafos: <span class="number"> {{ estadisticas.analysis.paragraphs }}</span>
-    </li>
-    <li>
-      Número de Oraciones: <span class="number">{{ estadisticas.analysis.total_sentences }}</span>
-    </li>
-    <li>
-      Número de Palabras: <span class="number">{{ estadisticas.analysis.total_words }}</span>
-    </li>
-  </ul>  
+  <div class="wrapper">
+    <div class="cont-graphic" style="padding-bottom:0px !important">
+      <ul v-if="estadisticas" class="cont-txt" style="margin-top:0px !important">
+        <li>
+          NÚMERO DE PÁRRAFOS: <span class="number"> {{ estadisticas.analysis.paragraphs }}</span>
+        </li>
+        <li>
+          NÚMERO DE ORACIONES: <span class="number">{{ estadisticas.analysis.total_sentences }}</span>
+        </li>
+        <li>
+          NÚMERO DE PALABRAS: <span class="number">{{ estadisticas.analysis.total_words }}</span>
+        </li>
+      </ul>  
+    </div>
+  </div>
 </template>
 
 <script>

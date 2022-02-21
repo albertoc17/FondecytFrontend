@@ -1,13 +1,13 @@
 <template>
   <div id="Editor">
     <br>
-    <div v-if="feedbackTypes">
+    <div v-if="retroalimentacion.feedbackTypes">
       <div v-if="showError">
         <ErrorHtml />
       </div>
       <div>
         <quill-editor
-          v-model="contentHtml"
+          v-model="retroalimentacion.html"
           :options="editorOptions"
           @change="onEditorChange($event)"
           ref="myQuillEditor"
@@ -21,7 +21,7 @@
 import ErrorHtml from "./ErrorHtml.vue";
 import { quillEditor } from "vue-quill-editor";
 import "../../node_modules/quill/dist/quill.snow.css";
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 
 export default {
   name: "Editor",
@@ -33,8 +33,6 @@ export default {
   data() {
     return {
       showError: false,
-      html: "",
-      text: "",
       editorOptions: {
         readOnly: false,
         theme: "snow",
@@ -43,20 +41,21 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["getRetroalimentacion"]),
-    contentHtml () {
-      return this.getRetroalimentacion.html;
-    },
-    feedbackTypes () {
-      return this.getRetroalimentacion.feedbackTypes;
-    },
+    ...mapGetters({
+      retroalimentacion: "getRetroalimentacion"
+    }),
   },
   methods: {
-    onEditorChange({ html, text }) {
-      this.html = html;
-      this.text = text;
-    },
+    ...mapActions([
+      "savetextoEditor"
+    ]),
+    onEditorChange({ text }) {
+      this.savetextoEditor(text);
+    }
   },
+  // created() {
+  //   this.savetextoEditor(this.$refs.myQuillEditor.quill.container.innerText);
+  // }
 };
 </script>
 
