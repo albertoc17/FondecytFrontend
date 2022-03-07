@@ -1,11 +1,11 @@
 <template>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">{{ feedback.feedbackTitle }}</h5>
-      <p v-if="feedback.feedbackComment" class="card-text">
-        {{ feedback.feedbackComment }}
+      <h5 class="card-title">{{ tipoRetroalimentacion.feedbackTitle }}</h5>
+      <p v-if="tipoRetroalimentacion.feedbackComment" class="card-text">
+        {{ tipoRetroalimentacion.feedbackComment }}
       </p>
-      <div v-if="feedback.errorCorrection && feedback.errorExample">
+      <div v-if="tipoRetroalimentacion.errorCorrection && tipoRetroalimentacion.errorExample">
         <p class="card-text">
         A continuación te dejamos un ejemplo de como se evidencia este problema
         en la escritura de un estudiante:
@@ -15,30 +15,45 @@
             <div class="greenBar"></div>
             <div class="errorContainer">
               <img src="../assets/img/Vector.png" class="vectorImg" />
-              <p class="card-text">{{ feedback.errorCorrection }}</p>
+              <p class="card-text">{{ tipoRetroalimentacion.errorCorrection }}</p>
             </div>
           </div>
           <div class="errorExampleContainer">
             <div class="redBar"></div>
             <div class="errorContainer">
               <img src="../assets/img/BadVector.png" class="vectorImg" />
-              <p class="card-text">{{ feedback.errorExample }}</p>
+              <p class="card-text">{{ tipoRetroalimentacion.errorExample }}</p>
             </div>
           </div>
         </div>
       </div>
-      <p v-if="feedback.errorComment" class="card-text">
-        {{ feedback.errorComment }}
+      <p v-if="tipoRetroalimentacion.errorComment" class="card-text">
+        {{ tipoRetroalimentacion.errorComment }}
       </p>
-      <div> hola </div>
+      <Genially :urlGenially="tipoRetroalimentacion.urlGenially"/>
+      <div v-if="tipoRetroalimentacion.ejemplos">
+        <p class="card-text">Algunos ejemplos de oraciones que cumplen con este propósito son:</p>
+        <div 
+          v-for="(ejemplo, index) in tipoRetroalimentacion.ejemplos"
+          :key="index"
+          class="box-dest"
+        >
+          {{ ejemplo }}
+        </div>
+      </div>
     </div>
   </div>
 </template> 
 
 <script>
+import Genially from "@/components/Genially.vue";
+
 export default {
-  name: "DetallesFeedback",
-  props: ["feedback"],
+  name: "DetalleRetroalimentacion",
+  components: {
+    Genially
+  },
+  props: ["tipoRetroalimentacion"],
 };
 </script>
 <style scoped>

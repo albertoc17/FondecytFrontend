@@ -11,7 +11,7 @@ Vue.use(Vuex)
 const initialState = {
   gerundios: {
     html: "",
-    feedbackTypes: {
+    tiposRetroalimentacion: {
       gerundiosExcesivos: {
         feedbackTitle: "Gerundios Excesivos",
         feedbackComment: "Recuerda que el gerundio es una forma no personal del verbo, es decir, que no se encuentra conjugada. No se recomienda utilizar gerundios con tanta frecuencia, por lo que  intenta utilizar oraciones con verbos conjugados, por ejemplo: “Un circuito RLC consta de dos elementos de almacenamiento de energía: el inductor y el capacitor. A estos circuitos se les llama circuitos de segundo orden, porque sus respuestas se describen con ecuaciones diferenciales de segundo orden”.",
@@ -27,7 +27,7 @@ const initialState = {
   },
   oraciones: {
     html: "",
-    feedbackTypes: {
+    tiposRetroalimentacion: {
       oracionesExtensas: {
         feedbackTitle: "Oraciones Extensas",
         feedbackComment: "Recuerda que las oraciones se componen por un sujeto y un predicado y finalizan con un punto seguido.",
@@ -54,7 +54,7 @@ const initialState = {
   },
   parrafos: {
     html: "",
-    feedbackTypes: {
+    tiposRetroalimentacion: {
       parrafosExtensos: {
         feedbackTitle: "Párrafos Extensos",
         feedbackComment: "Recuerda que el párrafo es una unidad de sentido compuesta por diversas oraciones que se caracterizan por desarrollar una idea central.",
@@ -81,7 +81,7 @@ const initialState = {
   },
   persona: {
     html: "",
-    feedbackTypes:  {
+    tiposRetroalimentacion:  {
       primeraPersonaSingular: {
         feedbackTitle: "Primera Persona Singular",
         feedbackComment: "",
@@ -108,7 +108,7 @@ const initialState = {
   },
   vozPasiva: {
     html: "",
-    feedbackTypes:  {
+    tiposRetroalimentacion:  {
       vozPasiva: {
         feedbackTitle: "Voz Pasiva",
         feedbackComment: "La voz pasiva es una construcción en la que el sujeto de la oración es pasivo, es decir, que padece la acción denotada por el verbo. La voz pasiva oculta el agente de la acción, pero si consideras pertinente mostrar el agente, utiliza la oración activa, como por ejemplo “Las funciones periódicas son de gran ayuda, ya que permiten graficar a través de ellas la relación existente entre variables”.",
@@ -124,7 +124,7 @@ const initialState = {
   },
   conectores: {
     html: "",
-    feedbackTypes: {
+    tiposRetroalimentacion: {
       ausenciaConectores: {
         feedbackTitle: "Ausencia de Conectores",
         feedbackComment: "Los conectores son unidades invariables que establecen conexiones entre las distintas partes de un texto. Sin ellos la oración no cobra sentido, tal como se evidencia en el enunciado que se presenta a continuación: “el multímetro digital entregó mejores resultados en todas las actividades, (por lo que) es un buen candidato para realizar mediciones en futuros laboratorios, (ya que) también necesita menor cantidad de ajustes que un multímetro análogo”.",
@@ -152,7 +152,7 @@ const initialState = {
   },
   complejidad: {
     html: "",
-    feedbackTypes: {
+    tiposRetroalimentacion: {
       complejidad: {
         feedbackTitle: "Complejidad",
         feedbackComment: "La complejidad en la oración se refiere al alto grado de esfuerzo que se requiere para comprender un texto, lo que está determinado por la cantidad de palabras que se presentan antes del verbo principal. De modo que, mientras más palabras aparecen antes del verbo, mayor será el grado de complejidad.        Te sugerimos que, antes de reformular la oración para que el verbo aparezca antes, revises que esta cumpla con las recomendaciones de extensión mínima, es decir, que la oración esté dentro del rango entre las 18 a 32 palabras.",
@@ -168,8 +168,8 @@ const initialState = {
   },
   lecturabilidad: {
     html: "",
-    // ayuda: 'Para el análisis de lecturabilidad.',    
-    feedbackTypes: {
+    ayuda: 'Para el análisis de lecturabilidad.',    
+    tiposRetroalimentacion: {
       dificil: {
         feedbackTitle: "Lecturabilidad Difícil",
         feedbackComment: "",
@@ -219,7 +219,7 @@ const initialState = {
   },
   proposito: {
     html: "",
-    ayuda: 'Para el análisis de propósitos discursivos utilizamos sistemas de aprendizaje automático en base a muchos informes de ingeniería. Por lo mismo, las sugerencias no siempre calzarán de manera perfecta con tu texto. Si necesitas más ayuda, revisa las opciones "Ver más" de cada retroalimentación y las cápsulas informativas.',    feedbackTypes: {
+    ayuda: 'Para el análisis de propósitos discursivos utilizamos sistemas de aprendizaje automático en base a muchos informes de ingeniería. Por lo mismo, las sugerencias no siempre calzarán de manera perfecta con tu texto. Si necesitas más ayuda, revisa las opciones "Ver más" de cada retroalimentación y las cápsulas informativas.',    tiposRetroalimentacion: {
       // resumen: {
       //   feedbackTitle: "Resumen",
       //   feedbackComment: "El propósito de este apartado es sintetizar el contenido del informe, por lo tanto, se espera que se anuncien los principales temas que se presentarán en él. Te recomendamos considerar lo anterior y, evaluar si se ajusta o no a lo requerido, para corregir en caso de ser necesario.",
@@ -240,6 +240,12 @@ const initialState = {
         errorCorrection: "",
         errorComment: "",
         style: "bg-red",
+        ejemplos: [
+          "Este concepto ha sido recientemente cuestionado por estudios que demuestran que...",
+          "Hasta la fecha, la investigación se ha centrado en el papel de X en Y en lugar de Z...",
+          "El objetivo de este proyecto de investigación ha sido tratar de...",
+          "Las cuestiones / temas principales abordados en este trabajo son:"
+        ],
         nro_errores: 0
       },
       desarrollo: {
@@ -251,6 +257,12 @@ const initialState = {
         errorCorrection: "",
         errorComment: "",
         style: "bg-yellow",
+        ejemplos: [
+          "Los datos fueron obtenidos de...",
+          "El enfoque de investigación adoptado para este estudio fue...",
+          "Diferentes autores han utilizado X en un amplia variedad de formas para...",
+          "Para la realización de esta investigación se adoptó un diseño de tipo X para así proporcionar..."
+        ],
         nro_errores: 0
       },
       resultados: {
@@ -262,6 +274,12 @@ const initialState = {
         errorCorrection: "",
         errorComment: "",
         style: "bg-lightgreen",
+        ejemplos: [
+          "En este estudio se encontró una fuerte evidencia de X cuando...",
+          "El resultado más llamativo que emerge de los datos es... ",
+          "No se encontraron/hallaron diferencias significativas entre...",
+          "Estos resultados sugieren, en síntesis, que..."
+        ],
         nro_errores: 0
       },
       conclusion: {
@@ -273,13 +291,19 @@ const initialState = {
         errorCorrection: "",
         errorComment: "",
         style: "bg-orange",
+        ejemplos: [
+          "El presente estudio fue diseñado para determinar...",
+          "Se ha extraído una serie de conclusiones a partir de los resultados de este estudio...",
+          "Los resultados de este informe indican que...",
+          "Las siguiente conclusiones se pueden extraer de este informe:..."
+        ],
         nro_errores: 0
       }
     },
   },
   default: {
     html: null,
-    feedbackTypes: null
+    tiposRetroalimentacion: null
   },
   analysisTab: null,
   analysisGroupTab: null,

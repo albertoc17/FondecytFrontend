@@ -28,7 +28,7 @@
     </div>
   </div>
   <div v-else>
-    <ErrorPageMobile />
+    <ErrorMobile />
   </div>
 </div>
 </template>
@@ -38,7 +38,7 @@ import { mapGetters } from "vuex";
 import Sidenav from "@/components/Sidenav.vue";
 import PanelIzquierdo from "@/components/PanelIzquierdo.vue";
 import PanelDerecho from "@/components/PanelDerecho.vue";
-import ErrorPageMobile from "@/components/ErrorPageMobile.vue";
+import ErrorMobile from "@/components/ErrorMobile.vue";
 import { Splitpanes, Pane } from "splitpanes";
 import "splitpanes/dist/splitpanes.css";
 
@@ -50,7 +50,7 @@ export default {
     Sidenav,
     PanelIzquierdo,
     PanelDerecho,
-    ErrorPageMobile
+    ErrorMobile
   },
   data() {
     return {

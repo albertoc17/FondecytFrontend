@@ -1,7 +1,7 @@
 <template>
   <div id="Editor">
     <br>
-    <div v-if="retroalimentacion.feedbackTypes">
+    <div v-if="retroalimentacion.tiposRetroalimentacion">
       <div v-if="showError">
         <ErrorHtml />
       </div>
@@ -52,10 +52,7 @@ export default {
     onEditorChange({ text }) {
       this.savetextoEditor(text);
     }
-  },
-  // created() {
-  //   this.savetextoEditor(this.$refs.myQuillEditor.quill.container.innerText);
-  // }
+  }
 };
 </script>
 

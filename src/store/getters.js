@@ -72,7 +72,7 @@ const getters = {
             {
               backgroundColor: "#F87979",
               data: [
-                state.gerundios.feedbackTypes.gerundiosExcesivos.nro_errores
+                state.gerundios.tiposRetroalimentacion.gerundiosExcesivos.nro_errores
               ],
               borderWidth: 2
             },
@@ -86,10 +86,10 @@ const getters = {
             {
               backgroundColor: "#F87979",
               data: [
-                state.oraciones.feedbackTypes.oracionesExtensas.nro_errores,
-                state.oraciones.feedbackTypes.oracionesBreves.nro_errores,
-                state.parrafos.feedbackTypes.parrafosExtensos.nro_errores,
-                state.parrafos.feedbackTypes.parrafosBreves.nro_errores
+                state.oraciones.tiposRetroalimentacion.oracionesExtensas.nro_errores,
+                state.oraciones.tiposRetroalimentacion.oracionesBreves.nro_errores,
+                state.parrafos.tiposRetroalimentacion.parrafosExtensos.nro_errores,
+                state.parrafos.tiposRetroalimentacion.parrafosBreves.nro_errores
               ],
               borderWidth: 2
             },
@@ -103,11 +103,11 @@ const getters = {
             {
               backgroundColor: "#F87979",
               data: [
-                state.persona.feedbackTypes.primeraPersonaSingular.nro_errores,
-                state.persona.feedbackTypes.segundaPersonaSingular.nro_errores,
-                state.vozPasiva.feedbackTypes.vozPasiva.nro_errores,
-                state.conectores.feedbackTypes.ausenciaConectores.nro_errores,
-                state.conectores.feedbackTypes.conectoresRepetidos.nro_errores,
+                state.persona.tiposRetroalimentacion.primeraPersonaSingular.nro_errores,
+                state.persona.tiposRetroalimentacion.segundaPersonaSingular.nro_errores,
+                state.vozPasiva.tiposRetroalimentacion.vozPasiva.nro_errores,
+                state.conectores.tiposRetroalimentacion.ausenciaConectores.nro_errores,
+                state.conectores.tiposRetroalimentacion.conectoresRepetidos.nro_errores,
               ],
               borderWidth: 2
             },
@@ -121,7 +121,7 @@ const getters = {
             {
               backgroundColor: "#F87979",
               data: [
-                state.complejidad.feedbackTypes.complejidad.nro_errores
+                state.complejidad.tiposRetroalimentacion.complejidad.nro_errores
               ],
               borderWidth: 2
             },
