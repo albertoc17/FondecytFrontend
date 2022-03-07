@@ -3,7 +3,7 @@
     <div class="estadisticas">
       <Estadisticas />
     </div>
-    <p v-if="retroalimentacion.ayuda">{{ retroalimentacion.ayuda }} asdasd</p>
+    <p v-if="retroalimentacion.ayuda">{{ retroalimentacion.ayuda }} </p>
     <div>
       <div
         v-for="(fb, index) in retroalimentacion.feedbackTypes"

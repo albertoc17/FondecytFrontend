@@ -30,6 +30,7 @@
       <p v-if="feedback.errorComment" class="card-text">
         {{ feedback.errorComment }}
       </p>
+      <div> hola </div>
     </div>
   </div>
 </template> 
