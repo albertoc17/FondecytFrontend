@@ -3,7 +3,9 @@
     <div class="estadisticas">
       <Estadisticas />
     </div>
+    <br>
     <p v-if="retroalimentaciones.ayuda">{{ retroalimentaciones.ayuda }} </p>
+    <br>
     <div>
       <div
         v-for="(tipoRetroalimentacion, index) in retroalimentaciones.tiposRetroalimentacion"

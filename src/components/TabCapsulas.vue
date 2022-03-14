@@ -7,6 +7,7 @@
       escritura académica. También encontrarás algunas orientaciones y ejemplos
       de cómo escribir distintos tipos de informes.
     </p>
+    <br>
     <!-- class="box-hor" -->
     <div
       v-for="(capsula, index) in capsulas"
