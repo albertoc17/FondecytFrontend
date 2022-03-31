@@ -31,14 +31,16 @@
         {{ tipoRetroalimentacion.errorComment }}
       </p>
       <Genially :urlGenially="tipoRetroalimentacion.urlGenially"/>
-      <div v-if="tipoRetroalimentacion.ejemplos">
-        <p class="card-text">Algunos ejemplos de oraciones que cumplen con este propósito son:</p>
+      <p v-if="tipoRetroalimentacion.preExamples" class="card-text">
+        {{ tipoRetroalimentacion.preExamples }}
+      </p>
+      <div v-if="tipoRetroalimentacion.examples">
         <div 
-          v-for="(ejemplo, index) in tipoRetroalimentacion.ejemplos"
+          v-for="(example, index) in tipoRetroalimentacion.examples"
           :key="index"
           class="box-dest"
         >
-          {{ ejemplo }}
+          {{ example }}
         </div>
       </div>
     </div>

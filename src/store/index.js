@@ -155,7 +155,7 @@ const initialState = {
     tiposRetroalimentacion: {
       complejidad: {
         feedbackTitle: "Complejidad",
-        feedbackComment: "La complejidad en la oración se refiere al alto grado de esfuerzo que se requiere para comprender un texto, lo que está determinado por la cantidad de palabras que se presentan antes del verbo principal. De modo que, mientras más palabras aparecen antes del verbo, mayor será el grado de complejidad.        Te sugerimos que, antes de reformular la oración para que el verbo aparezca antes, revises que esta cumpla con las recomendaciones de extensión mínima, es decir, que la oración esté dentro del rango entre las 18 a 32 palabras.",
+        feedbackComment: "La complejidad en la oración se refiere al alto grado de esfuerzo que se requiere para comprender un texto, lo que está determinado por la cantidad de palabras que se presentan antes del verbo principal. De modo que, mientras más palabras aparecen antes del verbo, mayor será el grado de complejidad. Te sugerimos que, antes de reformular la oración para que el verbo aparezca antes, revises que esta cumpla con las recomendaciones de extensión mínima, es decir, que la oración esté dentro del rango entre las 18 a 32 palabras.",
         negativeFeedback: "Tu oración tiene un grado de complejidad muy alto, es decir, el verbo no aparece dentro del primer cuarto de palabras de la oración. Te recomendamos reducir la cantidad de palabras antes del verbo para que el texto se pueda comprender de mejor manera.",
         positiveFeedback: "¡Excelente! No observamos oraciones con alto grado de complejidad.",
         errorExample: "“Las comunicaciones inalámbricas de alta velocidad en entornos interiores para servicios móviles se han realizado en frecuencias bajo los 6 [GHz]”.",
@@ -172,46 +172,61 @@ const initialState = {
     tiposRetroalimentacion: {
       dificil: {
         feedbackTitle: "Lecturabilidad Difícil",
-        feedbackComment: "",
-        negativeFeedback: "¡Excelente!, el grado de lecturabilidad de tu párrafo se ajusta totalmente al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 0 y 40 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es ideal.",
+        feedbackComment: "Tu rango de lecturabilidad se encuentra entre 0 y 40 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es ideal.",
+        negativeFeedback: "El grado de lecturabilidad de tu párrafo se ajusta totalmente al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 0 y 40 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es ideal.",
         positiveFeedback: "No se encontraron párrafos con este nivel de lecturabilidad en tu texto.",
-        example: "Un ejemplo de párrafo categorizado con un grado de lecturabilidad muy difícil es el que se presenta a continuación: “Un parque eólico se define como un conjunto de generadores eólicos conectados entre sí para inyectar energía eléctrica a un sistema eléctrico” (37,25)",
+        preExamples: "Algunos ejemplos de párrafos categorizados con este grado de lecturabilidad son:",
+        examples: [
+          "“Un parque eólico se define como un conjunto de generadores eólicos conectados entre sí para inyectar energía eléctrica a un sistema eléctrico” (37,25)",
+        ],
         style: "bg-red",
         nro_errores: 0
       },
       algoDificil: {
         feedbackTitle: "Lecturabilidad Algo Difícil",
-        feedbackComment: "",
-        negativeFeedback: "¡Muy bien!, el grado de lecturabilidad de tu párrafo se ajusta bastante al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 40 y 55 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es adecuado.",
+        feedbackComment: "Tu rango de lecturabilidad se encuentra entre 40 y 55 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es adecuado.",
+        negativeFeedback: "El grado de lecturabilidad de tu párrafo se ajusta bastante al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 40 y 55 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es adecuado.",
         positiveFeedback: "No se encontraron párrafos con este nivel de lecturabilidad en tu texto.",
-        example: "Un ejemplo de párrafo categorizado con un grado de lecturabilidad algo difícil es el que se presenta a continuación: “La Energía Hidráulica es un tipo de energía renovable convencional, se obtiene del aprovechamiento de las energías cinéticas y potencial de la corriente del agua o los saltos de aguas naturales” (50,66)",
+        preExamples: "Algunos ejemplos de párrafos categorizados con este grado de lecturabilidad son:",
+        examples: [
+          "“La Energía Hidráulica es un tipo de energía renovable convencional, se obtiene del aprovechamiento de las energías cinéticas y potencial de la corriente del agua o los saltos de aguas naturales”. (50,66)",
+        ],
         style: "bg-yellow",
         nro_errores: 0
       },
       normal: {
         feedbackTitle: "Lecturabilidad Normal",
-        feedbackComment: "",
-        negativeFeedback: "¡Bien!, el grado de lecturabilidad de tu párrafo se ajusta suficientemente al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 55 y 65 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es aceptable.",
+        feedbackComment: "Tu rango de lecturabilidad se encuentra entre 55 y 65 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es aceptable. Te sugerimos extender el largo de tus oraciones y emplear términos propios de tu disciplina para mejorar el grado de lecturabilidad (utiliza la opción de concordancia para conocer el contexto de uso de las palabras que desees incorporar).",
+        negativeFeedback: "El grado de lecturabilidad de tu párrafo se ajusta suficientemente al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 55 y 65 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es aceptable.",
         positiveFeedback: "No se encontraron párrafos con este nivel de lecturabilidad en tu texto.",
-        example: "“Cuando se habla de la huella de carbono de la energía, esta contempla al sector eléctrico contribuyendo con el 35% de las emisiones de dióxido de carbono a nivel global”. (56,39)",
+        preExamples: "Algunos ejemplos de párrafos categorizados con este grado de lecturabilidad son:",
+        examples: [
+          "“Cuando se habla de la huella de carbono de la energía, esta contempla al sector eléctrico contribuyendo con el 35% de las emisiones de dióxido de carbono a nivel global”. (56,39)",
+        ],     
         style: "bg-lightgreen",
         nro_errores: 0
       },
       algoFacil: {
         feedbackTitle: "Lecturabilidad Algo Fácil",
-        feedbackComment: "",
+        feedbackComment: "Tu rango de lecturabilidad se encuentra entre 65 y 80 puntos, lo que significa que el largo de las palabras y frases de tu párrafo no es recomendable. Te sugerimos extender el largo de tus oraciones y emplear términos propios de tu disciplina para mejorar el grado de lecturabilidad (utiliza la opción de concordancia para conocer el contexto de uso de las palabras que desees incorporar).",
         negativeFeedback: "El grado de lecturabilidad de tu párrafo no se ajusta al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 65 y 80 puntos, lo que significa que el largo de las palabras y frases de tu párrafo no es recomendable.",
         positiveFeedback: "No se encontraron párrafos con este nivel de lecturabilidad en tu texto.",
-        example: "“Dispositivo que se utiliza para aprovechar la energía contenida en el viento y transformarla en eléctrica. Una turbina obtiene su potencia de entrada convirtiendo la energía cinética del viento en un par (fuerza de giro), el cual actúa sobre las palas”. (66,33)",
+        preExamples: "Algunos ejemplos de párrafos categorizados con este grado de lecturabilidad son:",
+        examples: [
+          "“Dispositivo que se utiliza para aprovechar la energía contenida en el viento y transformarla en eléctrica. Una turbina obtiene su potencia de entrada convirtiendo la energía cinética del viento en un par (fuerza de giro), el cual actúa sobre las palas”. (66,33)",
+        ],    
         style: "bg-orange",
         nro_errores: 0
       },
       facil: {
         feedbackTitle: "Lecturabilidad Fácil",
-        feedbackComment: "",
+        feedbackComment: "Tu rango de lecturabilidad se encuentra entre 80 y 100 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es insuficiente. Te sugerimos extender el largo de tus oraciones y emplear términos propios de tu disciplina para mejorar el grado de lecturabilidad (utiliza la opción de concordancia para conocer el contexto de uso de las palabras que desees incorporar).",
         negativeFeedback: "El grado de lecturabilidad de tu párrafo no se ajusta al nivel académico requerido. Tu rango de lecturabilidad se encuentra entre 80 y 100 puntos, lo que significa que el largo de las palabras y frases de tu párrafo es insuficiente.",
         positiveFeedback: "No se encontraron párrafos con este nivel de lecturabilidad en tu texto.",
-        example: "“Tal día como hoy de hace ciento diez (110) años, o lo que es lo mismo el 26 de octubre de 1906, el físico e inventor estadounidense Lee De Forest (1873-1961), anunciaba el descubrimiento del tubo de vacío de tres elementos”. (88,81)",
+        preExamples: "Algunos ejemplos de párrafos categorizados con este grado de lecturabilidad son:",
+        examples: [
+          "“Tal día como hoy de hace ciento diez (110) años, o lo que es lo mismo el 26 de octubre de 1906, el físico e inventor estadounidense Lee De Forest (1873-1961), anunciaba el descubrimiento del tubo de vacío de tres elementos”. (88,81)",
+        ],   
         style: "bg-blue",
         nro_errores: 0
       }
@@ -224,7 +239,7 @@ const initialState = {
       //   feedbackTitle: "Resumen",
       //   feedbackComment: "El propósito de este apartado es sintetizar el contenido del informe, por lo tanto, se espera que se anuncien los principales temas que se presentarán en él. Te recomendamos considerar lo anterior y, evaluar si se ajusta o no a lo requerido, para corregir en caso de ser necesario.",
       //   negativeFeedback: "Creemos que esta oración cumple con el propósito discursivo del resumen.",
-      //   positiveFeedback: "Al parecer no se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
+      //   positiveFeedback: "No se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
       //   errorExample: "",
       //   errorCorrection: "",
       //   errorComment: "",
@@ -235,16 +250,17 @@ const initialState = {
         feedbackTitle: "Introducción",
         feedbackComment: "El propósito de este apartado es orientar al lector en relación con el tema, presentar los supuestos conceptuales más relevantes que guían la investigación, indicar su propósito y justificar la relevancia de realizar la investigación. Te recomendamos considerar lo anterior y, evaluar si se ajusta o no a lo requerido, para corregir en caso de ser necesario.",
         negativeFeedback: "Creemos que esta oración cumple con el propósito discursivo de la sección Introducción. Revisa si las oraciones están de acuerdo al propósito de la sección.",
-        positiveFeedback: "Al parecer no se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
+        positiveFeedback: "No se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
         errorExample: "",
         errorCorrection: "",
         errorComment: "",
         style: "bg-red",
-        ejemplos: [
-          "Este concepto ha sido recientemente cuestionado por estudios que demuestran que...",
-          "Hasta la fecha, la investigación se ha centrado en el papel de X en Y en lugar de Z...",
-          "El objetivo de este proyecto de investigación ha sido tratar de...",
-          "Las cuestiones / temas principales abordados en este trabajo son:"
+        preExamples: "Algunos ejemplos de oraciones que cumplen con este propósito son:",
+        examples: [
+          "“Este concepto ha sido recientemente cuestionado por estudios que demuestran que...”",
+          "“Hasta la fecha, la investigación se ha centrado en el papel de X en Y en lugar de Z...”",
+          "“El objetivo de este proyecto de investigación ha sido tratar de...”",
+          "“Las cuestiones / temas principales abordados en este trabajo son:...”"
         ],
         nro_errores: 0
       },
@@ -252,16 +268,17 @@ const initialState = {
         feedbackTitle: "Desarrollo",
         feedbackComment: "El propósito de este apartado consiste en describir los procesos realizados para llevar a cabo el estudio, en donde se incluyen los materiales y metodología a utilizar. Te recomendamos considerar lo anterior y, evaluar si se ajusta o no a lo requerido, para corregir en caso de ser necesario.",
         negativeFeedback: "Creemos que esta oración cumple con el propósito discursivo de la sección Desarollo. Revisa si las oraciones están de acuerdo al propósito de la sección.",
-        positiveFeedback: "Al parecer no se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
+        positiveFeedback: "No se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
         errorExample: "",
         errorCorrection: "",
         errorComment: "",
         style: "bg-yellow",
-        ejemplos: [
-          "Los datos fueron obtenidos de...",
-          "El enfoque de investigación adoptado para este estudio fue...",
-          "Diferentes autores han utilizado X en un amplia variedad de formas para...",
-          "Para la realización de esta investigación se adoptó un diseño de tipo X para así proporcionar..."
+        preExamples: "Algunos ejemplos de oraciones que cumplen con este propósito son:",
+        examples: [
+          "“Los datos fueron obtenidos de...”",
+          "“El enfoque de investigación adoptado para este estudio fue...”",
+          "“Diferentes autores han utilizado X en un amplia variedad de formas para...”",
+          "“Para la realización de esta investigación se adoptó un diseño de tipo X para así proporcionar...”"
         ],
         nro_errores: 0
       },
@@ -269,16 +286,17 @@ const initialState = {
         feedbackTitle: "Resultados",
         feedbackComment: "El propósito de este apartado es presentar los resultados y proponer una interpretación de ellos de acuerdo con las investigaciones previas presentadas en el desarrollo. Te recomendamos considerar lo anterior y, evaluar si se ajusta o no a lo requerido, para corregir en caso de ser necesario.",
         negativeFeedback: "Creemos que esta oración cumple con el propósito discursivo de la sección Resultados. Revisa si las oraciones están de acuerdo al propósito de la sección.",
-        positiveFeedback: "Al parecer no se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
+        positiveFeedback: "No se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
         errorExample: "",
         errorCorrection: "",
         errorComment: "",
         style: "bg-lightgreen",
-        ejemplos: [
-          "En este estudio se encontró una fuerte evidencia de X cuando...",
-          "El resultado más llamativo que emerge de los datos es... ",
-          "No se encontraron/hallaron diferencias significativas entre...",
-          "Estos resultados sugieren, en síntesis, que..."
+        preExamples: "Algunos ejemplos de oraciones que cumplen con este propósito son:",
+        examples: [
+          "“En este estudio se encontró una fuerte evidencia de X cuando...”",
+          "“El resultado más llamativo que emerge de los datos es...”",
+          "“No se encontraron/hallaron diferencias significativas entre...”",
+          "“Estos resultados sugieren, en síntesis, que...”"
         ],
         nro_errores: 0
       },
@@ -286,16 +304,17 @@ const initialState = {
         feedbackTitle: "Conclusión",
         feedbackComment: "El propósito de este apartado es concluir el informe, recordando al lector los aspectos más relevantes y proponiendo una interpretación de los hallazgos obtenidos, presentando proyecciones del trabajo realizado. Te recomendamos considerar lo anterior y, evaluar si se ajusta o no a lo requerido, para corregir en caso de ser necesario.",
         negativeFeedback: "Creemos que esta oración cumple con el propósito discursivo de la sección Conclusión. Revisa si las oraciones están de acuerdo al propósito de la sección.",
-        positiveFeedback: "Al parecer no se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
+        positiveFeedback: "No se encontraron oraciones que cumplan con el propósito discursivo de este apartado.",
         errorExample: "",
         errorCorrection: "",
         errorComment: "",
         style: "bg-orange",
-        ejemplos: [
-          "El presente estudio fue diseñado para determinar...",
-          "Se ha extraído una serie de conclusiones a partir de los resultados de este estudio...",
-          "Los resultados de este informe indican que...",
-          "Las siguiente conclusiones se pueden extraer de este informe:..."
+        preExamples: "Algunos ejemplos de oraciones que cumplen con este propósito son:",
+        ejempexampleslos: [
+          "“El presente estudio fue diseñado para determinar...”",
+          "“Se ha extraído una serie de conclusiones a partir de los resultados de este estudio...”",
+          "“Los resultados de este informe indican que...”",
+          "“Las siguiente conclusiones se pueden extraer de este informe:...”"
         ],
         nro_errores: 0
       }

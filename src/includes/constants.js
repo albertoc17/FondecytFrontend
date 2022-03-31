@@ -61,6 +61,8 @@ export const PREHTML = "<html xmlns:o='urn:schemas-microsoft-com:office:office' 
 export const POSTHTML = "</body></html>";
 export const FEEDBACKSTYPESTDISABLED = ["Lecturabilidad Difícil", "Lecturabilidad Algo Difícil", "Lecturabilidad Normal", "Lecturabilidad Algo Fácil", "Lecturabilidad Fácil", "Resumen", "Introducción", "Desarrollo", "Resultados", "Conclusión"];
 export const CAPSULAS = [
+  { titulo: "Tour Virtual PEUMO", link: "https://drive.google.com/file/d/1i7MAwP55Doi2gzwfvBTMry-4P3B4mVi2/preview"},
+  { titulo: "Cápsula 1: Nociones fundamentales para la producción textual", link: "https://drive.google.com/file/d/1Q_slNUEuOdO9iCWc38sqkReQcA1vLBsv/preview"},
   { titulo: "Cápsula 1: Nociones fundamentales para la producción textual", link: "https://drive.google.com/file/d/1Q_slNUEuOdO9iCWc38sqkReQcA1vLBsv/preview"},
   { titulo: "Cápsula 2: Características de la escritura en Ingeniería", link: "https://drive.google.com/file/d/1pBJfeHfLsfVMlvgbdYB3kRZmfaWZ_-WP/preview"},
   { titulo: "Cápsula 3: Características del género informe en Ingeniería", link: "https://drive.google.com/file/d/1e9bJU-ocvJRFgVF7NArmPrS8o1Tp_A8C/preview"},
