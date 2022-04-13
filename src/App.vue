@@ -1,12 +1,12 @@
 <template>
   <div class="mt-0 pt-0" id="App">
-    <router-view/>
+    <router-view />
   </div>
 </template>
 
 <script>
 export default {
-  name: "App",
+  name: "App"
 };
 </script>
 
@@ -20,7 +20,7 @@ export default {
 </style>
 
 <style>
-@import './assets/css/css/jquery.fancybox.min.css';
-@import './assets/css/css/main.css';
-@import './assets/css/css/gridpak.css';
+@import "./assets/css/css/jquery.fancybox.min.css";
+@import "./assets/css/css/main.css";
+@import "./assets/css/css/gridpak.css";
 </style>
