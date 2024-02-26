@@ -63,7 +63,6 @@ export const FEEDBACKSTYPESTDISABLED = ["Lecturabilidad Difícil", "Lecturabilid
 export const CAPSULAS = [
   { titulo: "Tour Virtual PEUMO", link: "https://drive.google.com/file/d/1i7MAwP55Doi2gzwfvBTMry-4P3B4mVi2/preview"},
   { titulo: "Cápsula 1: Nociones fundamentales para la producción textual", link: "https://drive.google.com/file/d/1Q_slNUEuOdO9iCWc38sqkReQcA1vLBsv/preview"},
-  { titulo: "Cápsula 1: Nociones fundamentales para la producción textual", link: "https://drive.google.com/file/d/1Q_slNUEuOdO9iCWc38sqkReQcA1vLBsv/preview"},
   { titulo: "Cápsula 2: Características de la escritura en Ingeniería", link: "https://drive.google.com/file/d/1pBJfeHfLsfVMlvgbdYB3kRZmfaWZ_-WP/preview"},
   { titulo: "Cápsula 3: Características del género informe en Ingeniería", link: "https://drive.google.com/file/d/1e9bJU-ocvJRFgVF7NArmPrS8o1Tp_A8C/preview"},
   { titulo: "Cápsula 4A: Informe de laboratorio", link: "https://drive.google.com/file/d/1oX9TVK7jw4t6owhU3Fea0Z3RNJso27bR/preview"},

@@ -179,7 +179,7 @@ const initialState = {
         examples: [
           "“Un parque eólico se define como un conjunto de generadores eólicos conectados entre sí para inyectar energía eléctrica a un sistema eléctrico” (37,25)",
         ],
-        style: "bg-red",
+        style: "bg-blue",
         nro_errores: 0
       },
       algoDificil: {
@@ -191,7 +191,7 @@ const initialState = {
         examples: [
           "“La Energía Hidráulica es un tipo de energía renovable convencional, se obtiene del aprovechamiento de las energías cinéticas y potencial de la corriente del agua o los saltos de aguas naturales”. (50,66)",
         ],
-        style: "bg-yellow",
+        style: "bg-lightgreen",
         nro_errores: 0
       },
       normal: {
@@ -203,7 +203,7 @@ const initialState = {
         examples: [
           "“Cuando se habla de la huella de carbono de la energía, esta contempla al sector eléctrico contribuyendo con el 35% de las emisiones de dióxido de carbono a nivel global”. (56,39)",
         ],     
-        style: "bg-lightgreen",
+        style: "bg-yellow",
         nro_errores: 0
       },
       algoFacil: {
@@ -227,7 +227,7 @@ const initialState = {
         examples: [
           "“Tal día como hoy de hace ciento diez (110) años, o lo que es lo mismo el 26 de octubre de 1906, el físico e inventor estadounidense Lee De Forest (1873-1961), anunciaba el descubrimiento del tubo de vacío de tres elementos”. (88,81)",
         ],   
-        style: "bg-blue",
+        style: "bg-red",
         nro_errores: 0
       }
     },
